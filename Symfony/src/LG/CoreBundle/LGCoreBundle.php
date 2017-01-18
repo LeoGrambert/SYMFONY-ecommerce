@@ -1,9 +1,9 @@
 <?php
 
-namespace AppBundle;
+namespace LG\CoreBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class AppBundle extends Bundle
+class LGCoreBundle extends Bundle
 {
 }

@@ -1,0 +1,14 @@
+lg_core_homepage:
+    path:     /
+    defaults:
+        _controller: LGCoreBundle:Booking:index
+
+lg_core_bookingpage:
+    path:    /booking
+    defaults:
+        _controller: LGCoreBundle:Booking:booking
+
+lg_core_confirmationpage:
+    path:    /booking/confirmation
+    defaults:
+        _controller: LGCoreBundle:Booking:confirmation

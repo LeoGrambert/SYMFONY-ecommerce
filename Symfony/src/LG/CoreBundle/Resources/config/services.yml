@@ -1,0 +1,4 @@
+services:
+#    lg_core.example:
+#        class: LG\CoreBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
