@@ -10,6 +10,9 @@
         <title>{% block title %}Musée du Louvre{% endblock %}</title>
         <!-- Bootstrap Core CSS -->
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+        {% stylesheets 'bundles/app/css/*' filter='cssrewrite' %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -52,8 +55,8 @@
                     <li>
                         <a href="#">Arts & Education</a>
                     </li>
-                    <li style="background-color: gainsboro;">
-                        <a href="/booking" style="color:black;">Billetterie</a>
+                    <li id="navBooking">
+                        <a href="/booking">Billetterie</a>
                     </li>
                 </ul>
             </div>
@@ -71,7 +74,8 @@
     <footer>
         <div class="row">
             <div class="col-lg-12">
-                <p>Musée du Louvre 2017</p>
+                Musée du Louvre - 2017 - Site Fictif développé par <a href="http://leogrambert.fr">Léo Grambert</a>
+                <span id="formation">Formation Chef de Projet Multimédia, spécialité Développement - <a href="https://openclassrooms.com/projects/developpez-un-back-end-pour-un-client">Développez un back-end pour un client</a></span>
             </div>
         </div>
     </footer>
@@ -84,6 +88,10 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    {% javascripts 'bundles/app/js/*' %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
 
     </body>
 

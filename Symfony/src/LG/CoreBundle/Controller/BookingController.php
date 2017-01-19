@@ -38,8 +38,4 @@ class BookingController extends Controller
         $content = $this->get('templating')->render('LGCoreBundle:Booking:booking.html.twig');
         return new Response($content);
     }
-
-    public function confirmationAction(){
-        return new Response("Ici se trouvera la page de confirmation de la commande");
-    }
 }

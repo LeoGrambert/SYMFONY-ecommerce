@@ -1,12 +1,42 @@
 {% extends "LGCoreBundle::layout.html.twig" %}
 
 {%  block body %}
-<div class="container" style="margin-top: 5%;">
-    Ici se trouvera l'étape une
-    <button>Ajouter au panier</button>
-    Ici se trouvera l'étape deux
-    <button>Valider la commande</button>
-    Ici se trouvera l'étape trois
-    <button>Finaliser la commande</button>
-</div>
+    <img src="{{ asset('bundles/app/css/img/logo.png') }}" alt="logo_musee_du_louvre" id="logoImg"/>
+    <p id="subTextLogo">Billetterie en ligne</p>
+    <img src="{{ asset('bundles/app/css/img/basket.png') }}" alt="panier" id="basketImg"/>
+    <p id="basketText">Vous avez 0 billet(s)<br/> dans votre panier</p>
+
+    <div class="container" id="funnel">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-4">
+                <div id="funnelBorder"></div>
+                <div id="blocFunnelStepOne"></div>
+                <div id="blocFunnelStepTwo"></div>
+                <div id="blocFunnelStepThree"></div>
+                <div id="blocFunnelStepFour"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-md-offset-4" id="textFunnel">
+                <span id="textStepOne">Ajouter au panier</span>
+                <span id="textStepTwo">Détails billets</span>
+                <span id="textStepThree">Paiement</span>
+                <span id="textStepFour">Confirmation</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container marginBody">
+        <div id="stepOne">Ici se trouvera l'étape une<br/><hr>
+        <button class="btn btn-primary" id="stepOneButton">Ajouter au panier</button></div>
+
+        <div id="stepTwo">Ici se trouvera l'étape deux<br/><hr>
+        <button class="btn btn-primary" id="stepTwoButton">Valider la commande</button></div>
+
+        <div id="stepThree">Ici se trouvera l'étape trois<br/><hr>
+        <button class="btn btn-primary" id="stepThreeButton">Finaliser la commande</button></div>
+
+        <div id="stepFour">Ici se trouvera le message de confirmation<br/><hr>
+            <a href="/"><button class="btn btn-primary">Accueil</button></a></div>
+    </div>
 {% endblock %}
