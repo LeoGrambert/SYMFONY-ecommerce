@@ -1,0 +1,12 @@
+/*Homepage stylesheet*/
+#navBooking, #navBooking a{
+    background-color: #dadada;
+    color:black;
+}
+#navBooking:hover, #navBooking a:hover{
+    background-color: #8C5611;
+    color:whitesmoke;
+}
+#callToActionSection{
+    margin-top: 2%;
+}

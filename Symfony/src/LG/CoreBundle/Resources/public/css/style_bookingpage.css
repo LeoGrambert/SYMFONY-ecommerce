@@ -1,0 +1,85 @@
+/*
+Booking page stylesheet
+*/
+#logoImg{
+    margin: 5% 0 0 1%;
+}
+#subTextLogo{
+    margin-left: 2%;
+}
+#basketImg{
+    padding-right: 3.5%;
+    float: right;
+    margin-top: -7%;
+}
+#basketText{
+    font-size: 0.8em;
+    padding-right: 1%;
+    float: right;
+    margin-top: -5%;
+}
+/*Funnel*/
+#funnel{
+    margin: 0 0 5% 0;
+}
+#funnelBorder{
+    background-color: #F3E2C7;
+    height: 2px;
+    margin-top: 10%;
+    margin-bottom: -2%;
+}
+#blocFunnelStepOne, #blocFunnelStepTwo, #blocFunnelStepThree, #blocFunnelStepFour{
+    width:20px;
+    height: 20px;
+    border-radius: 10%;
+    position: absolute;
+    background-color: #DADADA;
+}
+#blocFunnelStepOne{
+    border-radius: 50%;
+    background-color: #AA8046;
+}
+
+#blocFunnelStepTwo{
+    margin-left: 30%;
+}
+#blocFunnelStepThree{
+    margin-left: 63%;
+}
+#blocFunnelStepFour{
+    margin-left: 94%;
+}
+#textFunnel{
+    padding-top: 2%;
+}
+#textStepOne{
+    margin-left: -8%;
+}
+#textStepTwo{
+    margin-left: 14%;
+}
+#textStepThree{
+    margin-left: 21%;
+}
+#textStepFour{
+    float: right;
+    margin-right: -8%;
+}
+#stepOne, #stepTwo, #stepThree, #stepFour{
+    margin-top: 12%;
+    text-align: center;
+}
+#stepTwo, #stepThree, #stepFour{
+    display: none;
+}
+
+@media screen and (min-width: 1500px) {
+    #funnel {
+        margin-left: 15%;
+    }
+
+    #basketImg {
+        padding-right: 2.5%;
+        margin-top: -6.5%;
+    }
+}

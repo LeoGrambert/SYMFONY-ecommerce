@@ -8,9 +8,8 @@
         <meta name="description" content="">
         <meta name="author" content="">
         <title>{% block title %}Musée du Louvre{% endblock %}</title>
-        <!-- Bootstrap Core CSS -->
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-        {% stylesheets 'bundles/app/css/*' filter='cssrewrite' %}
+        {% stylesheets
+        'bundles/lgcore/css/*' filter='cssrewrite' %}
         <link rel="stylesheet" href="{{ asset_url }}" />
         {% endstylesheets %}
 
@@ -83,13 +82,9 @@
     </div>
     <!-- /.container -->
 
-    <!-- jQuery -->
-    <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-    {% javascripts 'bundles/app/js/*' %}
+{% javascripts
+    '@js'
+    'bundles/lgcore/js/booking.js' %}
     <script src="{{ asset_url }}"></script>
     {% endjavascripts %}
 
