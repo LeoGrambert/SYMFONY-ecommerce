@@ -5,12 +5,12 @@ namespace LG\CoreBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Visitor
+ * Client
  *
- * @ORM\Table(name="visitor")
- * @ORM\Entity(repositoryClass="LG\CoreBundle\Repository\VisitorRepository")
+ * @ORM\Table(name="client")
+ * @ORM\Entity(repositoryClass="LG\CoreBundle\Repository\ClientRepository")
  */
-class Visitor
+class Client
 {
     /**
      * @var int
@@ -55,6 +55,12 @@ class Visitor
      * @ORM\Column(name="reduced_price", type="boolean")
      */
     private $reducedPrice = false;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="LG\CoreBundle\Entity\Booking")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $booking;
 
     /**
      * @return int

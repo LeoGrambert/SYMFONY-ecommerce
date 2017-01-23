@@ -29,6 +29,11 @@
     <div class="container marginBody">
         <div id="stepOne">Ici se trouvera l'étape une<br/><hr>
         <button class="btn btn-primary" id="stepOneButton">Ajouter au panier</button></div>
+        <div>
+            {% for booking in listBookings %}
+            {{ booking.email }} souhaite commander {{ booking.ticketNumber }} billets d'entrée.<br/>
+            {% endfor %}
+        </div>
 
         <div id="stepTwo">Ici se trouvera l'étape deux<br/><hr>
         <button class="btn btn-primary" id="stepTwoButton">Valider la commande</button></div>
