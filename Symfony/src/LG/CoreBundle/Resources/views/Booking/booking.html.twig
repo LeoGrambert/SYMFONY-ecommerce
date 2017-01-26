@@ -82,20 +82,4 @@
         <div id="stepFour">Ici se trouvera le message de confirmation<br/><hr>
             <a href="/"><button class="btn btn-primary">Accueil</button></a></div>
     </div>
-
-    {% javascripts
-    '@js'
-    'bundles/lgcore/js/booking.js' %}
-    <script src="{{ asset_url }}"></script>
-    {% endjavascripts %}
-    {% javascripts
-    '@js'
-    'bundles/lgcore/js/formVisitor.js' %}
-    <script src="{{ asset_url }}"></script>
-    {% endjavascripts %}
-    {% javascripts
-    '@js'
-    'bundles/lgcore/plugin/bootstrap-datepicker-master/dist/js/bootstrap-datepicker.min.js' %}
-    <script src="{{ asset_url }}"></script>
-    {% endjavascripts %}
 {% endblock %}

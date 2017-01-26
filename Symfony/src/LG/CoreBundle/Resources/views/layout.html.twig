@@ -83,6 +83,22 @@
             </div>
         </div>
     </footer>
+    {% javascripts
+    '@js'
+    'bundles/lgcore/js/booking.js' %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+    {% javascripts
+    '@js'
+    'bundles/lgcore/js/formVisitor.js' %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+    {% javascripts
+    '@js'
+    'bundles/lgcore/plugin/bootstrap-datepicker-master/dist/js/bootstrap-datepicker.min.js' %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/locales/bootstrap-datepicker.fr.min.js"></script>
 
     </body>
 
