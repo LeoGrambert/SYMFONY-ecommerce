@@ -84,6 +84,22 @@ Booking page stylesheet
     width: 65%;
     margin-left: 15%;
 }
+#datepickerHelpText, #isDailyHelpText{
+    position: absolute;
+    right: 2%;
+    font-size: 0.9em;
+    padding: 20px 6px 6px 6px;
+    margin-top: -2%;
+    background-color: #DADADA;
+    text-align: initial;
+    border-radius: 1%;
+    display: none;
+}
+#datepickerHelpCross, #isDailyHelpCross{
+    float: right;
+    margin-top: -15px;
+    cursor: pointer;
+}
 .radio{
     display: inline;
     margin: 0 1% 0 1%;
@@ -94,6 +110,10 @@ Booking page stylesheet
 }
 .datepicker table tr td.disabled{
     background: rgba(218,218,218,0.8);
+}
+.help{
+    margin-top: -15px;
+    cursor: pointer;
 }
 
 @media screen and (min-width: 1500px) {

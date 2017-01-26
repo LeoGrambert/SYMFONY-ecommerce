@@ -34,15 +34,35 @@
             <div class="row">
                 <div class="col-md-offset-4 col-md-4">
                     {{ form_label(form.dateReservation, 'Choisissez la date de votre visite') }}
+                    <img src="{{ asset('bundles/lgcore/img/help.png') }}" alt="help_icon" class="help" id="datepickerHelp"/>
                 </div>
                 <div class="col-md-offset-5 col-md-2">
                     {{ form_widget(form.dateReservation) }}
                 </div>
+                <div id="datepickerHelpText" class="col-md-3">
+                    <img src="{{ asset('bundles/lgcore/img/cross.png') }}" alt="cross_close" id="datepickerHelpCross" />
+                    <p>Le musée est ouvert tout les jours, de 9h à 18h, sauf le mardi.</p>
+                    <p>Fermeture les 1er mai, 1er novembre et 25 décembre.</p>
+                    <p>La commande de billets en ligne est impossible :
+                        <ul>
+                            <li>Les dimanches</li>
+                            <li>Les jours fériés</li>
+                            <li>Si plus de 1000 billets ont déjà été vendus sur une journée</li>
+                        </ul>
+                    </p>
+                </div>
             </div>
             <hr>
             <div class="row">
-                <p id="checkboxIsDaily">Nature du billet</p>
+                <p id="checkboxIsDaily">
+                    Nature du billet
+                    <img src="{{ asset('bundles/lgcore/img/help.png') }}" alt="help_icon" class="help" id="isDailyHelp"/>
+                </p>
                 {{ form_widget(form.isDaily) }}
+                <div id="isDailyHelpText" class="col-md-3">
+                    <img src="{{ asset('bundles/lgcore/img/cross.png') }}" alt="cross_close" id="isDailyHelpCross" />
+                    <p>La commande de billet demi-journée est impossible pour la journée en cours s'il est plus de 14 heures.</p>
+                </div>
             </div>
             <hr>
             <div class="row">
@@ -82,4 +102,28 @@
         <div id="stepFour">Ici se trouvera le message de confirmation<br/><hr>
             <a href="/"><button class="btn btn-primary">Accueil</button></a></div>
     </div>
-{% endblock %}
+    {% endblock %}
+
+    {% block script %}
+        {% javascripts
+        '@js'
+        'bundles/lgcore/js/booking.js' %}
+        <script src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+        {% javascripts
+            '@js'
+            'bundles/lgcore/js/formVisitor.js' %}
+        <script src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+        {% javascripts
+        '@js'
+        'bundles/lgcore/js/textHelp.js' %}
+        <script src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+        {% javascripts
+            '@js'
+            'bundles/lgcore/plugin/bootstrap-datepicker-master/dist/js/bootstrap-datepicker.min.js' %}
+        <script src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/locales/bootstrap-datepicker.fr.min.js"></script>
+    {% endblock %}
