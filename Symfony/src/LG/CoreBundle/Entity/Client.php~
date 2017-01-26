@@ -57,8 +57,7 @@ class Client
     private $reducedPrice = false;
 
     /**
-     * @ORM\ManyToOne(targetEntity="LG\CoreBundle\Entity\Booking")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\ManyToOne(targetEntity="LG\CoreBundle\Entity\Booking", inversedBy="clients")
      */
     private $booking;
 
@@ -150,5 +149,38 @@ class Client
         $this->reducedPrice = $reducedPrice;
     }
     
-}
 
+    /**
+     * Get reducedPrice
+     *
+     * @return boolean
+     */
+    public function getReducedPrice()
+    {
+        return $this->reducedPrice;
+    }
+
+    /**
+     * Set booking
+     *
+     * @param \LG\CoreBundle\Entity\Booking $booking
+     *
+     * @return Client
+     */
+    public function setBooking(\LG\CoreBundle\Entity\Booking $booking)
+    {
+        $this->booking = $booking;
+
+        return $this;
+    }
+
+    /**
+     * Get booking
+     *
+     * @return \LG\CoreBundle\Entity\Booking
+     */
+    public function getBooking()
+    {
+        return $this->booking;
+    }
+}

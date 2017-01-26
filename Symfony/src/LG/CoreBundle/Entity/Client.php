@@ -57,8 +57,7 @@ class Client
     private $reducedPrice = false;
 
     /**
-     * @ORM\ManyToOne(targetEntity="LG\CoreBundle\Entity\Booking")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\ManyToOne(targetEntity="LG\CoreBundle\Entity\Booking", inversedBy="clients")
      */
     private $booking;
 

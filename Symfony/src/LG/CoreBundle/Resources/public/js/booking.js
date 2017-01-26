@@ -5,26 +5,28 @@
 $(function($) {
 
     $('#stepOneButton').click(function() {
-        $('#stepOne').css('display', 'none');
-        $('#stepTwo').css('display', 'block');
+        $('#stepOne').hide();
+        $('#stepTwo').show();
         $('#blocFunnelStepTwo').css({
             'backgroundColor':'#AA8046',
             'borderRadius':'50%'
         });
         $('#funnelBorder').css('background', 'linear-gradient(to right, rgba(182,141,76,1) 0%, rgba(193,158,103,1) 33%, rgba(243,226,199,1) 33%, rgba(243,226,199,1) 33%)')
     });
+
     $('#stepTwoButton').click(function() {
-        $('#stepTwo').css('display', 'none');
-        $('#stepThree').css('display', 'block');
+        $('#stepTwo').hide();
+        $('#stepThree').show();
         $('#blocFunnelStepThree').css({
             'backgroundColor':'#AA8046',
             'borderRadius':'50%'
         });
         $('#funnelBorder').css('background', 'linear-gradient(to right, rgba(182,141,76,1) 0%, rgba(193,158,103,1) 68%, rgba(243,226,199,1) 68%, rgba(243,226,199,1) 68%)')
     });
+    
     $('#stepThreeButton').click(function() {
-        $('#stepThree').css('display', 'none');
-        $('#stepFour').css('display', 'block');
+        $('#stepThree').hide();
+        $('#stepFour').show();
         $('#blocFunnelStepFour').css({
             'backgroundColor':'#AA8046',
             'borderRadius':'50%'

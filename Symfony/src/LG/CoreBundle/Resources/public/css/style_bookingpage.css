@@ -66,11 +66,34 @@ Booking page stylesheet
     margin-right: -8%;
 }
 #stepOne, #stepTwo, #stepThree, #stepFour{
-    margin-top: 12%;
     text-align: center;
 }
 #stepTwo, #stepThree, #stepFour{
     display: none;
+}
+/*form*/
+#choiceTicketNumber{
+    width: 35%;
+    margin-left:32%;
+}
+#checkboxIsDaily{
+    font-weight: bold;
+}
+#lg_corebundle_booking_dateReservation{
+    text-align: center;
+    width: 65%;
+    margin-left: 15%;
+}
+.radio{
+    display: inline;
+    margin: 0 1% 0 1%;
+}
+.datepicker table tr td.new, .datepicker table tr td.old{
+    opacity: 0.4;
+    color: black;
+}
+.datepicker table tr td.disabled{
+    background: rgba(218,218,218,0.8);
 }
 
 @media screen and (min-width: 1500px) {

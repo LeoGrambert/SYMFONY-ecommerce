@@ -84,7 +84,6 @@
         <data-type>tinyint(1)</data-type>
       </column>
       <column id="22" parent="3" name="booking_id">
-        <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
       <index id="23" parent="3" name="IDX_C74404553301C60">

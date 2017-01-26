@@ -9,6 +9,11 @@ footer{
     background-color: #222222;
     color: whitesmoke;
 }
+hr{
+    border: 1px solid #d4d4d4;
+    width: 20%;
+    border-radius: 10%;
+}
 a, a:hover{
     color:#AD8A53;
     text-decoration: none;

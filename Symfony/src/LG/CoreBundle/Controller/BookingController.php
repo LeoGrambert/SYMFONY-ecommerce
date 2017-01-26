@@ -13,10 +13,19 @@ namespace LG\CoreBundle\Controller;
 /**
  * Use
  */
+use Doctrine\ORM\Query\Expr\Select;
 use LG\CoreBundle\Entity\Booking;
 use LG\CoreBundle\Entity\Client;
+use LG\CoreBundle\Form\BookingType;
 use LG\CoreBundle\LGCoreBundle;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\FormType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -38,24 +47,21 @@ class BookingController extends Controller
         return new Response($content);
     }
 
-    public function bookingAction(){
+    public function bookingAction(Request $request){
         $booking = new Booking();
-        $booking->setDateReservation(new \DateTime());
-        $booking->setDateAchat(new \DateTime());
-        $booking->setIsDaily(true);
-        $booking->setTicketNumber(2);
-        $booking->setEmail('leogrambert@gmail.com');
 
-        $em = $this->getDoctrine()->getManager();
+        $form = $this->createForm(BookingType::class, $booking);
 
-        $em->persist($booking);
+        if ($request->isMethod('POST')){
+            $form->handleRequest($request);
+            if ($form->isValid()){
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($booking);
+                $em->flush();
+            }
+        }
 
-        $em->flush();
-        
-        $repository = $this->getDoctrine()->getManager()->getRepository('LGCoreBundle:Booking');
-        $listBookings = $repository->findAll();
-
-        $content = $this->get('templating')->render('LGCoreBundle:Booking:booking.html.twig', ['listBookings' => $listBookings]);
+        $content = $this->get('templating')->render('LGCoreBundle:Booking:booking.html.twig', ['form' => $form->createView()]);
         return new Response($content);
     }
 }

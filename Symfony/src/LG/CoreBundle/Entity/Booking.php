@@ -40,7 +40,7 @@ class Booking
      *
      * @ORM\Column(name="is_daily", type="boolean")
      */
-    private $isDaily = false;
+    private $isDaily;
 
     /**
      * @var int
@@ -61,9 +61,15 @@ class Booking
      */
     private $payment;
 
+    /**
+     * @ORM\OneToMany(targetEntity="LG\CoreBundle\Entity\Client", mappedBy="booking", cascade={"persist"})
+     */
+    private $clients;
+
     public function __construct()
     {
         $this->dateAchat = new \DateTime();
+        $this->dateReservation = new \DateTime();
     }
     
     /**
@@ -228,5 +234,49 @@ class Booking
     public function getPayment()
     {
         return $this->payment;
+    }
+
+    /**
+     * Add client
+     *
+     * @param \LG\CoreBundle\Entity\Client $client
+     *
+     * @return Booking
+     */
+    public function addClient(\LG\CoreBundle\Entity\Client $client)
+    {
+        $this->client[] = $client;
+
+        return $this;
+    }
+
+    /**
+     * Remove client
+     *
+     * @param \LG\CoreBundle\Entity\Client $client
+     */
+    public function removeClient(\LG\CoreBundle\Entity\Client $client)
+    {
+        $this->client->removeElement($client);
+    }
+
+    /**
+     * Get client
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getClient()
+    {
+        return $this->client;
+    }
+
+    /**
+     * Get clients
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getClients()
+    {
+        return $this->clients;
     }
 }
