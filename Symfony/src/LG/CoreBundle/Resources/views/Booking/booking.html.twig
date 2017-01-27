@@ -6,6 +6,9 @@
     <img src="{{ asset('bundles/lgcore/img/basket.png') }}" alt="panier" id="basketImg"/>
     <p id="basketText">Vous avez 0 billet(s)<br/> dans votre panier</p>
 
+    <!--
+    Funnel
+    -->
     <div class="container" id="funnel">
         <div class="row">
             <div class="col-md-6 col-md-offset-4">
@@ -28,6 +31,9 @@
 
     <div class="container marginBody">
 
+        <!--
+        Step One >>>>
+        -->
         <div id="stepOne">
             {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
             {{ form_errors(form) }}
@@ -38,18 +44,18 @@
                 </div>
                 <div class="col-md-offset-5 col-md-2">
                     {{ form_widget(form.dateReservation) }}
+                    {{ form_errors(form.dateReservation) }}
                 </div>
                 <div id="datepickerHelpText" class="col-md-3">
                     <img src="{{ asset('bundles/lgcore/img/cross.png') }}" alt="cross_close" id="datepickerHelpCross" />
                     <p>Le musée est ouvert tout les jours, de 9h à 18h, sauf le mardi.</p>
                     <p>Fermeture les 1er mai, 1er novembre et 25 décembre.</p>
-                    <p>La commande de billets en ligne est impossible :
+                    <p>La commande de billets en ligne est impossible :</p>
                         <ul>
                             <li>Les dimanches</li>
                             <li>Les jours fériés</li>
                             <li>Si plus de 1000 billets ont déjà été vendus sur une journée</li>
                         </ul>
-                    </p>
                 </div>
             </div>
             <hr>
@@ -59,6 +65,7 @@
                     <img src="{{ asset('bundles/lgcore/img/help.png') }}" alt="help_icon" class="help" id="isDailyHelp"/>
                 </p>
                 {{ form_widget(form.isDaily) }}
+                {{ form_errors(form.isDaily) }}
                 <div id="isDailyHelpText" class="col-md-3">
                     <img src="{{ asset('bundles/lgcore/img/cross.png') }}" alt="cross_close" id="isDailyHelpCross" />
                     <p>La commande de billet demi-journée est impossible pour la journée en cours s'il est plus de 14 heures.</p>
@@ -68,7 +75,10 @@
             <div class="row">
                 <div class="col-md-offset-5 col-md-2">
                     {{ form_label(form.ticketNumber, 'Nombre de billets') }}
-                    <div id="choiceTicketNumber">{{ form_widget(form.ticketNumber) }}</div>
+                    <div id="choiceTicketNumber">
+                        {{ form_widget(form.ticketNumber) }}
+                        {{ form_errors(form.ticketNumber) }}
+                    </div>
                 </div>
             </div>
             <br/>
@@ -76,32 +86,59 @@
                 Prix :
             </div>
             <br/>
-            <button class="btn btn-primary" id="stepOneButton">Ajouter au panier</button>
+            <button class="btn btn-primary" id="lg_corebundle_booking_stepOne">Ajouter au panier</button>
         </div>
 
+        <!--
+        Step Two >>>>
+        -->
         <div id="stepTwo">
-            <div>
+            <div class="row">
                 {{ form_label(form.email, "Entrez votre adresse email :") }}
             </div>
-            <div class="col-md-offset-4 col-md-4 form-group">
-                {{ form_widget(form.email) }}
-            </div><br/><br/>
+            <div class="row">
+                <div class="col-md-offset-4 col-md-4 form-group">
+                    {{ form_widget(form.email) }}
+                    {{ form_errors(form.email) }}
+                </div>
+            </div>
             <hr>
-            {{ form_row(form.clients) }}
+            {{ form_widget(form.clients) }}
+            {{ form_errors(form.clients) }}
+            <div id="isReducedText"><strong>Quel tarif dois-je choisir ?</strong><img src="{{ asset('bundles/lgcore/img/help.png') }}" class="help" alt="help_icon" id="isReducedHelp"></div>
+            <div id="isReducedHelpText" >
+                <img src="{{ asset('bundles/lgcore/img/cross.png') }}" alt="cross" id="isReducedHelpCross">
+                <p>Tarif enfant : de 4 ans à 12 ans (8€)</p>
+                <p>Tarif senior : à partir de 60 ans (12€)</p>
+                <p>Tarif réduit : étudiant, employé du Musée, service du Ministre de la Culture, militaire (10€)</p>
+                <p>Gratuit : de 0 à 4 ans</p><br/>
+                <p><strong>Si vous ne correspondez à aucun critère ci-dessus, choisissez le tarif normal. (16€)</strong></p>
+            </div>
             <a href="#" id="add_client" class="btn btn-default">Ajouter un visiteur</a>
             <hr>
-            <button class="btn btn-primary" id="stepTwoButton">Valider la commande</button>
+            <button class="btn btn-primary" id ="lg_corebundle_booking_stepTwo">Valider la commande</button>
         </div>
 
-        <div id="stepThree">Ici se trouvera l'étape trois<br/><hr>
-            {{ form_row(form.save) }}
-
-            <button class="btn btn-primary" id="stepThreeButton">Finaliser la commande</button>
+        <!--
+        Step Three >>>>
+        -->
+        <div id="stepThree">
+            {{ form_label(form.cgvAccept) }}
+            {{ form_widget(form.cgvAccept) }}
+            <hr>
+            {{ form_widget(form.stepThree,  {'attr' : {'class':'btn-primary'}}) }}
+            {{ form_rest(form) }}
+            {{ form_end(form) }}
         </div>
 
-        <div id="stepFour">Ici se trouvera le message de confirmation<br/><hr>
-            <a href="/"><button class="btn btn-primary">Accueil</button></a></div>
+        <!--
+        Step Four >>>>
+        -->
+        <div id="stepFour">
+            <hr>
+            <a href="/"><button class="btn btn-primary">Retour à l'accueil</button></a></div>
     </div>
+
     {% endblock %}
 
     {% block script %}
@@ -112,7 +149,7 @@
         {% endjavascripts %}
         {% javascripts
             '@js'
-            'bundles/lgcore/js/formVisitor.js' %}
+            'bundles/lgcore/js/formClient.js' %}
         <script src="{{ asset_url }}"></script>
         {% endjavascripts %}
         {% javascripts

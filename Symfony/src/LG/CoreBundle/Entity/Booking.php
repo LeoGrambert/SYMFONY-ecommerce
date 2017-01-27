@@ -66,6 +66,13 @@ class Booking
      */
     private $clients;
 
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="cgv_accept", type="boolean")
+     */
+    private $cgvAccept;
+
     public function __construct()
     {
         $this->dateAchat = new \DateTime();
@@ -133,7 +140,7 @@ class Booking
     /**
      * Set ticketType
      *
-     * @param boolean $ticketType
+     * @param boolean $isDaily
      *
      * @return Booking
      */
@@ -235,6 +242,30 @@ class Booking
     {
         return $this->payment;
     }
+    
+    /**
+     * Set cgvAccept
+     *
+     * @param boolean $cgvAccept
+     *
+     * @return Booking
+     */
+    public function setCgvAccept($cgvAccept)
+    {
+        $this->cgvAccept = $cgvAccept;
+
+        return $this;
+    }
+
+    /**
+     * Get cgvAccept
+     *
+     * @return boolean
+     */
+    public function getCgvAccept()
+    {
+        return $this->cgvAccept;
+    }
 
     /**
      * Add client
@@ -245,7 +276,7 @@ class Booking
      */
     public function addClient(\LG\CoreBundle\Entity\Client $client)
     {
-        $this->client[] = $client;
+        $this->clients[] = $client;
 
         return $this;
     }
@@ -257,17 +288,7 @@ class Booking
      */
     public function removeClient(\LG\CoreBundle\Entity\Client $client)
     {
-        $this->client->removeElement($client);
-    }
-
-    /**
-     * Get client
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getClient()
-    {
-        return $this->client;
+        $this->clients->removeElement($client);
     }
 
     /**

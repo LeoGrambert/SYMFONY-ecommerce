@@ -124,4 +124,29 @@ class Payment
     {
         return $this->cryptogramme;
     }
+
+    /**
+     * Set cgvAccept
+     *
+     * @param boolean $cgvAccept
+     *
+     * @return payment
+     */
+    public function setCgvAccept($cgvAccept)
+    {
+        $this->cgvAccept = $cgvAccept;
+
+        return $this;
+    }
+
+    /**
+     * Get cgvAccept
+     *
+     * @return bool
+     */
+    public function getCgvAccept()
+    {
+        return $this->cgvAccept;
+    }
 }
+

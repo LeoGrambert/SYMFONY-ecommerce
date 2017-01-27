@@ -17,4 +17,10 @@ $(function () {
     $('#isDailyHelpCross').click(function() {
         $('#isDailyHelpText').hide();
     });
+    $('#isReducedText').click(function () {
+        $('#isReducedHelpText').show();
+    });
+    $('#isReducedHelpCross').click(function () {
+        $('#isReducedHelpText').hide();
+    });
 });

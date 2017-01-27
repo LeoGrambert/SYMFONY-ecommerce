@@ -52,9 +52,9 @@ class Client
     /**
      * @var bool
      *
-     * @ORM\Column(name="reduced_price", type="boolean")
+     * @ORM\Column(name="prices", type="string")
      */
-    private $reducedPrice = false;
+    private $prices;
 
     /**
      * @ORM\ManyToOne(targetEntity="LG\CoreBundle\Entity\Booking", inversedBy="clients")
@@ -136,28 +136,28 @@ class Client
     /**
      * @return boolean
      */
-    public function isReducedPrice()
+    public function isPrices()
     {
-        return $this->reducedPrice;
+        return $this->prices;
     }
 
     /**
-     * @param boolean $reducedPrice
+     * @param boolean $prices
      */
-    public function setReducedPrice($reducedPrice)
+    public function setPrices($prices)
     {
-        $this->reducedPrice = $reducedPrice;
+        $this->prices = $prices;
     }
     
 
     /**
-     * Get reducedPrice
+     * Get prices
      *
      * @return boolean
      */
-    public function getReducedPrice()
+    public function getPrices()
     {
-        return $this->reducedPrice;
+        return $this->prices;
     }
 
     /**

@@ -26,6 +26,7 @@ use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -58,6 +59,7 @@ class BookingController extends Controller
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($booking);
                 $em->flush();
+                return $this->redirectToRoute('lg_core_homepage');
             }
         }
 

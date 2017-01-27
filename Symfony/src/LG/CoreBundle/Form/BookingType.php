@@ -47,7 +47,11 @@ class BookingType extends AbstractType
                     '3' => 3,
                     '4' => 4,
                     '5' => 5,
-                    '6' => 6
+                    '6' => 6,
+                    '7' =>7,
+                    '8' => 8,
+                    '9' => 9,
+                    '10' => 10
                 )
             ))
             ->add('email', EmailType::class)
@@ -56,7 +60,17 @@ class BookingType extends AbstractType
                 'allow_add' => true,
                 'allow_delete' => true
             ])
-            ->add('save', SubmitType::class)
+            ->add('cgvAccept', ChoiceType::class, [
+                'label' => 'Acceptez-vous les Conditions Générales de Vente ?',
+                'choices' => ['Oui' => 1, 'Non' => 0],
+                'expanded' => true,
+                'multiple' => false,
+                'required' => true
+
+            ])
+            ->add('stepThree', SubmitType::class, [
+                'label' => 'Confirmer la commande'
+            ])
         ;
     }
     

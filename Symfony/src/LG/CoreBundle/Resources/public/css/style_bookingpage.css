@@ -71,6 +71,7 @@ Booking page stylesheet
 #stepTwo, #stepThree, #stepFour{
     display: none;
 }
+
 /*form*/
 #choiceTicketNumber{
     width: 35%;
@@ -84,7 +85,7 @@ Booking page stylesheet
     width: 65%;
     margin-left: 15%;
 }
-#datepickerHelpText, #isDailyHelpText{
+#datepickerHelpText, #isDailyHelpText, #isReducedHelpText{
     position: absolute;
     right: 2%;
     font-size: 0.9em;
@@ -95,10 +96,41 @@ Booking page stylesheet
     border-radius: 1%;
     display: none;
 }
-#datepickerHelpCross, #isDailyHelpCross{
+#isReducedHelpText{
+    margin-top: -6%;
+    right: 1%;
+}
+#datepickerHelpCross, #isDailyHelpCross, #isReducedHelpCross{
     float: right;
     margin-top: -15px;
     cursor: pointer;
+}
+#isReducedHelp{
+    margin-left: 5px;
+}
+#isReducedText{
+    color: #AD8A53;
+    cursor: pointer;
+    margin-bottom: 5%;
+}
+#lg_corebundle_booking_clients .form-group{
+    background-color: #DADADA;
+    border-radius: 1%;
+    padding: 10px;
+    margin: 2% 4% 2% 4%;
+    width: 40%;
+}
+#lg_corebundle_booking_clients{
+    width:100%;
+    margin: 3% 0 3% 0;
+    display: flex;
+    flex-flow: row wrap;
+}
+#lg_corebundle_booking_clients .form-group .form-group {
+    width:90%;
+}
+#add_client{
+    margin-bottom: 5%;
 }
 .radio{
     display: inline;

@@ -20,7 +20,7 @@ $(document).ready(function () {
 
     function addClient(container){
         var template = container.attr('data-prototype')
-            .replace(/__name__label__/g, 'Client n°' + (index+1))
+            .replace(/__name__label__/g, 'Visiteur n°' + (index+1))
             .replace(/__name__/g, index)
         ;
         

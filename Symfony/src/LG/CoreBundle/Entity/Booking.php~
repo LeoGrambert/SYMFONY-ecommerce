@@ -40,7 +40,7 @@ class Booking
      *
      * @ORM\Column(name="is_daily", type="boolean")
      */
-    private $isDaily = true;
+    private $isDaily;
 
     /**
      * @var int
@@ -65,6 +65,13 @@ class Booking
      * @ORM\OneToMany(targetEntity="LG\CoreBundle\Entity\Client", mappedBy="booking", cascade={"persist"})
      */
     private $clients;
+
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="cgv_accept", type="boolean")
+     */
+    private $cgvAccept;
 
     public function __construct()
     {
@@ -236,37 +243,29 @@ class Booking
         return $this->payment;
     }
 
+
+
     /**
-     * Add client
+     * Set cgvAccept
      *
-     * @param \LG\CoreBundle\Entity\Client $client
+     * @param boolean $cgvAccept
      *
      * @return Booking
      */
-    public function addClient(\LG\CoreBundle\Entity\Client $client)
+    public function setCgvAccept($cgvAccept)
     {
-        $this->client[] = $client;
+        $this->cgvAccept = $cgvAccept;
 
         return $this;
     }
 
     /**
-     * Remove client
+     * Get cgvAccept
      *
-     * @param \LG\CoreBundle\Entity\Client $client
+     * @return boolean
      */
-    public function removeClient(\LG\CoreBundle\Entity\Client $client)
+    public function getCgvAccept()
     {
-        $this->client->removeElement($client);
-    }
-
-    /**
-     * Get client
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getClient()
-    {
-        return $this->client;
+        return $this->cgvAccept;
     }
 }
