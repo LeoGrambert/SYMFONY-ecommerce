@@ -10,23 +10,10 @@
  */
 namespace LG\CoreBundle\Controller;
 
-/**
- * Use
- */
-use Doctrine\ORM\Query\Expr\Select;
 use LG\CoreBundle\Entity\Booking;
 use LG\CoreBundle\Entity\Client;
 use LG\CoreBundle\Form\BookingType;
-use LG\CoreBundle\LGCoreBundle;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\DateType;
-use Symfony\Component\Form\Extension\Core\Type\EmailType;
-use Symfony\Component\Form\Extension\Core\Type\FormType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -40,14 +27,18 @@ class BookingController extends Controller
 {
     /**
      * @return Response
+     * @throws \Twig_Error
      */
-    public function indexAction(Request $request){
-
+    public function indexAction(){
         $content = $this->get('templating')->render('LGCoreBundle:Booking:index.html.twig');
-
         return new Response($content);
     }
 
+    /**
+     * @param Request $request
+     * @return Response
+     * @throws \Twig_Error
+     */
     public function bookingAction(Request $request){
         $booking = new Booking();
 
@@ -57,9 +48,9 @@ class BookingController extends Controller
             $form->handleRequest($request);
             if ($form->isValid()){
                 $em = $this->getDoctrine()->getManager();
+                $em->persist($booking->getClients());
                 $em->persist($booking);
                 $em->flush();
-                return $this->redirectToRoute('lg_core_homepage');
             }
         }
 

@@ -3,6 +3,7 @@
 namespace LG\CoreBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Booking
@@ -45,9 +46,30 @@ class Booking
     /**
      * @var int
      *
-     * @ORM\Column(name="ticket_number", type="integer")
+     * @ORM\Column(name="ticket_number_normal", type="integer")
      */
-    private $ticketNumber;
+    private $ticketNumberNormal = 0;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="ticket_number_child", type="integer")
+     */
+    private $ticketNumberChild = 0;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="ticket_number_senior", type="integer")
+     */
+    private $ticketNumberSenior = 0;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="ticket_number_reduce", type="integer")
+     */
+    private $ticketNumberReduce = 0;
 
     /**
      * @var string
@@ -77,12 +99,14 @@ class Booking
     {
         $this->dateAchat = new \DateTime();
         $this->dateReservation = new \DateTime();
+        $this->clients = new ArrayCollection();
     }
     
+
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -138,7 +162,7 @@ class Booking
     }
 
     /**
-     * Set ticketType
+     * Set isDaily
      *
      * @param boolean $isDaily
      *
@@ -152,37 +176,109 @@ class Booking
     }
 
     /**
-     * Get ticketType
+     * Get isDaily
      *
-     * @return bool
+     * @return boolean
      */
-    public function getTicketType()
+    public function getIsDaily()
     {
         return $this->isDaily;
     }
 
     /**
-     * Set ticketNumber
+     * Set ticketNumberNormal
      *
-     * @param integer $ticketNumber
+     * @param integer $ticketNumberNormal
      *
      * @return Booking
      */
-    public function setTicketNumber($ticketNumber)
+    public function setTicketNumberNormal($ticketNumberNormal)
     {
-        $this->ticketNumber = $ticketNumber;
+        $this->ticketNumberNormal = $ticketNumberNormal;
 
         return $this;
     }
 
     /**
-     * Get ticketNumber
+     * Get ticketNumberNormal
      *
-     * @return int
+     * @return integer
      */
-    public function getTicketNumber()
+    public function getTicketNumberNormal()
     {
-        return $this->ticketNumber;
+        return $this->ticketNumberNormal;
+    }
+
+    /**
+     * Set ticketNumberChild
+     *
+     * @param integer $ticketNumberChild
+     *
+     * @return Booking
+     */
+    public function setTicketNumberChild($ticketNumberChild)
+    {
+        $this->ticketNumberChild = $ticketNumberChild;
+
+        return $this;
+    }
+
+    /**
+     * Get ticketNumberChild
+     *
+     * @return integer
+     */
+    public function getTicketNumberChild()
+    {
+        return $this->ticketNumberChild;
+    }
+
+    /**
+     * Set ticketNumberSenior
+     *
+     * @param integer $ticketNumberSenior
+     *
+     * @return Booking
+     */
+    public function setTicketNumberSenior($ticketNumberSenior)
+    {
+        $this->ticketNumberSenior = $ticketNumberSenior;
+
+        return $this;
+    }
+
+    /**
+     * Get ticketNumberSenior
+     *
+     * @return integer
+     */
+    public function getTicketNumberSenior()
+    {
+        return $this->ticketNumberSenior;
+    }
+
+    /**
+     * Set ticketNumberReduce
+     *
+     * @param integer $ticketNumberReduce
+     *
+     * @return Booking
+     */
+    public function setTicketNumberReduce($ticketNumberReduce)
+    {
+        $this->ticketNumberReduce = $ticketNumberReduce;
+
+        return $this;
+    }
+
+    /**
+     * Get ticketNumberReduce
+     *
+     * @return integer
+     */
+    public function getTicketNumberReduce()
+    {
+        return $this->ticketNumberReduce;
     }
 
     /**
@@ -210,13 +306,27 @@ class Booking
     }
 
     /**
-     * Get isDaily
+     * Set cgvAccept
+     *
+     * @param boolean $cgvAccept
+     *
+     * @return Booking
+     */
+    public function setCgvAccept($cgvAccept)
+    {
+        $this->cgvAccept = $cgvAccept;
+
+        return $this;
+    }
+
+    /**
+     * Get cgvAccept
      *
      * @return boolean
      */
-    public function getIsDaily()
+    public function getCgvAccept()
     {
-        return $this->isDaily;
+        return $this->cgvAccept;
     }
 
     /**
@@ -241,30 +351,6 @@ class Booking
     public function getPayment()
     {
         return $this->payment;
-    }
-    
-    /**
-     * Set cgvAccept
-     *
-     * @param boolean $cgvAccept
-     *
-     * @return Booking
-     */
-    public function setCgvAccept($cgvAccept)
-    {
-        $this->cgvAccept = $cgvAccept;
-
-        return $this;
-    }
-
-    /**
-     * Get cgvAccept
-     *
-     * @return boolean
-     */
-    public function getCgvAccept()
-    {
-        return $this->cgvAccept;
     }
 
     /**

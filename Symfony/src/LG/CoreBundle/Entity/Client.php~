@@ -2,6 +2,7 @@
 
 namespace LG\CoreBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -48,139 +49,21 @@ class Client
      * @ORM\Column(name="birth_date", type="date")
      */
     private $birthDate;
-
     /**
-     * @var bool
-     *
-     * @ORM\Column(name="reduced_price", type="boolean")
+     * @var \DateTime
+     * 
+     * @ORM\Column(name="date_ajout", type="datetime")
      */
-    private $reducedPrice = false;
+    private $dateAjout;
 
     /**
      * @ORM\ManyToOne(targetEntity="LG\CoreBundle\Entity\Booking", inversedBy="clients")
      */
     private $booking;
 
-    /**
-     * @return int
-     */
-    public function getId()
+    public function __construct()
     {
-        return $this->id;
+        $this->dateAjout = new \DateTime();
     }
 
-    /**
-     * @return string
-     */
-    public function getLastName()
-    {
-        return $this->lastName;
-    }
-
-    /**
-     * @param string $lastName
-     */
-    public function setLastName($lastName)
-    {
-        $this->lastName = $lastName;
-    }
-
-    /**
-     * @return string
-     */
-    public function getFirstName()
-    {
-        return $this->firstName;
-    }
-
-    /**
-     * @param string $firstName
-     */
-    public function setFirstName($firstName)
-    {
-        $this->firstName = $firstName;
-    }
-
-    /**
-     * @return string
-     */
-    public function getCountry()
-    {
-        return $this->country;
-    }
-
-    /**
-     * @param string $country
-     */
-    public function setCountry($country)
-    {
-        $this->country = $country;
-    }
-
-    /**
-     * @return \DateTime
-     */
-    public function getBirthDate()
-    {
-        return $this->birthDate;
-    }
-
-    /**
-     * @param \DateTime $birthDate
-     */
-    public function setBirthDate($birthDate)
-    {
-        $this->birthDate = $birthDate;
-    }
-
-    /**
-     * @return boolean
-     */
-    public function isReducedPrice()
-    {
-        return $this->reducedPrice;
-    }
-
-    /**
-     * @param boolean $reducedPrice
-     */
-    public function setReducedPrice($reducedPrice)
-    {
-        $this->reducedPrice = $reducedPrice;
-    }
-    
-
-    /**
-     * Get reducedPrice
-     *
-     * @return boolean
-     */
-    public function getReducedPrice()
-    {
-        return $this->reducedPrice;
-    }
-
-    /**
-     * Set booking
-     *
-     * @param \LG\CoreBundle\Entity\Booking $booking
-     *
-     * @return Client
-     */
-    public function setBooking(\LG\CoreBundle\Entity\Booking $booking)
-    {
-        $this->booking = $booking;
-
-        return $this;
-    }
-
-    /**
-     * Get booking
-     *
-     * @return \LG\CoreBundle\Entity\Booking
-     */
-    public function getBooking()
-    {
-        return $this->booking;
-    }
 }

@@ -2,6 +2,7 @@
 
 namespace LG\CoreBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -45,9 +46,30 @@ class Booking
     /**
      * @var int
      *
-     * @ORM\Column(name="ticket_number", type="integer")
+     * @ORM\Column(name="ticket_number_normal", type="integer")
      */
-    private $ticketNumber;
+    private $ticketNumberNormal = 0;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="ticket_number_child", type="integer")
+     */
+    private $ticketNumberChild = 0;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="ticket_number_senior", type="integer")
+     */
+    private $ticketNumberSenior = 0;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="ticket_number_reduce", type="integer")
+     */
+    private $ticketNumberReduce = 0;
 
     /**
      * @var string
@@ -77,195 +99,7 @@ class Booking
     {
         $this->dateAchat = new \DateTime();
         $this->dateReservation = new \DateTime();
+        $this->clients = new ArrayCollection();
     }
     
-    /**
-     * Get id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Set dateReservation
-     *
-     * @param \DateTime $dateReservation
-     *
-     * @return Booking
-     */
-    public function setDateReservation($dateReservation)
-    {
-        $this->dateReservation = $dateReservation;
-
-        return $this;
-    }
-
-    /**
-     * Get dateReservation
-     *
-     * @return \DateTime
-     */
-    public function getDateReservation()
-    {
-        return $this->dateReservation;
-    }
-
-    /**
-     * Set dateAchat
-     *
-     * @param \DateTime $dateAchat
-     *
-     * @return Booking
-     */
-    public function setDateAchat($dateAchat)
-    {
-        $this->dateAchat = $dateAchat;
-
-        return $this;
-    }
-
-    /**
-     * Get dateAchat
-     *
-     * @return \DateTime
-     */
-    public function getDateAchat()
-    {
-        return $this->dateAchat;
-    }
-
-    /**
-     * Set ticketType
-     *
-     * @param boolean $ticketType
-     *
-     * @return Booking
-     */
-    public function setIsDaily($isDaily)
-    {
-        $this->isDaily = $isDaily;
-
-        return $this;
-    }
-
-    /**
-     * Get ticketType
-     *
-     * @return bool
-     */
-    public function getTicketType()
-    {
-        return $this->isDaily;
-    }
-
-    /**
-     * Set ticketNumber
-     *
-     * @param integer $ticketNumber
-     *
-     * @return Booking
-     */
-    public function setTicketNumber($ticketNumber)
-    {
-        $this->ticketNumber = $ticketNumber;
-
-        return $this;
-    }
-
-    /**
-     * Get ticketNumber
-     *
-     * @return int
-     */
-    public function getTicketNumber()
-    {
-        return $this->ticketNumber;
-    }
-
-    /**
-     * Set email
-     *
-     * @param string $email
-     *
-     * @return Booking
-     */
-    public function setEmail($email)
-    {
-        $this->email = $email;
-
-        return $this;
-    }
-
-    /**
-     * Get email
-     *
-     * @return string
-     */
-    public function getEmail()
-    {
-        return $this->email;
-    }
-
-    /**
-     * Get isDaily
-     *
-     * @return boolean
-     */
-    public function getIsDaily()
-    {
-        return $this->isDaily;
-    }
-
-    /**
-     * Set payment
-     *
-     * @param \LG\CoreBundle\Entity\Payment $payment
-     *
-     * @return Booking
-     */
-    public function setPayment(\LG\CoreBundle\Entity\Payment $payment = null)
-    {
-        $this->payment = $payment;
-
-        return $this;
-    }
-
-    /**
-     * Get payment
-     *
-     * @return \LG\CoreBundle\Entity\Payment
-     */
-    public function getPayment()
-    {
-        return $this->payment;
-    }
-
-
-
-    /**
-     * Set cgvAccept
-     *
-     * @param boolean $cgvAccept
-     *
-     * @return Booking
-     */
-    public function setCgvAccept($cgvAccept)
-    {
-        $this->cgvAccept = $cgvAccept;
-
-        return $this;
-    }
-
-    /**
-     * Get cgvAccept
-     *
-     * @return boolean
-     */
-    public function getCgvAccept()
-    {
-        return $this->cgvAccept;
-    }
 }

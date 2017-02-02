@@ -3,6 +3,8 @@
 namespace LG\CoreBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+
 
 /**
  * Client
@@ -48,21 +50,29 @@ class Client
      * @ORM\Column(name="birth_date", type="date")
      */
     private $birthDate;
-
     /**
-     * @var bool
-     *
-     * @ORM\Column(name="prices", type="string")
+     * @var \DateTime
+     * 
+     * @ORM\Column(name="date_ajout", type="datetime")
      */
-    private $prices;
+    private $dateAjout;
 
     /**
      * @ORM\ManyToOne(targetEntity="LG\CoreBundle\Entity\Booking", inversedBy="clients")
      */
     private $booking;
 
+    public function __construct()
+    {
+        $this->dateAjout = new \DateTime();
+        $this->booking = new ArrayCollection();
+    }
+
+
     /**
-     * @return int
+     * Get id
+     *
+     * @return integer
      */
     public function getId()
     {
@@ -70,6 +80,22 @@ class Client
     }
 
     /**
+     * Set lastName
+     *
+     * @param string $lastName
+     *
+     * @return Client
+     */
+    public function setLastName($lastName)
+    {
+        $this->lastName = $lastName;
+
+        return $this;
+    }
+
+    /**
+     * Get lastName
+     *
      * @return string
      */
     public function getLastName()
@@ -78,14 +104,22 @@ class Client
     }
 
     /**
-     * @param string $lastName
+     * Set firstName
+     *
+     * @param string $firstName
+     *
+     * @return Client
      */
-    public function setLastName($lastName)
+    public function setFirstName($firstName)
     {
-        $this->lastName = $lastName;
+        $this->firstName = $firstName;
+
+        return $this;
     }
 
     /**
+     * Get firstName
+     *
      * @return string
      */
     public function getFirstName()
@@ -94,14 +128,22 @@ class Client
     }
 
     /**
-     * @param string $firstName
+     * Set country
+     *
+     * @param string $country
+     *
+     * @return Client
      */
-    public function setFirstName($firstName)
+    public function setCountry($country)
     {
-        $this->firstName = $firstName;
+        $this->country = $country;
+
+        return $this;
     }
 
     /**
+     * Get country
+     *
      * @return string
      */
     public function getCountry()
@@ -110,14 +152,22 @@ class Client
     }
 
     /**
-     * @param string $country
+     * Set birthDate
+     *
+     * @param \DateTime $birthDate
+     *
+     * @return Client
      */
-    public function setCountry($country)
+    public function setBirthDate($birthDate)
     {
-        $this->country = $country;
+        $this->birthDate = $birthDate;
+
+        return $this;
     }
 
     /**
+     * Get birthDate
+     *
      * @return \DateTime
      */
     public function getBirthDate()
@@ -126,38 +176,27 @@ class Client
     }
 
     /**
-     * @param \DateTime $birthDate
-     */
-    public function setBirthDate($birthDate)
-    {
-        $this->birthDate = $birthDate;
-    }
-
-    /**
-     * @return boolean
-     */
-    public function isPrices()
-    {
-        return $this->prices;
-    }
-
-    /**
-     * @param boolean $prices
-     */
-    public function setPrices($prices)
-    {
-        $this->prices = $prices;
-    }
-    
-
-    /**
-     * Get prices
+     * Set dateAjout
      *
-     * @return boolean
+     * @param \DateTime $dateAjout
+     *
+     * @return Client
      */
-    public function getPrices()
+    public function setDateAjout($dateAjout)
     {
-        return $this->prices;
+        $this->dateAjout = $dateAjout;
+
+        return $this;
+    }
+
+    /**
+     * Get dateAjout
+     *
+     * @return \DateTime
+     */
+    public function getDateAjout()
+    {
+        return $this->dateAjout;
     }
 
     /**
@@ -167,7 +206,7 @@ class Client
      *
      * @return Client
      */
-    public function setBooking(\LG\CoreBundle\Entity\Booking $booking)
+    public function setBooking(\LG\CoreBundle\Entity\Booking $booking = null)
     {
         $this->booking = $booking;
 

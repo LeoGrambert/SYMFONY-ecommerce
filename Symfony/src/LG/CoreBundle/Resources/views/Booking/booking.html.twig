@@ -29,7 +29,7 @@
         </div>
     </div>
 
-    <div class="container marginBody">
+    <div class="container marginBody" id="forms-container">
 
         <!--
         Step One >>>>
@@ -61,7 +61,7 @@
             <hr>
             <div class="row">
                 <p id="checkboxIsDaily">
-                    Nature du billet
+                    Nature du(des) billet(s)
                     <img src="{{ asset('bundles/lgcore/img/help.png') }}" alt="help_icon" class="help" id="isDailyHelp"/>
                 </p>
                 {{ form_widget(form.isDaily) }}
@@ -72,21 +72,50 @@
                 </div>
             </div>
             <hr>
+            <p class="ticketNumber">Nombre de billets</p>
             <div class="row">
-                <div class="col-md-offset-5 col-md-2">
-                    {{ form_label(form.ticketNumber, 'Nombre de billets') }}
-                    <div id="choiceTicketNumber">
-                        {{ form_widget(form.ticketNumber) }}
-                        {{ form_errors(form.ticketNumber) }}
-                    </div>
+                <div id="isReduced" class="col-md-offset-3 col-md-6">
+                    <p><span class="ticketNumber">Tarif enfant :</span> de 4 ans à 12 ans (8€)</p>
+                    <p><span class="ticketNumber">Tarif senior :</span> à partir de 60 ans (12€)</p>
+                    <p><span class="ticketNumber">Tarif réduit :</span> étudiant, employé du Musée, service du Ministre de la Culture, militaire (10€)</p>
+                    <p><span class="ticketNumber">Gratuit :</span> de 0 à 4 ans</p>
+                    <p><strong>Si vous ne correspondez à aucun critère ci-dessus, choisissez le tarif normal. (16€)</strong></p>
+                </div>
+            </div>
+            <div class="row" id="choiceTicketNumber">
+                <div class="col-md-offset-3 col-md-1">
+                        {{ form_label(form.ticketNumberNormal, ('Tarif Normal (16€)')) }}
+                        {{ form_widget(form.ticketNumberNormal) }}
+                        {{ form_errors(form.ticketNumberNormal) }}
+                </div>
+                <div class="col-md-1">
+                        {{ form_label(form.ticketNumberChild, ('Tarif Enfant (8€)')) }}
+                        {{ form_widget(form.ticketNumberChild) }}
+                        {{ form_errors(form.ticketNumberChild) }}
+                </div>
+                <div class="col-md-1">
+                        {{ form_label(form.ticketNumberSenior, ('Tarif Senior (12€)')) }}
+                        {{ form_widget(form.ticketNumberSenior) }}
+                        {{ form_errors(form.ticketNumberSenior) }}
+                </div>
+                <div class="col-md-1">
+                        {{ form_label(form.ticketNumberReduce, ('Tarif Réduit (10€)')) }}
+                        {{ form_widget(form.ticketNumberReduce) }}
+                        {{ form_errors(form.ticketNumberReduce) }}
                 </div>
             </div>
             <br/>
+            <hr>
             <div class="row">
                 Prix :
             </div>
             <br/>
             <button class="btn btn-primary" id="lg_corebundle_booking_stepOne">Ajouter au panier</button>
+            <div class="row">
+                <div class="alert alert-danger col-md-offset-3 col-md-6" id="alertStepOneDate">Veuillez sélectionner une date de réservation.</div>
+                <div class="alert alert-danger col-md-offset-3 col-md-6" id="alertStepOneisDaily">Veuillez sélectionner le type de billet(s) que vous souhaitez commander. (Journée ou demi-journée)</div>
+                <div class="alert alert-danger col-md-offset-3 col-md-6" id="alertStepOneTicket">Veuillez choisir un ou plusieurs billet.</div>
+            </div>
         </div>
 
         <!--
@@ -105,18 +134,13 @@
             <hr>
             {{ form_widget(form.clients) }}
             {{ form_errors(form.clients) }}
-            <div id="isReducedText"><strong>Quel tarif dois-je choisir ?</strong><img src="{{ asset('bundles/lgcore/img/help.png') }}" class="help" alt="help_icon" id="isReducedHelp"></div>
-            <div id="isReducedHelpText" >
-                <img src="{{ asset('bundles/lgcore/img/cross.png') }}" alt="cross" id="isReducedHelpCross">
-                <p>Tarif enfant : de 4 ans à 12 ans (8€)</p>
-                <p>Tarif senior : à partir de 60 ans (12€)</p>
-                <p>Tarif réduit : étudiant, employé du Musée, service du Ministre de la Culture, militaire (10€)</p>
-                <p>Gratuit : de 0 à 4 ans</p><br/>
-                <p><strong>Si vous ne correspondez à aucun critère ci-dessus, choisissez le tarif normal. (16€)</strong></p>
-            </div>
             <a href="#" id="add_client" class="btn btn-default">Ajouter un visiteur</a>
             <hr>
             <button class="btn btn-primary" id ="lg_corebundle_booking_stepTwo">Valider la commande</button>
+            <div class="row">
+                <div class="alert alert-danger col-md-offset-3 col-md-6" id="alertStepTwoEmail">Veuillez renseigner votre adresse email.</div>
+                <div class="alert alert-danger col-md-offset-3 col-md-6" id="alertStepTwoClient">Veuillez renseigner tout les champs visiteurs.</div>
+            </div>
         </div>
 
         <!--
@@ -129,6 +153,9 @@
             {{ form_widget(form.stepThree,  {'attr' : {'class':'btn-primary'}}) }}
             {{ form_rest(form) }}
             {{ form_end(form) }}
+            <div class="row">
+                <div class="alert alert-danger col-md-offset-3 col-md-6" id="alertStepThreeCgv">Veuillez accepter les conditions générales de vente pour finaliser votre commande.</div>
+            </div>
         </div>
 
         <!--

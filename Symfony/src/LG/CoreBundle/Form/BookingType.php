@@ -2,14 +2,11 @@
 
 namespace LG\CoreBundle\Form;
 
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
-use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -35,13 +32,65 @@ class BookingType extends AbstractType
                 ]
             ))
             ->add('isDaily', ChoiceType::class, [
-                'choices' => ['Journée' => 1, 'Demi-journée' => 0],
+                'choices' => [
+                    'Journée' => true,
+                    'Demi-journée' => false
+                ],
                 'expanded' => true,
-                'multiple' => false,
-                'required' => true
+                'multiple' => false
             ])
-            ->add('ticketNumber', ChoiceType::class, array(
+            ->add('ticketNumberNormal', ChoiceType::class, array(
+                'label' => 'Tarif Normal',
                 'choices'  => array(
+                    '0' => 0,
+                    '1' => 1,
+                    '2' => 2,
+                    '3' => 3,
+                    '4' => 4,
+                    '5' => 5,
+                    '6' => 6,
+                    '7' =>7,
+                    '8' => 8,
+                    '9' => 9,
+                    '10' => 10
+                )
+            ))
+            ->add('ticketNumberChild', ChoiceType::class, array(
+                'label' => 'Tarif Enfant',
+                'choices'  => array(
+                    '0' => 0,
+                    '1' => 1,
+                    '2' => 2,
+                    '3' => 3,
+                    '4' => 4,
+                    '5' => 5,
+                    '6' => 6,
+                    '7' =>7,
+                    '8' => 8,
+                    '9' => 9,
+                    '10' => 10
+                )
+            ))
+            ->add('ticketNumberSenior', ChoiceType::class, array(
+                'label' => 'Tarif Senior',
+                'choices'  => array(
+                    '0' => 0,
+                    '1' => 1,
+                    '2' => 2,
+                    '3' => 3,
+                    '4' => 4,
+                    '5' => 5,
+                    '6' => 6,
+                    '7' =>7,
+                    '8' => 8,
+                    '9' => 9,
+                    '10' => 10
+                )
+            ))
+            ->add('ticketNumberReduce', ChoiceType::class, array(
+                'label' => 'Tarif Réduit',
+                'choices'  => array(
+                    '0' => 0,
                     '1' => 1,
                     '2' => 2,
                     '3' => 3,
@@ -55,11 +104,11 @@ class BookingType extends AbstractType
                 )
             ))
             ->add('email', EmailType::class)
-            ->add('clients', CollectionType::class, [
+            ->add('clients', CollectionType::class, array (
                 'entry_type' => ClientType::class,
                 'allow_add' => true,
                 'allow_delete' => true
-            ])
+            ))
             ->add('cgvAccept', ChoiceType::class, [
                 'label' => 'Acceptez-vous les Conditions Générales de Vente ?',
                 'choices' => ['Oui' => 1, 'Non' => 0],
