@@ -104,11 +104,11 @@ class BookingType extends AbstractType
                 )
             ))
             ->add('email', EmailType::class)
-            ->add('clients', CollectionType::class, array (
-                'entry_type' => ClientType::class,
-                'allow_add' => true,
-                'allow_delete' => true
-            ))
+//            ->add('clients', CollectionType::class, array (
+//                'entry_type' => ClientType::class,
+//                'allow_add' => true,
+//                'allow_delete' => true
+//            ))
             ->add('cgvAccept', ChoiceType::class, [
                 'label' => 'Acceptez-vous les Conditions Générales de Vente ?',
                 'choices' => ['Oui' => 1, 'Non' => 0],

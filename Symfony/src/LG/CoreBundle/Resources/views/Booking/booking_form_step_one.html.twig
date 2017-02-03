@@ -1,0 +1,21 @@
+{% extends "LGCoreBundle::layout.html.twig" %}
+
+{%  block body %}
+    <div class="container marginBody">
+        <div class="row">
+            <div id="booking-form-container" class="col-sm-12 booking-container__step-one">
+                {{ form(form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block script %}
+    {% javascripts
+    '@js'
+    'bundles/lgcore/js/booking.js' %}
+    <script src="{{ asset_url }}"></script>
+    <!-- Including jQuery Form plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
+    {% endjavascripts %}
+{% endblock %}

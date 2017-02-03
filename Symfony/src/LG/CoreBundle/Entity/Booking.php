@@ -24,7 +24,6 @@ class Booking
 
     /**
      * @var \DateTime
-     *
      * @ORM\Column(name="date_reservation", type="date")
      */
     private $dateReservation;
@@ -99,7 +98,7 @@ class Booking
     {
         $this->dateAchat = new \DateTime();
         $this->dateReservation = new \DateTime();
-        $this->clients = new ArrayCollection();
+//        $this->clients = new ArrayCollection();
     }
     
 
