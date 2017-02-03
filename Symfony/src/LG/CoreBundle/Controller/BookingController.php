@@ -58,7 +58,7 @@ class BookingController extends Controller
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($booking);
                 $em->flush();
-                return $this->redirectToRoute("booking.create.stepTwo");
+                return $this->redirectToRoute("booking.create.stepTwo", ['id' => $booking->getId()]);
             }
         }
 
@@ -85,16 +85,30 @@ class BookingController extends Controller
      */
     public function createClientBooking (Request $request, Booking $booking)
     {
-        // testing by the routes :
+        $clientsDenormalized = [];
+        // This code below is a boostrap to guide you through persistance
 
-        // will get data from ajax call
-        $clients = $request->get('data');
-        dump($clients);
+        // step one denormalize
+        /** @var Client $clientDenormalized */
+//        $clients = json_decode($request->get('data'), true);
+//        foreach ($clients as $client) {
+//            $clientsDenormalized [] = $this->get('serializer')->denormalize($client, Client::class, 'json');
+//        }
+//        dump($clientsDenormalized);
 
-        foreach ($clients as $client) {
-            // persist inside client and booking
-        }
-        // todo read symfony normalizer and denormalizer...we will need it right here
+        // step two persist using booking
+//        $clientDenormalized->setBooking($booking);
+//        $this->getDoctrine()->getManager()->persist($clientDenormalized);
+//        $this->getDoctrine()->getManager()->flush();
+
+        // step three normalize
+//        $clientNormalized = $this->get("serializer")->normalize($clientDenormalized);
+
+        // last step return json response
+//        if($clientNormalized) {
+//            return new JsonResponse($clientNormalized, 200);
+//        }
+
 
     }
 }

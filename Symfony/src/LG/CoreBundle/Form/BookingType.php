@@ -13,6 +13,15 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class BookingType extends AbstractType
 {
+
+    private function getDisabledDate() {
+        // todo cast date string into array
+        // todo split each element into string
+        // todo increment item and push it to the array
+        // todo cast the array into string
+        // todo return the string date formated
+        return '01-01-2017,17-04-2017,01-05-2017,08-05-2017,25-05-2017,05-06-2017,14-07-2017,15-08-2017,01-11-2017,11-11-2017,25-12-2017';
+    }
     /**
      * {@inheritdoc}
      */
@@ -30,8 +39,7 @@ class BookingType extends AbstractType
                     'data-date-language' => 'fr',
                     'data-date-start-date' => "0d",
                     'data-date-end-date' => '+364d',
-                    'data-date-dates-disabled' =>
-                        '01-01-2017,17-04-2017,01-05-2017,08-05-2017,25-05-2017,05-06-2017,14-07-2017,15-08-2017,01-11-2017,11-11-2017,25-12-2017'
+                    'data-date-dates-disabled' => $this->getDisabledDate()
                 ]
             ))
             ->add('isDaily', ChoiceType::class, [

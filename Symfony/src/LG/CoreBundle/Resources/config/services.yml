@@ -2,3 +2,8 @@ services:
 #    lg_core.example:
 #        class: LG\CoreBundle\Example
 #        arguments: ["@service_id", "plain_value", "%parameter%"]
+
+  lg_core_bundle.normalizer.client:
+    class: LG\CoreBundle\Normalizer\ClientNormalizer
+    tags:
+      - { name: serializer.normalizer }

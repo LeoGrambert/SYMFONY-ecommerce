@@ -33,7 +33,7 @@ Funnel
         <!-- Step One -->
         <div class="row" id="stepOne">
             <div id="booking-form-container" class="col-sm-12 booking-container__step-one">
-                {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+                {{ form_start(form, {'attr': {'class': 'form-horizontal', 'id': 'booking-form-step-one'}}) }}
                 {{ form_errors(form) }}
                 <div class="row">
                     <div class="col-md-offset-4 col-md-4">
@@ -41,7 +41,7 @@ Funnel
                         <img src="{{ asset('bundles/lgcore/img/help.png') }}" alt="help_icon" class="help" id="datepickerHelp"/>
                     </div>
                     <div class="col-md-offset-5 col-md-2">
-                        {{ form_widget(form.dateReservation) }}
+                        {{ form_widget(form.dateReservation, {'attr' : { 'class' : 'booking-input__reservation-date'}}) }}
                         {{ form_errors(form.dateReservation) }}
                     </div>
                     <div id="datepickerHelpText" class="col-md-3">
@@ -62,7 +62,7 @@ Funnel
                         Nature du(des) billet(s)
                         <img src="{{ asset('bundles/lgcore/img/help.png') }}" alt="help_icon" class="help" id="isDailyHelp"/>
                     </p>
-                    {{ form_widget(form.isDaily) }}
+                    {{ form_widget(form.isDaily, { 'attr' : { 'class' : 'booking-input__is-daily' }}) }}
                     {{ form_errors(form.isDaily) }}
                     <div id="isDailyHelpText" class="col-md-3">
                         <img src="{{ asset('bundles/lgcore/img/cross.png') }}" alt="cross_close" id="isDailyHelpCross" />

@@ -2,7 +2,7 @@
  * Created by leo on 02/02/17.
  */
 $(function($) {
-    console.log('booking step 2 is charged');
+    console.log('booking step 2 is charged LOL');
 
     var $formContainerStepTwo = $('#booking-form-container-step-two');
     var $formContainerStepTwoUrl = $formContainerStepTwo.data('create-url');
@@ -36,18 +36,18 @@ $(function($) {
      *      - should display success message
      */
     var generateForm = function () {
-        var $form = $('<form>');
+        var $form = $('<div>');
         $formContainerStepTwo.append($form);
         // todo improve this wheel, the map will not work, pretty sure... -> Done, problem comes to function's parameters (generateformfields)
         $.each(clientsMap, function (key, value) {
             $form.append(generateFormFields(key, value));
         });
-        $form.append($('<button type="submit" class="btn btn-default">').text('Valider'));
-        $form.on('submit', function() {
+        $form.append($('<button class="btn btn-default booking-client__validate">').text('Valider'));
+        $form.on('click', '.booking-client__validate', function() {
             var dataForm = getDataForm();
             createClientModel(dataForm.firstname, dataForm.lastname, dataForm.country, dataForm.birthdate);
+            console.log(clients);
             // todo test and to remove (just the line) -> we will sent an array, not every client each and every time, one request KISS -> Done, I haven't remove the line. It's why we've 500 in console
-            alert(clients);
             submitClient(onSuccessSubmitCallback);
         });
     };
