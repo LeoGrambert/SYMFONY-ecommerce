@@ -29,7 +29,9 @@ class BookingType extends AbstractType
                     'data-date-days-of-week-disabled' => '02',
                     'data-date-language' => 'fr',
                     'data-date-start-date' => "0d",
-                    'data-date-dates-disabled' => '01-01-2017, 17-04-2017, 01-05-2017, 08-05-2017, 25-05-2017, 05-06-2017, 14-07-2017, 15-08-2017, 01-11-2017, 11-11-2017, 25-12-2017'
+                    'data-date-end-date' => '+364d',
+                    'data-date-dates-disabled' =>
+                        '01-01-2017,17-04-2017,01-05-2017,08-05-2017,25-05-2017,05-06-2017,14-07-2017,15-08-2017,01-11-2017,11-11-2017,25-12-2017'
                 ]
             ))
             ->add('isDaily', ChoiceType::class, [
@@ -38,7 +40,7 @@ class BookingType extends AbstractType
                     'Demi-journée' => false
                 ],
                 'expanded' => true,
-                'multiple' => false
+                'multiple' => false,
             ])
             ->add('ticketNumberNormal', ChoiceType::class, array(
                 'label' => 'Tarif Normal',

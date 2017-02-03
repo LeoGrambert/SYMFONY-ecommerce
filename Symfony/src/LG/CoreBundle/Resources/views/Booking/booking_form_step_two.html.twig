@@ -1,6 +1,36 @@
 {% extends "LGCoreBundle::layout.html.twig" %}
 
 {%  block body %}
+
+    <img src="{{ asset('bundles/lgcore/img/logo.png') }}" alt="logo_musee_du_louvre" id="logoImg"/>
+    <p id="subTextLogo">Billetterie en ligne</p>
+    <img src="{{ asset('bundles/lgcore/img/basket.png') }}" alt="panier" id="basketImg"/>
+    <p id="basketText">Vous avez 0 billet(s)<br/> dans votre panier</p>
+    <!--
+    Funnel
+    -->
+    <div class="container" id="funnelstepTwo">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-4">
+                <div id="funnelBorder"></div>
+                <div id="blocFunnelStepOne"></div>
+                <div id="blocFunnelStepTwo"></div>
+                <div id="blocFunnelStepThree"></div>
+                <div id="blocFunnelStepFour"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-md-offset-4" id="textFunnel">
+                <span id="textStepOne">Ajouter au panier</span>
+                <span id="textStepTwo">Détails billets</span>
+                <span id="textStepThree">Paiement</span>
+                <span id="textStepFour">Confirmation</span>
+            </div>
+        </div>
+    </div>
+    <!-- //end of Funnel -->
+
+    <!-- Step two -->
     <div class="container marginBody">
         <div class="row">
             <div id="booking-form-container-step-two" class="col-sm-12" data-create-url="{{ path('booking.client.create', {"id" : booking.id}) }}">

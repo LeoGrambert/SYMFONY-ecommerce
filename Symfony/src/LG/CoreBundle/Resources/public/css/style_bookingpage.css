@@ -24,9 +24,17 @@ hr{
 }
 
 /*Funnel*/
-#funnel{
+#funnelStepOne, #funnelstepTwo{
     margin: 0 0 5% 0;
 }
+#funnelstepTwo #blocFunnelStepTwo {
+    background-color: #AA8046;
+    border-radius: 50%;
+}
+#funnelstepTwo #funnelBorder{
+    background :linear-gradient(to right, rgba(182,141,76,1) 0%, rgba(193,158,103,1) 33%, rgba(243,226,199,1) 33%, rgba(243,226,199,1) 33%);
+}
+
 #funnelBorder{
     background-color: #F3E2C7;
     height: 2px;
