@@ -178,6 +178,9 @@ hr{
 .ticketNumber{
     font-weight: bold;
 }
+.form-control[readonly]{
+    background-color: white;
+}
 
 /*Medias queries for booking page*/
 @media screen and (min-width: 1500px) {

@@ -11,7 +11,7 @@ $(function ($) {
     var $twoDigitMonth = (($currentDate.getMonth().length+1) === 1)? ($currentDate.getMonth()+1) : '0' + ($currentDate.getMonth()+1);
     var $customCurrentDate = $currentDateDay + "-" + $twoDigitMonth + "-" + $currentDate.getFullYear();
     var $currentHour = $currentDate.getHours();
-
+    
     if ($currentHour >= 14){
         $('input#lg_corebundle_booking_isDaily_1').attr('disabled', true);
     }
@@ -23,7 +23,5 @@ $(function ($) {
         } else {
             $('input#lg_corebundle_booking_isDaily_1').attr('disabled', false);
         }
-    });
-    
-
+    }).attr('readonly', true);
 });

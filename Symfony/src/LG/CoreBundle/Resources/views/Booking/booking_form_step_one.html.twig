@@ -46,14 +46,14 @@ Funnel
                     </div>
                     <div id="datepickerHelpText" class="col-md-3">
                         <img src="{{ asset('bundles/lgcore/img/cross.png') }}" alt="cross_close" id="datepickerHelpCross" />
-                        <p>Le musée est ouvert tout les jours, de 9h à 18h, sauf le mardi.</p>
-                        <p>Fermeture les 1er mai, 1er novembre et 25 décembre.</p>
+                        <p>Le musée est ouvert tout les jours, de 9h à 18h, <strong>sauf le mardi (Fermeture hebdomadaire) et les 1er mai, 1er novembre et 25 décembre</strong>. </p><br/>
                         <p>La commande de billets en ligne est impossible :</p>
                         <ul>
                             <li>Les dimanches</li>
                             <li>Les jours fériés</li>
-                            <li>Si plus de 1000 billets ont déjà été vendus sur une journée</li>
+                            <li>Si plus de 1000 billets ont déjà été commandés en ligne pour la journée en cours</li>
                         </ul>
+                        <p>Pour ces dates, veuillez vous rendre directement au Musée pour acheter vos billets.</p><br/>
                     </div>
                 </div>
                 <hr>
@@ -125,6 +125,6 @@ Funnel
     'bundles/lgcore/plugin/form-master/jquery.form.js'
     'bundles/lgcore/plugin/bootstrap-datepicker-master/dist/js/bootstrap-datepicker.js'%}
     <script src="{{ asset_url }}"></script>
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/locales/bootstrap-datepicker.fr.min.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/locales/bootstrap-datepicker.fr.min.js"></script>
     {% endjavascripts %}
 {% endblock %}
