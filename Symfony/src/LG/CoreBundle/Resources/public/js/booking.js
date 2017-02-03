@@ -2,13 +2,19 @@
  * Created by leo on 02/02/17.
  */
 $(function($) {
-
     console.log('booking step 2 is charged');
 
     var $formContainerStepTwo = $('#booking-form-container-step-two');
     var $formContainerStepTwoUrl = $formContainerStepTwo.data('create-url');
-    var clientsMap = [ { lastname : 'Nom',  firstame: 'Prénom', country : 'Pays', birthdate :'Date de naissance' }];
+    var clientsMap = {
+        lastname : 'Nom',
+        firstname: 'Prénom',
+        country : 'Pays',
+        birthdate :'Date de naissance'
+    };
     var clients = [];
+
+    console.log(clients[1]);
 
     /**
      * Creates a call to action button : "Add a client"
@@ -16,7 +22,6 @@ $(function($) {
      *      - when this event is fired, it generates the form with fields
      */
     var generateAddClientButton = function() {
-        // todo make sure event are not reatached many times to the DOM
         var $button = $('<button class="btn btn-primary">').text('Ajouter un client');
         $formContainerStepTwo.append($button);
         $button.on('click', function() {
@@ -33,15 +38,16 @@ $(function($) {
     var generateForm = function () {
         var $form = $('<form>');
         $formContainerStepTwo.append($form);
-        // todo improve this wheel, the map will not work, pretty sure...
+        // todo improve this wheel, the map will not work, pretty sure... -> Done, problem comes to function's parameters (generateformfields)
         $.each(clientsMap, function (key, value) {
             $form.append(generateFormFields(key, value));
         });
         $form.append($('<button type="submit" class="btn btn-default">').text('Valider'));
         $form.on('submit', function() {
             var dataForm = getDataForm();
-            createClientModel(dataForm.firstame, dataForm.lastname, dataForm.country, dataForm.birthdate);
-            // todo test and to remove (just the line) -> we will sent an array, not every client each and every time, one request KISS
+            createClientModel(dataForm.firstname, dataForm.lastname, dataForm.country, dataForm.birthdate);
+            // todo test and to remove (just the line) -> we will sent an array, not every client each and every time, one request KISS -> Done, I haven't remove the line. It's why we've 500 in console
+            alert(clients);
             submitClient(onSuccessSubmitCallback);
         });
     };
@@ -54,7 +60,7 @@ $(function($) {
      * @param birthdate
      */
     var createClientModel = function(firstname, lastname, country, birthdate) {
-        // todo make sure that the namespace is OK, and so the data
+        // todo make sure that the namespace is OK, and so the data -> Done, when we check the source of 'lg', we find booking-namespace.js file
         var client =  new lg.ClientModel(firstname, lastname, country, birthdate);
         clients.push(client);
         console.log("array client on pushing", clients);
@@ -65,27 +71,26 @@ $(function($) {
      * @returns {{firstame: (*|jQuery), lastname: (*|jQuery), country: (*|jQuery), birthdate: (*|jQuery)}}
      */
     var getDataForm = function() {
-        // todo test value binding
-        var temp = {
-            firstame : $('#firstame').val(),
+        // todo test value binding -> Done, we get values
+        return {
             lastname : $('#lastname').val(),
+            firstname : $('#firstname').val(),
             country : $('#country').val(),
-            birthdate : $('#birthdate').val(),
+            birthdate : $('#birthdate').val()
         };
-        console.log("data form", temp);
-        return temp;
     };
 
     /**
      * Generates form fields depending on a map
      * @param label
+     * @param key
      * @returns {*|jQuery|HTMLElement}
      */
-    var generateFormFields = function(label) {
-        // todo check with the each wheel...the map is not valid
+    var generateFormFields = function(key, label) {
+        // todo check with the each wheel...the map is not valid -> Done, now the map is valid
         var $formGroup = $('<div class="form-group">');
         var $label = $('<label class="control-label required">').text(label);
-        var $input = $('<input id='+label+' type="text" class="form-control required">');
+        var $input = $('<input id='+key+' type="text" class="form-control required">');
         $formGroup.append($label, $input);
         return $formGroup;
     };
@@ -96,7 +101,6 @@ $(function($) {
      * @returns {*}
      */
     var submitClient = function(callback) {
-        // todo check clients validity
         console.log("clients", clients);
         return $.ajax({
             method: 'POST',
@@ -113,8 +117,8 @@ $(function($) {
      * Append a success message
      */
     var onSuccessSubmitCallback = function () {
-        // todo remove the message with a setTimeOut()
-        $formContainerStepTwo.prepend('<p class="alert alert-success">').text('Wouhou, client persisté')
+        // todo remove the message with a setTimeOut() -> Done, I've used delay function with a fadeOut effect
+        $formContainerStepTwo.prepend('<p class="alert alert-success" id="persistSuccessMessage">').text('Wouhou, client persisté').delay(3000).fadeOut(300);
     };
 
     /**

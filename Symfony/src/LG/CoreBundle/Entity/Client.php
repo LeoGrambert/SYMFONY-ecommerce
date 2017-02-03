@@ -58,6 +58,13 @@ class Client
     private $dateAjout;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=255)
+     */
+    private $email;
+
+    /**
      * @ORM\ManyToOne(targetEntity="LG\CoreBundle\Entity\Booking", inversedBy="clients")
      */
     private $booking;
@@ -221,5 +228,29 @@ class Client
     public function getBooking()
     {
         return $this->booking;
+    }
+
+    /**
+     * Set email
+     *
+     * @param string $email
+     *
+     * @return Booking
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * Get email
+     *
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
     }
 }

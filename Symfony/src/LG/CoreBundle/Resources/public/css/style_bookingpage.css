@@ -73,9 +73,10 @@ hr{
 #stepOne, #stepTwo, #stepThree, #stepFour{
     text-align: center;
 }
+/*
 #stepTwo, #stepThree, #stepFour{
     display: none;
-}
+}*/
 
 /*Form stylesheet*/
 #isReduced{
@@ -139,10 +140,11 @@ hr{
 #add_client{
     margin-bottom: 5%;
 }
+/*
 #alertStepOneDate, #alertStepOneisDaily, #alertStepOneTicket, #alertStepTwoEmail, #alertStepTwoClient, #alertStepThreeCgv{
     margin-top: 2%;
     display: none;
-}
+}*/
 .radio{
     display: inline;
     margin: 0 1% 0 1%;
@@ -153,6 +155,10 @@ hr{
 }
 .datepicker table tr td.disabled{
     background: rgba(218,218,218,0.8);
+
+}
+.datepicker table tr td.disabled, .datepicker table tr td.active, .datepicker table tr td.active:hover{
+    border-radius: 2%;
 }
 .help{
     margin-top: -15px;

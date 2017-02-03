@@ -28,6 +28,7 @@ class BookingType extends AbstractType
                     'data-date-format' => 'dd-mm-yyyy',
                     'data-date-days-of-week-disabled' => '02',
                     'data-date-language' => 'fr',
+                    'data-date-start-date' => "0d",
                     'data-date-dates-disabled' => '01-01-2017, 17-04-2017, 01-05-2017, 08-05-2017, 25-05-2017, 05-06-2017, 14-07-2017, 15-08-2017, 01-11-2017, 11-11-2017, 25-12-2017'
                 ]
             ))
@@ -103,20 +104,11 @@ class BookingType extends AbstractType
                     '10' => 10
                 )
             ))
-            ->add('email', EmailType::class)
 //            ->add('clients', CollectionType::class, array (
 //                'entry_type' => ClientType::class,
 //                'allow_add' => true,
 //                'allow_delete' => true
 //            ))
-            ->add('cgvAccept', ChoiceType::class, [
-                'label' => 'Acceptez-vous les Conditions Générales de Vente ?',
-                'choices' => ['Oui' => 1, 'Non' => 0],
-                'expanded' => true,
-                'multiple' => false,
-                'required' => true
-
-            ])
             ->add('stepThree', SubmitType::class, [
                 'label' => 'Confirmer la commande'
             ])

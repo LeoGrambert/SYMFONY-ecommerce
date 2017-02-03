@@ -1,10 +1,116 @@
 {% extends "LGCoreBundle::layout.html.twig" %}
 
 {%  block body %}
-    <div class="container marginBody">
+    <img src="{{ asset('bundles/lgcore/img/logo.png') }}" alt="logo_musee_du_louvre" id="logoImg"/>
+    <p id="subTextLogo">Billetterie en ligne</p>
+    <img src="{{ asset('bundles/lgcore/img/basket.png') }}" alt="panier" id="basketImg"/>
+    <p id="basketText">Vous avez 0 billet(s)<br/> dans votre panier</p>
+    <!--
+Funnel
+-->
+    <div class="container" id="funnel">
         <div class="row">
+            <div class="col-md-6 col-md-offset-4">
+                <div id="funnelBorder"></div>
+                <div id="blocFunnelStepOne"></div>
+                <div id="blocFunnelStepTwo"></div>
+                <div id="blocFunnelStepThree"></div>
+                <div id="blocFunnelStepFour"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-md-offset-4" id="textFunnel">
+                <span id="textStepOne">Ajouter au panier</span>
+                <span id="textStepTwo">Détails billets</span>
+                <span id="textStepThree">Paiement</span>
+                <span id="textStepFour">Confirmation</span>
+            </div>
+        </div>
+    </div>
+    <!-- //end of Funnel -->
+
+    <div class="container marginBody">
+        <!-- Step One -->
+        <div class="row" id="stepOne">
             <div id="booking-form-container" class="col-sm-12 booking-container__step-one">
-                {{ form(form) }}
+                {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+                {{ form_errors(form) }}
+                <div class="row">
+                    <div class="col-md-offset-4 col-md-4">
+                        {{ form_label(form.dateReservation, 'Choisissez la date de votre visite') }}
+                        <img src="{{ asset('bundles/lgcore/img/help.png') }}" alt="help_icon" class="help" id="datepickerHelp"/>
+                    </div>
+                    <div class="col-md-offset-5 col-md-2">
+                        {{ form_widget(form.dateReservation) }}
+                        {{ form_errors(form.dateReservation) }}
+                    </div>
+                    <div id="datepickerHelpText" class="col-md-3">
+                        <img src="{{ asset('bundles/lgcore/img/cross.png') }}" alt="cross_close" id="datepickerHelpCross" />
+                        <p>Le musée est ouvert tout les jours, de 9h à 18h, sauf le mardi.</p>
+                        <p>Fermeture les 1er mai, 1er novembre et 25 décembre.</p>
+                        <p>La commande de billets en ligne est impossible :</p>
+                        <ul>
+                            <li>Les dimanches</li>
+                            <li>Les jours fériés</li>
+                            <li>Si plus de 1000 billets ont déjà été vendus sur une journée</li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <p id="checkboxIsDaily">
+                        Nature du(des) billet(s)
+                        <img src="{{ asset('bundles/lgcore/img/help.png') }}" alt="help_icon" class="help" id="isDailyHelp"/>
+                    </p>
+                    {{ form_widget(form.isDaily) }}
+                    {{ form_errors(form.isDaily) }}
+                    <div id="isDailyHelpText" class="col-md-3">
+                        <img src="{{ asset('bundles/lgcore/img/cross.png') }}" alt="cross_close" id="isDailyHelpCross" />
+                        <p>La commande de billet demi-journée est impossible pour la journée en cours s'il est plus de 14 heures.</p>
+                    </div>
+                </div>
+                <hr>
+                <p class="ticketNumber">Nombre de billets</p>
+                <div class="row">
+                    <div id="isReduced" class="col-md-offset-3 col-md-6">
+                        <p><span class="ticketNumber">Tarif enfant :</span> de 4 ans à 12 ans (8€)</p>
+                        <p><span class="ticketNumber">Tarif senior :</span> à partir de 60 ans (12€)</p>
+                        <p><span class="ticketNumber">Tarif réduit :</span> étudiant, employé du Musée, service du Ministre de la Culture, militaire (10€)</p>
+                        <p><span class="ticketNumber">Gratuit :</span> de 0 à 4 ans</p>
+                        <p><strong>Si vous ne correspondez à aucun critère ci-dessus, choisissez le tarif normal. (16€)</strong></p>
+                    </div>
+                </div>
+                <div class="row" id="choiceTicketNumber">
+                    <div class="col-md-offset-3 col-md-1">
+                        {{ form_label(form.ticketNumberNormal, ('Tarif Normal (16€)')) }}
+                        {{ form_widget(form.ticketNumberNormal) }}
+                        {{ form_errors(form.ticketNumberNormal) }}
+                    </div>
+                    <div class="col-md-1">
+                        {{ form_label(form.ticketNumberChild, ('Tarif Enfant (8€)')) }}
+                        {{ form_widget(form.ticketNumberChild) }}
+                        {{ form_errors(form.ticketNumberChild) }}
+                    </div>
+                    <div class="col-md-1">
+                        {{ form_label(form.ticketNumberSenior, ('Tarif Senior (12€)')) }}
+                        {{ form_widget(form.ticketNumberSenior) }}
+                        {{ form_errors(form.ticketNumberSenior) }}
+                    </div>
+                    <div class="col-md-1">
+                        {{ form_label(form.ticketNumberReduce, ('Tarif Réduit (10€)')) }}
+                        {{ form_widget(form.ticketNumberReduce) }}
+                        {{ form_errors(form.ticketNumberReduce) }}
+                    </div>
+                </div>
+                <br/>
+                <hr>
+                <div class="row">
+                    Prix :
+                </div>
+                <hr>
+                {{ form_widget(form.stepThree,  {'attr' : {'class':'btn-primary'}}) }}
+                {{ form_rest(form) }}
+                {{ form_end(form) }}
             </div>
         </div>
     </div>
@@ -13,9 +119,11 @@
 {% block script %}
     {% javascripts
     '@js'
-    'bundles/lgcore/js/booking.js' %}
+    'bundles/lgcore/js/booking.js'
+    'bundles/lgcore/js/textHelp.js'
+    'bundles/lgcore/plugin/form-master/jquery.form.js'
+    'bundles/lgcore/plugin/bootstrap-datepicker-master/dist/js/bootstrap-datepicker.js'%}
     <script src="{{ asset_url }}"></script>
-    <!-- Including jQuery Form plugin -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/locales/bootstrap-datepicker.fr.min.js"></script>
     {% endjavascripts %}
 {% endblock %}

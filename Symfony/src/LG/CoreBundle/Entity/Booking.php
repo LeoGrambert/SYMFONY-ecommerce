@@ -71,13 +71,6 @@ class Booking
     private $ticketNumberReduce = 0;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="email", type="string", length=255)
-     */
-    private $email;
-
-    /**
      * @ORM\OneToOne(targetEntity="LG\CoreBundle\Entity\Payment")
      */
     private $payment;
@@ -86,13 +79,6 @@ class Booking
      * @ORM\OneToMany(targetEntity="LG\CoreBundle\Entity\Client", mappedBy="booking", cascade={"persist"})
      */
     private $clients;
-
-    /**
-     * @var bool
-     *
-     * @ORM\Column(name="cgv_accept", type="boolean")
-     */
-    private $cgvAccept;
 
     public function __construct()
     {
@@ -280,53 +266,6 @@ class Booking
         return $this->ticketNumberReduce;
     }
 
-    /**
-     * Set email
-     *
-     * @param string $email
-     *
-     * @return Booking
-     */
-    public function setEmail($email)
-    {
-        $this->email = $email;
-
-        return $this;
-    }
-
-    /**
-     * Get email
-     *
-     * @return string
-     */
-    public function getEmail()
-    {
-        return $this->email;
-    }
-
-    /**
-     * Set cgvAccept
-     *
-     * @param boolean $cgvAccept
-     *
-     * @return Booking
-     */
-    public function setCgvAccept($cgvAccept)
-    {
-        $this->cgvAccept = $cgvAccept;
-
-        return $this;
-    }
-
-    /**
-     * Get cgvAccept
-     *
-     * @return boolean
-     */
-    public function getCgvAccept()
-    {
-        return $this->cgvAccept;
-    }
 
     /**
      * Set payment
