@@ -4,6 +4,7 @@ namespace LG\CoreBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Booking
@@ -25,6 +26,8 @@ class Booking
     /**
      * @var \DateTime
      * @ORM\Column(name="date_reservation", type="date")
+     * @Assert\NotBlank()
+     * @Assert\Date()
      */
     private $dateReservation;
 
@@ -48,20 +51,6 @@ class Booking
      * @ORM\Column(name="ticket_number_normal", type="integer")
      */
     private $ticketNumberNormal = 0;
-
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="ticket_number_child", type="integer")
-     */
-    private $ticketNumberChild = 0;
-
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="ticket_number_senior", type="integer")
-     */
-    private $ticketNumberSenior = 0;
 
     /**
      * @var int
@@ -192,54 +181,6 @@ class Booking
     public function getTicketNumberNormal()
     {
         return $this->ticketNumberNormal;
-    }
-
-    /**
-     * Set ticketNumberChild
-     *
-     * @param integer $ticketNumberChild
-     *
-     * @return Booking
-     */
-    public function setTicketNumberChild($ticketNumberChild)
-    {
-        $this->ticketNumberChild = $ticketNumberChild;
-
-        return $this;
-    }
-
-    /**
-     * Get ticketNumberChild
-     *
-     * @return integer
-     */
-    public function getTicketNumberChild()
-    {
-        return $this->ticketNumberChild;
-    }
-
-    /**
-     * Set ticketNumberSenior
-     *
-     * @param integer $ticketNumberSenior
-     *
-     * @return Booking
-     */
-    public function setTicketNumberSenior($ticketNumberSenior)
-    {
-        $this->ticketNumberSenior = $ticketNumberSenior;
-
-        return $this;
-    }
-
-    /**
-     * Get ticketNumberSenior
-     *
-     * @return integer
-     */
-    public function getTicketNumberSenior()
-    {
-        return $this->ticketNumberSenior;
     }
 
     /**

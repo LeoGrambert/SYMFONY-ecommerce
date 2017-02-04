@@ -2,7 +2,7 @@
  * Created by leo on 02/02/17.
  */
 $(function($) {
-    console.log('booking step 2 is charged LOL');
+    console.log('booking step 2 is charged');
 
     var $formContainerStepTwo = $('#booking-form-container-step-two');
     var $formContainerStepTwoUrl = $formContainerStepTwo.data('create-url');

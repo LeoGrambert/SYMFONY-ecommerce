@@ -67,39 +67,34 @@ Funnel
                     <div id="isDailyHelpText" class="col-md-3">
                         <img src="{{ asset('bundles/lgcore/img/cross.png') }}" alt="cross_close" id="isDailyHelpCross" />
                         <p>La commande de billet demi-journée est impossible pour la journée en cours s'il est plus de 14 heures.</p>
+                        <p>Le billet demi-journée ne permet de rentrer dans le Musée qu'à partir de 14 heures.</p>
                     </div>
                 </div>
                 <hr>
                 <p class="ticketNumber">Nombre de billets</p>
                 <div class="row">
                     <div id="isReduced" class="col-md-offset-3 col-md-6">
-                        <p><span class="ticketNumber">Tarif enfant :</span> de 4 ans à 12 ans (8€)</p>
-                        <p><span class="ticketNumber">Tarif senior :</span> à partir de 60 ans (12€)</p>
                         <p><span class="ticketNumber">Tarif réduit :</span> étudiant, employé du Musée, service du Ministre de la Culture, militaire (10€)</p>
-                        <p><span class="ticketNumber">Gratuit :</span> de 0 à 4 ans</p>
-                        <p><strong>Si vous ne correspondez à aucun critère ci-dessus, choisissez le tarif normal. (16€)</strong></p>
+                        <p><span class="ticketNumber">Tarif normal :</span> 16€</p>
+                        <p>En fonction de votre âge, <strong>et dans le cadre d'un tarif normal</strong>, le prix de votre billet peut être amené à baisser. (Gratuit jusqu'à 4 ans, tarif enfant à 8€ de 4 à 12 ans, tarif senior à 12€ partir de 60 ans).<br/>
+                            Ces modifications se font automatiquement en fonction de votre âge. Un justificatif pourra vous être demandé à l'entrée du Musée.</p>
                     </div>
                 </div>
                 <div class="row" id="choiceTicketNumber">
-                    <div class="col-md-offset-3 col-md-1">
+                    <div class="col-md-offset-5 col-md-1">
                         {{ form_label(form.ticketNumberNormal, ('Tarif Normal (16€)')) }}
-                        {{ form_widget(form.ticketNumberNormal) }}
+                        {{ form_widget(form.ticketNumberNormal, {'attr' : {'class':'ticketNumberNormal'}}) }}
                         {{ form_errors(form.ticketNumberNormal) }}
                     </div>
                     <div class="col-md-1">
-                        {{ form_label(form.ticketNumberChild, ('Tarif Enfant (8€)')) }}
-                        {{ form_widget(form.ticketNumberChild) }}
-                        {{ form_errors(form.ticketNumberChild) }}
-                    </div>
-                    <div class="col-md-1">
-                        {{ form_label(form.ticketNumberSenior, ('Tarif Senior (12€)')) }}
-                        {{ form_widget(form.ticketNumberSenior) }}
-                        {{ form_errors(form.ticketNumberSenior) }}
-                    </div>
-                    <div class="col-md-1">
                         {{ form_label(form.ticketNumberReduce, ('Tarif Réduit (10€)')) }}
-                        {{ form_widget(form.ticketNumberReduce) }}
+                        {{ form_widget(form.ticketNumberReduce, {'attr' : {'class':'ticketNumberReduce'}}) }}
                         {{ form_errors(form.ticketNumberReduce) }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-offset-3 col-md-6">
+                        <p id="messageErrorIsReduce" class="alert-danger">Veuillez choisir un billet pour passer à l'étape suivante.</p>
                     </div>
                 </div>
                 <br/>
@@ -122,6 +117,7 @@ Funnel
     'bundles/lgcore/js/booking.js'
     'bundles/lgcore/js/textHelp.js'
     'bundles/lgcore/js/isDailyDisabled.js'
+    'bundles/lgcore/js/isReduced.js'
     'bundles/lgcore/plugin/form-master/jquery.form.js'
     'bundles/lgcore/plugin/bootstrap-datepicker-master/dist/js/bootstrap-datepicker.js'%}
     <script src="{{ asset_url }}"></script>

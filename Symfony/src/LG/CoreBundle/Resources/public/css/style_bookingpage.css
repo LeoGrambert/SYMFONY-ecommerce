@@ -96,7 +96,7 @@ hr{
     padding: 1%;
 }
 #choiceTicketNumber{
-    margin-left: -6%;
+    margin-left: -16%;
 }
 #choiceTicketNumber select{
     width: 60%;
@@ -153,6 +153,12 @@ hr{
     margin-top: 2%;
     display: none;
 }*/
+#messageErrorIsReduce{
+    display: none;
+    border-radius: 2%;
+    margin-top: 3%;
+    padding:2%;
+}
 .radio{
     display: inline;
     margin: 0 1% 0 1%;
