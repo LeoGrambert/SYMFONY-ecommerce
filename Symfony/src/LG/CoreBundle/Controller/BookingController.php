@@ -16,6 +16,7 @@ use LG\CoreBundle\Form\BookingType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -29,17 +30,6 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
  */
 class BookingController extends Controller
 {
-    /**
-     * @Route("", name="booking.index", methods={"GET"})
-     * @return Response
-     * @throws \Twig_Error
-     */
-    public function indexAction()
-    {
-//        return $this->get('templating')->renderResponse('LGCoreBundle:Booking:booking.html.twig');
-
-    }
-
     /**
      * @Route("/create/1", name="booking.create.stepOne", methods={"POST", "GET"})
      * @param Request $request
@@ -82,6 +72,7 @@ class BookingController extends Controller
      * @ParamConverter("booking", options={"id" = "id"})
      * @param Request $request
      * @param Booking $booking
+     * @return RedirectResponse
      */
     public function createClientBooking (Request $request, Booking $booking)
     {
@@ -89,26 +80,41 @@ class BookingController extends Controller
         // This code below is a boostrap to guide you through persistance
 
         // step one denormalize
-        /** @var Client $clientDenormalized */
-//        $clients = json_decode($request->get('data'), true);
-//        foreach ($clients as $client) {
-//            $clientsDenormalized [] = $this->get('serializer')->denormalize($client, Client::class, 'json');
-//        }
-//        dump($clientsDenormalized);
+        $clients = json_decode($request->get('data'), true);
+        foreach ($clients as $client) {
+            $clientsDenormalized[] = $this->get('serializer')->denormalize($client, Client::class);
+            dump($clientsDenormalized);
+        }
 
-        // step two persist using booking
-//        $clientDenormalized->setBooking($booking);
-//        $this->getDoctrine()->getManager()->persist($clientDenormalized);
-//        $this->getDoctrine()->getManager()->flush();
+        $em = $this->getDoctrine()->getManager();
 
-        // step three normalize
-//        $clientNormalized = $this->get("serializer")->normalize($clientDenormalized);
+        foreach ($clientsDenormalized as $clientDenormalized){
+            dump($clientDenormalized);
+            // step two persist using booking
+            $clientDenormalized->setBooking($booking);
+            $em->persist($clientDenormalized);
+            $em->flush();
 
-        // last step return json response
-//        if($clientNormalized) {
-//            return new JsonResponse($clientNormalized, 200);
-//        }
+            // step three normalize
+            $clientNormalized = $this->get("serializer")->normalize($clientDenormalized);
 
+            // last step return json response
+            if($clientNormalized) {
+                return new JsonResponse($clientNormalized, 200);
+             }
+        }
 
+        return $this->redirectToRoute("booking.create.stepThree", ['id' => $booking->getId()]);
+    }
+
+    /**
+     * @Route("/create/3/{id}", name="booking.create.stepThree", methods={"POST", "GET"}, requirements={"id" : "\d+"})
+     * @return Response
+     * @ParamConverter("booking", options={"id" = "id"})
+     * @return Response
+     */
+    public function bookingCreateStepThree (Booking $booking)
+    {
+        return $this->get('templating')->renderResponse('LGCoreBundle:Booking:booking_form_step_three.html.twig', ["booking" => $booking]);
     }
 }

@@ -3,9 +3,6 @@
  */
 $(function($) {
 
-    console.log('client model is charged');
-    // todo make sure that the namespace is OK -> Done, when we check the source of 'lg', we find booking-namespace.js file
-
     lg.ClientModel = function(firstname, lastname, country, birthdate) {
         this.lastName = lastname;
         this.firstName = firstname;

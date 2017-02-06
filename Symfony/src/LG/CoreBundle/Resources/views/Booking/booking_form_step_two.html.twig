@@ -33,6 +33,7 @@
     <!-- Step two -->
     <div class="container marginBody">
         <div class="row">
+            <p id="infoTicketsStepTwo">En vu de l'édition des billets, veuillez remplir les formulaires ci-dessous pour chaque visiteur. Le prix est automatiquement mis à jour en fonction de l'âge du visiteur. Un justificatif pourra vous être demandé à l'entrée du Musée.</p>
             <div id="booking-form-container-step-two" class="col-sm-12" data-create-url="{{ path('booking.client.create', {"id" : booking.id}) }}">
             </div>
         </div>
@@ -44,6 +45,7 @@
     '@js'
     'bundles/lgcore/js/booking-namespace.js'
     'bundles/lgcore/js/model/clientModel.js'
+    'bundles/lgcore/plugin/moment/moment-with-locales.js'
     'bundles/lgcore/js/booking.js'
     'bundles/lgcore/plugin/form-master/jquery.form.js'
     %}

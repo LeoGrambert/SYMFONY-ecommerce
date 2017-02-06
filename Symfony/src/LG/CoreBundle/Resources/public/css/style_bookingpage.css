@@ -87,7 +87,7 @@ hr{
 }*/
 
 /*Form stylesheet*/
-#isReduced{
+#isReduced, #infoTicketsStepTwo{
     font-size: 0.9em;
     background-color: #DADADA;
     border-radius: 1%;
@@ -129,24 +129,32 @@ hr{
     margin-top: -15px;
     cursor: pointer;
 }
-#lg_corebundle_booking_clients .form-group{
-    background-color: #DADADA;
+#booking-form-container-step-two .btn-primary{
+    position:absolute;
+    margin-top: -5%;
+}
+#booking-form-container-step-two .btn-default{
+    margin-left: 42%;
+    margin-bottom: 5%;
+}
+#booking-form-container-step-two .form-group{
     border-radius: 1%;
     padding: 10px;
     margin: 2% 4% 2% 4%;
-    width: 40%;
+    width: auto;
 }
-#lg_corebundle_booking_clients{
-    width:100%;
+#booking-form-container-step-two{
     margin: 3% 0 3% 0;
-    display: flex;
-    flex-flow: row wrap;
+    width: 100%;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
-#lg_corebundle_booking_clients .form-group .form-group {
-    width:90%;
-}
-#add_client{
-    margin-bottom: 5%;
+#booking-form-container-step-two div{
+    background-color: #DADADA;
+    margin-left: 5%;
+    margin-bottom: 2%;
+    width:40%;
 }
 /*
 #alertStepOneDate, #alertStepOneisDaily, #alertStepOneTicket, #alertStepTwoEmail, #alertStepTwoClient, #alertStepThreeCgv{
@@ -158,6 +166,12 @@ hr{
     border-radius: 2%;
     margin-top: 3%;
     padding:2%;
+}
+#infoTicketsStepTwo{
+    margin-bottom: 5%;
+}
+#cgv{
+    text-align: center;
 }
 .radio{
     display: inline;

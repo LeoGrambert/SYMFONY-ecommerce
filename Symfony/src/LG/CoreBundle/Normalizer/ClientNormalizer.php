@@ -12,6 +12,7 @@ use Symfony\Component\Serializer\SerializerAwareInterface;
 use Symfony\Component\Serializer\SerializerAwareTrait;
 use Symfony\Component\Serializer\SerializerInterface;
 
+
 /**
  * Class ClientNormalizer
  * @package LG\CoreBundle\Normalizer
@@ -33,10 +34,12 @@ class ClientNormalizer implements NormalizerInterface, DenormalizerInterface, Se
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        // todo normalize the entire client entity
         return [
             "id" => $object->getId(),
-            "lastName" => $object->getLastName()
+            "lastName" => $object->getLastName(),
+            "firstName" => $object->getFirstName(),
+            "country" => $object->getCountry(),
+            "birthDate" => $object->getBirthDate(),
         ];
     }
 
@@ -49,12 +52,17 @@ class ClientNormalizer implements NormalizerInterface, DenormalizerInterface, Se
      */
     public function denormalize($data, $class, $format = null, array $context = array())
     {
-        dump($data);
         $client = new Client();
-        // todo denormalize the entire client entity
+        
         $firstName = $data["firstName"];
         $client->setFirstName($firstName);
-
+        $lastName = $data["lastName"];
+        $client->setLastName($lastName);
+        $country = $data["country"];
+        $client->setCountry($country);
+        $birthDate = $data["birthDate"];
+        $client->setBirthDate($birthDate);
+            
         return $client;
     }
 

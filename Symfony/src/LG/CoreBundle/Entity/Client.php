@@ -4,6 +4,7 @@ namespace LG\CoreBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Validator\Constraints\Date;
 
 
 /**
@@ -45,36 +46,15 @@ class Client
     private $country;
 
     /**
-     * @var \DateTime
      *
-     * @ORM\Column(name="birth_date", type="date")
+     * @ORM\Column(name="birth_date", type="date", nullable=false)
      */
-    private $birthDate;
-    /**
-     * @var \DateTime
-     * 
-     * @ORM\Column(name="date_ajout", type="datetime")
-     */
-    private $dateAjout;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="email", type="string", length=255)
-     */
-    private $email;
+    private $birthDate = null;
 
     /**
      * @ORM\ManyToOne(targetEntity="LG\CoreBundle\Entity\Booking", inversedBy="clients")
      */
     private $booking;
-
-    public function __construct()
-    {
-        $this->dateAjout = new \DateTime();
-        $this->booking = new ArrayCollection();
-    }
-
 
     /**
      * Get id
@@ -161,7 +141,7 @@ class Client
     /**
      * Set birthDate
      *
-     * @param \DateTime $birthDate
+     * @param Date $birthDate
      *
      * @return Client
      */
@@ -175,7 +155,7 @@ class Client
     /**
      * Get birthDate
      *
-     * @return \DateTime
+     * @return Date
      */
     public function getBirthDate()
     {
@@ -183,37 +163,13 @@ class Client
     }
 
     /**
-     * Set dateAjout
-     *
-     * @param \DateTime $dateAjout
-     *
-     * @return Client
-     */
-    public function setDateAjout($dateAjout)
-    {
-        $this->dateAjout = $dateAjout;
-
-        return $this;
-    }
-
-    /**
-     * Get dateAjout
-     *
-     * @return \DateTime
-     */
-    public function getDateAjout()
-    {
-        return $this->dateAjout;
-    }
-
-    /**
      * Set booking
      *
-     * @param \LG\CoreBundle\Entity\Booking $booking
+     * @param Booking $booking
      *
      * @return Client
      */
-    public function setBooking(\LG\CoreBundle\Entity\Booking $booking = null)
+    public function setBooking(Booking $booking = null)
     {
         $this->booking = $booking;
 
@@ -223,34 +179,10 @@ class Client
     /**
      * Get booking
      *
-     * @return \LG\CoreBundle\Entity\Booking
+     * @return Booking
      */
     public function getBooking()
     {
         return $this->booking;
-    }
-
-    /**
-     * Set email
-     *
-     * @param string $email
-     *
-     * @return Booking
-     */
-    public function setEmail($email)
-    {
-        $this->email = $email;
-
-        return $this;
-    }
-
-    /**
-     * Get email
-     *
-     * @return string
-     */
-    public function getEmail()
-    {
-        return $this->email;
     }
 }

@@ -19,3 +19,7 @@ monolog:
             level: debug
         console:
             type:  console
+
+framework:
+    serializer:
+        cache: serializer.mapping.cache.apc
