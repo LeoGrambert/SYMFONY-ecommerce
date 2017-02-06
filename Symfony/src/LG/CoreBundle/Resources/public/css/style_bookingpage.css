@@ -87,7 +87,7 @@ hr{
 }*/
 
 /*Form stylesheet*/
-#isReduced, #infoTicketsStepTwo{
+#isReduced, #infoTicketsStepTwo, #emailTextDescription{
     font-size: 0.9em;
     background-color: #DADADA;
     border-radius: 1%;
@@ -175,6 +175,10 @@ hr{
 }
 #cgv_yes, #cgv_no{
     margin:5px;
+}
+#alertIcon{
+    margin-right: 2px;
+    margin-top: -2px;
 }
 .radio{
     display: inline;

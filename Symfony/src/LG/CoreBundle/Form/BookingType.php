@@ -50,6 +50,7 @@ class BookingType extends AbstractType
                 'expanded' => true,
                 'multiple' => false,
             ])
+            ->add('email', EmailType::class)
             ->add('ticketNumberNormal', ChoiceType::class, array(
                 'label' => 'Tarif Normal',
                 'choices'  => array(
@@ -82,13 +83,8 @@ class BookingType extends AbstractType
                     '10' => 10
                 )
             ))
-//            ->add('clients', CollectionType::class, array (
-//                'entry_type' => ClientType::class,
-//                'allow_add' => true,
-//                'allow_delete' => true
-//            ))
             ->add('stepThree', SubmitType::class, [
-                'label' => 'Confirmer la commande'
+                'label' => 'Ajouter au panier'
             ])
         ;
     }

@@ -46,6 +46,17 @@ class Booking
     private $isDaily;
 
     /**
+     * @var string
+     * 
+     * @ORM\Column(name="email", type="string")
+     * @Assert\Email(
+     *     message="L'adresse email indiquée n'est pas valide. Veuillez rentrer une adresse correcte, vous y recevrez vos billets d'entrée.",
+     *     checkMX = true
+     *     )
+     */
+    private $email;
+
+    /**
      * @var int
      *
      * @ORM\Column(name="ticket_number_normal", type="integer")
@@ -264,5 +275,29 @@ class Booking
     public function getClients()
     {
         return $this->clients;
+    }
+
+    /**
+     * Set email
+     *
+     * @param string $email
+     *
+     * @return Booking
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * Get email
+     *
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
     }
 }

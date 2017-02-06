@@ -2,28 +2,12 @@
  * Created by leo on 02/02/17.
  */
 $(function($) {
-
-    /*
-    var mockPhpDateObject = function(format, php, locale) {
-        return {
-            date: moment("2013-02-08").format(format), // datetime now
-            format: {
-                js: format,
-                php: php
-            },
-            locale: locale
-        };
-    };
-    console.log(mockPhpDateObject);
-
-    var obj = {creationDate: mockPhpDateObject("DD/MM/YYYY HH:mm:ss", "d/m/Y H:i:s", "fr") };*/
-
     var $formContainerStepTwo = $('#booking-form-container-step-two');
     var $formContainerStepTwoUrl = $formContainerStepTwo.data('create-url');
     var clientsMap = {
         lastname : 'Nom',
         firstname: 'Prénom',
-        country : 'Pays',
+        country : 'Pays de résidence',
         birthdate :'Date de naissance'
     };
     var clients = [];

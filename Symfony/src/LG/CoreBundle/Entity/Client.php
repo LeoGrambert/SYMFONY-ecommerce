@@ -147,7 +147,7 @@ class Client
      */
     public function setBirthDate($birthDate)
     {
-        $this->birthDate = $birthDate;
+        $this->birthDate = new \DateTime($birthDate);
 
         return $this;
     }

@@ -37,6 +37,15 @@ Funnel
                 {{ form_errors(form) }}
                 <div class="row">
                     <div class="col-md-offset-4 col-md-4">
+                        {{ form_label(form.email) }}
+                        <p id="emailTextDescription"><img src="{{ asset('bundles/lgcore/img/alert.png') }}" alt="alert" id="alertIcon"/> Les billets vous seront envoyés par email.</p>
+                        {{ form_widget(form.email) }}
+                        {{ form_errors(form.email) }}
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-offset-4 col-md-4">
                         {{ form_label(form.dateReservation, 'Choisissez la date de votre visite') }}
                         <img src="{{ asset('bundles/lgcore/img/help.png') }}" alt="help_icon" class="help" id="datepickerHelp"/>
                     </div>
@@ -76,7 +85,7 @@ Funnel
                     <div id="isReduced" class="col-md-offset-3 col-md-6">
                         <p><span class="ticketNumber">Tarif réduit :</span> étudiant, employé du Musée, service du Ministre de la Culture, militaire (10€)</p>
                         <p><span class="ticketNumber">Tarif normal :</span> 16€</p>
-                        <p>En fonction de votre âge, <strong>et dans le cadre d'un tarif normal</strong>, le prix de votre billet peut être amené à baisser. (Gratuit jusqu'à 4 ans, tarif enfant à 8€ de 4 à 12 ans, tarif senior à 12€ partir de 60 ans).<br/>
+                        <p>En fonction de votre âge, <strong>et dans le cadre d'un tarif normal</strong>, le prix de votre billet peut être amené à baisser. Gratuit jusqu'à 4 ans. Tarif enfant de 4 à 12 ans (8€). Tarif senior partir de 60 ans (12€)<br/>
                             Ces modifications se font automatiquement en fonction de votre âge. Un justificatif pourra vous être demandé à l'entrée du Musée.</p>
                     </div>
                 </div>
