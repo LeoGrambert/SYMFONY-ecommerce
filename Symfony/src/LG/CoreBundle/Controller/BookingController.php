@@ -117,4 +117,15 @@ class BookingController extends Controller
     {
         return $this->get('templating')->renderResponse('LGCoreBundle:Booking:booking_form_step_three.html.twig', ["booking" => $booking]);
     }
+
+    /**
+     * @Route("/create/4/{id}", name="booking.create.stepFour", methods={"POST", "GET"}, requirements={"id" : "\d+"})
+     * @return Response
+     * @ParamConverter("booking", options={"id" = "id"})
+     * @return Response
+     */
+    public function bookingCreateStepFour (Booking $booking)
+    {
+        return $this->get('templating')->renderResponse('LGCoreBundle:Booking:booking_form_step_four.html.twig', ["booking" => $booking]);
+    }
 }

@@ -10,7 +10,8 @@
         <input type="checkbox" id="cgv_yes">Oui
         <input type="checkbox" id="cgv_no">Non
     </form>
-
+<br/><hr>
+    <a href="{{ path('booking.create.stepFour', {"id" : booking.id}) }}"><button class="btn btn-primary">Finaliser la commande</button></a>
 </div>
 
 {% endblock %}

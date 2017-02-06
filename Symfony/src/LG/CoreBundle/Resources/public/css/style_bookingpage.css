@@ -173,6 +173,9 @@ hr{
 #cgv{
     text-align: center;
 }
+#cgv_yes, #cgv_no{
+    margin:5px;
+}
 .radio{
     display: inline;
     margin: 0 1% 0 1%;
