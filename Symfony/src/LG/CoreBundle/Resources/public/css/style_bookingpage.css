@@ -186,6 +186,16 @@ hr{
     margin-bottom: 5%;
     border-radius: 8%;
 }
+#priceContainer{
+background-color: rgba(34,34,34,0.8);
+    color: white;
+    padding: 10px;
+    border-radius: 2%;
+    box-shadow: 1px 1px 4px black;
+}
+#price{
+    font-size: 1.3em;
+}
 .radio{
     display: inline;
     margin: 0 1% 0 1%;

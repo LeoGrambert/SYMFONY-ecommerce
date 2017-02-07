@@ -109,7 +109,9 @@ Funnel
                 <br/>
                 <hr>
                 <div class="row">
-                    Prix :
+                    <div class="col-md-offset-5 col-md-2" id="priceContainer">
+                        Prix provisoire :<div id="price">0 €</div>
+                    </div>
                 </div>
                 <hr>
                 {{ form_widget(form.stepThree,  {'attr' : {'class':'btn-primary'}}) }}
@@ -127,6 +129,7 @@ Funnel
     'bundles/lgcore/js/textHelp.js'
     'bundles/lgcore/js/isDailyDisabled.js'
     'bundles/lgcore/js/isReduced.js'
+    'bundles/lgcore/js/displayPriceStepOne.js'
     'bundles/lgcore/plugin/form-master/jquery.form.js'
     'bundles/lgcore/plugin/bootstrap-datepicker-master/dist/js/bootstrap-datepicker.js'%}
     <script src="{{ asset_url }}"></script>
