@@ -58,6 +58,7 @@ $(function($) {
                             return $form.append($('<div class="alert alert-danger">La date de naissance n\'est pas valide</div>').delay(4000).fadeOut('slow'));
                         } else{
                             submitClient(onSuccessSubmitCallback);
+                            $('#buttonToStepThree').attr('disabled', false);
                         }
                     }
                 }

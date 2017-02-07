@@ -37,7 +37,7 @@
             <div id="booking-form-container-step-two" class="col-sm-12" data-create-url="{{ path('booking.client.create', {"id" : booking.id}) }}">
             </div>
             <div class="col-md-offset-5">
-                <a href="{{ path('booking.create.stepThree', {"id" : booking.id}) }}"><button class="btn btn-primary" id="buttonToStepThree">Confirmer la commande</button></a>
+                <a href="{{ path('booking.create.stepThree', {"id" : booking.id}) }}"><button disabled class="btn btn-primary" id="buttonToStepThree">Confirmer la commande</button></a>
             </div>
         </div>
     </div>
