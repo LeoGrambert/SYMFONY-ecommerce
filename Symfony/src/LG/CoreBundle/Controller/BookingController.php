@@ -96,15 +96,14 @@ class BookingController extends Controller
             $em->flush();
 
             // step three normalize
-            $clientNormalized = $this->get("serializer")->normalize($clientDenormalized);
+            //$clientNormalized = $this->get("serializer")->normalize($clientDenormalized);
 
             // last step return json response
-            if($clientNormalized) {
-                return new JsonResponse($clientNormalized, 200);
-             }
+            //if($clientNormalized) {
+            //    return new JsonResponse($clientNormalized, 200);
+             //}
         }
-
-        return $this->redirectToRoute("booking.create.stepThree", ['id' => $booking->getId()]);
+        return new Response;
     }
 
     /**

@@ -106,7 +106,7 @@ $(function($) {
      * Append a success message
      */
     var onSuccessSubmitCallback = function () {
-        $formContainerStepTwo.prepend('<p class="alert alert-success" id="persistSuccessMessage">').text('Wouhou, client persisté').delay(3000).fadeOut(300);
+        $formContainerStepTwo.prepend('<p class="alert alert-success" id="persistSuccessMessage">').text('Le client a bien été persisté en BDD');
     };
 
     /**
