@@ -68,6 +68,7 @@ class BookingController extends Controller
         $numberTicketsReduce = $booking->getTicketNumberReduce();
         $numberTicketsChild = $booking->getTicketNumberChild();
         $numberTicketsSenior = $booking->getTicketNumberSenior();
+        dump($numberTicketsChild, $numberTicketsReduce, $numberTicketsNormal, $numberTicketsSenior);
         $numberTickets = $numberTicketsChild + $numberTicketsNormal + $numberTicketsReduce + $numberTicketsSenior;
         $dateReservation = $booking->getDateReservation();
         $dateReservationToString = $dateReservation->format('d-m-Y');

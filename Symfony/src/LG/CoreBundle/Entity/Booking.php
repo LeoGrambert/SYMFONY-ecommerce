@@ -346,9 +346,9 @@ class Booking
      *
      * @return Booking
      */
-    public function setTicketNumberchild($ticketNumberChild)
+    public function setTicketNumberChild($ticketNumberChild)
     {
-        $this->ticketNumberchild = $ticketNumberChild;
+        $this->ticketNumberChild = $ticketNumberChild;
 
         return $this;
     }
