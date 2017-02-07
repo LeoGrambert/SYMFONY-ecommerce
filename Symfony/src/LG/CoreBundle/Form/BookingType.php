@@ -4,6 +4,7 @@ namespace LG\CoreBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
@@ -53,37 +54,17 @@ class BookingType extends AbstractType
             ->add('email', EmailType::class, [
                 'label' => 'Entrez votre adresse e-mail'
             ])
-            ->add('ticketNumberNormal', ChoiceType::class, array(
+            ->add('ticketNumberNormal', TextType::class, array(
                 'label' => 'Tarif Normal',
-                'choices'  => array(
-                    '0' => 0,
-                    '1' => 1,
-                    '2' => 2,
-                    '3' => 3,
-                    '4' => 4,
-                    '5' => 5,
-                    '6' => 6,
-                    '7' =>7,
-                    '8' => 8,
-                    '9' => 9,
-                    '10' => 10
-                )
             ))
-            ->add('ticketNumberReduce', ChoiceType::class, array(
+            ->add('ticketNumberReduce', TextType::class, array(
                 'label' => 'Tarif Réduit',
-                'choices'  => array(
-                    '0' => 0,
-                    '1' => 1,
-                    '2' => 2,
-                    '3' => 3,
-                    '4' => 4,
-                    '5' => 5,
-                    '6' => 6,
-                    '7' =>7,
-                    '8' => 8,
-                    '9' => 9,
-                    '10' => 10
-                )
+            ))
+            ->add('ticketNumberChild', TextType::class, array(
+                'label' => 'Tarif Enfant',
+            ))
+            ->add('ticketNumberSenior', TextType::class, array(
+                'label' => 'Tarif Senior',
             ))
             ->add('stepThree', SubmitType::class, [
                 'label' => 'Ajouter au panier'

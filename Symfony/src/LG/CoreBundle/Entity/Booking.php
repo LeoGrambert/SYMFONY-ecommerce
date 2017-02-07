@@ -60,6 +60,12 @@ class Booking
      * @var int
      *
      * @ORM\Column(name="ticket_number_normal", type="integer")
+     * @Assert\Range(
+     *     min=0,
+     *     max=100,
+     *     minMessage="Vous ne pouvez pas sélectionner un nombre négatif",
+     *     maxMessage="Si vous souhaitez commander plus de 100 billets, contactez le Musée."
+     * )
      */
     private $ticketNumberNormal = 0;
 
@@ -67,8 +73,40 @@ class Booking
      * @var int
      *
      * @ORM\Column(name="ticket_number_reduce", type="integer")
+     * @Assert\Range(
+     *     min=0,
+     *     max=100,
+     *     minMessage="Vous ne pouvez pas sélectionner un nombre négatif",
+     *     maxMessage="Si vous souhaitez commander plus de 100 billets, contactez le Musée."
+     * )
      */
     private $ticketNumberReduce = 0;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="ticket_number_child", type="integer")
+     * @Assert\Range(
+     *     min=0,
+     *     max=100,
+     *     minMessage="Vous ne pouvez pas sélectionner un nombre négatif",
+     *     maxMessage="Si vous souhaitez commander plus de 100 billets, contactez le Musée."
+     * )
+     */
+    private $ticketNumberchild = 0;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="ticket_number_senior", type="integer")
+     * @Assert\Range(
+     *     min=0,
+     *     max=100,
+     *     minMessage="Vous ne pouvez pas sélectionner un nombre négatif",
+     *     maxMessage="Si vous souhaitez commander plus de 100 billets, contactez le Musée."
+     * )
+     */
+    private $ticketNumberSenior = 0;
 
     /**
      * @ORM\OneToOne(targetEntity="LG\CoreBundle\Entity\Payment")
@@ -299,5 +337,53 @@ class Booking
     public function getEmail()
     {
         return $this->email;
+    }
+
+    /**
+     * Set ticketNumberchild
+     *
+     * @param integer $ticketNumberchild
+     *
+     * @return Booking
+     */
+    public function setTicketNumberchild($ticketNumberchild)
+    {
+        $this->ticketNumberchild = $ticketNumberchild;
+
+        return $this;
+    }
+
+    /**
+     * Get ticketNumberchild
+     *
+     * @return integer
+     */
+    public function getTicketNumberchild()
+    {
+        return $this->ticketNumberchild;
+    }
+
+    /**
+     * Set ticketNumberSenior
+     *
+     * @param integer $ticketNumberSenior
+     *
+     * @return Booking
+     */
+    public function setTicketNumberSenior($ticketNumberSenior)
+    {
+        $this->ticketNumberSenior = $ticketNumberSenior;
+
+        return $this;
+    }
+
+    /**
+     * Get ticketNumberSenior
+     *
+     * @return integer
+     */
+    public function getTicketNumberSenior()
+    {
+        return $this->ticketNumberSenior;
     }
 }

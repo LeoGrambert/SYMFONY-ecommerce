@@ -72,7 +72,7 @@ class BookingController extends Controller
      * @ParamConverter("booking", options={"id" = "id"})
      * @param Request $request
      * @param Booking $booking
-     * @return RedirectResponse
+     * @return Response
      */
     public function createClientBooking (Request $request, Booking $booking)
     {
@@ -104,6 +104,11 @@ class BookingController extends Controller
              //}
         }
         return new Response;
+    }
+
+    public function recapBooking (Request $request, Booking $booking)
+    {
+
     }
 
     /**

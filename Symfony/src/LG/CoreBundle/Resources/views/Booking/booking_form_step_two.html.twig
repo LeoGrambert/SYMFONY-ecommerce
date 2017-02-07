@@ -36,6 +36,20 @@
             <p id="infoTicketsStepTwo">Pour l'édition de vos billets, veuillez remplir les formulaires ci-dessous (1 par visiteur). Le prix est automatiquement mis à jour en fonction de l'âge du visiteur. Un justificatif pourra vous être demandé à l'entrée du Musée.</p>
             <div id="booking-form-container-step-two" class="col-sm-12" data-create-url="{{ path('booking.client.create', {"id" : booking.id}) }}">
             </div>
+            <div class="row">
+                <div class="col-md-offset-4 col-md-4" id="textRecapStepTwo">
+                    <h4>Récapitulatif de votre commande</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-offset-4 col-md-4" id="containerPriceStepTwo">
+                    <p>X billets dans le panier - Date de visite : dd-mm-yyyy</p>
+                    <div>Prix total :
+                        <div class="price">X €</div>
+                    </div>
+                    <p>Confirmez-vous votre commande ?</p>
+                </div>
+            </div>
             <div class="col-md-offset-5">
                 <a href="{{ path('booking.create.stepThree', {"id" : booking.id}) }}"><button disabled class="btn btn-primary" id="buttonToStepThree">Confirmer la commande</button></a>
             </div>

@@ -87,6 +87,18 @@ hr{
 }*/
 
 /*Form stylesheet*/
+table input{
+    text-align: center;
+}
+#choiceTicketNumber tr, td{
+    border:1px solid #DADADA;
+}
+#selectType td{
+    height: 100px;
+}
+#leftBottomTable{
+    padding: 3px;
+}
 #isReduced, #infoTicketsStepTwo, #emailTextDescription{
     font-size: 0.9em;
     background-color: #DADADA;
@@ -95,15 +107,9 @@ hr{
     margin-bottom: 3%;
     padding: 1%;
 }
-#choiceTicketNumber{
-    margin-left: -16%;
-}
-#choiceTicketNumber select{
-    width: 60%;
-    margin-left: 20%;
-}
-#choiceTicketNumber .col-md-1{
-    width: 14%;
+#choiceTicketNumber input{
+    width: 40%;
+    margin-left: 30%;
 }
 #checkboxIsDaily{
     font-weight: bold;
@@ -186,15 +192,24 @@ hr{
     margin-bottom: 5%;
     border-radius: 8%;
 }
-#priceContainer{
-background-color: rgba(34,34,34,0.8);
+#priceContainer, #containerPriceStepTwo{
+    background-color: rgba(34,34,34,0.8);
     color: white;
     padding: 10px;
+    margin-bottom: 3%;
+    margin-top: 2%;
     border-radius: 2%;
     box-shadow: 1px 1px 4px black;
 }
-#price{
+#containerPriceStepTwo{
+    text-align: center;
+}
+#textRecapStepTwo{
+    text-align: center;
+}
+.price{
     font-size: 1.3em;
+    margin: 1%;
 }
 .radio{
     display: inline;
