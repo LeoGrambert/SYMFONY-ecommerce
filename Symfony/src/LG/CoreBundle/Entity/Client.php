@@ -5,6 +5,7 @@ namespace LG\CoreBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Validator\Constraints\Date;
+use Symfony\Component\Validator\Constraints as Assert;
 
 
 /**
@@ -28,6 +29,8 @@ class Client
      * @var string
      *
      * @ORM\Column(name="last_name", type="string", length=255)
+     * @Assert\NotBlank()
+     * @Assert\Length(min=3)
      */
     private $lastName;
 
@@ -35,6 +38,8 @@ class Client
      * @var string
      *
      * @ORM\Column(name="first_name", type="string", length=255)
+     * @Assert\NotBlank()
+     * @Assert\Length(min=3)
      */
     private $firstName;
 
@@ -42,12 +47,16 @@ class Client
      * @var string
      *
      * @ORM\Column(name="country", type="string", length=255)
+     * @Assert\NotBlank()
+     * @Assert\Length(min=3)
      */
     private $country;
 
     /**
      *
      * @ORM\Column(name="birth_date", type="date", nullable=false)
+     * @Assert\NotBlank()
+     * @Assert\Date()
      */
     private $birthDate = null;
 

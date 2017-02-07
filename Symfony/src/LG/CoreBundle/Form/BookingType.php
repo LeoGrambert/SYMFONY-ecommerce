@@ -50,7 +50,9 @@ class BookingType extends AbstractType
                 'expanded' => true,
                 'multiple' => false,
             ])
-            ->add('email', EmailType::class)
+            ->add('email', EmailType::class, [
+                'label' => 'Entrez votre adresse e-mail'
+            ])
             ->add('ticketNumberNormal', ChoiceType::class, array(
                 'label' => 'Tarif Normal',
                 'choices'  => array(
