@@ -68,11 +68,9 @@ class BookingController extends Controller
         $numberTicketsReduce = $booking->getTicketNumberReduce();
         $numberTicketsChild = $booking->getTicketNumberChild();
         $numberTicketsSenior = $booking->getTicketNumberSenior();
-        dump($numberTicketsChild, $numberTicketsReduce, $numberTicketsNormal, $numberTicketsSenior);
         $numberTickets = $numberTicketsChild + $numberTicketsNormal + $numberTicketsReduce + $numberTicketsSenior;
         $dateReservation = $booking->getDateReservation();
         $dateReservationToString = $dateReservation->format('d-m-Y');
-        dump($dateReservationToString);
         $price = ($numberTicketsChild*8) + ($numberTicketsNormal*16) + ($numberTicketsReduce*10) + ($numberTicketsSenior*12);
         
         return $this->get('templating')->renderResponse('LGCoreBundle:Booking:booking_form_step_two.html.twig', ["booking" => $booking, "numberTickets" => $numberTickets, "dateReservationToString" => $dateReservationToString, "price" => $price]);
