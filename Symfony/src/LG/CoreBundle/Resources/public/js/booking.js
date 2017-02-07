@@ -12,17 +12,19 @@ $(function($) {
     };
     var clients = [];
 
+    
     /**
-     * Creates a call to action button : "Add a client"
-     * Attaches click event :
-     *      - when this event is fired, it generates the form with fields
+     * Function that retrieves the number of ordered tickets
+     * Then, it's generate form in a for loop
+     *
+     * Return the correct number of form in twig view
      */
-    var generateAddClientButton = function() {
-        var $button = $('<button class="btn btn-primary">').text('Ajouter un visiteur');
-        $formContainerStepTwo.append($button);
-        $button.on('click', function() {
+    var numberTicketsGenerate = function()
+    {
+        var $numberTickets = $('#numberTickets').text();
+        for (i=0; i<$numberTickets; i++){
             generateForm();
-        });
+        }
     };
 
     /**
@@ -133,7 +135,7 @@ $(function($) {
      * Orchestral master
      */
     var render = function () {
-        generateAddClientButton();
+        numberTicketsGenerate();
     };
 
     /**

@@ -62,9 +62,9 @@ class Booking
      * @ORM\Column(name="ticket_number_normal", type="integer")
      * @Assert\Range(
      *     min=0,
-     *     max=100,
+     *     max=20,
      *     minMessage="Vous ne pouvez pas sélectionner un nombre négatif",
-     *     maxMessage="Si vous souhaitez commander plus de 100 billets, contactez le Musée."
+     *     maxMessage="Vous ne pouvez pas commander plus de 20 billets par tarif. Contactez le Musée pour organiser une visite de groupe."
      * )
      */
     private $ticketNumberNormal = 0;
@@ -75,9 +75,9 @@ class Booking
      * @ORM\Column(name="ticket_number_reduce", type="integer")
      * @Assert\Range(
      *     min=0,
-     *     max=100,
+     *     max=20,
      *     minMessage="Vous ne pouvez pas sélectionner un nombre négatif",
-     *     maxMessage="Si vous souhaitez commander plus de 100 billets, contactez le Musée."
+     *     maxMessage="Vous ne pouvez pas commander plus de 20 billets par tarif. Contactez le Musée pour organiser une visite de groupe."
      * )
      */
     private $ticketNumberReduce = 0;
@@ -88,9 +88,9 @@ class Booking
      * @ORM\Column(name="ticket_number_child", type="integer")
      * @Assert\Range(
      *     min=0,
-     *     max=100,
+     *     max=20,
      *     minMessage="Vous ne pouvez pas sélectionner un nombre négatif",
-     *     maxMessage="Si vous souhaitez commander plus de 100 billets, contactez le Musée."
+     *     maxMessage="Vous ne pouvez pas commander plus de 20 billets par tarif. Contactez le Musée pour organiser une visite de groupe."
      * )
      */
     private $ticketNumberChild = 0;
@@ -101,9 +101,9 @@ class Booking
      * @ORM\Column(name="ticket_number_senior", type="integer")
      * @Assert\Range(
      *     min=0,
-     *     max=100,
+     *     max=20,
      *     minMessage="Vous ne pouvez pas sélectionner un nombre négatif",
-     *     maxMessage="Si vous souhaitez commander plus de 100 billets, contactez le Musée."
+     *     maxMessage="Vous ne pouvez pas commander plus de 20 billets par tarif. Contactez le Musée pour organiser une visite de groupe."
      * )
      */
     private $ticketNumberSenior = 0;
@@ -122,7 +122,6 @@ class Booking
     {
         $this->dateAchat = new \DateTime();
         $this->dateReservation = new \DateTime();
-//        $this->clients = new ArrayCollection();
     }
     
 
