@@ -43,9 +43,9 @@
             </div>
             <div class="row">
                 <div class="col-md-offset-4 col-md-4" id="containerPriceStepTwo">
-                    <p>X billets dans le panier - Date de visite : dd-mm-yyyy</p>
+                    <p>{{ numberTickets }} billets dans le panier - Date de visite : {{ dateReservationToString }}</p>
                     <div>Prix total :
-                        <div class="price">X €</div>
+                        <div class="price">{{ price }} €</div>
                     </div>
                     <p>Confirmez-vous votre commande ?</p>
                 </div>

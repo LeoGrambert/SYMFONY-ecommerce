@@ -93,7 +93,7 @@ class Booking
      *     maxMessage="Si vous souhaitez commander plus de 100 billets, contactez le Musée."
      * )
      */
-    private $ticketNumberchild = 0;
+    private $ticketNumberChild = 0;
 
     /**
      * @var int
@@ -340,27 +340,27 @@ class Booking
     }
 
     /**
-     * Set ticketNumberchild
+     * Set ticketNumberChild
      *
-     * @param integer $ticketNumberchild
+     * @param integer $ticketNumberChild
      *
      * @return Booking
      */
-    public function setTicketNumberchild($ticketNumberchild)
+    public function setTicketNumberchild($ticketNumberChild)
     {
-        $this->ticketNumberchild = $ticketNumberchild;
+        $this->ticketNumberchild = $ticketNumberChild;
 
         return $this;
     }
 
     /**
-     * Get ticketNumberchild
+     * Get ticketNumberChild
      *
      * @return integer
      */
-    public function getTicketNumberchild()
+    public function getTicketNumberChild()
     {
-        return $this->ticketNumberchild;
+        return $this->ticketNumberChild;
     }
 
     /**
