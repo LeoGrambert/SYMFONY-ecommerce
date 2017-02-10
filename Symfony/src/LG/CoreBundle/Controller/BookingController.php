@@ -115,11 +115,6 @@ class BookingController extends Controller
         return new Response;
     }
 
-    public function recapBooking (Request $request, Booking $booking)
-    {
-
-    }
-
     /**
      * @Route("/create/3/{id}", name="booking.create.stepThree", methods={"POST", "GET"}, requirements={"id" : "\d+"})
      * @return Response
@@ -128,7 +123,13 @@ class BookingController extends Controller
      */
     public function bookingCreateStepThree (Booking $booking)
     {
-        return $this->get('templating')->renderResponse('LGCoreBundle:Booking:booking_form_step_three.html.twig', ["booking" => $booking]);
+        $numberTicketsNormal = $booking->getTicketNumberNormal();
+        $numberTicketsReduce = $booking->getTicketNumberReduce();
+        $numberTicketsChild = $booking->getTicketNumberChild();
+        $numberTicketsSenior = $booking->getTicketNumberSenior();
+        $numberTickets = $numberTicketsChild + $numberTicketsNormal + $numberTicketsReduce + $numberTicketsSenior;
+
+        return $this->get('templating')->renderResponse('LGCoreBundle:Booking:booking_form_step_three.html.twig', ["booking" => $booking, "numberTickets" => $numberTickets]);
     }
 
     /**

@@ -1,8 +1,34 @@
 {%  extends "LGCoreBundle::layout.html.twig" %}
 
 {% block body %}
-
-    <div class="container marginBody">
+    <img src="{{ asset('bundles/lgcore/img/logo.png') }}" alt="logo_musee_du_louvre" id="logoImg"/>
+    <p id="subTextLogo">Billetterie en ligne</p>
+    <img src="{{ asset('bundles/lgcore/img/basket.png') }}" alt="panier" id="basketImg"/>
+    <p id="basketText">Vous avez <span id="numberTickets">0</span> billet(s)<br/> dans votre panier</p>
+    <!--
+Funnel
+-->
+    <div class="container" id="funnelStepFour">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-4">
+                <div id="funnelBorder"></div>
+                <div id="blocFunnelStepOne"></div>
+                <div id="blocFunnelStepTwo"></div>
+                <div id="blocFunnelStepThree"></div>
+                <div id="blocFunnelStepFour"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-md-offset-4" id="textFunnel">
+                <span id="textStepOne">Ajouter au panier</span>
+                <span id="textStepTwo">Détails billets</span>
+                <span id="textStepThree">Paiement</span>
+                <span id="textStepFour">Confirmation</span>
+            </div>
+        </div>
+    </div>
+    <!-- //end of Funnel -->
+    <div class="container marginBody" id="confirmationPage">
         Ici se trouvera la page de confirmation/remerciements<br/><hr>
         <a href="{{ path('home.index') }}"><button class="btn btn-primary">Retour à l'accueil</button></a>
     </div>

@@ -24,7 +24,7 @@ hr{
 }
 
 /*Funnel*/
-#funnelStepOne, #funnelstepTwo{
+#funnelStepOne, #funnelstepTwo, #funnelStepThree{
     margin: 0 0 5% 0;
 }
 #funnelstepTwo #blocFunnelStepTwo {
@@ -33,6 +33,20 @@ hr{
 }
 #funnelstepTwo #funnelBorder{
     background :linear-gradient(to right, rgba(182,141,76,1) 0%, rgba(193,158,103,1) 33%, rgba(243,226,199,1) 33%, rgba(243,226,199,1) 33%);
+}
+#funnelStepThree #blocFunnelStepThree, #funnelStepThree #blocFunnelStepTwo {
+    background-color: #AA8046;
+    border-radius: 50%;
+}
+#funnelStepThree #funnelBorder{
+    background :linear-gradient(to right, rgba(182,141,76,1) 0%, rgba(193,158,103,1) 69%, rgba(243,226,199,1) 69%, rgba(243,226,199,1) 69%);
+}
+#funnelStepFour #blocFunnelStepFour, #funnelStepFour #blocFunnelStepTwo, #funnelStepFour #blocFunnelStepThree {
+    background-color: #AA8046;
+    border-radius: 50%;
+}
+#funnelStepFour #funnelBorder{
+    background :linear-gradient(to right, rgba(182,141,76,1) 0%, rgba(193,158,103,1) 100%, rgba(243,226,199,1) 100%, rgba(243,226,199,1) 100%);
 }
 
 #funnelBorder{
@@ -81,10 +95,6 @@ hr{
 #stepOne, #stepTwo, #stepThree, #stepFour{
     text-align: center;
 }
-/*
-#stepTwo, #stepThree, #stepFour{
-    display: none;
-}*/
 
 /*Form stylesheet*/
 table input{
@@ -163,14 +173,9 @@ table input{
 #booking-form-container-step-two div{
     background-color: #DADADA;
     margin-left: 6.5%;
-    margin-bottom: 2%;
+    margin-bottom: 20px;
     width:40%;
 }
-/*
-#alertStepOneDate, #alertStepOneisDaily, #alertStepOneTicket, #alertStepTwoEmail, #alertStepTwoClient, #alertStepThreeCgv{
-    margin-top: 2%;
-    display: none;
-}*/
 #messageErrorIsReduce{
     display: none;
     border-radius: 2%;
@@ -214,6 +219,9 @@ table input{
     margin-top: 5%;
     margin-left: 5%;
     width:40%;
+    text-align: center;
+}
+#confirmationPage{
     text-align: center;
 }
 .price{
@@ -261,5 +269,16 @@ table input{
     #basketImg {
         padding-right: 2.5%;
         margin-top: -6.5%;
+    }
+}
+@media screen and (min-width: 1700px) {
+    #funnelStepOne, #funnelstepTwo, #funnelStepThree, #funnelStepFour {
+        margin: 0 0 5% 15%;
+    }
+    #choiceTicketNumber .col-md-offset-2 {
+        margin-left:0;
+    }
+    #isDailyHelpText{
+        margin-top: -3%;
     }
 }
