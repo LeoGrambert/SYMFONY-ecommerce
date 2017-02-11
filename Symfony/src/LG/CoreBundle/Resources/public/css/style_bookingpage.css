@@ -261,6 +261,41 @@ table input{
 }
 
 /*Medias queries for booking page*/
+@media screen and (max-width: 1200px) {
+    .navbar-brand{
+        display: none;
+    }
+}
+@media screen and (min-width: 980px) {
+    footer .row{
+        font-size:0.8em;
+    }
+    .navbar-brand{
+        display: block;
+    }
+    #textFunnel{
+        display:none;
+    }
+    #funnelStepOne, #funnelstepTwo, #funnelStepThree, #funnelStepFour{
+        margin:0 0 5% 25%;
+        width: 50%;
+    }
+    #basketText{
+        margin-top: -4%;
+    }
+    #buttonToStepThree{
+        margin-left: 38%;
+    }
+    #persistSuccessMessage{
+        margin-left: 30%;
+    }
+    .messageErrorClient{
+        margin-left: 30%;
+    }
+    .booking-client__validate{
+        margin-left:44%;
+    }
+}
 @media screen and (min-width: 1500px) {
     #funnel {
         margin-left: 15%;
@@ -280,10 +315,5 @@ table input{
     }
     #isDailyHelpText{
         margin-top: -3%;
-    }
-}
-@media screen and (min-width: 979px) {
-    #bs-example-navbar-collapse-1{
-        display: none;
     }
 }

@@ -82,6 +82,12 @@
             </div>
         </div>
     </footer>
+    {% javascripts
+    '@js'
+    'bundles/lgcore/js/bootstrap.min.js'
+    %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
     {% block script %}
     {% endblock %}
     </body>

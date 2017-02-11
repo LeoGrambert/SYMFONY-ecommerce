@@ -82,4 +82,3 @@ assetic:
         js:
             inputs:
                 - 'bundles/lgcore/js/jquery-3.1.1.min.js'
-                - 'bundles/lgcore/js/bootstrap.min.js'
