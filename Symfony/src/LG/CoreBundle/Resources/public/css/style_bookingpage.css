@@ -25,7 +25,7 @@ hr{
 
 /*Funnel*/
 #funnelStepOne, #funnelstepTwo, #funnelStepThree{
-    margin: 0 0 5% 0;
+    margin: 0 0 5% -5%;
 }
 #funnelstepTwo #blocFunnelStepTwo {
     background-color: #AA8046;
@@ -261,12 +261,49 @@ table input{
 }
 
 /*Medias queries for booking page*/
-@media screen and (max-width: 1200px) {
-    .navbar-brand{
+@media screen and (max-width: 500px) {
+    body #logoImg{
+        width: 20%;
+        margin:15% 0 0 1%;
+    }
+    body #subTextLogo{
         display: none;
     }
+    body #basketText{
+        display: none;
+    }
+    body #basketImg{
+        display: none;
+    }
+    body #funnelStepOne, body #funnelStepThree, body #funnelstepTwo, body #funnelStepFour{
+        margin: 10% 0 15% 25%;
+    }
+    #funnelBorder{
+        margin-bottom: -5%;
+    }
+    #blocFunnelStepTwo{
+        margin-left: 26% !important;
+    }
+    #blocFunnelStepThree{
+        margin-left: 56% !important;
+    }
+    #blocFunnelStepFour{
+        margin-left: 82% !important;
+    }
+    #booking-form-container-step-two{
+        display: block;
+    }
+    #booking-form-container-step-two .booking-form-container{
+        width: 85%;
+    }
+    .marginBody .booking-client__validate{
+        margin-left: 36%;
+    }
+    .marginBody #buttonToStepThree{
+        margin-left: 25%;
+    }
 }
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 981px) {
     #textFunnel{
         display:none;
     }
@@ -292,6 +329,22 @@ table input{
     #persistSuccessMessage{
         margin-left: 30%;
     }
+    #datepickerHelpText, #isDailyHelpText{
+        display: inline;
+        position: inherit;
+        right: 0;
+        padding:1%;
+        background-color: inherit;
+        text-align: center;
+        border-radius: 0;
+    }
+    #datepickerHelpCross, #isDailyHelpCross{
+        display: none
+    ;
+    }
+    #datepickerHelp, #isDailyHelp{
+        display: none;
+    }
     .messageErrorClient{
         margin-left: 30%;
     }
@@ -299,9 +352,12 @@ table input{
         margin-left:44%;
     }
 }
-@media screen and (min-width: 980px) {
+@media screen and (max-width: 1200px) {
     .navbar-brand{
-        display: block;
+        display: none;
+    }
+    #textFunnel{
+        display: none;
     }
 }
 @media screen and (min-width: 1500px) {
