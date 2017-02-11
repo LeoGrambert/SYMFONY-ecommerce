@@ -266,7 +266,7 @@ table input{
         display: none;
     }
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 768px) {
     #textFunnel{
         display:none;
     }
@@ -277,11 +277,17 @@ table input{
         margin:0 0 5% 25%;
         width: 50%;
     }
+    #basketImg{
+        margin-top:-10%;
+    }
     #basketText{
-        margin-top: -4%;
+        margin-top: -7%;
     }
     #buttonToStepThree{
         margin-left: 38%;
+    }
+    #blocFunnelStepFour{
+        margin-left:91%;
     }
     #persistSuccessMessage{
         margin-left: 30%;
