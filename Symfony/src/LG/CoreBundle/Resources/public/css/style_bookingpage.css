@@ -266,15 +266,12 @@ table input{
         display: none;
     }
 }
-@media screen and (min-width: 980px) {
-    footer .row{
-        font-size:0.8em;
-    }
-    .navbar-brand{
-        display: block;
-    }
+@media screen and (min-width: 800px) {
     #textFunnel{
         display:none;
+    }
+    #logoImg{
+        margin: 6% 0 0 1%;
     }
     #funnelStepOne, #funnelstepTwo, #funnelStepThree, #funnelStepFour{
         margin:0 0 5% 25%;
@@ -294,6 +291,11 @@ table input{
     }
     .booking-client__validate{
         margin-left:44%;
+    }
+}
+@media screen and (min-width: 980px) {
+    .navbar-brand{
+        display: block;
     }
 }
 @media screen and (min-width: 1500px) {
