@@ -426,7 +426,7 @@ hr{
     #funnelStepOne, #funnelstepTwo, #funnelStepThree, #funnelStepFour {
         margin: 0 0 5% 15%;
     }
-    #choiceTicketNumber .col-md-offset-2 {
+    #choiceTicketNumber{
         margin-left:0;
     }
     #isDailyHelpText{
