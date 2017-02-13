@@ -90,22 +90,24 @@ Funnel
                         <p>Pour les enfants de moins de 4 ans, l'entrée est gratuite. Vous n'avez pas à prendre de billets.</p>
                     </div>
                 </div>
-                <div class="row" id="choiceTicketNumber">
-                    <div class="col-md-offset-2">
-                        <table>
-                            <tr>
-                                <td>{{ form_label(form.ticketNumberNormal, ('Tarif Normal (16€)')) }}</td>
-                                <td>{{ form_label(form.ticketNumberReduce, ('Tarif Réduit (10€)')) }}</td>
-                                <td>{{ form_label(form.ticketNumberChild, ('Tarif Enfant (8€)')) }}</td>
-                                <td>{{ form_label(form.ticketNumberSenior, ('Tarif Senior (12€)')) }}</td>
-                            </tr>
-                            <tr id="selectType">
-                                <td>{{ form_widget(form.ticketNumberNormal, {'attr' : {'class':'ticketNumberNormal'}}) }}</td>
-                                <td>{{ form_widget(form.ticketNumberReduce, {'attr' : {'class':'ticketNumberReduce'}}) }}</td>
-                                <td>{{ form_widget(form.ticketNumberChild, {'attr' : {'class':'ticketNumberChild'}}) }}</td>
-                                <td>{{ form_widget(form.ticketNumberSenior, {'attr' : {'class':'ticketNumberSenior'}}) }}</td>
-                            </tr>
-                        </table>
+                <div id="choiceTicketNumber">
+                    <div class="row" id="selectType">
+                        <div class="col-md-offset-2 col-md-2">
+                            {{ form_label(form.ticketNumberNormal, ('Tarif Normal (16€)')) }}
+                            {{ form_widget(form.ticketNumberNormal, {'attr' : {'class':'ticketNumberNormal'}}) }}
+                        </div>
+                        <div class="col-md-2">
+                            {{ form_label(form.ticketNumberReduce, ('Tarif Réduit (10€)')) }}
+                            {{ form_widget(form.ticketNumberReduce, {'attr' : {'class':'ticketNumberReduce'}}) }}
+                        </div>
+                        <div class="col-md-2">
+                            {{ form_label(form.ticketNumberChild, ('Tarif Enfant (8€)')) }}
+                            {{ form_widget(form.ticketNumberChild, {'attr' : {'class':'ticketNumberChild'}}) }}
+                        </div>
+                        <div class="col-md-2">
+                            {{ form_label(form.ticketNumberSenior, ('Tarif Senior (12€)')) }}
+                            {{ form_widget(form.ticketNumberSenior, {'attr' : {'class':'ticketNumberSenior'}}) }}
+                        </div>
                     </div>
                 </div>
                 <div class="row">
