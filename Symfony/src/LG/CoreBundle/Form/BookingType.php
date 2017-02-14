@@ -15,14 +15,27 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 class BookingType extends AbstractType
 {
 
-    private function getDisabledDate() {
-        // todo cast date string into array
-        // todo split each element into string
-        // todo increment item and push it to the array
-        // todo cast the array into string
-        // todo return the string date formated
-        return '01-01-2017,17-04-2017,01-05-2017,08-05-2017,25-05-2017,05-06-2017,14-07-2017,15-08-2017,01-11-2017,11-11-2017,25-12-2017';
+    /**
+     * @return string
+     * The function recovers all days off for the current year and the next.
+     * Then, the function assemble these dates in a string.
+     * The string is used to disable dates in build form function.
+     */
+    private function getDisabledDate()
+    {
+        $disabledDateCurrentYear = '';
+        $disabledDateNextYear = '';
+        $currentYear = date('Y');
+        $nextYear = date('Y')+1;
+        $daysOff = ['01-01-', '17-04-', '01-05-', '08-05-', '25-05-', '05-06-', '14-07-', '15-08-', '01-11-', '11-11-', '25-12-'];
+        foreach ($daysOff as $dayOff){
+            $disabledDateCurrentYear = $disabledDateCurrentYear.$dayOff.$currentYear.', ';
+            $disabledDateNextYear = $disabledDateNextYear.$dayOff.$nextYear.', ';
+        }
+        $disabledDate = $disabledDateCurrentYear.$disabledDateNextYear;
+        return $disabledDate;
     }
+
     /**
      * {@inheritdoc}
      */
