@@ -39,6 +39,13 @@ class Booking
     private $dateAchat;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="code_reservation", type="string")
+     */
+    private $codeReservation;
+
+    /**
      * @var bool
      *
      * @ORM\Column(name="is_daily", type="boolean")
@@ -60,6 +67,12 @@ class Booking
      * @var int
      *
      * @ORM\Column(name="ticket_number_normal", type="integer")
+     * @Assert\Range(
+     *     min=0,
+     *     max=20,
+     *     minMessage="Vous ne pouvez pas sélectionner un nombre négatif",
+     *     maxMessage="Vous ne pouvez pas commander plus de 20 billets par tarif. Contactez le Musée pour organiser une visite de groupe."
+     * )
      */
     private $ticketNumberNormal = 0;
 
@@ -67,6 +80,12 @@ class Booking
      * @var int
      *
      * @ORM\Column(name="ticket_number_reduce", type="integer")
+     * @Assert\Range(
+     *     min=0,
+     *     max=20,
+     *     minMessage="Vous ne pouvez pas sélectionner un nombre négatif",
+     *     maxMessage="Vous ne pouvez pas commander plus de 20 billets par tarif. Contactez le Musée pour organiser une visite de groupe."
+     * )
      */
     private $ticketNumberReduce = 0;
 
@@ -74,13 +93,25 @@ class Booking
      * @var int
      *
      * @ORM\Column(name="ticket_number_child", type="integer")
+     * @Assert\Range(
+     *     min=0,
+     *     max=20,
+     *     minMessage="Vous ne pouvez pas sélectionner un nombre négatif",
+     *     maxMessage="Vous ne pouvez pas commander plus de 20 billets par tarif. Contactez le Musée pour organiser une visite de groupe."
+     * )
      */
-    private $ticketNumberchild = 0;
+    private $ticketNumberChild = 0;
 
     /**
      * @var int
      *
      * @ORM\Column(name="ticket_number_senior", type="integer")
+     * @Assert\Range(
+     *     min=0,
+     *     max=20,
+     *     minMessage="Vous ne pouvez pas sélectionner un nombre négatif",
+     *     maxMessage="Vous ne pouvez pas commander plus de 20 billets par tarif. Contactez le Musée pour organiser une visite de groupe."
+     * )
      */
     private $ticketNumberSenior = 0;
 
@@ -98,7 +129,6 @@ class Booking
     {
         $this->dateAchat = new \DateTime();
         $this->dateReservation = new \DateTime();
-//        $this->clients = new ArrayCollection();
     }
     
 
@@ -313,5 +343,53 @@ class Booking
     public function getEmail()
     {
         return $this->email;
+    }
+
+    /**
+     * Set ticketNumberChild
+     *
+     * @param integer $ticketNumberChild
+     *
+     * @return Booking
+     */
+    public function setTicketNumberChild($ticketNumberChild)
+    {
+        $this->ticketNumberChild = $ticketNumberChild;
+
+        return $this;
+    }
+
+    /**
+     * Get ticketNumberChild
+     *
+     * @return integer
+     */
+    public function getTicketNumberChild()
+    {
+        return $this->ticketNumberChild;
+    }
+
+    /**
+     * Set ticketNumberSenior
+     *
+     * @param integer $ticketNumberSenior
+     *
+     * @return Booking
+     */
+    public function setTicketNumberSenior($ticketNumberSenior)
+    {
+        $this->ticketNumberSenior = $ticketNumberSenior;
+
+        return $this;
+    }
+
+    /**
+     * Get ticketNumberSenior
+     *
+     * @return integer
+     */
+    public function getTicketNumberSenior()
+    {
+        return $this->ticketNumberSenior;
     }
 }

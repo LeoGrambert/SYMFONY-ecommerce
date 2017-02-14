@@ -29,7 +29,8 @@ Funnel
     </div>
     <!-- //end of Funnel -->
     <div class="container marginBody" id="confirmationPage">
-        Ici se trouvera la page de confirmation/remerciements<br/><hr>
+        Ici se trouvera la page de confirmation/remerciements<br/>
+        Aperçu du mail qui sera envoyé au client après la commande : <a href="{{ path('booking.mailConfirmation', {"id" : booking.id}) }}">Cliquez ici</a><hr>
         <a href="{{ path('home.index') }}"><button class="btn btn-primary">Retour à l'accueil</button></a>
     </div>
 

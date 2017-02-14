@@ -142,4 +142,20 @@ class BookingController extends Controller
     {
         return $this->get('templating')->renderResponse('LGCoreBundle:Booking:booking_form_step_four.html.twig', ["booking" => $booking]);
     }
+
+    /**
+     * @Route("/mailConfirmation/{id}", name="booking.mailConfirmation", methods={"POST", "GET"}, requirements={"id" : "\d+"})
+     * @return Response
+     * @ParamConverter("booking", options={"id" = "id"})
+     * @return Response
+     */
+    public function bookingMailConfirmation (Booking $booking)
+    {
+        $dateReservation = $booking->getDateReservation();
+        $dateReservationToString = $dateReservation->format("d-m-y");
+        $isDaily = $booking->getIsDaily();
+        $chain = $booking->getCodeReservation();
+        
+        return $this->get('templating')->renderResponse('LGCoreBundle:MailConfirmation:template.html.twig', ["booking" => $booking, "dateReservationToString" => $dateReservationToString, "isDaily" => $isDaily, "chain" => $chain]);
+    }
 }

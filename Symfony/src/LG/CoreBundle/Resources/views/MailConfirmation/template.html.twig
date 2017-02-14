@@ -1,0 +1,62 @@
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% stylesheets
+        'bundles/lgcore/css/style_templateMailConfirmation.css' filter='cssrewrite' %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
+        {% stylesheets
+        'bundles/lgcore/css/bootstrap.min.css' filter='cssrewrite' %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
+        <title>Commande validée</title>
+    </head>
+
+    <body>
+
+    <div class="container">
+
+        <div id="side" class="col-md-2">
+            <div id="logo">
+                <img src="{{ asset('bundles/lgcore/img/logo.png') }}" alt="logo"/>
+                <p>Musée du Louvre</p>
+            </div>
+            <hr>
+            <p>Ce mail contient vos billets d'entrée.<br/>Conservez le, il vous sera demandé à l'entrée du Musée</p>
+            <p>Vous pouvez également télécharger et imprimer vos billets.</p>
+            <hr>
+            <a href="https://www.google.fr/maps/place/Mus%C3%A9e+du+Louvre/@48.8606111,2.3354553,17z/data=!3m1!4b1!4m5!3m4!1s0x47e671d877937b0f:0xb975fcfa192f84d4!8m2!3d48.8606111!4d2.337644" target="_blank">Comment venir au Musée ?</a>
+        </div>
+
+        <div class="col-md-offset-3" id="main">
+            <h1>Confirmation d'achat. Merci pour votre commande et bonne visite !</h1>
+            <div id="infoReservation" class="col-md-offset-1">
+                <p>Date de réservation : {{ dateReservationToString }}</p>
+                <p>Billet(s) : {% if isDaily == 1 %}Journée{% else %}Demi-journée{% endif %}</p>
+                <p>Code de réservation : {{ chain }}</p>
+            </div>
+            <div class="row clientsInfos">
+                <div class="col-md-offset-1 col-md-4">
+                    <h1>Nom du client</h1>
+                    <div>Type de tarif</div>
+                    <img src="{{ asset('bundles/lgcore/img/qr.png') }}" alt="qr_code" id="qr"/>
+                </div>
+                <div class="col-md-offset-2 col-md-4">
+                    <h1>Nom du client</h1>
+                    <div>Type de tarif</div>
+                    <img src="{{ asset('bundles/lgcore/img/qr.png') }}" alt="qr_code" id="qr"/>
+                </div>
+            </div>
+            <div class="col-md-offset-1" id="pdfTickets">
+                Pour éditer vos billets au format PDF, <a href="">cliquez ici</a>.
+            </div>
+        </div>
+
+    </div>
+
+    </body>
+
+</html>

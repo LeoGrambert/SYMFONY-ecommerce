@@ -39,6 +39,13 @@ class Booking
     private $dateAchat;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="code_reservation", type="string")
+     */
+    private $codeReservation;
+
+    /**
      * @var bool
      *
      * @ORM\Column(name="is_daily", type="boolean")
@@ -120,8 +127,20 @@ class Booking
 
     public function __construct()
     {
+        function random($size){
+            $string = "";
+            $chainLetter = "AZERTYUIOPQSDFGHJKLMWXCVBN";
+            $chainNumber = "123456789";
+            srand((double)microtime()*1000000);
+            for ($i=0; $i<$size; $i++){
+                $string .= $chainLetter[rand()%strlen($chainLetter)] . $chainNumber[rand()%strlen($chainNumber)];
+            }
+            return $string;
+        }
+
         $this->dateAchat = new \DateTime();
         $this->dateReservation = new \DateTime();
+        $this->codeReservation = random(5);
     }
     
 
@@ -384,5 +403,29 @@ class Booking
     public function getTicketNumberSenior()
     {
         return $this->ticketNumberSenior;
+    }
+
+    /**
+     * Set codeReservation
+     *
+     * @param string $codeReservation
+     *
+     * @return Booking
+     */
+    public function setCodeReservation($codeReservation)
+    {
+        $this->codeReservation = $codeReservation;
+
+        return $this;
+    }
+
+    /**
+     * Get codeReservation
+     *
+     * @return string
+     */
+    public function getCodeReservation()
+    {
+        return $this->codeReservation;
     }
 }

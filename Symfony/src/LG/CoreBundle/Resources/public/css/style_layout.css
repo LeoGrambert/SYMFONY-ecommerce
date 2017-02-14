@@ -24,6 +24,7 @@ a, a:hover{
 }
 .marginBody{
     margin-top: 5%;
+    min-height: calc(100vh - 413px);
 }
 .navbar{
     border:0;

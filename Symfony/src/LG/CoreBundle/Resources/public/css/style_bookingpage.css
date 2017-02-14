@@ -25,7 +25,7 @@ hr{
 
 /*Funnel*/
 #funnelStepOne, #funnelstepTwo, #funnelStepThree, #funnelStepFour{
-    margin: 0 0 5% -5%;
+    margin: 0 0 5% -3%;
 }
 #funnelstepTwo #blocFunnelStepTwo {
     background-color: #AA8046;
@@ -257,6 +257,12 @@ hr{
 
 /*Medias queries for booking page*/
 @media screen and (max-width: 500px) {
+    body{
+        padding:3%;
+    }
+    footer{
+        padding: 0;
+    }
     body #logoImg{
         width: 40%;
         margin:15% 0 0 1%;
@@ -402,6 +408,20 @@ hr{
     }
     #funnelBorder{
         margin-bottom: -3%;
+    }
+    #selectType{
+        margin: 3% 0 3% 0;
+        width: 100%;
+        display:flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    #selectType div{
+        margin-bottom: 20px;
+        width:40%;
+    }
+    #selectType label{
+        margin-left:45%;
     }
 }
 @media screen and (max-width: 1200px) {

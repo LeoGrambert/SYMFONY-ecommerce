@@ -9,7 +9,19 @@
         <meta name="author" content="">
         <title>{% block title %}Musée du Louvre{% endblock %}</title>
         {% stylesheets
-        'bundles/lgcore/css/*' filter='cssrewrite' %}
+        'bundles/lgcore/css/bootstrap.min.css' filter='cssrewrite' %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
+        {% stylesheets
+        'bundles/lgcore/css/style_layout.css' filter='cssrewrite' %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
+        {% stylesheets
+        'bundles/lgcore/css/style_bookingpage.css' filter='cssrewrite' %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
+        {% stylesheets
+        'bundles/lgcore/css/style_homepage.css' filter='cssrewrite' %}
         <link rel="stylesheet" href="{{ asset_url }}" />
         {% endstylesheets %}
         {% stylesheets
@@ -77,8 +89,7 @@
     <footer>
         <div class="row">
             <div class="col-lg-12">
-                Musée du Louvre - 2017 - Site Fictif développé par <a href="http://leogrambert.fr">Léo Grambert</a>
-                <span id="formation">Formation Chef de Projet Multimédia, spécialité Développement - <a href="https://openclassrooms.com/projects/developpez-un-back-end-pour-un-client">Développez un back-end pour un client</a></span>
+                Musée du Louvre - 2017 - Site Fictif développé par <a href="http://leogrambert.fr">Léo Grambert</a> - Retour sur la <a href="http://leogrambert.fr/front/projets/louvre">Feuille de route</a>
             </div>
         </div>
     </footer>
