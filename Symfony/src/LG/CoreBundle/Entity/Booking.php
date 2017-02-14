@@ -26,7 +26,9 @@ class Booking
     /**
      * @var \DateTime
      * @ORM\Column(name="date_reservation", type="date")
-     * @Assert\NotBlank()
+     * @Assert\NotBlank(
+     *     message="Veuillez choisir une date de réservation.",
+     * )
      * @Assert\Date()
      */
     private $dateReservation;
@@ -139,7 +141,6 @@ class Booking
         }
 
         $this->dateAchat = new \DateTime();
-        $this->dateReservation = new \DateTime();
         $this->codeReservation = random(5);
     }
     
