@@ -33,7 +33,6 @@ class BookingType extends AbstractType
             $disabledDateNextYear = $disabledDateNextYear.$dayOff.$nextYear.', ';
         }
         $disabledDate = $disabledDateCurrentYear.'25-12-'.$currentYear.', '.$disabledDateNextYear.'25-12-'.$nextYear;
-        dump($disabledDate);
         return $disabledDate;
     }
 
