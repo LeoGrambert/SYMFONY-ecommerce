@@ -27,12 +27,13 @@ class BookingType extends AbstractType
         $disabledDateNextYear = '';
         $currentYear = date('Y');
         $nextYear = date('Y')+1;
-        $daysOff = ['01-01-', '17-04-', '01-05-', '08-05-', '25-05-', '05-06-', '14-07-', '15-08-', '01-11-', '11-11-', '25-12-'];
+        $daysOff = ['01-01-', '17-04-', '01-05-', '08-05-', '25-05-', '05-06-', '14-07-', '15-08-', '01-11-', '11-11-'];
         foreach ($daysOff as $dayOff){
             $disabledDateCurrentYear = $disabledDateCurrentYear.$dayOff.$currentYear.', ';
             $disabledDateNextYear = $disabledDateNextYear.$dayOff.$nextYear.', ';
         }
-        $disabledDate = $disabledDateCurrentYear.$disabledDateNextYear;
+        $disabledDate = $disabledDateCurrentYear.'25-12-'.$currentYear.', '.$disabledDateNextYear.'25-12-'.$nextYear;
+        dump($disabledDate);
         return $disabledDate;
     }
 

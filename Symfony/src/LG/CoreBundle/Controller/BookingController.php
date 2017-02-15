@@ -51,7 +51,7 @@ class BookingController extends Controller
                 return $this->redirectToRoute("booking.create.stepTwo", ['id' => $booking->getId()]);
             }
         }
-
+        
         return $this->get('templating')->renderResponse('@LGCore/Booking/booking_form_step_one.html.twig', ['form' => $form->createView()]);
 
     }
@@ -86,31 +86,20 @@ class BookingController extends Controller
     public function createClientBooking (Request $request, Booking $booking)
     {
         $clientsDenormalized = [];
-        // This code below is a boostrap to guide you through persistance
 
         // step one denormalize
         $clients = json_decode($request->get('data'), true);
         foreach ($clients as $client) {
             $clientsDenormalized[] = $this->get('serializer')->denormalize($client, Client::class);
-            dump($clientsDenormalized);
         }
 
         $em = $this->getDoctrine()->getManager();
 
         foreach ($clientsDenormalized as $clientDenormalized){
-            dump($clientDenormalized);
             // step two persist using booking
             $clientDenormalized->setBooking($booking);
             $em->persist($clientDenormalized);
             $em->flush();
-
-            // step three normalize
-            //$clientNormalized = $this->get("serializer")->normalize($clientDenormalized);
-
-            // last step return json response
-            //if($clientNormalized) {
-            //    return new JsonResponse($clientNormalized, 200);
-             //}
         }
         return new Response;
     }
@@ -140,7 +129,9 @@ class BookingController extends Controller
      */
     public function bookingCreateStepFour (Booking $booking)
     {
-        return $this->get('templating')->renderResponse('LGCoreBundle:Booking:booking_form_step_four.html.twig', ["booking" => $booking]);
+        $codeReservation = $booking->getCodeReservation();
+        $emailReservation = $booking->getEmail();
+        return $this->get('templating')->renderResponse('LGCoreBundle:Booking:booking_form_step_four.html.twig', ["booking" => $booking, "codeReservation" =>$codeReservation, "emailReservation" => $emailReservation]);
     }
 
     /**

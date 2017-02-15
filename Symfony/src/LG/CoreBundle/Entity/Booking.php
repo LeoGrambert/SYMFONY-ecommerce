@@ -129,21 +129,36 @@ class Booking
 
     public function __construct()
     {
-        function random($size){
-            $string = "";
-            $chainLetter = "AZERTYUIOPQSDFGHJKLMWXCVBN";
-            $chainNumber = "123456789";
-            srand((double)microtime()*1000000);
-            for ($i=0; $i<$size; $i++){
-                $string .= $chainLetter[rand()%strlen($chainLetter)] . $chainNumber[rand()%strlen($chainNumber)];
-            }
-            return $string;
-        }
-
         $this->dateAchat = new \DateTime();
-        $this->codeReservation = random(5);
+        $this->codeReservation = $this->generateCodeReservation();
     }
-    
+
+    /**
+     * @return string
+     * This function generate a random string with numbers and letters
+     */
+    public function random($size)
+    {
+        $string = "";
+        $chainLetter = "AZERTYUIOPQSDFGHJKLMWXCVBN";
+        $chainNumber = "123456789";
+        srand((double)microtime() * 1000000);
+        for ($i = 0; $i < $size; $i++) {
+            $string .= $chainLetter[rand() % strlen($chainLetter)] . $chainNumber[rand() % strlen($chainNumber)];
+        }
+        return $string;
+    }
+
+    /**
+     * @return string
+     * This function generate a code reservation using random method and dateAchat attribute.
+     * Return is called in constructor method.
+     */
+    public function generateCodeReservation(){
+        $dateAchat = $this->getDateAchat()->format('YmdHis');
+        $codeReservation = $this->random(3).$dateAchat;
+        return $codeReservation;
+    }
 
     /**
      * Get id
