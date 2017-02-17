@@ -10,4 +10,16 @@ namespace LG\CoreBundle\Repository;
  */
 class BookingRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findByDateReservation()
+    {
+        $currentDate = new \DateTime();
+        
+        $qd = $this->createQueryBuilder('b');
+        
+        $qd
+            ->select('b')
+            ->where('b.dateReservation >= :currentDate')->setParameter('currentDate', $currentDate);
+        
+        return $qd->getQuery()->getResult();
+    }
 }

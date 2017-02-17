@@ -7,3 +7,9 @@ services:
     class: LG\CoreBundle\Normalizer\ClientNormalizer
     tags:
       - { name: serializer.normalizer }
+
+  lg_core_bundle.validator.limittickets:
+      class: LG\CoreBundle\Validator\LimitTicketsValidator
+      arguments: ["@doctrine.orm.entity_manager"]
+      tags:
+          - { name: validator.constraint_validator, alias: lg_core_bundle_limittickets }

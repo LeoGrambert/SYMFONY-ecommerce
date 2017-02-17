@@ -30,7 +30,9 @@
         "incenteev/composer-parameter-handler": "^2.0",
         "symfony/assetic-bundle": "^2.8",
         "symfony/serializer": "^3.2",
-        "symfony/property-access": "^3.2"
+        "symfony/property-access": "^3.2",
+        "curl/curl": "^1.6",
+        "stripe/stripe-php": "^4.4"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",

@@ -14,14 +14,13 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class BookingType extends AbstractType
 {
-
     /**
      * @return string
      * The function recovers all days off for the current year and the next.
      * Then, the function assemble these dates in a string.
      * The string is used to disable dates in build form function.
      */
-    private function getDisabledDate()
+    private function getDisabledDateForDaysOff()
     {
         $disabledDateCurrentYear = '';
         $disabledDateNextYear = '';
@@ -53,7 +52,7 @@ class BookingType extends AbstractType
                     'data-date-language' => 'fr',
                     'data-date-start-date' => "0d",
                     'data-date-end-date' => '+364d',
-                    'data-date-dates-disabled' => $this->getDisabledDate()
+                    'data-date-dates-disabled' => $this->getDisabledDateForDaysOff()
                 ]
             ))
             ->add('isDaily', ChoiceType::class, [
