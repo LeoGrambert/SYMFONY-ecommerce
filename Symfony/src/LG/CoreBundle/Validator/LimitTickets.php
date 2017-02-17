@@ -16,7 +16,7 @@ use Symfony\Component\Validator\Constraint;
  */
 class LimitTickets extends Constraint
 {
-    public $message = "Vous ne pouvez pas commander de billets pour cette date. Plus de 1000 billets ont déjà été vendus.";
+    public $message = "Vous ne pouvez pas commander de billets pour cette date. Plus de 1000 billets ont déjà été vendus (capacité d'accueil maximale atteinte).";
     
     public function validatedBy()
     {
