@@ -30,10 +30,36 @@ Funnel
     </div>
     <!-- //end of Funnel -->
 
-<div class="container marginBody" id="cgv">
+<div id="wrapper" class="container marginBody">
 
-<br/><hr>
-    <a href="{{ path('booking.create.stepFour', {"id" : booking.id}) }}"><button class="btn btn-primary">Finaliser la commande</button></a>
-</div>
+            <div id="welcome" class="row">
+                <div class="col-md-offset-4 col-md-4" id="containerPriceStepThree">
+                    <p>{{ numberTickets }} billet(s) dans le panier - Date de visite : {{ dateReservationToString }}</p>
+                    <div>Prix total :
+                        <div class="price">{{ price }} €</div>
+                    </div>
+                    <p>Vous êtes sur le point de payer votre commande.</p>
+                </div>
+            </div>
 
+            <div id="status">
+                <form action="{{ path('order.checkout', {"id" : booking.id}) }}" method="POST">
+                    <input
+                        type="submit"
+                        class="btn btn-primary"
+                        value="Paiement en CB"
+                     />
+                    <script
+                            src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                            data-key="pk_test_TfkNsQ8b0ms55dJSR1FCIzMF"
+                            data-amount="{{ price }}00"
+                            data-name="Musée du Louvre"
+                            data-locale="auto"
+                            data-currency="eur"
+                            data-email="{{ email }}">
+                    </script>
+                </form>
+            </div>
+
+    </div>
 {% endblock %}

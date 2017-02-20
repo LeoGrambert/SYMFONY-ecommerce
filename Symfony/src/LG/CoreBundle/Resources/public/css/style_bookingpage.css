@@ -114,6 +114,9 @@ hr{
 }
 #infoTicketsStepTwo{
     text-align: center;
+}
+#infoTicketsStepTwo p{
+    text-align: center;
     font-weight: bold;
 }
 #choiceTicketNumber input{
@@ -195,7 +198,7 @@ hr{
     margin-bottom: 5%;
     border-radius: 8%;
  }
-#priceContainer, #containerPriceStepTwo{
+#priceContainer, #containerPriceStepTwo, #containerPriceStepThree{
     background-color: rgba(34,34,34,0.8);
     color: white;
     padding: 10px;
@@ -204,8 +207,14 @@ hr{
     border-radius: 2%;
     box-shadow: 1px 1px 4px black;
 }
-#containerPriceStepTwo{
+#containerPriceStepTwo, #containerPriceStepThree{
     text-align: center;
+}
+#status{
+    margin-left:44%;
+}
+#status button{
+    display:none;
 }
 #textRecapStepTwo{
     text-align: center;
@@ -252,7 +261,7 @@ hr{
     background-color: white;
 }
 .booking-client__validate{
-    margin-left: 19%;
+    margin-right:50%;
 }
 
 /*Medias queries for booking page*/

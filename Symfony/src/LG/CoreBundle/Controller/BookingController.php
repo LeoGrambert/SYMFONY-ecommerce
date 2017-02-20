@@ -73,7 +73,15 @@ class BookingController extends Controller
         $dateReservationToString = $dateReservation->format('d-m-Y');
         $price = ($numberTicketsChild*8) + ($numberTicketsNormal*16) + ($numberTicketsReduce*10) + ($numberTicketsSenior*12);
         
-        return $this->get('templating')->renderResponse('LGCoreBundle:Booking:booking_form_step_two.html.twig', ["booking" => $booking, "numberTickets" => $numberTickets, "dateReservationToString" => $dateReservationToString, "price" => $price]);
+        return $this->get('templating')->renderResponse('LGCoreBundle:Booking:booking_form_step_two.html.twig', [
+            "booking" => $booking, 
+            'numberTicketsNormal' => $numberTicketsNormal,
+            'numberTicketsReduce' => $numberTicketsReduce,
+            'numberTicketsChild' => $numberTicketsChild,
+            'numberTicketsSenior' => $numberTicketsSenior,
+            "numberTickets" => $numberTickets, 
+            "dateReservationToString" => $dateReservationToString, 
+            "price" => $price]);
     }
 
     /**
@@ -95,12 +103,14 @@ class BookingController extends Controller
 
         $em = $this->getDoctrine()->getManager();
 
-        foreach ($clientsDenormalized as $clientDenormalized){
+
+            foreach ($clientsDenormalized as $clientDenormalized){
             // step two persist using booking
-            $clientDenormalized->setBooking($booking);
-            $em->persist($clientDenormalized);
-            $em->flush();
-        }
+                dump($clientDenormalized);
+                $clientDenormalized->setBooking($booking);
+                $em->persist($clientDenormalized);
+                $em->flush();
+            }
         return new Response;
     }
 
@@ -108,7 +118,6 @@ class BookingController extends Controller
      * @Route("/create/3/{id}", name="booking.create.stepThree", methods={"POST", "GET"}, requirements={"id" : "\d+"})
      * @return Response
      * @ParamConverter("booking", options={"id" = "id"})
-     * @return Response
      */
     public function bookingCreateStepThree (Booking $booking)
     {
@@ -117,8 +126,52 @@ class BookingController extends Controller
         $numberTicketsChild = $booking->getTicketNumberChild();
         $numberTicketsSenior = $booking->getTicketNumberSenior();
         $numberTickets = $numberTicketsChild + $numberTicketsNormal + $numberTicketsReduce + $numberTicketsSenior;
+        $dateReservation = $booking->getDateReservation();
+        $dateReservationToString = $dateReservation->format('d-m-Y');
+        $price = ($numberTicketsChild*8) + ($numberTicketsNormal*16) + ($numberTicketsReduce*10) + ($numberTicketsSenior*12);
+        $email = $booking->getEmail();
 
-        return $this->get('templating')->renderResponse('LGCoreBundle:Booking:booking_form_step_three.html.twig', ["booking" => $booking, "numberTickets" => $numberTickets]);
+        return $this->get('templating')->renderResponse('LGCoreBundle:Booking:booking_form_step_three.html.twig', [
+            "booking" => $booking,
+            "numberTickets" => $numberTickets,
+            "dateReservationToString" => $dateReservationToString,
+            "price" => $price,
+            "email" => $email
+        ]);
+    }
+
+    /**
+     * @Route("/order/{id}", name="order.checkout", methods="POST", requirements={"id" : "\d+"})
+     * @ParamConverter("booking", options={"id" = "id"})
+     * @param Booking $booking
+     * @return Response
+     */
+    public function checkoutAction(Booking $booking)
+    {
+        $numberTicketsNormal = $booking->getTicketNumberNormal();
+        $numberTicketsReduce = $booking->getTicketNumberReduce();
+        $numberTicketsChild = $booking->getTicketNumberChild();
+        $numberTicketsSenior = $booking->getTicketNumberSenior();
+        $price = (($numberTicketsChild*8) + ($numberTicketsNormal*16) + ($numberTicketsReduce*10) + ($numberTicketsSenior*12))*100;
+
+        \Stripe\Stripe::setApiKey("sk_test_BmOFQTlYFGqZ6itjVnGiBtrK");
+
+        // Get the credit card details submitted by the form
+        $token = $_POST['stripeToken'];
+
+        // Create a charge: this will charge the user's card
+        try {
+            $charge = \Stripe\Charge::create(array(
+                "amount" => $price, // Amount in cents
+                "currency" => "eur",
+                "source" => $token,
+                "description" => "Paiement Stripe - Musée du Louvre"
+            ));
+            return $this->redirectToRoute("booking.create.stepFour", ['id' => $booking->getId()]);
+        } catch(\Stripe\Error\Card $e) {
+            return $this->redirectToRoute("booking.create.stepThree", ['id' => $booking->getId()]);
+            // The card has been declined
+        }
     }
 
     /**
@@ -131,7 +184,11 @@ class BookingController extends Controller
     {
         $codeReservation = $booking->getCodeReservation();
         $emailReservation = $booking->getEmail();
-        return $this->get('templating')->renderResponse('LGCoreBundle:Booking:booking_form_step_four.html.twig', ["booking" => $booking, "codeReservation" =>$codeReservation, "emailReservation" => $emailReservation]);
+        return $this->get('templating')->renderResponse('LGCoreBundle:Booking:booking_form_step_four.html.twig', [
+            "booking" => $booking, 
+            "codeReservation" =>$codeReservation, 
+            "emailReservation" => $emailReservation
+        ]);
     }
 
     /**

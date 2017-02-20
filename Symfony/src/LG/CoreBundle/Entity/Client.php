@@ -28,7 +28,7 @@ class Client
     /**
      * @var string
      *
-     * @ORM\Column(name="last_name", type="string", length=255)
+     * @ORM\Column(name="last_name", type="string", length=255, nullable=false)
      * @Assert\NotBlank()
      * @Assert\Length(min=3)
      */
@@ -37,7 +37,7 @@ class Client
     /**
      * @var string
      *
-     * @ORM\Column(name="first_name", type="string", length=255)
+     * @ORM\Column(name="first_name", type="string", length=255, nullable=false)
      * @Assert\NotBlank()
      * @Assert\Length(min=3)
      */
@@ -46,7 +46,7 @@ class Client
     /**
      * @var string
      *
-     * @ORM\Column(name="country", type="string", length=255)
+     * @ORM\Column(name="country", type="string", length=255, nullable=false)
      * @Assert\NotBlank()
      * @Assert\Length(min=3)
      */

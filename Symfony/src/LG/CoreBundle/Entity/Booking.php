@@ -120,11 +120,6 @@ class Booking
     private $ticketNumberSenior = 0;
 
     /**
-     * @ORM\OneToOne(targetEntity="LG\CoreBundle\Entity\Payment")
-     */
-    private $payment;
-
-    /**
      * @ORM\OneToMany(targetEntity="LG\CoreBundle\Entity\Client", mappedBy="booking", cascade={"persist"})
      */
     private $clients;
@@ -290,31 +285,6 @@ class Booking
     public function getTicketNumberReduce()
     {
         return $this->ticketNumberReduce;
-    }
-
-
-    /**
-     * Set payment
-     *
-     * @param \LG\CoreBundle\Entity\Payment $payment
-     *
-     * @return Booking
-     */
-    public function setPayment(\LG\CoreBundle\Entity\Payment $payment = null)
-    {
-        $this->payment = $payment;
-
-        return $this;
-    }
-
-    /**
-     * Get payment
-     *
-     * @return \LG\CoreBundle\Entity\Payment
-     */
-    public function getPayment()
-    {
-        return $this->payment;
     }
 
     /**

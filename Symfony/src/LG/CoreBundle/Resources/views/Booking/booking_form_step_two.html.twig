@@ -32,8 +32,13 @@
 
     <!-- Step two -->
     <div class="container marginBody">
-        <div class="row">
-            <p id="infoTicketsStepTwo">Pour l'édition de vos billets, veuillez remplir les formulaires ci-dessous (1 par visiteur).<br/> Un justificatif pourra vous être demandé à l'entrée du Musée.</p>
+        <div class="row" id="infoTicketsStepTwo">
+            <p>
+                Pour l'édition de vos billets, veuillez remplir les formulaires ci-dessous<br/> Un justificatif pourra vous être demandé à l'entrée du Musée.<p>
+                    - {{ numberTicketsNormal }} billet(s) Tarif Normal<br/>
+                    - {{ numberTicketsReduce }} billet(s) Tarif Réduit<br/>
+                    - {{ numberTicketsChild }} billet(s) Tarif Enfant<br/>
+                    - {{ numberTicketsSenior }} billet(s) Tarif Senior
             <hr>
             <div id="booking-form-container-step-two" class="col-sm-12" data-create-url="{{ path('booking.client.create', {"id" : booking.id}) }}">
             </div>
@@ -52,7 +57,7 @@
                     <p>Confirmez-vous votre commande ?</p>
                 </div>
             </div>
-            <div class="col-md-offset-5">
+            <div id="">
                 <a href="{{ path('booking.create.stepThree', {"id" : booking.id}) }}"><button disabled class="btn btn-primary" id="buttonToStepThree">Confirmer la commande</button></a>
             </div>
         </div>
