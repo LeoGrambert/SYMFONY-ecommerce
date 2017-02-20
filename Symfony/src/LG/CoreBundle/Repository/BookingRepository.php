@@ -1,6 +1,7 @@
 <?php
 
 namespace LG\CoreBundle\Repository;
+use Symfony\Component\Validator\Constraints\Date;
 
 /**
  * BookingRepository
@@ -12,13 +13,16 @@ class BookingRepository extends \Doctrine\ORM\EntityRepository
 {
     public function findByDateReservation()
     {
-        $currentDate = new \DateTime();
+        $dayYesterday = date('d') - 1;
+        $month = date('m');
+        $year = date('Y');
+        $currentDate = $year.$month.$dayYesterday;
         
         $qd = $this->createQueryBuilder('b');
         
         $qd
             ->select('b')
-            ->where('b.dateReservation >= :currentDate')->setParameter('currentDate', $currentDate);
+            ->where('b.dateReservation > :currentDate')->setParameter('currentDate', $currentDate);
         
         return $qd->getQuery()->getResult();
     }

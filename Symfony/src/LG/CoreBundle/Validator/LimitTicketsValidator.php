@@ -53,7 +53,6 @@ class LimitTicketsValidator extends ConstraintValidator
                 $datesReservation[] = $dateReservation ;
             }
         }
-        
         $dates = array_count_values($datesReservation);
         
         foreach ($dates as $date => $number) {
