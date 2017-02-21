@@ -151,7 +151,12 @@ class BookingController extends Controller
         //Using Stripe as a service
         $stripe = $this->get('lg_core_bundle.stripe');
 
+        $em = $this->getDoctrine()->getManager();
+
         if ($stripe->checkout($booking)){
+            $booking->setPaymentIsSuccess(true);
+            $em->persist($booking);
+            $em->flush();
             return $this->redirectToRoute("booking.create.stepFour", ['id' => $booking->getId()]);
         } else {
             return $this->redirectToRoute("booking.create.stepThree", ['id' => $booking->getId()]);

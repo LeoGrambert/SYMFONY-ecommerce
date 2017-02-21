@@ -124,6 +124,13 @@ class Booking
      */
     private $clients;
 
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="payment_is_success", type="boolean")
+     */
+    private $paymentIsSuccess = false;
+
     public function __construct()
     {
         $this->dateAchat = new \DateTime();
@@ -415,5 +422,22 @@ class Booking
     public function getCodeReservation()
     {
         return $this->codeReservation;
+    }
+
+
+    /**
+     * @return boolean
+     */
+    public function isPaymentIsSuccess()
+    {
+        return $this->paymentIsSuccess;
+    }
+
+    /**
+     * @param boolean $paymentIsSuccess
+     */
+    public function setPaymentIsSuccess($paymentIsSuccess)
+    {
+        $this->paymentIsSuccess = $paymentIsSuccess;
     }
 }
