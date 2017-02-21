@@ -157,7 +157,18 @@ class BookingController extends Controller
             $booking->setPaymentIsSuccess(true);
             $em->persist($booking);
             $em->flush();
+            $email = $booking->getEmail();
+            $message = \Swift_Message::newInstance()
+                ->setSubject('Confirmation de votre commande')
+                ->setFrom(['devTestLG@gmail.com' => 'Musée du Louvre'])
+                ->setTo($email)
+                ->setCharset('utf-8')
+                ->setContentType('text/html')
+                ->setBody($this->bookingMailConfirmation($booking));
+            $this->get('mailer')->send($message);
+
             return $this->redirectToRoute("booking.create.stepFour", ['id' => $booking->getId()]);
+
         } else {
             return $this->redirectToRoute("booking.create.stepThree", ['id' => $booking->getId()]);
         }
@@ -193,6 +204,11 @@ class BookingController extends Controller
         $isDaily = $booking->getIsDaily();
         $chain = $booking->getCodeReservation();
         
-        return $this->get('templating')->renderResponse('LGCoreBundle:MailConfirmation:template.html.twig', ["booking" => $booking, "dateReservationToString" => $dateReservationToString, "isDaily" => $isDaily, "chain" => $chain]);
+        return $this->get('templating')->renderResponse('LGCoreBundle:MailConfirmation:template.html.twig', [
+            "booking" => $booking, 
+            "dateReservationToString" => $dateReservationToString, 
+            "isDaily" => $isDaily, 
+            "chain" => $chain
+        ]);
     }
 }
