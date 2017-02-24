@@ -228,6 +228,9 @@ hr{
 #confirmationPage{
     text-align: center;
 }
+#ticketsDetailStepTwo{
+    font-size: 0.9em;
+}
 .price{
     font-size: 1.3em;
     margin: 1%;

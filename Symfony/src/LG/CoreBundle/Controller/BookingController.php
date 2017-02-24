@@ -74,13 +74,13 @@ class BookingController extends Controller
         $price = ($numberTicketsChild*8) + ($numberTicketsNormal*16) + ($numberTicketsReduce*10) + ($numberTicketsSenior*12);
         
         return $this->get('templating')->renderResponse('LGCoreBundle:Booking:booking_form_step_two.html.twig', [
-            "booking" => $booking, 
+            "booking" => $booking,
             'numberTicketsNormal' => $numberTicketsNormal,
             'numberTicketsReduce' => $numberTicketsReduce,
             'numberTicketsChild' => $numberTicketsChild,
             'numberTicketsSenior' => $numberTicketsSenior,
-            "numberTickets" => $numberTickets, 
-            "dateReservationToString" => $dateReservationToString, 
+            "numberTickets" => $numberTickets,
+            "dateReservationToString" => $dateReservationToString,
             "price" => $price]);
     }
 
@@ -203,12 +203,21 @@ class BookingController extends Controller
         $dateReservationToString = $dateReservation->format("d-m-y");
         $isDaily = $booking->getIsDaily();
         $chain = $booking->getCodeReservation();
+        $em = $this->getDoctrine()->getRepository('LGCoreBundle:Client');
+        $numberTicketsNormal = $booking->getTicketNumberNormal();
+        $numberTicketsReduce = $booking->getTicketNumberReduce();
+        $numberTicketsChild = $booking->getTicketNumberChild();
+        $numberTicketsSenior = $booking->getTicketNumberSenior();
+        $clients = $numberTicketsChild + $numberTicketsNormal + $numberTicketsReduce + $numberTicketsSenior;
+        $lastName = $em->getLastName($booking);
         
         return $this->get('templating')->renderResponse('LGCoreBundle:MailConfirmation:template.html.twig', [
             "booking" => $booking, 
             "dateReservationToString" => $dateReservationToString, 
             "isDaily" => $isDaily, 
-            "chain" => $chain
+            "chain" => $chain,
+            "lastName" => $lastName,
+            "clients" => $clients
         ]);
     }
 }
