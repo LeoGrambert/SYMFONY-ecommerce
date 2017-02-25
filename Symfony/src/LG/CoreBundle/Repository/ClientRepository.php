@@ -10,4 +10,19 @@ namespace LG\CoreBundle\Repository;
  */
 class ClientRepository extends \Doctrine\ORM\EntityRepository
 {
+    /**
+     * We get the name client.
+     * @param $bookingId
+     * @return array
+     */
+    public function getClientsNameById($bookingId){
+        
+        $qd = $this->createQueryBuilder('c');
+        
+        $qd
+            ->select('c.lastName', 'c.firstName')
+            ->where('c.booking = :bookingId')->setParameter('bookingId', $bookingId);
+        
+        return $qd->getQuery()->getResult();
+    }
 }
