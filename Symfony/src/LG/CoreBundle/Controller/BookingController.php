@@ -203,20 +203,17 @@ class BookingController extends Controller
         $dateReservationToString = $dateReservation->format("d-m-y");
         $isDaily = $booking->getIsDaily();
         $chain = $booking->getCodeReservation();
-        $em = $this->getDoctrine()->getRepository('LGCoreBundle:Client');
         $numberTicketsNormal = $booking->getTicketNumberNormal();
         $numberTicketsReduce = $booking->getTicketNumberReduce();
         $numberTicketsChild = $booking->getTicketNumberChild();
         $numberTicketsSenior = $booking->getTicketNumberSenior();
         $clients = $numberTicketsChild + $numberTicketsNormal + $numberTicketsReduce + $numberTicketsSenior;
-        $lastName = $em->getLastName($booking);
-        
+
         return $this->get('templating')->renderResponse('LGCoreBundle:MailConfirmation:template.html.twig', [
             "booking" => $booking, 
             "dateReservationToString" => $dateReservationToString, 
             "isDaily" => $isDaily, 
             "chain" => $chain,
-            "lastName" => $lastName,
             "clients" => $clients
         ]);
     }

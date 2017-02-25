@@ -228,9 +228,6 @@ hr{
 #confirmationPage{
     text-align: center;
 }
-#ticketsDetailStepTwo{
-    font-size: 0.9em;
-}
 .price{
     font-size: 1.3em;
     margin: 1%;
@@ -265,6 +262,9 @@ hr{
 }
 .booking-client__validate{
     margin-right:50%;
+}
+.cursorFunnel{
+    cursor: pointer;
 }
 
 /*Medias queries for booking page*/

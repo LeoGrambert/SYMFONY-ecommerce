@@ -17,36 +17,33 @@
 
     <body>
 
-    <div class="container">
+        <div class="container">
 
-        <div id="side" class="col-md-2">
-            <div id="logo">
-                <img src="{{ asset('bundles/lgcore/img/logo.png') }}" alt="logo"/>
-                <p>Musée du Louvre</p>
+            <div id="side" class="col-md-2">
+                <div id="logo">
+                    <img src="http://leogrambert.fr/front/css/img/louvre_logo.png" alt="logo"/>
+                    <p>Musée du Louvre</p>
+                </div>
+                <hr>
+                <p>Ce mail contient vos billets d'entrée.<br/>Conservez le, il vous sera demandé à l'entrée du Musée</p>
+                <hr>
             </div>
-            <hr>
-            <p>Ce mail contient vos billets d'entrée.<br/>Conservez le, il vous sera demandé à l'entrée du Musée</p>
-            <p>Vous pouvez également télécharger et imprimer vos billets.</p>
-            <hr>
+
+            <div class="col-md-offset-3" id="main">
+                <h1>Confirmation d'achat. Merci pour votre commande et bonne visite !</h1>
+                <div id="infoReservation" class="col-md-offset-1">
+                    <p>Date de réservation : {{ dateReservationToString }}</p>
+                    <p>Billet(s) : {% if isDaily == 1 %}Journée{% else %}Demi-journée{% endif %}</p>
+                    <p>Code de réservation : {{ chain }}</p>
+                </div>
+                <div class="row clientsInfos">
+                    Afficher les informations clients demandées (nom + tarif)
+                </div>
+            </div>
+
             <a href="https://www.google.fr/maps/place/Mus%C3%A9e+du+Louvre/@48.8606111,2.3354553,17z/data=!3m1!4b1!4m5!3m4!1s0x47e671d877937b0f:0xb975fcfa192f84d4!8m2!3d48.8606111!4d2.337644" target="_blank">Comment venir au Musée ?</a>
-        </div>
 
-        <div class="col-md-offset-3" id="main">
-            <h1>Confirmation d'achat. Merci pour votre commande et bonne visite !</h1>
-            <div id="infoReservation" class="col-md-offset-1">
-                <p>Date de réservation : {{ dateReservationToString }}</p>
-                <p>Billet(s) : {% if isDaily == 1 %}Journée{% else %}Demi-journée{% endif %}</p>
-                <p>Code de réservation : {{ chain }}</p>
-            </div>
-            <div class="row clientsInfos">
-                Afficher les informations clients demandées (nom + tarif)
-            </div>
-            <div class="col-md-offset-1" id="pdfTickets">
-                Pour éditer vos billets au format PDF, <a href="">cliquez ici</a>.
-            </div>
         </div>
-
-    </div>
 
     </body>
 
