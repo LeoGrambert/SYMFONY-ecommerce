@@ -329,11 +329,11 @@ hr{
     #booking-form-container-step-two .booking-form-container{
         width: 85%;
     }
+    body #status{
+        margin-left:27%;
+    }
     .marginBody .booking-client__validate{
         margin-left: 36%;
-    }
-    .marginBody #buttonToStepThree{
-        margin-left: 22%;
     }
 }
 @media screen and (max-width: 981px) {
@@ -352,9 +352,6 @@ hr{
     }
     #basketText{
         margin-top: -7%;
-    }
-    #buttonToStepThree{
-        margin-left: 38%;
     }
     #blocFunnelStepFour{
         margin-left:91%;
@@ -386,6 +383,9 @@ hr{
     }
     #booking-form-container-step-two .form-control{
         width:100%;
+    }
+    #status{
+        margin-left:40%;
     }
     .messageErrorClient{
         margin-left: 30%;
