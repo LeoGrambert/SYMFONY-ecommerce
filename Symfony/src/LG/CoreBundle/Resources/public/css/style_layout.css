@@ -19,9 +19,6 @@ a, a:hover{
     color:#AD8A53;
     text-decoration: none;
 }
-#formation{
-    float: right;
-}
 #flag{
     margin-top:15%;
     padding: 5px 5px 5px 5px;
@@ -40,9 +37,4 @@ a, a:hover{
 }
 .navbar{
     border:0;
-}
-@media screen and (min-width: 768px) {
-    footer #formation{
-        float:left;
-    }
 }

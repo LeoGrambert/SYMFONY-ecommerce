@@ -15,6 +15,10 @@ class LimitTicketsValidator extends ConstraintValidator
 {
     private $em;
 
+    /**
+     * LimitTicketsValidator constructor.
+     * @param EntityManagerInterface $em
+     */
     public function __construct(EntityManagerInterface $em)
     {
         $this->em = $em;

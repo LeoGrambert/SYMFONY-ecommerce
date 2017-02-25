@@ -11,7 +11,7 @@ namespace LG\CoreBundle\Repository;
 class ClientRepository extends \Doctrine\ORM\EntityRepository
 {
     /**
-     * We get the name client.
+     * We get the first and last names of clients associated to a booking
      * @param $bookingId
      * @return array
      */

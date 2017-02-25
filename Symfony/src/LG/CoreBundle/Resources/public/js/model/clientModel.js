@@ -1,5 +1,6 @@
 /**
  * Created by leo on 02/02/17.
+ * This is the client model
  */
 $(function($) {
 

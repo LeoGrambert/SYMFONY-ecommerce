@@ -28,6 +28,7 @@
                 <hr>
                 <div>
                     {% set num = 1 %}
+                    {# For each client, we display last and first names #}
                     {% for clientName in clientsName %}
                         <br/>
                             <strong>{{ "Visiteur n°"|trans}}{{ num }}{% set num = num + 1 %}</strong><br/><br/>

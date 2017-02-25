@@ -1,5 +1,6 @@
 /**
  * Created by leo on 04/02/17.
+ * Display an error message if user doesn't choose at least one ticket
  */
 $(function ($) {
 

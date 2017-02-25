@@ -1,5 +1,6 @@
 /**
  * Created by leo on 03/02/17.
+ * Half-day checkbox is disabled for current day after 2 p.m.
  */
 $(function ($) {
 

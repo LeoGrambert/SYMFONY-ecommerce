@@ -1,9 +1,0 @@
-#lg_core_homepage:
-#    path:     /
-#    defaults:
-#        _controller: LGCoreBundle:Booking:index
-#
-#lg_core_bookingpage:
-#    path:    /booking
-#    defaults:
-#        _controller: LGCoreBundle:Booking:booking

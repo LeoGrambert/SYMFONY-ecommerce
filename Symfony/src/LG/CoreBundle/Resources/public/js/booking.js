@@ -1,5 +1,6 @@
 /**
  * Created by leo on 02/02/17.
+ * We generate a form for client entity. We send data with ajax request.
  */
 $(function($) {
     var $formContainerStepTwo = $('#booking-form-container-step-two');
@@ -41,7 +42,10 @@ $(function($) {
             $form.append(generateFormFields(key, value));
         });
     };
-    
+
+    /**
+     * Front validation of client
+     */
     var submitClientButton = function () {
         var isValid = false;
         var $form = $('<div class="col-md-offset-4">');

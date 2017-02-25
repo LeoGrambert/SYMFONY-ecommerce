@@ -153,8 +153,9 @@ class BookingController extends Controller
         $stripe = $this->get('lg_core_bundle.stripe');
 
         $em = $this->getDoctrine()->getManager();
+        $numberTickets = $this->get('lg_core_bundle.numbertickets');
 
-        if ($stripe->checkout($booking)){
+        if ($stripe->checkout($numberTickets, $booking)){
 
             //This booking attribute indicates that the order has been paid
             $booking->setPaymentIsSuccess(true);

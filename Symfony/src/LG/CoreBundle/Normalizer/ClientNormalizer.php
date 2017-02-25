@@ -27,7 +27,7 @@ class ClientNormalizer implements NormalizerInterface, DenormalizerInterface, Se
     }
 
     /**
-     * @param CLient $object
+     * @param Client $object
      * @param null $format
      * @param array $context
      * @return array

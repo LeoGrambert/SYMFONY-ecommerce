@@ -59,97 +59,7 @@
     <favorites_list name="Symfony" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BookingController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Controller/BookingController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="918">
-              <caret line="233" column="1" selection-start-line="233" selection-start-column="1" selection-end-line="233" selection-end-column="1" />
-              <folding>
-                <element signature="e#504#607#0#PHP" expanded="false" />
-                <element signature="e#657#833#0#PHP" expanded="false" />
-                <element signature="e#838#1592#0#PHP" expanded="false" />
-                <element signature="e#1042#1066#1#PHP" expanded="true" />
-                <element signature="e#1356#1380#0#PHP" expanded="true" />
-                <element signature="e#1501#1550#0#PHP" expanded="true" />
-                <element signature="e#1598#1831#0#PHP" expanded="false" />
-                <element signature="e#1836#3280#0#PHP" expanded="false" />
-                <element signature="e#2792#2846#0#PHP" expanded="true" />
-                <element signature="e#3286#3554#0#PHP" expanded="false" />
-                <element signature="e#3559#4280#0#PHP" expanded="false" />
-                <element signature="e#4286#4497#0#PHP" expanded="false" />
-                <element signature="e#4502#5486#0#PHP" expanded="false" />
-                <element signature="e#5199#5255#0#PHP" expanded="true" />
-                <element signature="e#5492#5712#0#PHP" expanded="false" />
-                <element signature="e#5717#6931#0#PHP" expanded="false" />
-                <element signature="e#6742#6767#0#PHP" expanded="true" />
-                <element signature="e#6858#6884#0#PHP" expanded="true" />
-                <element signature="e#6937#7171#0#PHP" expanded="false" />
-                <element signature="e#7176#7654#0#PHP" expanded="false" />
-                <element signature="e#7439#7494#0#PHP" expanded="true" />
-                <element signature="e#7660#7903#0#PHP" expanded="false" />
-                <element signature="e#7908#9474#0#PHP" expanded="false" />
-                <element signature="e#8776#8797#1#PHP" expanded="true" />
-                <element signature="e#8992#9042#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Email.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Email/Email.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
-              <folding>
-                <element signature="e#129#183#0#PHP" expanded="false" />
-                <element signature="e#184#411#0#PHP" expanded="false" />
-                <element signature="e#202#293#0#PHP" expanded="false" />
-                <element signature="e#298#409#0#PHP" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DateReservation.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/DateReservation/DateReservation.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
-              <folding>
-                <element signature="e#7#60#0#PHP" expanded="true" />
-                <element signature="e#139#213#0#PHP" expanded="false" />
-                <element signature="e#214#613#0#PHP" expanded="false" />
-                <element signature="e#242#360#0#PHP" expanded="false" />
-                <element signature="e#365#611#0#PHP" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NumberTickets.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/NumberTickets/NumberTickets.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="10" selection-end-column="33" />
-              <folding>
-                <element signature="e#7#60#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="services.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/config/services.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="558">
-              <caret line="22" column="2" selection-start-line="22" selection-start-column="2" selection-end-line="22" selection-end-column="2" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -162,20 +72,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/LG/CoreBundle/Normalizer/ClientNormalizer.php" />
-        <option value="$PROJECT_DIR$/src/LG/CoreBundle/Resources/public/js/model/clientModel.js" />
-        <option value="$PROJECT_DIR$/src/LG/CoreBundle/Resources/public/js/priceStepOne.js" />
-        <option value="$PROJECT_DIR$/src/LG/CoreBundle/Resources/public/js/isReduced.js" />
-        <option value="$PROJECT_DIR$/web/bundles/lgcore/css/style_bookingpage.css" />
-        <option value="$PROJECT_DIR$/src/LG/CoreBundle/Form/ClientType.php" />
-        <option value="$PROJECT_DIR$/src/LG/CoreBundle/Entity/Client.php" />
         <option value="$PROJECT_DIR$/src/LG/CoreBundle/Controller/OrderController.php" />
         <option value="$PROJECT_DIR$/src/LG/CoreBundle/Resources/views/Order/prepare.html.twig" />
         <option value="$PROJECT_DIR$/src/LG/CoreBundle/Resources/public/js/order.js" />
-        <option value="$PROJECT_DIR$/src/LG/CoreBundle/Repository/BookingRepository.php" />
-        <option value="$PROJECT_DIR$/src/LG/CoreBundle/Validator/LimitTicketsValidator.php" />
-        <option value="$PROJECT_DIR$/src/LG/CoreBundle/Stripe/Stripe.php" />
-        <option value="$PROJECT_DIR$/src/LG/CoreBundle/Entity/Booking.php" />
         <option value="$PROJECT_DIR$/app/config/config_prod.yml" />
         <option value="$PROJECT_DIR$/app/config/config_dev.yml" />
         <option value="$PROJECT_DIR$/app/Resources/views/TwigBundle/views/Exception/error404.html.twig" />
@@ -190,29 +89,40 @@
         <option value="$PROJECT_DIR$/src/LG/CoreBundle/Resources/public/js/displayPriceStepOne.js" />
         <option value="$PROJECT_DIR$/app/config/parameters.yml" />
         <option value="$PROJECT_DIR$/src/LG/CoreBundle/Mailing/Mailing.php" />
-        <option value="$PROJECT_DIR$/src/LG/CoreBundle/Repository/ClientRepository.php" />
         <option value="$PROJECT_DIR$/src/LG/CoreBundle/Resources/public/css/style_templateMailConfirmation.css" />
-        <option value="$PROJECT_DIR$/src/LG/CoreBundle/Resources/public/css/style_bookingpage.css" />
         <option value="$PROJECT_DIR$/src/LG/CoreBundle/Resources/views/Home/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/LG/CoreBundle/Resources/views/Booking/booking_form_step_two.html.twig" />
-        <option value="$PROJECT_DIR$/src/LG/CoreBundle/Resources/views/Booking/booking_form_step_one.html.twig" />
-        <option value="$PROJECT_DIR$/src/LG/CoreBundle/Form/BookingType.php" />
-        <option value="$PROJECT_DIR$/src/LG/CoreBundle/Resources/views/MailConfirmation/template.html.twig" />
-        <option value="$PROJECT_DIR$/src/LG/CoreBundle/Resources/views/Booking/booking_form_step_four.html.twig" />
         <option value="$PROJECT_DIR$/src/LG/CoreBundle/Resources/translations/messages.locale.yml" />
         <option value="$PROJECT_DIR$/app/config/config.yml" />
-        <option value="$PROJECT_DIR$/src/LG/CoreBundle/Resources/public/css/style_layout.css" />
         <option value="$PROJECT_DIR$/src/LG/CoreBundle/Controller/HomeController.php" />
         <option value="$PROJECT_DIR$/src/LG/CoreBundle/Resources/views/layout.html.twig" />
-        <option value="$PROJECT_DIR$/src/LG/CoreBundle/Resources/public/js/booking.js" />
-        <option value="$PROJECT_DIR$/src/LG/CoreBundle/Resources/views/Booking/booking_form_step_three.html.twig" />
-        <option value="$PROJECT_DIR$/src/LG/CoreBundle/Resources/translations/messages.en.yml" />
-        <option value="$PROJECT_DIR$/src/LG/CoreBundle/Resources/translations/messages.fr.yml" />
-        <option value="$PROJECT_DIR$/src/LG/CoreBundle/NumberTickets/NumberTickets.php" />
         <option value="$PROJECT_DIR$/src/LG/CoreBundle/Resources/config/services.yml" />
         <option value="$PROJECT_DIR$/src/LG/CoreBundle/Email/Email.php" />
         <option value="$PROJECT_DIR$/src/LG/CoreBundle/DateReservation/DateReservation.php" />
+        <option value="$PROJECT_DIR$/src/LG/CoreBundle/Entity/Booking.php" />
+        <option value="$PROJECT_DIR$/src/LG/CoreBundle/Entity/Client.php" />
+        <option value="$PROJECT_DIR$/src/LG/CoreBundle/Form/BookingType.php" />
+        <option value="$PROJECT_DIR$/src/LG/CoreBundle/Normalizer/ClientNormalizer.php" />
+        <option value="$PROJECT_DIR$/src/LG/CoreBundle/NumberTickets/NumberTickets.php" />
+        <option value="$PROJECT_DIR$/src/LG/CoreBundle/Repository/BookingRepository.php" />
+        <option value="$PROJECT_DIR$/src/LG/CoreBundle/Repository/ClientRepository.php" />
+        <option value="$PROJECT_DIR$/src/LG/CoreBundle/Resources/config/routing.yml" />
+        <option value="$PROJECT_DIR$/src/LG/CoreBundle/Resources/public/css/style_bookingpage.css" />
+        <option value="$PROJECT_DIR$/src/LG/CoreBundle/Resources/public/css/style_layout.css" />
+        <option value="$PROJECT_DIR$/src/LG/CoreBundle/Resources/public/js/model/clientModel.js" />
+        <option value="$PROJECT_DIR$/src/LG/CoreBundle/Resources/public/js/booking.js" />
+        <option value="$PROJECT_DIR$/src/LG/CoreBundle/Resources/public/js/isDailyDisabled.js" />
+        <option value="$PROJECT_DIR$/src/LG/CoreBundle/Resources/public/js/isReduced.js" />
+        <option value="$PROJECT_DIR$/src/LG/CoreBundle/Resources/public/js/textHelp.js" />
+        <option value="$PROJECT_DIR$/src/LG/CoreBundle/Resources/views/Booking/booking_form_step_four.html.twig" />
+        <option value="$PROJECT_DIR$/src/LG/CoreBundle/Resources/views/Booking/booking_form_step_one.html.twig" />
+        <option value="$PROJECT_DIR$/src/LG/CoreBundle/Resources/views/Booking/booking_form_step_three.html.twig" />
+        <option value="$PROJECT_DIR$/src/LG/CoreBundle/Resources/views/Booking/booking_form_step_two.html.twig" />
+        <option value="$PROJECT_DIR$/src/LG/CoreBundle/Resources/views/MailConfirmation/template.html.twig" />
+        <option value="$PROJECT_DIR$/src/LG/CoreBundle/Stripe/Stripe.php" />
+        <option value="$PROJECT_DIR$/src/LG/CoreBundle/Resources/translations/messages.fr.yml" />
+        <option value="$PROJECT_DIR$/src/LG/CoreBundle/Resources/translations/messages.en.yml" />
         <option value="$PROJECT_DIR$/src/LG/CoreBundle/Controller/BookingController.php" />
+        <option value="$PROJECT_DIR$/src/LG/CoreBundle/Validator/LimitTicketsValidator.php" />
       </list>
     </option>
   </component>
@@ -332,6 +242,580 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Validator" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Symfony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Symfony" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LG" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CoreBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tests" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controller" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Symfony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Symfony" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LG" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CoreBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Stripe" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Symfony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Symfony" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LG" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CoreBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Symfony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Symfony" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LG" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CoreBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MailConfirmation" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Symfony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Symfony" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LG" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CoreBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Home" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Symfony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Symfony" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LG" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CoreBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Booking" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Symfony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Symfony" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LG" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CoreBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="translations" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Symfony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Symfony" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LG" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CoreBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Symfony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Symfony" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LG" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CoreBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Symfony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Symfony" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LG" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CoreBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Symfony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Symfony" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LG" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CoreBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="img" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Symfony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Symfony" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LG" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CoreBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Symfony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Symfony" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LG" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CoreBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Symfony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Symfony" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LG" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CoreBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Repository" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Symfony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Symfony" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LG" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CoreBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NumberTickets" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Symfony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Symfony" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LG" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CoreBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Normalizer" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Symfony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Symfony" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LG" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CoreBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Form" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Symfony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Symfony" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LG" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CoreBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Entity" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Symfony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Symfony" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LG" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CoreBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Email" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -358,39 +842,59 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="DependencyInjection" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Symfony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Symfony" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LG" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CoreBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DateReservation" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Symfony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Symfony" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LG" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CoreBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Controller" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Symfony" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Symfony" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Symfony" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Symfony" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -519,25 +1023,26 @@
       <workItem from="1487928548480" duration="6561000" />
       <workItem from="1487940827547" duration="10516000" />
       <workItem from="1487953778462" duration="204000" />
-      <workItem from="1488023520218" duration="21412000" />
+      <workItem from="1488023520218" duration="21809000" />
+      <workItem from="1488053977724" duration="4208000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="356901000" />
+    <option name="totallyTimeSpent" value="361506000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1423" y="24" width="1863" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18835804" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1900055" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4439834" sideWeight="0.501922" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.08676551" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32572615" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11307054" sideWeight="0.498078" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4460581" sideWeight="0.498078" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -562,71 +1067,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="16" />
+      <option name="time" value="18" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/config/config_prod.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views/Exception/error.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="14" column="40" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/TwigBundle/views/Exception/error404.html.twig" />
-    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/public/css/style_error.css" />
-    <entry file="file://$PROJECT_DIR$/app/Resources/TwigBundle/views/Exception/error.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="5" column="52" selection-start-line="5" selection-start-column="52" selection-end-line="5" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/NextStep/NextStep.php" />
-    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/GetTickets/GetTickets.php" />
-    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/public/js/displayPriceStepOne.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="22" column="7" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/config_dev.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="515">
-          <caret line="37" column="31" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/services.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -639,47 +1084,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Repository/BookingRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="530">
-          <caret line="23" column="25" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Validator/LimitTicketsValidator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="557">
-          <caret line="56" column="8" selection-start-line="56" selection-start-column="8" selection-end-line="56" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Repository/ClientRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/public/css/style_templateMailConfirmation.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/public/css/style_templateMailConfirmation.css" />
     <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/public/plugin/form-master/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1701">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -687,17 +1099,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/public/css/style_bookingpage.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1029">
-          <caret line="332" column="22" selection-start-line="332" selection-start-column="22" selection-end-line="332" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -705,9 +1106,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -720,15 +1118,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/views/Home/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -736,63 +1125,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Controller/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/views/Booking/booking_form_step_two.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="62" column="14" selection-start-line="62" selection-start-column="14" selection-end-line="62" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Form/BookingType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="66" column="38" selection-start-line="66" selection-start-column="38" selection-end-line="66" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/views/Booking/booking_form_step_one.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="898">
-          <caret line="59" column="54" selection-start-line="59" selection-start-column="54" selection-end-line="59" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/views/MailConfirmation/template.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="16" column="52" selection-start-line="16" selection-start-column="52" selection-end-line="16" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/public/css/style_layout.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="34" column="14" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -800,57 +1132,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/views/Booking/booking_form_step_four.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="25" column="72" selection-start-line="25" selection-start-column="72" selection-end-line="25" selection-end-column="72" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/views/layout.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="92" column="20" selection-start-line="92" selection-start-column="20" selection-end-line="92" selection-end-column="20" />
-          <folding>
-            <element signature="e#2525#2535#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/public/js/model/clientModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/translations/messages.en.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="89" column="39" selection-start-line="89" selection-start-column="39" selection-end-line="89" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/public/js/booking.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/translations/messages.fr.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="652">
-          <caret line="89" column="34" selection-start-line="89" selection-start-column="34" selection-end-line="89" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -858,15 +1139,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="547">
           <caret line="36" column="35" selection-start-line="36" selection-start-column="35" selection-end-line="36" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Stripe/Stripe.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="10" column="33" selection-start-line="8" selection-start-column="0" selection-end-line="10" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -879,15 +1151,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/views/Booking/booking_form_step_three.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="509">
-          <caret line="45" column="71" selection-start-line="45" selection-start-column="64" selection-end-line="45" selection-end-column="71" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -895,7 +1158,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -903,16 +1165,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Controller/DefaultController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/NumberTickets/NumberTickets.php">
+    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/DateReservation/DateReservation.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="10" selection-end-column="33" />
+        <state relative-caret-position="351">
+          <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
           <folding>
-            <element signature="e#7#60#0#PHP" expanded="true" />
+            <element signature="e#7#60#0#PHP" expanded="false" />
+            <element signature="e#139#213#0#PHP" expanded="false" />
+            <element signature="e#214#613#0#PHP" expanded="false" />
+            <element signature="e#242#360#0#PHP" expanded="false" />
+            <element signature="e#365#611#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -930,32 +1203,515 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Entity/Booking.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding>
+            <element signature="e#220#355#0#PHP" expanded="false" />
+            <element signature="e#356#9419#0#PHP" expanded="false" />
+            <element signature="e#376#515#0#PHP" expanded="false" />
+            <element signature="e#538#771#0#PHP" expanded="false" />
+            <element signature="e#807#902#0#PHP" expanded="false" />
+            <element signature="e#932#1028#0#PHP" expanded="false" />
+            <element signature="e#1064#1151#0#PHP" expanded="false" />
+            <element signature="e#1179#1468#0#PHP" expanded="false" />
+            <element signature="e#1494#1874#0#PHP" expanded="false" />
+            <element signature="e#1917#2297#0#PHP" expanded="false" />
+            <element signature="e#2340#2719#0#PHP" expanded="false" />
+            <element signature="e#2761#3141#0#PHP" expanded="false" />
+            <element signature="e#3184#3302#0#PHP" expanded="false" />
+            <element signature="e#3330#3430#0#PHP" expanded="false" />
+            <element signature="e#3475#3514#0#PHP" expanded="false" />
+            <element signature="e#3519#3671#0#PHP" expanded="false" />
+            <element signature="e#3677#3781#0#PHP" expanded="false" />
+            <element signature="e#3786#4173#0#PHP" expanded="false" />
+            <element signature="e#4179#4360#0#PHP" expanded="false" />
+            <element signature="e#4365#4564#0#PHP" expanded="false" />
+            <element signature="e#4570#4625#0#PHP" expanded="false" />
+            <element signature="e#4630#4691#0#PHP" expanded="false" />
+            <element signature="e#4697#4813#0#PHP" expanded="false" />
+            <element signature="e#4818#4956#0#PHP" expanded="false" />
+            <element signature="e#4962#5032#0#PHP" expanded="false" />
+            <element signature="e#5037#5124#0#PHP" expanded="false" />
+            <element signature="e#5130#5234#0#PHP" expanded="false" />
+            <element signature="e#5239#5353#0#PHP" expanded="false" />
+            <element signature="e#5359#5423#0#PHP" expanded="false" />
+            <element signature="e#5428#5503#0#PHP" expanded="false" />
+            <element signature="e#5509#5607#0#PHP" expanded="false" />
+            <element signature="e#5612#5718#0#PHP" expanded="false" />
+            <element signature="e#5724#5784#0#PHP" expanded="false" />
+            <element signature="e#5789#5860#0#PHP" expanded="false" />
+            <element signature="e#5866#5986#0#PHP" expanded="false" />
+            <element signature="e#5991#6141#0#PHP" expanded="false" />
+            <element signature="e#6147#6218#0#PHP" expanded="false" />
+            <element signature="e#6223#6316#0#PHP" expanded="false" />
+            <element signature="e#6322#6442#0#PHP" expanded="false" />
+            <element signature="e#6447#6597#0#PHP" expanded="false" />
+            <element signature="e#6603#6674#0#PHP" expanded="false" />
+            <element signature="e#6679#6772#0#PHP" expanded="false" />
+            <element signature="e#6778#6895#0#PHP" expanded="false" />
+            <element signature="e#6900#7034#0#PHP" expanded="false" />
+            <element signature="e#7040#7130#0#PHP" expanded="false" />
+            <element signature="e#7135#7261#0#PHP" expanded="false" />
+            <element signature="e#7267#7359#0#PHP" expanded="false" />
+            <element signature="e#7364#7435#0#PHP" expanded="false" />
+            <element signature="e#7441#7534#0#PHP" expanded="false" />
+            <element signature="e#7539#7637#0#PHP" expanded="false" />
+            <element signature="e#7643#7700#0#PHP" expanded="false" />
+            <element signature="e#7705#7772#0#PHP" expanded="false" />
+            <element signature="e#7778#7896#0#PHP" expanded="false" />
+            <element signature="e#7901#8047#0#PHP" expanded="false" />
+            <element signature="e#8053#8123#0#PHP" expanded="false" />
+            <element signature="e#8128#8219#0#PHP" expanded="false" />
+            <element signature="e#8225#8345#0#PHP" expanded="false" />
+            <element signature="e#8350#8500#0#PHP" expanded="false" />
+            <element signature="e#8506#8577#0#PHP" expanded="false" />
+            <element signature="e#8582#8675#0#PHP" expanded="false" />
+            <element signature="e#8681#8794#0#PHP" expanded="false" />
+            <element signature="e#8799#8937#0#PHP" expanded="false" />
+            <element signature="e#8943#9010#0#PHP" expanded="false" />
+            <element signature="e#9015#9102#0#PHP" expanded="false" />
+            <element signature="e#9109#9143#0#PHP" expanded="false" />
+            <element signature="e#9148#9236#0#PHP" expanded="false" />
+            <element signature="e#9242#9293#0#PHP" expanded="false" />
+            <element signature="e#9298#9417#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Entity/Client.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+          <folding>
+            <element signature="e#229#361#0#PHP" expanded="false" />
+            <element signature="e#362#3409#0#PHP" expanded="false" />
+            <element signature="e#381#520#0#PHP" expanded="false" />
+            <element signature="e#543#715#0#PHP" expanded="false" />
+            <element signature="e#744#917#0#PHP" expanded="false" />
+            <element signature="e#947#1117#0#PHP" expanded="false" />
+            <element signature="e#1145#1278#0#PHP" expanded="false" />
+            <element signature="e#1315#1415#0#PHP" expanded="false" />
+            <element signature="e#1443#1498#0#PHP" expanded="false" />
+            <element signature="e#1503#1564#0#PHP" expanded="false" />
+            <element signature="e#1570#1668#0#PHP" expanded="false" />
+            <element signature="e#1673#1783#0#PHP" expanded="false" />
+            <element signature="e#1789#1849#0#PHP" expanded="false" />
+            <element signature="e#1854#1927#0#PHP" expanded="false" />
+            <element signature="e#1933#2033#0#PHP" expanded="false" />
+            <element signature="e#2038#2152#0#PHP" expanded="false" />
+            <element signature="e#2158#2219#0#PHP" expanded="false" />
+            <element signature="e#2224#2299#0#PHP" expanded="false" />
+            <element signature="e#2305#2401#0#PHP" expanded="false" />
+            <element signature="e#2406#2512#0#PHP" expanded="false" />
+            <element signature="e#2518#2577#0#PHP" expanded="false" />
+            <element signature="e#2582#2653#0#PHP" expanded="false" />
+            <element signature="e#2659#2757#0#PHP" expanded="false" />
+            <element signature="e#2762#2891#0#PHP" expanded="false" />
+            <element signature="e#2897#2956#0#PHP" expanded="false" />
+            <element signature="e#2961#3036#0#PHP" expanded="false" />
+            <element signature="e#3042#3139#0#PHP" expanded="false" />
+            <element signature="e#3144#3265#0#PHP" expanded="false" />
+            <element signature="e#3271#3331#0#PHP" expanded="false" />
+            <element signature="e#3336#3407#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Form/BookingType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
+          <folding>
+            <element signature="e#474#533#0#PHP" expanded="false" />
+            <element signature="e#534#3757#0#PHP" expanded="false" />
+            <element signature="e#579#816#0#PHP" expanded="false" />
+            <element signature="e#821#1510#0#PHP" expanded="false" />
+            <element signature="e#1516#1603#0#PHP" expanded="false" />
+            <element signature="e#1608#3399#0#PHP" expanded="false" />
+            <element signature="e#3409#3441#0#PHP" expanded="false" />
+            <element signature="e#3446#3626#0#PHP" expanded="false" />
+            <element signature="e#3632#3664#0#PHP" expanded="false" />
+            <element signature="e#3669#3753#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Normalizer/ClientNormalizer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="15" column="3" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
+          <folding>
+            <element signature="e#541#611#0#PHP" expanded="false" />
+            <element signature="e#612#2259#0#PHP" expanded="false" />
+            <element signature="e#752#877#0#PHP" expanded="false" />
+            <element signature="e#883#1000#0#PHP" expanded="false" />
+            <element signature="e#1005#1361#0#PHP" expanded="false" />
+            <element signature="e#1367#1510#0#PHP" expanded="false" />
+            <element signature="e#1515#2013#0#PHP" expanded="false" />
+            <element signature="e#2019#2131#0#PHP" expanded="false" />
+            <element signature="e#2137#2257#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/NumberTickets/NumberTickets.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+          <folding>
+            <element signature="e#137#292#0#PHP" expanded="false" />
+            <element signature="e#293#2600#0#PHP" expanded="false" />
+            <element signature="e#319#428#0#PHP" expanded="false" />
+            <element signature="e#433#599#0#PHP" expanded="false" />
+            <element signature="e#605#714#0#PHP" expanded="false" />
+            <element signature="e#719#885#0#PHP" expanded="false" />
+            <element signature="e#891#999#0#PHP" expanded="false" />
+            <element signature="e#1004#1166#0#PHP" expanded="false" />
+            <element signature="e#1172#1281#0#PHP" expanded="false" />
+            <element signature="e#1286#1452#0#PHP" expanded="false" />
+            <element signature="e#1458#1561#0#PHP" expanded="false" />
+            <element signature="e#1566#2040#0#PHP" expanded="false" />
+            <element signature="e#2046#2132#0#PHP" expanded="false" />
+            <element signature="e#2137#2598#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Repository/BookingRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="10" column="62" selection-start-line="10" selection-start-column="62" selection-end-line="10" selection-end-column="62" />
+          <folding>
+            <element signature="e#44#173#0#PHP" expanded="false" />
+            <element signature="e#174#801#1#PHP" expanded="false" />
+            <element signature="e#243#342#0#PHP" expanded="false" />
+            <element signature="e#347#799#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Repository/ClientRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="10" column="61" selection-start-line="10" selection-start-column="61" selection-end-line="10" selection-end-column="61" />
+          <folding>
+            <element signature="e#44#172#0#PHP" expanded="false" />
+            <element signature="e#173#698#1#PHP" expanded="false" />
+            <element signature="e#241#372#0#PHP" expanded="false" />
+            <element signature="e#377#696#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/config/services.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
+        <state relative-caret-position="594">
           <caret line="22" column="2" selection-start-line="22" selection-start-column="2" selection-end-line="22" selection-end-column="2" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/DateReservation/DateReservation.php">
+    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/public/css/style_bookingpage.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
+        <state relative-caret-position="2241">
+          <caret line="458" column="0" selection-start-line="458" selection-start-column="0" selection-end-line="458" selection-end-column="0" />
           <folding>
-            <element signature="e#7#60#0#PHP" expanded="true" />
-            <element signature="e#139#213#0#PHP" expanded="false" />
-            <element signature="e#214#613#0#PHP" expanded="false" />
-            <element signature="e#242#360#0#PHP" expanded="false" />
-            <element signature="e#365#611#0#PHP" expanded="false" />
+            <element signature="e#32#78#0" expanded="false" />
+            <element signature="e#115#141#0" expanded="false" />
+            <element signature="e#154#178#0" expanded="false" />
+            <element signature="e#189#256#0" expanded="false" />
+            <element signature="e#268#355#0" expanded="false" />
+            <element signature="e#397#424#0" expanded="false" />
+            <element signature="e#490#673#0" expanded="false" />
+            <element signature="e#722#749#0" expanded="false" />
+            <element signature="e#829#856#0" expanded="false" />
+            <element signature="e#891#949#0" expanded="false" />
+            <element signature="e#978#1122#0" expanded="false" />
+            <element signature="e#1198#1256#0" expanded="false" />
+            <element signature="e#1287#1431#0" expanded="false" />
+            <element signature="e#1542#1600#0" expanded="false" />
+            <element signature="e#1630#1777#0" expanded="false" />
+            <element signature="e#1791#1887#0" expanded="false" />
+            <element signature="e#1969#2085#0" expanded="false" />
+            <element signature="e#2104#2162#0" expanded="false" />
+            <element signature="e#2181#2206#0" expanded="false" />
+            <element signature="e#2227#2252#0" expanded="false" />
+            <element signature="e#2272#2297#0" expanded="false" />
+            <element signature="e#2309#2333#0" expanded="false" />
+            <element signature="e#2346#2371#0" expanded="false" />
+            <element signature="e#2384#2409#0" expanded="false" />
+            <element signature="e#2424#2449#0" expanded="false" />
+            <element signature="e#2463#2507#0" expanded="false" />
+            <element signature="e#2576#2641#0" expanded="false" />
+            <element signature="e#2679#2893#0" expanded="false" />
+            <element signature="e#2933#2998#0" expanded="false" />
+            <element signature="e#3009#3057#0" expanded="false" />
+            <element signature="e#3091#3230#0" expanded="false" />
+            <element signature="e#3250#3277#0" expanded="false" />
+            <element signature="e#3299#3349#0" expanded="false" />
+            <element signature="e#3366#3392#0" expanded="false" />
+            <element signature="e#3418#3483#0" expanded="false" />
+            <element signature="e#3513#3561#0" expanded="false" />
+            <element signature="e#3583#3664#0" expanded="false" />
+            <element signature="e#3671#3712#0" expanded="false" />
+            <element signature="e#3719#3766#0" expanded="false" />
+            <element signature="e#3823#3862#0" expanded="false" />
+            <element signature="e#3895#3938#0" expanded="false" />
+            <element signature="e#4041#4067#0" expanded="false" />
+            <element signature="e#4073#4120#0" expanded="false" />
+            <element signature="e#4134#4160#0" expanded="false" />
+            <element signature="e#4184#4216#0" expanded="false" />
+            <element signature="e#4266#4292#0" expanded="false" />
+            <element signature="e#4325#4432#0" expanded="false" />
+            <element signature="e#4469#4566#0" expanded="false" />
+            <element signature="e#4611#4698#0" expanded="false" />
+            <element signature="e#4744#4791#0" expanded="false" />
+            <element signature="e#4837#4885#0" expanded="false" />
+            <element signature="e#4932#5030#0" expanded="false" />
+            <element signature="e#5074#5157#0" expanded="false" />
+            <element signature="e#5175#5202#0" expanded="false" />
+            <element signature="e#5228#5253#0" expanded="false" />
+            <element signature="e#5295#5319#0" expanded="false" />
+            <element signature="e#5334#5355#0" expanded="false" />
+            <element signature="e#5464#6849#0" expanded="false" />
+            <element signature="e#5511#5538#0" expanded="false" />
+            <element signature="e#5549#5576#0" expanded="false" />
+            <element signature="e#5594#5648#0" expanded="false" />
+            <element signature="e#5670#5700#0" expanded="false" />
+            <element signature="e#5721#5751#0" expanded="false" />
+            <element signature="e#5771#5801#0" expanded="false" />
+            <element signature="e#5891#5929#0" expanded="false" />
+            <element signature="e#5946#5978#0" expanded="false" />
+            <element signature="e#6002#6078#0" expanded="false" />
+            <element signature="e#6112#6140#0" expanded="false" />
+            <element signature="e#6160#6213#0" expanded="false" />
+            <element signature="e#6240#6292#0" expanded="false" />
+            <element signature="e#6307#6359#0" expanded="false" />
+            <element signature="e#6377#6412#0" expanded="false" />
+            <element signature="e#6435#6479#0" expanded="false" />
+            <element signature="e#6504#6548#0" expanded="false" />
+            <element signature="e#6572#6616#0" expanded="false" />
+            <element signature="e#6653#6684#0" expanded="false" />
+            <element signature="e#6745#6772#0" expanded="false" />
+            <element signature="e#6814#6847#0" expanded="false" />
+            <element signature="e#6850#8129#0" expanded="false" />
+            <element signature="e#6904#6933#0" expanded="false" />
+            <element signature="e#6946#6980#0" expanded="false" />
+            <element signature="e#7050#7104#0" expanded="false" />
+            <element signature="e#7119#7151#0" expanded="false" />
+            <element signature="e#7167#7199#0" expanded="false" />
+            <element signature="e#7223#7255#0" expanded="false" />
+            <element signature="e#7282#7315#0" expanded="false" />
+            <element signature="e#7357#7543#0" expanded="false" />
+            <element signature="e#7587#7622#0" expanded="false" />
+            <element signature="e#7656#7686#0" expanded="false" />
+            <element signature="e#7720#7753#0" expanded="false" />
+            <element signature="e#7787#7812#0" expanded="false" />
+            <element signature="e#7863#7890#0" expanded="false" />
+            <element signature="e#7902#7934#0" expanded="false" />
+            <element signature="e#7958#7991#0" expanded="false" />
+            <element signature="e#8021#8053#0" expanded="false" />
+            <element signature="e#8071#8127#0" expanded="false" />
+            <element signature="e#8130#8916#0" expanded="false" />
+            <element signature="e#8232#8285#0" expanded="false" />
+            <element signature="e#8315#8368#0" expanded="false" />
+            <element signature="e#8388#8440#0" expanded="false" />
+            <element signature="e#8467#8519#0" expanded="false" />
+            <element signature="e#8552#8585#0" expanded="false" />
+            <element signature="e#8603#8638#0" expanded="false" />
+            <element signature="e#8654#8785#0" expanded="false" />
+            <element signature="e#8805#8860#0" expanded="false" />
+            <element signature="e#8882#8914#0" expanded="false" />
+            <element signature="e#8917#9052#0" expanded="false" />
+            <element signature="e#8972#9002#0" expanded="false" />
+            <element signature="e#9020#9050#0" expanded="false" />
+            <element signature="e#9053#9219#0" expanded="false" />
+            <element signature="e#9105#9138#0" expanded="false" />
+            <element signature="e#9154#9217#0" expanded="false" />
+            <element signature="e#9220#9474#0" expanded="false" />
+            <element signature="e#9330#9365#0" expanded="false" />
+            <element signature="e#9389#9419#0" expanded="false" />
+            <element signature="e#9440#9472#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/public/css/style_homepage.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#50#101#0" expanded="false" />
+            <element signature="e#140#196#0" expanded="false" />
+            <element signature="e#217#240#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/public/css/style_layout.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="39" column="1" selection-start-line="39" selection-start-column="1" selection-end-line="39" selection-end-column="1" />
+          <folding>
+            <element signature="e#35#68#0" expanded="false" />
+            <element signature="e#75#177#0" expanded="false" />
+            <element signature="e#180#254#0" expanded="false" />
+            <element signature="e#265#314#0" expanded="false" />
+            <element signature="e#320#474#0" expanded="false" />
+            <element signature="e#486#505#0" expanded="false" />
+            <element signature="e#517#577#0" expanded="false" />
+            <element signature="e#585#602#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/public/js/model/clientModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#66#0" expanded="false" />
+            <element signature="e#81#683#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/public/js/booking-namespace.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/public/js/booking.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1362">
+          <caret line="87" column="16" selection-start-line="87" selection-start-column="16" selection-end-line="87" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/public/js/displayPriceStepOne.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="22" column="7" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/public/js/isDailyDisabled.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" column="61" selection-start-line="2" selection-start-column="61" selection-end-line="2" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/public/js/isReduced.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/public/js/textHelp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/views/Booking/booking_form_step_four.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="39" column="26" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/views/Booking/booking_form_step_one.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="135" column="23" selection-start-line="135" selection-start-column="23" selection-end-line="135" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/views/Booking/booking_form_step_two.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="771">
+          <caret line="64" column="32" selection-start-line="64" selection-start-column="32" selection-end-line="64" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/views/Home/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1605">
+          <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/views/MailConfirmation/template.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-12">
+          <caret line="28" column="21" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/views/layout.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="92" column="20" selection-start-line="92" selection-start-column="20" selection-end-line="92" selection-end-column="20" />
+          <folding>
+            <element signature="e#2525#2535#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/translations/messages.fr.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="652">
+          <caret line="89" column="34" selection-start-line="89" selection-start-column="34" selection-end-line="89" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/views/Booking/booking_form_step_three.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="609">
+          <caret line="66" column="23" selection-start-line="66" selection-start-column="23" selection-end-line="66" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/translations/messages.en.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="650">
+          <caret line="89" column="39" selection-start-line="89" selection-start-column="39" selection-end-line="89" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Controller/BookingController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="233" column="1" selection-start-line="233" selection-start-column="1" selection-end-line="233" selection-end-column="1" />
+        <state relative-caret-position="434">
+          <caret line="149" column="52" selection-start-line="149" selection-start-column="52" selection-end-line="149" selection-end-column="52" />
           <folding>
             <element signature="e#504#607#0#PHP" expanded="false" />
             <element signature="e#657#833#0#PHP" expanded="false" />
@@ -972,16 +1728,66 @@
             <element signature="e#4502#5486#0#PHP" expanded="false" />
             <element signature="e#5199#5255#0#PHP" expanded="true" />
             <element signature="e#5492#5712#0#PHP" expanded="false" />
-            <element signature="e#5717#6931#0#PHP" expanded="false" />
-            <element signature="e#6742#6767#0#PHP" expanded="true" />
-            <element signature="e#6858#6884#0#PHP" expanded="true" />
-            <element signature="e#6937#7171#0#PHP" expanded="false" />
-            <element signature="e#7176#7654#0#PHP" expanded="false" />
-            <element signature="e#7439#7494#0#PHP" expanded="true" />
-            <element signature="e#7660#7903#0#PHP" expanded="false" />
-            <element signature="e#7908#9474#0#PHP" expanded="false" />
-            <element signature="e#8776#8797#1#PHP" expanded="true" />
-            <element signature="e#8992#9042#0#PHP" expanded="true" />
+            <element signature="e#5717#7016#0#PHP" expanded="false" />
+            <element signature="e#6827#6852#0#PHP" expanded="true" />
+            <element signature="e#6943#6969#0#PHP" expanded="true" />
+            <element signature="e#7022#7256#0#PHP" expanded="false" />
+            <element signature="e#7261#7739#0#PHP" expanded="false" />
+            <element signature="e#7524#7579#0#PHP" expanded="true" />
+            <element signature="e#7745#7988#0#PHP" expanded="false" />
+            <element signature="e#7993#9559#0#PHP" expanded="false" />
+            <element signature="e#8861#8882#1#PHP" expanded="true" />
+            <element signature="e#9077#9127#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Tests/Controller/DefaultControllerTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/LGCoreBundle.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Validator/LimitTicketsValidator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="13" column="55" selection-start-line="13" selection-start-column="55" selection-end-line="13" selection-end-column="55" />
+          <folding>
+            <element signature="e#236#2416#0#PHP" expanded="false" />
+            <element signature="e#316#410#0#PHP" expanded="false" />
+            <element signature="e#415#507#0#PHP" expanded="false" />
+            <element signature="e#513#1038#0#PHP" expanded="false" />
+            <element signature="e#1043#2414#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Validator/LimitTickets.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Stripe/Stripe.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="20" column="76" selection-start-line="20" selection-start-column="76" selection-end-line="20" selection-end-column="76" />
+          <folding>
+            <element signature="e#95#128#0#PHP" expanded="true" />
+            <element signature="e#177#285#0#PHP" expanded="false" />
+            <element signature="e#305#1201#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>

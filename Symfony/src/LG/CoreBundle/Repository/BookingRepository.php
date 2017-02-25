@@ -1,7 +1,6 @@
 <?php
 
 namespace LG\CoreBundle\Repository;
-use Symfony\Component\Validator\Constraints\Date;
 
 /**
  * BookingRepository
@@ -11,6 +10,10 @@ use Symfony\Component\Validator\Constraints\Date;
  */
 class BookingRepository extends \Doctrine\ORM\EntityRepository
 {
+    /**
+     * With this function, we can get all booking dates from today
+     * @return array
+     */
     public function findByDateReservation()
     {
         $dayYesterday = date('d') - 1;

@@ -8,7 +8,7 @@ use LG\CoreBundle\Validator\LimitTickets;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * Booking
+ * Booking entity
  *
  * @ORM\Table(name="booking")
  * @ORM\Entity(repositoryClass="LG\CoreBundle\Repository\BookingRepository")
@@ -131,6 +131,9 @@ class Booking
      */
     private $paymentIsSuccess = false;
 
+    /**
+     * Booking constructor.
+     */
     public function __construct()
     {
         $this->dateAchat = new \DateTime();
@@ -155,7 +158,7 @@ class Booking
 
     /**
      * @return string
-     * This function generate a code reservation using random method and dateAchat attribute.
+     * This function generate a unique code reservation using random method and dateAchat attribute.
      * Return is called in constructor method.
      */
     public function generateCodeReservation(){

@@ -28,6 +28,7 @@ Funnel
         </div>
     </div>
     <!-- //end of Funnel -->
+    <!-- Main -->
     <div class="container marginBody" id="confirmationPage">
         <h2>{{ "Confirmation de commande"|trans}} n° {{ codeReservation }}</h2>
         <h3 id="stepFourThankMessage">{{ "Merci et bonne visite !"|trans}}</h3>
@@ -36,5 +37,6 @@ Funnel
         <p>{{ "En cas de problèmes liés à votre commande, contactez le service clientèle en vous munissant de votre numéro de réservation"|trans}} ({{ codeReservation }})</p>
         <br/><br/><br/><a href="{{ path('home.index') }}"><button class="btn btn-primary">{{ "Retour à l'accueil"|trans}}</button></a>
     </div>
+    <!-- //end of Main -->
 
 {% endblock %}

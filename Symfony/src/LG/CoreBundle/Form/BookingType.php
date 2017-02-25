@@ -3,7 +3,6 @@
 namespace LG\CoreBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -12,6 +11,10 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
+/**
+ * Class BookingType
+ * @package LG\CoreBundle\Form
+ */
 class BookingType extends AbstractType
 {
     /**
@@ -36,6 +39,7 @@ class BookingType extends AbstractType
     }
 
     /**
+     * This function is used to build form on step one
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
