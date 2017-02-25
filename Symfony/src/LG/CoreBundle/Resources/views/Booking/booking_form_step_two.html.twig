@@ -3,9 +3,9 @@
 {%  block body %}
 
     <img src="{{ asset('bundles/lgcore/img/logo.png') }}" alt="logo_musee_du_louvre" id="logoImg"/>
-    <p id="subTextLogo">Billetterie en ligne</p>
+    <p id="subTextLogo">{{ "Billetterie en ligne"|trans}}</p>
     <img src="{{ asset('bundles/lgcore/img/basket.png') }}" alt="panier" id="basketImg"/>
-    <p id="basketText">Vous avez <span id="numberTickets">{{ numberTickets }}</span> billet(s)<br/> dans votre panier</p>
+    <p id="basketText">{{ "Vous avez"|trans}} <span id="numberTickets">{{ numberTickets }}</span> {{ "billet(s)"|trans}}<br/> {{ "dans votre panier"|trans}}</p>
     <!--
     Funnel
     -->
@@ -21,10 +21,10 @@
         </div>
         <div class="row">
             <div class="col-md-6 col-md-offset-4" id="textFunnel">
-                <span id="textStepOne">Ajouter au panier</span>
-                <span id="textStepTwo">Détails billets</span>
-                <span id="textStepThree">Paiement</span>
-                <span id="textStepFour">Confirmation</span>
+                <span id="textStepOne">{{ "Ajouter au panier"|trans}}</span>
+                <span id="textStepTwo">{{ "Détails billets"|trans}}</span>
+                <span id="textStepThree">{{ "Paiement"|trans}}</span>
+                <span id="textStepFour">{{  "Confirmation"|trans}}</span>
             </div>
         </div>
     </div>
@@ -34,31 +34,31 @@
     <div class="container marginBody">
         <div class="row" id="infoTicketsStepTwo">
             <p>
-                Pour l'édition de vos billets, veuillez remplir les formulaires ci-dessous<br/> Un justificatif pourra vous être demandé à l'entrée du Musée.<p>
-                    > {{ numberTicketsNormal }} billet(s) Tarif Normal<br/>
-                    > {{ numberTicketsReduce }} billet(s) Tarif Réduit<br/>
-                    > {{ numberTicketsChild }} billet(s) Tarif Enfant<br/>
-                    > {{ numberTicketsSenior }} billet(s) Tarif Senior
+                {{ "Pour l'édition de vos billets, veuillez remplir les formulaires ci-dessous."|trans}}<br/> {{ "Un justificatif pourra vous être demandé à l'entrée du Musée."|trans}}<p>
+                    > {{ numberTicketsNormal }} {{ "billet(s) Tarif Normal"|trans}}<br/>
+                    > {{ numberTicketsReduce }} {{ "billet(s) Tarif Réduit"|trans}}<br/>
+                    > {{ numberTicketsChild }} {{ "billet(s) Tarif Enfant"|trans}}<br/>
+                    > {{ numberTicketsSenior }} {{ "billet(s) Tarif Senior"|trans}}
             <hr>
             <div id="booking-form-container-step-two" class="col-sm-12" data-create-url="{{ path('booking.client.create', {"id" : booking.id}) }}">
             </div>
             <hr>
             <div class="row">
                 <div class="col-md-offset-4 col-md-4" id="textRecapStepTwo">
-                    <h4>Récapitulatif de votre commande</h4>
+                    <h4>{{ "Récapitulatif de votre commande"|trans}}</h4>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-offset-4 col-md-4" id="containerPriceStepTwo">
-                    <p>{{ numberTickets }} billets dans le panier - Date de visite : {{ dateReservationToString }}</p>
-                    <div>Prix total :
+                    <p>{{ numberTickets }} {{ "billets dans le panier - Date de visite :"|trans}} {{ dateReservationToString }}</p>
+                    <div>{{ "Prix total :"|trans }}
                         <div class="price">{{ price }} €</div>
                     </div>
-                    <p>Confirmez-vous votre commande ?</p>
+                    <p>{{ "Confirmez-vous votre commande ?"|trans}}</p>
                 </div>
             </div>
             <div id="">
-                <a href="{{ path('booking.create.stepThree', {"id" : booking.id}) }}"><button disabled class="btn btn-primary" id="buttonToStepThree">Confirmer la commande</button></a>
+                <a href="{{ path('booking.create.stepThree', {"id" : booking.id}) }}"><button disabled class="btn btn-primary" id="buttonToStepThree">{{ "Confirmer la commande"|trans}}</button></a>
             </div>
         </div>
     </div>

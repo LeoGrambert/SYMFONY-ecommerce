@@ -2,9 +2,9 @@
 
 {% block body %}
     <img src="{{ asset('bundles/lgcore/img/logo.png') }}" alt="logo_musee_du_louvre" id="logoImg"/>
-    <p id="subTextLogo">Billetterie en ligne</p>
+    <p id="subTextLogo">{{ "Billetterie en ligne"|trans}}</p>
     <img src="{{ asset('bundles/lgcore/img/basket.png') }}" alt="panier" id="basketImg"/>
-    <p id="basketText">Vous avez <span id="numberTickets">0</span> billet(s)<br/> dans votre panier</p>
+    <p id="basketText">{{ "Vous avez"|trans}} <span id="numberTickets">0</span> {{ "billet(s)"|trans}}<br/> {{ "dans votre panier"|trans}}</p>
     <!--
 Funnel
 -->
@@ -20,21 +20,21 @@ Funnel
         </div>
         <div class="row">
             <div class="col-md-6 col-md-offset-4" id="textFunnel">
-                <span id="textStepOne">Ajouter au panier</span>
-                <span id="textStepTwo">Détails billets</span>
-                <span id="textStepThree">Paiement</span>
-                <span id="textStepFour">Confirmation</span>
+                <span id="textStepOne">{{ "Ajouter au panier"|trans}}</span>
+                <span id="textStepTwo">{{ "Détails billets"|trans}}</span>
+                <span id="textStepThree">{{ "Paiement"|trans}}</span>
+                <span id="textStepFour">{{ "Confirmation"|trans}}</span>
             </div>
         </div>
     </div>
     <!-- //end of Funnel -->
     <div class="container marginBody" id="confirmationPage">
-        <h2>Confirmation de commande n° {{ codeReservation }}</h2>
-        <h3 id="stepFourThankMessage">Merci et bonne visite !</h3>
+        <h2>{{ "Confirmation de commande"|trans}} n° {{ codeReservation }}</h2>
+        <h3 id="stepFourThankMessage">{{ "Merci et bonne visite !"|trans}}</h3>
         <hr>
-        <p>Les billets d'entrée vous ont été envoyés par mail (adresse : <strong>{{ emailReservation }}</strong>).</p>
-        <p>En cas de problèmes liés à votre commande, contactez le service clientèle en vous munissant de votre numéro de réservation ({{ codeReservation }})</p>
-        <br/><br/><br/><a href="{{ path('home.index') }}"><button class="btn btn-primary">Retour à l'accueil</button></a>
+        <p>{{ "Les billets d'entrée vous ont été envoyés par mail (adresse :"|trans}} <strong>{{ emailReservation }}</strong>).</p>
+        <p>{{ "En cas de problèmes liés à votre commande, contactez le service clientèle en vous munissant de votre numéro de réservation"|trans}} ({{ codeReservation }})</p>
+        <br/><br/><br/><a href="{{ path('home.index') }}"><button class="btn btn-primary">{{ "Retour à l'accueil"|trans}}</button></a>
     </div>
 
 {% endblock %}

@@ -26,7 +26,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 /**
  * Class BookingController
  * @package LG\CoreBundle\Controller
- * @Route("/booking")
+ * @Route("/{_locale}/booking")
  */
 class BookingController extends Controller
 {

@@ -52,28 +52,28 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/">Musée du Louvre</a>
+                <a class="navbar-brand" href="{{ path('home.index') }}">{{ 'Musée du Louvre'|trans }}</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="#">Informations pratiques</a>
+                        <a href="#">{{ 'Informations pratiques'|trans }}</a>
                     </li>
                     <li>
-                        <a href="#">Visites & Activités</a>
+                        <a href="#">{{ 'Visites & Activités'|trans }}</a>
                     </li>
                     <li>
-                        <a href="#">Expositions & Actualités</a>
+                        <a href="#">{{ 'Expositions & Actualités'|trans}}</a>
                     </li>
                     <li>
-                        <a href="#">Oeuvres & Palais</a>
+                        <a href="#">{{ 'Oeuvres & Palais'|trans}}</a>
                     </li>
                     <li>
-                        <a href="#">Arts & Education</a>
+                        <a href="#">{{ 'Arts & Education'|trans}}</a>
                     </li>
                     <li id="navBooking">
-                        <a href="{{ path('booking.create.stepOne') }}">Billetterie</a>
+                        <a href="{{ path('booking.create.stepOne') }}">{{ 'Billetterie'|trans}}</a>
                     </li>
                 </ul>
             </div>
@@ -82,6 +82,14 @@
         <!-- /.container -->
     </nav>
 
+    <div id="flag">
+        {% set route = app.request.attributes.get('_route') %}
+        {% set route_params = app.request.attributes.get('_route_params') %}
+        {% set params = route_params|merge(app.request.query.all) %}
+        <a href="{{ path(route, params|merge({ _locale: "fr" })) }}"><img src="{{ asset('bundles/lgcore/img/france.png') }}" alt="french_flag"></a><br/><br/>
+        <a href="{{ path(route, params|merge({ _locale: "en" })) }}"><img src="{{ asset('bundles/lgcore/img/united-kingdom.png') }}" alt="uk_flag"></a>
+    </div>
+
     {% block body %}
     {% endblock %}
 
@@ -89,7 +97,7 @@
     <footer>
         <div class="row">
             <div class="col-lg-12">
-                Musée du Louvre - 2017 - Site Fictif développé par <a href="http://leogrambert.fr">Léo Grambert</a> - Retour sur la <a href="http://leogrambert.fr/front/projets/louvre">Feuille de route</a>
+                {{ 'Musée du Louvre - 2017 - Site Fictif développé par'|trans}} <a href="http://leogrambert.fr">Léo Grambert</a> - {{ 'Retour sur la'|trans}} <a href="http://leogrambert.fr/front/projets/louvre">{{ 'Feuille de route'|trans}}</a>
             </div>
         </div>
     </footer>

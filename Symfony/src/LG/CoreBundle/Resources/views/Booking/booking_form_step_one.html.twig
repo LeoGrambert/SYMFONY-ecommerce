@@ -2,9 +2,9 @@
 
 {%  block body %}
     <img src="{{ asset('bundles/lgcore/img/logo.png') }}" alt="logo_musee_du_louvre" id="logoImg"/>
-    <p id="subTextLogo">Billetterie en ligne</p>
+    <p id="subTextLogo">{{ "Billetterie en ligne"|trans}}</p>
     <img src="{{ asset('bundles/lgcore/img/basket.png') }}" alt="panier" id="basketImg"/>
-    <p id="basketText">Vous avez <span id="numberTickets">0</span> billet(s)<br/> dans votre panier</p>
+    <p id="basketText">{{ "Vous avez"|trans}} <span id="numberTickets">0</span> {{ "billet(s)"|trans}}<br/> {{ "dans votre panier"|trans}}</p>
     <!--
 Funnel
 -->
@@ -20,10 +20,10 @@ Funnel
         </div>
         <div class="row">
             <div class="col-md-6 col-md-offset-4" id="textFunnel">
-                <span id="textStepOne">Ajouter au panier</span>
-                <span id="textStepTwo">Détails billets</span>
-                <span id="textStepThree">Paiement</span>
-                <span id="textStepFour">Confirmation</span>
+                <span id="textStepOne">{{ "Ajouter au panier"|trans}}</span>
+                <span id="textStepTwo">{{ "Détails billets"|trans}}</span>
+                <span id="textStepThree">{{ "Paiement"|trans}}</span>
+                <span id="textStepFour">{{ "Confirmation"|trans}}</span>
             </div>
         </div>
     </div>
@@ -38,7 +38,7 @@ Funnel
                 <div class="row">
                     <div class="col-md-offset-4 col-md-4">
                         {{ form_label(form.email) }}
-                        <p id="emailTextDescription"><img src="{{ asset('bundles/lgcore/img/alert.png') }}" alt="alert" id="alertIcon"/> Les billets vous seront envoyés par email.</p>
+                        <p id="emailTextDescription"><img src="{{ asset('bundles/lgcore/img/alert.png') }}" alt="alert" id="alertIcon"/> {{ "Les billets vous seront envoyés par email."|trans}}</p>
                         {{ form_widget(form.email) }}
                         {{ form_errors(form.email) }}
                     </div>
@@ -55,37 +55,37 @@ Funnel
                     </div>
                     <div id="datepickerHelpText" class="col-md-3">
                         <img src="{{ asset('bundles/lgcore/img/cross.png') }}" alt="cross_close" id="datepickerHelpCross" />
-                        <p>Le musée est ouvert tout les jours, de 9h à 18h, <strong>sauf le mardi (Fermeture hebdomadaire) et les 1er mai, 1er novembre et 25 décembre</strong>. </p><br/>
-                        <p>La commande de billets en ligne est impossible :</p>
-                            <p>Les dimanches</p>
-                            <p>Les jours fériés</p>
-                            <p>Si plus de 1000 billets ont déjà été commandés en ligne pour la journée en cours</p>
-                        <p>Pour ces dates, veuillez vous rendre directement au Musée pour acheter vos billets.</p><br/>
+                        <p>{{ "Le musée est ouvert tout les jours, de 9h à 18h,"|trans}} <strong>{{ "sauf le mardi (Fermeture hebdomadaire) et les 1er mai, 1er novembre et 25 décembre"|trans}}</strong>. </p><br/>
+                        <p>{{ "La commande de billets en ligne est impossible :"|trans}}</p>
+                            <p>{{ "- Les dimanches"|trans}}</p>
+                            <p>{{ "- Les jours fériés"|trans}}</p>
+                            <p>{{ "- Si plus de 1000 billets ont déjà été commandés en ligne pour la journée en cours"|trans}}</p>
+                        <p>{{ "Pour ces dates, veuillez vous rendre directement au Musée pour acheter vos billets."|trans}}</p><br/>
                     </div>
                 </div>
                 <hr>
                 <div class="row">
                     <p id="checkboxIsDaily">
-                        Nature du(des) billet(s)
+                        {{ "Nature du(des) billet(s)"|trans}}
                         <img src="{{ asset('bundles/lgcore/img/help.png') }}" alt="help_icon" class="help" id="isDailyHelp"/>
                     </p>
                     {{ form_widget(form.isDaily, { 'attr' : { 'class' : 'booking-input__is-daily' }}) }}
                     {{ form_errors(form.isDaily) }}
                     <div id="isDailyHelpText" class="col-md-3">
                         <img src="{{ asset('bundles/lgcore/img/cross.png') }}" alt="cross_close" id="isDailyHelpCross" />
-                        <p>La commande de billet demi-journée est impossible pour la journée en cours s'il est plus de 14 heures.</p>
-                        <p>Le billet demi-journée ne permet de rentrer dans le Musée qu'à partir de 14 heures.</p>
+                        <p>{{ "La commande de billet demi-journée est impossible pour la journée en cours s'il est plus de 14 heures."|trans}}</p>
+                        <p>{{ "Le billet demi-journée ne permet de rentrer dans le Musée qu'à partir de 14 heures."|trans}}</p>
                     </div>
                 </div>
                 <hr>
-                <p class="ticketNumber">Nombre de billets</p>
+                <p class="ticketNumber">{{ "Nombre de billets"|trans}}</p>
                 <div class="row">
                     <div id="isReduced" class="col-md-offset-3 col-md-6">
-                        <p><span class="ticketNumber">Tarif normal :</span> 16€</p>
-                        <p><span class="ticketNumber">Tarif réduit :</span> étudiant, employé du Musée, service du Ministre de la Culture, militaire (10€)</p>
-                        <p><span class="ticketNumber">Tarif enfant :</span> de 4 à 12 ans (8€)</p>
-                        <p><span class="ticketNumber">Tarif senior :</span> à partir de 60 ans (12€)</p>
-                        <p>Pour les enfants de moins de 4 ans, l'entrée est gratuite. Vous n'avez pas à prendre de billets.</p>
+                        <p><span class="ticketNumber">{{ "Tarif normal :"|trans}}</span> 16€</p>
+                        <p><span class="ticketNumber">{{ "Tarif réduit :"|trans}}</span> {{ "étudiant, employé du Musée, service du Ministre de la Culture, militaire"|trans}} (10€)</p>
+                        <p><span class="ticketNumber">{{ "Tarif enfant :"|trans}}</span> {{ "de 4 à 12 ans"|trans}} (8€)</p>
+                        <p><span class="ticketNumber">{{ "Tarif senior :"|trans}}</span> {{ "à partir de 60 ans"|trans}} (12€)</p>
+                        <p>{{ "Pour les enfants de moins de 4 ans, l'entrée est gratuite. Vous n'avez pas à prendre de billets."|trans}}</p>
                     </div>
                 </div>
                 <div id="choiceTicketNumber">
@@ -116,12 +116,12 @@ Funnel
                 </div>
                 <div class="row">
                     <div class="col-md-offset-3 col-md-6">
-                        <p id="messageErrorIsReduce" class="alert-danger">Veuillez choisir un billet pour passer à l'étape suivante.</p>
+                        <p id="messageErrorIsReduce" class="alert-danger">{{ "Veuillez choisir un billet pour passer à l'étape suivante."|trans}}</p>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-offset-5 col-md-2" id="priceContainer">
-                        Prix :<div id="price" class="price">0 €</div>
+                        {{ "Prix :"|trans}}<div id="price" class="price">0 €</div>
                     </div>
                 </div>
                 <hr>

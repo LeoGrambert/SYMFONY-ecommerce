@@ -14,35 +14,35 @@
                 <div>
                     <img src="http://leogrambert.fr/front/css/img/louvre_logo.png" alt="logo"/>
                 </div>
-                <p>Ce mail contient vos billets d'entrée.<br/>Conservez le, il vous sera demandé à l'entrée du Musée<br/><a href="https://www.google.fr/maps/place/Mus%C3%A9e+du+Louvre/@48.8606111,2.3354553,17z/data=!3m1!4b1!4m5!3m4!1s0x47e671d877937b0f:0xb975fcfa192f84d4!8m2!3d48.8606111!4d2.337644" target="_blank">Comment venir au Musée ?</a>
+                <p>{{ "Ce mail contient vos billets d'entrée."|trans}}<br/>{{ "Conservez le, il vous sera demandé à l'entrée du Musée"|trans}}<br/><a href="https://www.google.fr/maps/place/Mus%C3%A9e+du+Louvre/@48.8606111,2.3354553,17z/data=!3m1!4b1!4m5!3m4!1s0x47e671d877937b0f:0xb975fcfa192f84d4!8m2!3d48.8606111!4d2.337644" target="_blank">{{ "Comment venir au Musée ?"|trans}}</a>
                 </p>
                 <hr>
             </div>
             <div>
-                <h1>Confirmation d'achat. Merci pour votre commande et bonne visite !</h1>
+                <h1>{{ "Confirmation d'achat. Merci pour votre commande et bonne visite !"|trans}}</h1>
                 <div>
-                    <p>Date de réservation : {{ dateReservationToString }}</p>
-                    <p>Billet(s) : {% if isDaily == 1 %}Journée{% else %}Demi-journée{% endif %}</p>
-                    <p>Code de réservation : {{ chain }}</p>
+                    <p>{{ "Date de réservation :"|trans}} {{ dateReservationToString }}</p>
+                    <p>{{ "Billet(s) :"|trans}} {% if isDaily == 1 %}{{ "Journée"|trans}}{% else %}{{ "Demi-journée"|trans}}{% endif %}</p>
+                    <p>{{ "Code de réservation :"|trans}}{{ chain }}</p>
                 </div>
                 <hr>
                 <div>
                     {% set num = 1 %}
                     {% for clientName in clientsName %}
                         <br/>
-                            <strong>Visiteur n°{{ num }}{% set num = num + 1 %}</strong><br/><br/>
+                            <strong>{{ "Visiteur n°"|trans}}{{ num }}{% set num = num + 1 %}</strong><br/><br/>
                             <em>{{ clientName.lastName }}<br/>{{ clientName.firstName }}</em>
                         <br/>
                     {% endfor %}
                     <hr>
                 </div>
                 <div>
-                    <u>Votre commande contient</u> :<br/><br/>
-                    {{ numberTicketsNormal }} billet(s) Tarif Normal (16€)<br/>
-                    {{ numberTicketsReduce }} billet(s) Tarif Réduit (10€ - étudiant, employé du Musée, Ministère de la Culture, militaire)<br/>
-                    {{ numberTicketsChild }} billet(s) Tarif Enfant (8€ - de 4 à 12 ans)<br/>
-                    {{ numberTicketsSenior }} billet(s) Tarif Senior (12€ - à partir de 60 ans)<br/><br/>
-                    <strong>Veuillez noter qu'un justificatif pourra vous être demandé à l'entrée du Musée.</strong>
+                    <u>{{ "Votre commande contient"|trans}}</u> :<br/><br/>
+                    {{ numberTicketsNormal }} {{ "billet(s) Tarif Normal (16€)"|trans}}<br/>
+                    {{ numberTicketsReduce }} {{ "billet(s) Tarif Réduit (10€ - étudiant, employé du Musée, Ministère de la Culture, militaire)"|trans}}<br/>
+                    {{ numberTicketsChild }} {{ "billet(s) Tarif Enfant (8€ - de 4 à 12 ans)"|trans}}<br/>
+                    {{ numberTicketsSenior }} {{ "billet(s) Tarif Senior (12€ - à partir de 60 ans)"|trans}}<br/><br/>
+                    <strong>{{ "Veuillez noter qu'un justificatif pourra vous être demandé à l'entrée du Musée."|trans}}</strong>
                 </div>
             </div>
             <br/>
