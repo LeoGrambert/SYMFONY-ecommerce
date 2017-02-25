@@ -23,7 +23,6 @@ class ClientNormalizer implements NormalizerInterface, DenormalizerInterface, Se
 
     public function setSerializer(SerializerInterface $serializer)
     {
-        // TODO: Implement setSerializer() method.
     }
 
     /**
