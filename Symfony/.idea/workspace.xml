@@ -75,11 +75,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="booking.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="booking.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/public/js/booking.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="533">
-              <caret line="142" column="17" selection-start-line="142" selection-start-column="17" selection-end-line="142" selection-end-column="17" />
+            <state relative-caret-position="761">
+              <caret line="181" column="65" selection-start-line="181" selection-start-column="65" selection-end-line="181" selection-end-column="65" />
               <folding />
             </state>
           </provider>
@@ -88,7 +88,7 @@
       <file leaf-file-name="Booking.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Entity/Booking.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
+            <state relative-caret-position="459">
               <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
               <folding>
                 <element signature="e#220#355#0#PHP" expanded="false" />
@@ -161,7 +161,7 @@
       <file leaf-file-name="style_bookingpage.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/public/css/style_bookingpage.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
+            <state relative-caret-position="1647">
               <caret line="213" column="20" selection-start-line="213" selection-start-column="20" selection-end-line="213" selection-end-column="20" />
               <folding>
                 <element signature="e#32#78#0" expanded="false" />
@@ -285,10 +285,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LimitTicketsValidator.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LimitTicketsValidator.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Validator/LimitTicketsValidator.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="587">
+            <state relative-caret-position="1188">
               <caret line="64" column="32" selection-start-line="64" selection-start-column="32" selection-end-line="64" selection-end-column="32" />
               <folding>
                 <element signature="e#316#410#0#PHP" expanded="false" />
@@ -360,9 +360,9 @@
         <option value="$PROJECT_DIR$/src/LG/CoreBundle/Resources/views/Booking/booking_form_step_two.html.twig" />
         <option value="$PROJECT_DIR$/src/LG/CoreBundle/Resources/public/js/isReduced.js" />
         <option value="$PROJECT_DIR$/src/LG/CoreBundle/Resources/public/css/style_bookingpage.css" />
-        <option value="$PROJECT_DIR$/src/LG/CoreBundle/Resources/public/js/booking.js" />
         <option value="$PROJECT_DIR$/src/LG/CoreBundle/Entity/Booking.php" />
         <option value="$PROJECT_DIR$/src/LG/CoreBundle/Validator/LimitTicketsValidator.php" />
+        <option value="$PROJECT_DIR$/src/LG/CoreBundle/Resources/public/js/booking.js" />
       </list>
     </option>
   </component>
@@ -406,8 +406,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -1142,6 +1140,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1265,24 +1265,25 @@
       <workItem from="1487953778462" duration="204000" />
       <workItem from="1488023520218" duration="21809000" />
       <workItem from="1488053977724" duration="6428000" />
-      <workItem from="1488094949222" duration="14754000" />
+      <workItem from="1488094949222" duration="15103000" />
+      <workItem from="1488113623666" duration="7078000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="378480000" />
+    <option name="totallyTimeSpent" value="385907000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1423" y="24" width="1863" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19165294" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13399231" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4439834" sideWeight="0.501922" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.08676551" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22302905" sideWeight="0.498078" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1400415" sideWeight="0.498078" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1388,38 +1389,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
-          <folding>
-            <element signature="e#229#361#0#PHP" expanded="false" />
-            <element signature="e#362#3409#0#PHP" expanded="false" />
-            <element signature="e#381#520#0#PHP" expanded="false" />
-            <element signature="e#543#715#0#PHP" expanded="false" />
-            <element signature="e#744#917#0#PHP" expanded="false" />
-            <element signature="e#947#1117#0#PHP" expanded="false" />
-            <element signature="e#1145#1278#0#PHP" expanded="false" />
-            <element signature="e#1315#1415#0#PHP" expanded="false" />
-            <element signature="e#1443#1498#0#PHP" expanded="false" />
-            <element signature="e#1503#1564#0#PHP" expanded="false" />
-            <element signature="e#1570#1668#0#PHP" expanded="false" />
-            <element signature="e#1673#1783#0#PHP" expanded="false" />
-            <element signature="e#1789#1849#0#PHP" expanded="false" />
-            <element signature="e#1854#1927#0#PHP" expanded="false" />
-            <element signature="e#1933#2033#0#PHP" expanded="false" />
-            <element signature="e#2038#2152#0#PHP" expanded="false" />
-            <element signature="e#2158#2219#0#PHP" expanded="false" />
-            <element signature="e#2224#2299#0#PHP" expanded="false" />
-            <element signature="e#2305#2401#0#PHP" expanded="false" />
-            <element signature="e#2406#2512#0#PHP" expanded="false" />
-            <element signature="e#2518#2577#0#PHP" expanded="false" />
-            <element signature="e#2582#2653#0#PHP" expanded="false" />
-            <element signature="e#2659#2757#0#PHP" expanded="false" />
-            <element signature="e#2762#2891#0#PHP" expanded="false" />
-            <element signature="e#2897#2956#0#PHP" expanded="false" />
-            <element signature="e#2961#3036#0#PHP" expanded="false" />
-            <element signature="e#3042#3139#0#PHP" expanded="false" />
-            <element signature="e#3144#3265#0#PHP" expanded="false" />
-            <element signature="e#3271#3331#0#PHP" expanded="false" />
-            <element signature="e#3336#3407#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1427,18 +1396,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
-          <folding>
-            <element signature="e#474#533#0#PHP" expanded="false" />
-            <element signature="e#534#3757#0#PHP" expanded="false" />
-            <element signature="e#579#816#0#PHP" expanded="false" />
-            <element signature="e#821#1510#0#PHP" expanded="false" />
-            <element signature="e#1516#1603#0#PHP" expanded="false" />
-            <element signature="e#1608#3399#0#PHP" expanded="false" />
-            <element signature="e#3409#3441#0#PHP" expanded="false" />
-            <element signature="e#3446#3626#0#PHP" expanded="false" />
-            <element signature="e#3632#3664#0#PHP" expanded="false" />
-            <element signature="e#3669#3753#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1446,12 +1403,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="10" column="62" selection-start-line="10" selection-start-column="62" selection-end-line="10" selection-end-column="62" />
-          <folding>
-            <element signature="e#44#173#0#PHP" expanded="false" />
-            <element signature="e#174#801#1#PHP" expanded="false" />
-            <element signature="e#243#342#0#PHP" expanded="false" />
-            <element signature="e#347#799#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1514,13 +1465,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/public/js/isDailyDisabled.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="2" column="61" selection-start-line="2" selection-start-column="61" selection-end-line="2" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/public/js/textHelp.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
@@ -1532,7 +1476,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="652">
           <caret line="89" column="34" selection-start-line="89" selection-start-column="34" selection-end-line="89" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1540,7 +1483,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="650">
           <caret line="89" column="39" selection-start-line="89" selection-start-column="39" selection-end-line="89" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1576,33 +1518,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="742">
           <caret line="235" column="0" selection-start-line="235" selection-start-column="0" selection-end-line="235" selection-end-column="0" />
-          <folding>
-            <element signature="e#504#607#0#PHP" expanded="false" />
-            <element signature="e#657#833#0#PHP" expanded="false" />
-            <element signature="e#838#1592#0#PHP" expanded="false" />
-            <element signature="e#1042#1066#1#PHP" expanded="false" />
-            <element signature="e#1356#1380#0#PHP" expanded="false" />
-            <element signature="e#1501#1550#0#PHP" expanded="false" />
-            <element signature="e#1598#1831#0#PHP" expanded="false" />
-            <element signature="e#1836#3280#0#PHP" expanded="false" />
-            <element signature="e#2792#2846#0#PHP" expanded="false" />
-            <element signature="e#3286#3554#0#PHP" expanded="false" />
-            <element signature="e#3559#4280#0#PHP" expanded="false" />
-            <element signature="e#4286#4497#0#PHP" expanded="false" />
-            <element signature="e#4502#5486#0#PHP" expanded="false" />
-            <element signature="e#5199#5255#0#PHP" expanded="false" />
-            <element signature="e#5492#5712#0#PHP" expanded="false" />
-            <element signature="e#5717#7016#0#PHP" expanded="false" />
-            <element signature="e#6827#6852#0#PHP" expanded="false" />
-            <element signature="e#6943#6969#0#PHP" expanded="false" />
-            <element signature="e#7022#7256#0#PHP" expanded="false" />
-            <element signature="e#7261#7739#0#PHP" expanded="false" />
-            <element signature="e#7524#7579#0#PHP" expanded="false" />
-            <element signature="e#7745#7988#0#PHP" expanded="false" />
-            <element signature="e#7993#9559#0#PHP" expanded="false" />
-            <element signature="e#8861#8882#1#PHP" expanded="false" />
-            <element signature="e#9077#9127#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1638,21 +1553,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="783">
           <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
-          <folding>
-            <element signature="e#137#292#0#PHP" expanded="false" />
-            <element signature="e#319#428#0#PHP" expanded="false" />
-            <element signature="e#433#599#0#PHP" expanded="false" />
-            <element signature="e#605#714#0#PHP" expanded="false" />
-            <element signature="e#719#885#0#PHP" expanded="false" />
-            <element signature="e#891#999#0#PHP" expanded="false" />
-            <element signature="e#1004#1166#0#PHP" expanded="false" />
-            <element signature="e#1172#1281#0#PHP" expanded="false" />
-            <element signature="e#1286#1452#0#PHP" expanded="false" />
-            <element signature="e#1458#1561#0#PHP" expanded="false" />
-            <element signature="e#1566#2040#0#PHP" expanded="false" />
-            <element signature="e#2046#2132#0#PHP" expanded="false" />
-            <element signature="e#2137#2598#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1660,7 +1560,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1134">
           <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1668,7 +1567,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1836">
           <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1684,7 +1582,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3078">
           <caret line="114" column="0" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1692,7 +1589,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1404">
           <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1700,7 +1596,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="567">
           <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1708,7 +1603,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
           <caret line="9" column="42" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1716,7 +1610,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="524">
           <caret line="120" column="26" selection-start-line="120" selection-start-column="26" selection-end-line="120" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1737,7 +1630,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="351">
           <caret line="49" column="58" selection-start-line="49" selection-start-column="58" selection-end-line="49" selection-end-column="58" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1755,7 +1647,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/public/css/style_bookingpage.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
+        <state relative-caret-position="1647">
           <caret line="213" column="20" selection-start-line="213" selection-start-column="20" selection-end-line="213" selection-end-column="20" />
           <folding>
             <element signature="e#32#78#0" expanded="false" />
@@ -1878,17 +1770,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/public/js/booking.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="533">
-          <caret line="142" column="17" selection-start-line="142" selection-start-column="17" selection-end-line="142" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Entity/Booking.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
+        <state relative-caret-position="459">
           <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
           <folding>
             <element signature="e#220#355#0#PHP" expanded="false" />
@@ -1959,13 +1843,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Validator/LimitTicketsValidator.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="587">
+        <state relative-caret-position="1188">
           <caret line="64" column="32" selection-start-line="64" selection-start-column="32" selection-end-line="64" selection-end-column="32" />
           <folding>
             <element signature="e#316#410#0#PHP" expanded="false" />
             <element signature="e#415#507#0#PHP" expanded="false" />
             <element signature="e#513#1038#0#PHP" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/public/js/isDailyDisabled.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-27">
+          <caret line="2" column="61" selection-start-line="2" selection-start-column="61" selection-end-line="2" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/public/js/booking.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="761">
+          <caret line="181" column="65" selection-start-line="181" selection-start-column="65" selection-end-line="181" selection-end-column="65" />
+          <folding />
         </state>
       </provider>
     </entry>

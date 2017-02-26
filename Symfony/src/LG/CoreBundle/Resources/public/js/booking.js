@@ -12,6 +12,18 @@ $(function($) {
         birthdate :'Date de naissance (dd-mm-yyyy)'
     };
     var clients = [];
+    
+    //Get the current date in order to validate birthdate (child and senior price)
+    var $now = new Date();
+    var $currentDay = $now.getDate();
+    var $currentMonth = $now.getMonth()+1;
+    if ($currentMonth < 10){
+        $currentMonth = '0' + $currentMonth;
+    }
+    var $currentYear = $now.getFullYear();
+    var $fourYearsOld = $currentDay + '-' + $currentMonth + '-' + ($currentYear - 4);
+    var $twelveYearsOld = $currentDay + '-' + $currentMonth + '-' + ($currentYear - 12);
+    var $sixtyYearsOld = $currentDay + '-' + $currentMonth + '-' + ($currentYear - 60);
 
     
     /**
@@ -27,27 +39,19 @@ $(function($) {
         var $numberTicketsChild = $('#numberTicketsChild').text();
         var $numberTicketsReduce = $('#numberTicketsReduce').text();
         var $numberTicketsSenior = $('#numberTicketsSenior').text();
-        //Get the current date in order to validate birthdate (child and senior price)
-        var $now = new Date();
-        var $currentDay = $now.getDate();
-        var $currentMonth = $now.getMonth()+1;
-        if ($currentMonth < 10){
-            $currentMonth = '0' + $currentMonth;
-        }
-        var $currentYear = $now.getFullYear();
-        var $fourYearsOld = $currentDay + '-' + $currentMonth + '-' + ($currentYear - 4);
-        var $twelveYearsOld = $currentDay + '-' + $currentMonth + '-' + ($currentYear - 12);
-        var $sixtyYearsOld = $currentDay + '-' + $currentMonth + '-' + ($currentYear - 60);
         //In order to increase visitor in a loop
         var $visitor = 0;
         //In order to increase form id in a loop
         var $number = 0;
+        //In order to identify ticket price
+        var $price;
         
         //Generate forms for normal tickets
         for (i=0; i<$numberTicketsNormal; i++){
             $visitor++;
             $number++;
-            generateForm($number);
+            $price = "normal";
+            generateForm($number, $price);
             $('#form_'+$number).prepend('<div class="visitor normalPriceVisitor">Visiteur n°'+$visitor+'<br/>Tarif Normal</div>');
         }
         
@@ -55,7 +59,8 @@ $(function($) {
         for (i=0; i<$numberTicketsReduce; i++){
             $visitor++;
             $number++;
-            generateForm($number);
+            $price = "reduce";
+            generateForm($number, $price);
             $('#form_'+$number)
                 .prepend('<div class="visitor reducePriceVisitor">Visiteur n°'+$visitor+'<br/>Tarif Réduit</div>')
                 .append('<div class="radioReducePrice">' +
@@ -67,7 +72,8 @@ $(function($) {
         for (i=0; i<$numberTicketsChild; i++){
             $visitor++;
             $number++;
-            generateForm($number);
+            $price = "child";
+            generateForm($number, $price);
             $('#form_'+$number)
                 .prepend('<div class="visitor childPriceVisitor">Visiteur n°'+$visitor+'<br/>Tarif Enfant</div>')
                 .append('<div class="textChildPrice">Le visiteur doit être né entre le ' + $twelveYearsOld + ' et le ' + $fourYearsOld +'</div>');
@@ -78,7 +84,8 @@ $(function($) {
         for (i=0; i<$numberTicketsSenior; i++){
             $visitor++;
             $number++;
-            generateForm($number);
+            $price = "senior";
+            generateForm($number, $price);
             $('#form_'+$number)
                 .prepend('<div class="visitor seniorPriceVisitor">Visiteur n°'+$visitor+'<br/>Tarif Senior</div>')
                 .append('<div class="textSeniorPrice">Le visiteur doit être né avant le '+$sixtyYearsOld+'</div>');
@@ -91,8 +98,8 @@ $(function($) {
      *      - should send an ajax request to allowing client persisting data
      *      - should display success message
      */
-    var generateForm = function ($number) {
-        var $form = $("<div class='booking-form-container' id='form_"+$number+"'>");
+    var generateForm = function ($number, $price) {
+        var $form = $("<div class='booking-form-container "+$price+"' id='form_"+$number+"'>");
         $formContainerStepTwo.append($form);
         $.each(clientsMap, function (key, value) {
             $form.append(generateFormFields(key, value));
@@ -104,6 +111,9 @@ $(function($) {
      */
     var submitClientButton = function () {
         var isValid = false;
+        var reducePriceIsValid = false;
+        var childPriceIsValid = false;
+        var seniorPriceIsValid = false;
         
         var $form = $('<div class="col-md-offset-4">');
         $formContainerStepTwo.after($form);
@@ -113,6 +123,8 @@ $(function($) {
             var $visitor = 0;
             var $number = 1;
             $('div.alert.alert-danger').remove();
+
+            //For each form, we check if each field is correctly fill.
             $('.booking-form-container').each(function() {
                 $visitor++;
                 $number++;
@@ -142,7 +154,44 @@ $(function($) {
                     }
                 }
             });
-            if( isValid === true )
+
+            //We check if radio button on reduce price is checked. If not -> error message
+            $('.booking-form-container.reduce').each(function () {
+                if($('input[name=yes]:checked').val() || '')
+                {
+                    reducePriceIsValid = true
+                } else {
+                    reducePriceIsValid = false;
+                    return $form.append($('<div class="alert alert-danger messageErrorClient">Tarif Réduit : Veuillez confirmer le(s) tarif(s) réduit(s)</div>'));
+                }
+            });
+
+            //We check if birthdate client for senior price is correct (more than 60 years old)
+            $('.booking-form-container.senior').each(function () {
+                var $birthDateValue = $(this).find('.birthdate').val();
+                if ($birthDateValue.split('-').reverse().join('') <= $sixtyYearsOld.split('-').reverse().join(''))
+                {
+                    seniorPriceIsValid = true;
+                } else {
+                    seniorPriceIsValid = false;
+                    return $form.append($('<div class="alert alert-danger messageErrorClient">Tarif Senior : La date de naissance ne correspond pas au Tarif Senior (60 ans ou plus)</div>'));
+                }
+            });
+
+            //We check if birthdate client for child price is correct (between 4 and 12 years old)
+            $('.booking-form-container.child').each(function () {
+                var $birthDateValue = $(this).find('.birthdate').val();
+                if (($twelveYearsOld.split('-').reverse().join('') <= $birthDateValue.split('-').reverse().join('')) && ($birthDateValue.split('-').reverse().join('') <= $fourYearsOld.split('-').reverse().join('')))
+                {
+                    childPriceIsValid = true;
+                } else {
+                    childPriceIsValid = false;
+                    return $form.append($('<div class="alert alert-danger messageErrorClient">Tarif Enfant : La date de naissance ne correspond pas au Tarif Enfant (Entre 4 et 12 ans)</div>'));
+                }
+            });
+
+            //If each front validation is good, we call submitClient function and onSuccessSubmit function
+            if( isValid === true && reducePriceIsValid === true && childPriceIsValid === true && seniorPriceIsValid === true)
             {
                 var dataForm = getDataForm();
                 $.each(dataForm, function(index, value) {
@@ -211,6 +260,7 @@ $(function($) {
      * Append a success message
      */
    var onSuccessSubmit = function () {
+        //todo Change this function adding a redirection to step three
         $('.booking-client__validate').after('<div class="alert alert-success" id="persistSuccessMessage">Merci, <br/>Informations enregistrées</div>');
     };
 
