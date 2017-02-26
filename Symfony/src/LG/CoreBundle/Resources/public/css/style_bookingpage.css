@@ -233,11 +233,11 @@ hr{
     margin-bottom: 5%;
     border-radius: 8%;
  }
-#persistSuccessMessage, .messageErrorClient{
-    margin-top: 5%;
-    margin-left: 5%;
-    width:40%;
+#booking-form-container-step-two .messageErrorClient{
+    margin:5%;
+    width:auto;
     text-align: center;
+    border-radius:2%;
 }
 #textRecapStepTwo{
     text-align: center;

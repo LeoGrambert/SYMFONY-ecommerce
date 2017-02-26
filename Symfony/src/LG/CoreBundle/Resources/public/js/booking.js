@@ -25,6 +25,17 @@ $(function($) {
     var $twelveYearsOld = $currentDay + '-' + $currentMonth + '-' + ($currentYear - 12);
     var $sixtyYearsOld = $currentDay + '-' + $currentMonth + '-' + ($currentYear - 60);
 
+    //Get number of tickets in order to generate form in a loop
+    var $numberTicketsNormal = $('#numberTicketsNormal').text();
+    var $numberTicketsChild = $('#numberTicketsChild').text();
+    var $numberTicketsReduce = $('#numberTicketsReduce').text();
+    var $numberTicketsSenior = $('#numberTicketsSenior').text();
+
+    //In order to add class at form
+    var $numberReduce = 0;
+    var $numberChild = 0;
+    var $numberSenior = 0;
+
     
     /**
      * Function that retrieves the number of ordered tickets
@@ -34,11 +45,6 @@ $(function($) {
      */
     var numberTicketsGenerate = function()
     {
-        //Get number of tickets in order to generate form in a loop
-        var $numberTicketsNormal = $('#numberTicketsNormal').text();
-        var $numberTicketsChild = $('#numberTicketsChild').text();
-        var $numberTicketsReduce = $('#numberTicketsReduce').text();
-        var $numberTicketsSenior = $('#numberTicketsSenior').text();
         //In order to increase visitor in a loop
         var $visitor = 0;
         //In order to increase form id in a loop
@@ -59,36 +65,41 @@ $(function($) {
         for (i=0; i<$numberTicketsReduce; i++){
             $visitor++;
             $number++;
+            $numberReduce++;
             $price = "reduce";
             generateForm($number, $price);
             $('#form_'+$number)
                 .prepend('<div class="visitor reducePriceVisitor">Visiteur n°'+$visitor+'<br/>Tarif Réduit</div>')
                 .append('<div class="radioReducePrice">' +
-                            '<input type="radio" name="yes" id="reducePriceYes" required><label for="Yes">Confirmation Tarif Réduit</label>' +
-                            '<p id="reduceText">Votre carte d\'étudiant, militaire ou équivalent vous sera demandé à l\'entrée du Musée.</p></div>');
+                            '<input type="checkbox" name="yes" id="reducePriceYes" required><label for="Yes">Confirmation Tarif Réduit</label>' +
+                            '<p id="reduceText">Votre carte d\'étudiant, militaire ou équivalent vous sera demandé à l\'entrée du Musée.</p></div>')
+                .addClass('reduce_'+$numberReduce);
         }
         
         //Generate forms for child tickets
         for (i=0; i<$numberTicketsChild; i++){
             $visitor++;
             $number++;
+            $numberChild++;
             $price = "child";
             generateForm($number, $price);
             $('#form_'+$number)
                 .prepend('<div class="visitor childPriceVisitor">Visiteur n°'+$visitor+'<br/>Tarif Enfant</div>')
-                .append('<div class="textChildPrice">Le visiteur doit être né entre le ' + $twelveYearsOld + ' et le ' + $fourYearsOld +'</div>');
-
+                .append('<div class="textChildPrice">Le visiteur doit être né entre le ' + $twelveYearsOld + ' et le ' + $fourYearsOld +'</div>')
+                .addClass('child_'+$numberChild);
         }
         
         //Generate forms for senior tickets
         for (i=0; i<$numberTicketsSenior; i++){
             $visitor++;
             $number++;
+            $numberSenior++;
             $price = "senior";
             generateForm($number, $price);
             $('#form_'+$number)
                 .prepend('<div class="visitor seniorPriceVisitor">Visiteur n°'+$visitor+'<br/>Tarif Senior</div>')
-                .append('<div class="textSeniorPrice">Le visiteur doit être né avant le '+$sixtyYearsOld+'</div>');
+                .append('<div class="textSeniorPrice">Le visiteur doit être né avant le '+$sixtyYearsOld+'</div>')
+                .addClass('senior_'+$numberSenior);
         }
     };
 
@@ -107,7 +118,12 @@ $(function($) {
     };
 
     /**
-     * Front validation of client
+     * Front validation of client. We use 4 boolean.
+     *      isValid -> is true if each field is correctly fill
+     *      reducePriceIsValid -> is true if checkbox on reduce tickets is checked
+     *      childPriceIsValid -> is true if birthdate is for a child between 4 and 12 years old
+     *      seniorPriceIsValid -> is true if birthdate is for a senior after 60 years old
+     * If there all are true, we send and save data.
      */
     var submitClientButton = function () {
         var isValid = false;
@@ -122,6 +138,9 @@ $(function($) {
         $form.on('click', '.booking-client__validate', function() {
             var $visitor = 0;
             var $number = 1;
+            var $numberReduce = 0;
+            var $numberChild = 0;
+            var $numberSenior = 0;
             $('div.alert.alert-danger').remove();
 
             //For each form, we check if each field is correctly fill.
@@ -131,22 +150,22 @@ $(function($) {
                 var $lastNameValue = $(this).find('.lastname').val();
                 if ($lastNameValue == "" || $lastNameValue.length < 3){
                     isValid = false;
-                    return $form.append($('<div class="alert alert-danger messageErrorClient">Visiteur n°'+$visitor+' : Le nom n\'est pas valide</div>'));
+                    return $('#form_'+$visitor).append($('<div class="alert alert-danger messageErrorClient">Le nom n\'est pas valide</div>'));
                 } else {
                     var $firstNameValue = $(this).find('.firstname').val();
                     if ($firstNameValue == "" || $firstNameValue.length < 3){
                         isValid = false;
-                        return $form.append($('<div class="alert alert-danger messageErrorClient">Visiteur n°'+$visitor+' : Le prénom n\'est pas valide</div>'));
+                        return $('#form_'+$visitor).append($('<div class="alert alert-danger messageErrorClient">Le prénom n\'est pas valide</div>'));
                     } else {
                         var $countryValue = $(this).find('.country').val();
                         if($countryValue == "" || $countryValue.length < 3) {
                             isValid = false;
-                            return $form.append($('<div class="alert alert-danger messageErrorClient">Visiteur n°'+$visitor+' : Le pays de résidence n\'est pas valide</div>'));
+                            return $('#form_'+$visitor).append($('<div class="alert alert-danger messageErrorClient">Le pays de résidence n\'est pas valide</div>'));
                         } else {
                             var $birthDateValue = $(this).find('.birthdate').val();
                             if(!$birthDateValue.match(/^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]|(?:Jan|Mar|May|Jul|Aug|Oct|Dec)))\1|(?:(?:29|30)(\/|-|\.)(?:0?[1,3-9]|1[0-2]|(?:Jan|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec))\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)(?:0?2|(?:Feb))\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9]|(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep))|(?:1[0-2]|(?:Oct|Nov|Dec)))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$/)){
                                 isValid = false;
-                                return $form.append($('<div class="alert alert-danger messageErrorClient">Visiteur n°'+$visitor+' : La date de naissance n\'est pas valide</div>'));
+                                return $('#form_'+$visitor).append($('<div class="alert alert-danger messageErrorClient">La date de naissance n\'est pas valide</div>'));
                             } else {
                                 isValid = true;
                             }
@@ -155,42 +174,66 @@ $(function($) {
                 }
             });
 
-            //We check if radio button on reduce price is checked. If not -> error message
-            $('.booking-form-container.reduce').each(function () {
-                if($('input[name=yes]:checked').val() || '')
-                {
-                    reducePriceIsValid = true
-                } else {
-                    reducePriceIsValid = false;
-                    return $form.append($('<div class="alert alert-danger messageErrorClient">Tarif Réduit : Veuillez confirmer le(s) tarif(s) réduit(s)</div>'));
-                }
-            });
+            //We check if checkbox button on reduce price is checked. If not -> error message
+            var $containerReduce = $('.booking-form-container.reduce');
+            console.log($containerReduce.length);
+            if ($containerReduce.length === 0){
+                reducePriceIsValid = true;
+            } else {
+                $containerReduce.each(function () {
+                    $numberReduce++;
+                    console.log($numberReduce);
+                    if($('.reduce_'+$numberReduce+' input[name=yes]:checked').val() || '')
+                    {
+                        reducePriceIsValid = true;
+                    } else {
+                        reducePriceIsValid = false;
+                        return $('.reduce_'+$numberReduce).append($('<div class="alert alert-danger messageErrorClient">Tarif Réduit : Veuillez confirmer le(s) tarif(s) réduit(s)</div>'));
+                    }
+                });
+            }
+
 
             //We check if birthdate client for senior price is correct (more than 60 years old)
-            $('.booking-form-container.senior').each(function () {
-                var $birthDateValue = $(this).find('.birthdate').val();
-                if ($birthDateValue.split('-').reverse().join('') <= $sixtyYearsOld.split('-').reverse().join(''))
-                {
-                    seniorPriceIsValid = true;
-                } else {
-                    seniorPriceIsValid = false;
-                    return $form.append($('<div class="alert alert-danger messageErrorClient">Tarif Senior : La date de naissance ne correspond pas au Tarif Senior (60 ans ou plus)</div>'));
-                }
-            });
+            var $containerSenior = $('.booking-form-container.senior');
+            console.log($containerSenior.length);
+            if ($containerSenior.length === 0){
+                seniorPriceIsValid = true;
+            } else {
+                $containerSenior.each(function () {
+                    $numberSenior++;
+                    var $birthDateValue = $(this).find('.birthdate').val();
+                    console.log($birthDateValue.split('-').reverse().join(''));
+                    if (($birthDateValue.split('-').reverse().join('') > $sixtyYearsOld.split('-').reverse().join('')) || ($birthDateValue == ""))
+                    {
+                        seniorPriceIsValid = false;
+                        return $('.senior_'+$numberSenior).append($('<div class="alert alert-danger messageErrorClient">Tarif Senior : La date de naissance ne correspond pas au Tarif Senior (60 ans ou plus)</div>'));
+                    } else {
+                        seniorPriceIsValid = true;
+                    }
+                });
+            }
 
             //We check if birthdate client for child price is correct (between 4 and 12 years old)
-            $('.booking-form-container.child').each(function () {
-                var $birthDateValue = $(this).find('.birthdate').val();
-                if (($twelveYearsOld.split('-').reverse().join('') <= $birthDateValue.split('-').reverse().join('')) && ($birthDateValue.split('-').reverse().join('') <= $fourYearsOld.split('-').reverse().join('')))
-                {
-                    childPriceIsValid = true;
-                } else {
-                    childPriceIsValid = false;
-                    return $form.append($('<div class="alert alert-danger messageErrorClient">Tarif Enfant : La date de naissance ne correspond pas au Tarif Enfant (Entre 4 et 12 ans)</div>'));
-                }
-            });
+            var $containerChild = $('.booking-form-container.child');
+            if ($containerChild.length === 0){
+                childPriceIsValid = true;
+            } else {
+                $containerChild.each(function () {
+                    $numberChild++;
+                    var $birthDateValue = $(this).find('.birthdate').val();
+                    if (($twelveYearsOld.split('-').reverse().join('') <= $birthDateValue.split('-').reverse().join('')) && ($birthDateValue.split('-').reverse().join('') <= $fourYearsOld.split('-').reverse().join('')))
+                    {
+                        childPriceIsValid = true;
+                    } else {
+                        childPriceIsValid = false;
+                        return $('.child_'+$numberChild).append($('<div class="alert alert-danger messageErrorClient">Tarif Enfant : La date de naissance ne correspond pas au Tarif Enfant (Entre 4 et 12 ans)</div>'));
+                    }
+                });
+            }
 
             //If each front validation is good, we call submitClient function and onSuccessSubmit function
+            console.log(isValid, reducePriceIsValid, childPriceIsValid, seniorPriceIsValid);
             if( isValid === true && reducePriceIsValid === true && childPriceIsValid === true && seniorPriceIsValid === true)
             {
                 var dataForm = getDataForm();
@@ -202,7 +245,6 @@ $(function($) {
                 $('#buttonToStepThree').attr('disabled', false);
             }
         });
-
     };
 
     /**
