@@ -22,10 +22,67 @@ $(function($) {
      */
     var numberTicketsGenerate = function()
     {
-        var $numberTickets = $('#numberTickets').text();
-        for (i=0; i<$numberTickets; i++){
-            generateForm();
-            $('.booking-form-container');
+        //Get number of tickets in order to generate form in a loop
+        var $numberTicketsNormal = $('#numberTicketsNormal').text();
+        var $numberTicketsChild = $('#numberTicketsChild').text();
+        var $numberTicketsReduce = $('#numberTicketsReduce').text();
+        var $numberTicketsSenior = $('#numberTicketsSenior').text();
+        //Get the current date in order to validate birthdate (child and senior price)
+        var $now = new Date();
+        var $currentDay = $now.getDate();
+        var $currentMonth = $now.getMonth()+1;
+        if ($currentMonth < 10){
+            $currentMonth = '0' + $currentMonth;
+        }
+        var $currentYear = $now.getFullYear();
+        var $fourYearsOld = $currentDay + '-' + $currentMonth + '-' + ($currentYear - 4);
+        var $twelveYearsOld = $currentDay + '-' + $currentMonth + '-' + ($currentYear - 12);
+        var $sixtyYearsOld = $currentDay + '-' + $currentMonth + '-' + ($currentYear - 60);
+        //In order to increase visitor in a loop
+        var $visitor = 0;
+        //In order to increase form id in a loop
+        var $number = 0;
+        
+        //Generate forms for normal tickets
+        for (i=0; i<$numberTicketsNormal; i++){
+            $visitor++;
+            $number++;
+            generateForm($number);
+            $('#form_'+$number).prepend('<div class="visitor normalPriceVisitor">Visiteur n°'+$visitor+'<br/>Tarif Normal</div>');
+        }
+        
+        //Generate forms for reduce tickets
+        for (i=0; i<$numberTicketsReduce; i++){
+            $visitor++;
+            $number++;
+            generateForm($number);
+            $('#form_'+$number)
+                .prepend('<div class="visitor reducePriceVisitor">Visiteur n°'+$visitor+'<br/>Tarif Réduit</div>')
+                .append('<div class="radioReducePrice">Confirmation tarif réduit ?<br/>' +
+                            '<input type="radio" name="yesOrNo" id="reducePriceYes" value="Yes"><label for="Yes">Oui</label>' +
+                            '<input type="radio" name="yesOrNo" id="reducePriceNo" value="No"><label for="No">Non</label>' +
+                            '<p>Votre carte d\'étudiant, militaire ou équivalent vous sera demandé à l\'entrée du Musée.</p></div>');
+        }
+        
+        //Generate forms for child tickets
+        for (i=0; i<$numberTicketsChild; i++){
+            $visitor++;
+            $number++;
+            generateForm($number);
+            $('#form_'+$number)
+                .prepend('<div class="visitor childPriceVisitor">Visiteur n°'+$visitor+'<br/>Tarif Enfant</div>')
+                .append('<div class="textChildPrice">Le visiteur doit être né entre le ' + $twelveYearsOld + ' et le ' + $fourYearsOld +'</div>');
+
+        }
+        
+        //Generate forms for senior tickets
+        for (i=0; i<$numberTicketsSenior; i++){
+            $visitor++;
+            $number++;
+            generateForm($number);
+            $('#form_'+$number)
+                .prepend('<div class="visitor seniorPriceVisitor">Visiteur n°'+$visitor+'<br/>Tarif Senior</div>')
+                .append('<div class="textSeniorPrice">Le visiteur doit être né avant le '+$sixtyYearsOld+'</div>');
         }
     };
 
@@ -35,8 +92,8 @@ $(function($) {
      *      - should send an ajax request to allowing client persisting data
      *      - should display success message
      */
-    var generateForm = function () {
-        var $form = $('<div class="booking-form-container">');
+    var generateForm = function ($number) {
+        var $form = $("<div class='booking-form-container' id='form_"+$number+"'>");
         $formContainerStepTwo.append($form);
         $.each(clientsMap, function (key, value) {
             $form.append(generateFormFields(key, value));

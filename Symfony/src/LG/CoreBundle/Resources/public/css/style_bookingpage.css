@@ -242,9 +242,28 @@ hr{
 #textRecapStepTwo{
     text-align: center;
 }
+#booking-form-container-step-two .visitor{
+    margin-left:29%;
+    margin-top:5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    background-color: #4B4B4B;
+    color:white;
+    border-radius: 8%;
+    box-shadow: 1px 1px 3px black;
+}
+#booking-form-container-step-two .radioReducePrice, #booking-form-container-step-two .textChildPrice, #booking-form-container-step-two .textSeniorPrice{
+    width:auto;
+    font-weight: bold;
+    margin:6%;
+}
+#booking-form-container-step-two .radioReducePrice label{
+    margin:2%;
+}
 .booking-client__validate{
     margin-right:50%;
 }
+
 
 /*Stripe step three stylesheet*/
 #status{

@@ -32,31 +32,32 @@
 
     <!-- Step two main -->
     <div class="container marginBody">
+        <div class="row">
+            <div class="col-md-offset-4 col-md-4" id="textRecapStepTwo">
+                <h4>{{ "Récapitulatif de votre commande"|trans}}</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-offset-4 col-md-4" id="containerPriceStepTwo">
+                <p>{{ numberTickets }} {{ "billets dans le panier - Date de visite :"|trans}} {{ dateReservationToString }}</p>
+                <hr>
+                <span id="numberTicketsNormal">{{ numberTicketsNormal }}</span> {{ "billet(s) Tarif Normal"|trans}}<br/>
+                <span id="numberTicketsReduce">{{ numberTicketsReduce }}</span> {{ "billet(s) Tarif Réduit"|trans}}<br/>
+                <span id="numberTicketsChild">{{ numberTicketsChild }}</span> {{ "billet(s) Tarif Enfant"|trans}}<br/>
+                <span id="numberTicketsSenior">{{ numberTicketsSenior }}</span> {{ "billet(s) Tarif Senior"|trans}}<br/>
+                <hr>
+                <div>{{ "Prix total :"|trans }}
+                    <div class="price">{{ price }} €</div>
+                </div>
+            </div>
+        </div>
         <div class="row" id="infoTicketsStepTwo">
-            <p>
-                {{ "Pour l'édition de vos billets, veuillez remplir les formulaires ci-dessous."|trans}}<br/> {{ "Un justificatif pourra vous être demandé à l'entrée du Musée."|trans}}<p>
-                    > {{ numberTicketsNormal }} {{ "billet(s) Tarif Normal"|trans}}<br/>
-                    > {{ numberTicketsReduce }} {{ "billet(s) Tarif Réduit"|trans}}<br/>
-                    > {{ numberTicketsChild }} {{ "billet(s) Tarif Enfant"|trans}}<br/>
-                    > {{ numberTicketsSenior }} {{ "billet(s) Tarif Senior"|trans}}
+            <p>{{ "Pour l'édition de vos billets, veuillez remplir les formulaires ci-dessous."|trans}}<br/> {{ "Un justificatif pourra vous être demandé à l'entrée du Musée."|trans}}<p>
             <hr>
             <div id="booking-form-container-step-two" class="col-sm-12" data-create-url="{{ path('booking.client.create', {"id" : booking.id}) }}">
             </div>
             <hr>
-            <div class="row">
-                <div class="col-md-offset-4 col-md-4" id="textRecapStepTwo">
-                    <h4>{{ "Récapitulatif de votre commande"|trans}}</h4>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-offset-4 col-md-4" id="containerPriceStepTwo">
-                    <p>{{ numberTickets }} {{ "billets dans le panier - Date de visite :"|trans}} {{ dateReservationToString }}</p>
-                    <div>{{ "Prix total :"|trans }}
-                        <div class="price">{{ price }} €</div>
-                    </div>
-                    <p>{{ "Confirmez-vous votre commande ?"|trans}}</p>
-                </div>
-            </div>
+
             <div id="">
                 <a href="{{ path('booking.create.stepThree', {"id" : booking.id}) }}"><button disabled class="btn btn-primary" id="buttonToStepThree">{{ "Confirmer la commande"|trans}}</button></a>
             </div>
