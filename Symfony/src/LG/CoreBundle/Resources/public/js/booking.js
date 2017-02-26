@@ -58,10 +58,9 @@ $(function($) {
             generateForm($number);
             $('#form_'+$number)
                 .prepend('<div class="visitor reducePriceVisitor">Visiteur n°'+$visitor+'<br/>Tarif Réduit</div>')
-                .append('<div class="radioReducePrice">Confirmation tarif réduit ?<br/>' +
-                            '<input type="radio" name="yesOrNo" id="reducePriceYes" value="Yes"><label for="Yes">Oui</label>' +
-                            '<input type="radio" name="yesOrNo" id="reducePriceNo" value="No"><label for="No">Non</label>' +
-                            '<p>Votre carte d\'étudiant, militaire ou équivalent vous sera demandé à l\'entrée du Musée.</p></div>');
+                .append('<div class="radioReducePrice">' +
+                            '<input type="radio" name="yes" id="reducePriceYes" required><label for="Yes">Confirmation Tarif Réduit</label>' +
+                            '<p id="reduceText">Votre carte d\'étudiant, militaire ou équivalent vous sera demandé à l\'entrée du Musée.</p></div>');
         }
         
         //Generate forms for child tickets
@@ -105,38 +104,46 @@ $(function($) {
      */
     var submitClientButton = function () {
         var isValid = false;
+        
         var $form = $('<div class="col-md-offset-4">');
         $formContainerStepTwo.after($form);
-        $form.append($('<button class="btn btn-default booking-client__validate">').text('Enregistrer'));
+        $form.append($('<button class="btn btn-primary booking-client__validate">').text('Confirmer la commande'));
+        
         $form.on('click', '.booking-client__validate', function() {
+            var $visitor = 0;
+            var $number = 1;
+            $('div.alert.alert-danger').remove();
             $('.booking-form-container').each(function() {
+                $visitor++;
+                $number++;
                 var $lastNameValue = $(this).find('.lastname').val();
                 if ($lastNameValue == "" || $lastNameValue.length < 3){
-                    return $form.append($('<div class="alert alert-danger messageErrorClient">Le nom n\'est pas valide</div>').delay(4000).fadeOut('slow'));
+                    isValid = false;
+                    return $form.append($('<div class="alert alert-danger messageErrorClient">Visiteur n°'+$visitor+' : Le nom n\'est pas valide</div>'));
                 } else {
                     var $firstNameValue = $(this).find('.firstname').val();
                     if ($firstNameValue == "" || $firstNameValue.length < 3){
-                        return $form.append($('<div class="alert alert-danger messageErrorClient">Le prénom n\'est pas valide</div>').delay(4000).fadeOut('slow'));
+                        isValid = false;
+                        return $form.append($('<div class="alert alert-danger messageErrorClient">Visiteur n°'+$visitor+' : Le prénom n\'est pas valide</div>'));
                     } else {
                         var $countryValue = $(this).find('.country').val();
                         if($countryValue == "" || $countryValue.length < 3) {
-                            return $form.append($('<div class="alert alert-danger messageErrorClient">Le pays de résidence n\'est pas valide</div>').delay(4000).fadeOut('slow'));
+                            isValid = false;
+                            return $form.append($('<div class="alert alert-danger messageErrorClient">Visiteur n°'+$visitor+' : Le pays de résidence n\'est pas valide</div>'));
                         } else {
                             var $birthDateValue = $(this).find('.birthdate').val();
                             if(!$birthDateValue.match(/^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]|(?:Jan|Mar|May|Jul|Aug|Oct|Dec)))\1|(?:(?:29|30)(\/|-|\.)(?:0?[1,3-9]|1[0-2]|(?:Jan|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec))\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)(?:0?2|(?:Feb))\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9]|(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep))|(?:1[0-2]|(?:Oct|Nov|Dec)))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$/)){
-                                return $form.append($('<div class="alert alert-danger messageErrorClient">La date de naissance n\'est pas valide</div>').delay(4000).fadeOut('slow'));
-                            } else{
+                                isValid = false;
+                                return $form.append($('<div class="alert alert-danger messageErrorClient">Visiteur n°'+$visitor+' : La date de naissance n\'est pas valide</div>'));
+                            } else {
                                 isValid = true;
                             }
                         }
                     }
                 }
             });
-            if( 
-                $('.booking-form-container').each(function() {
-                    isValid === true
-                })
-            ) {
+            if( isValid === true )
+            {
                 var dataForm = getDataForm();
                 $.each(dataForm, function(index, value) {
                     createClientModel(value.firstname, value.lastname, value.country, value.birthdate);

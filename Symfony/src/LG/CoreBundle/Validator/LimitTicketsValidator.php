@@ -36,7 +36,9 @@ class LimitTicketsValidator extends ConstraintValidator
     public function validate($value, Constraint $constraint)
     {
         $datesReservation = [];
-        $dateValue = $value->format('d-m-Y');
+        if($value != null){
+            $dateValue = $value->format('d-m-Y');
+        }
 
         /*
          * I call findByDateReservation in repository/BookingRepository.php

@@ -211,7 +211,7 @@ hr{
 #booking-form-container-step-two div{
     background-color: #DADADA;
     margin-left: 6.5%;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
     width:40%;
 }
 #booking-form-container-step-two .form-group{
@@ -244,12 +244,12 @@ hr{
 }
 #booking-form-container-step-two .visitor{
     margin-left:29%;
-    margin-top:5px;
+    margin-top:-4%;
     font-size: 1.1em;
     font-weight: bold;
     background-color: #4B4B4B;
     color:white;
-    border-radius: 8%;
+    border-radius: 2%;
     box-shadow: 1px 1px 3px black;
 }
 #booking-form-container-step-two .radioReducePrice, #booking-form-container-step-two .textChildPrice, #booking-form-container-step-two .textSeniorPrice{
@@ -259,6 +259,9 @@ hr{
 }
 #booking-form-container-step-two .radioReducePrice label{
     margin:2%;
+}
+.radioReducePrice #reduceText{
+    font-weight: normal;
 }
 .booking-client__validate{
     margin-right:50%;

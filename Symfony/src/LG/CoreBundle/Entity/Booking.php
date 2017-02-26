@@ -27,7 +27,7 @@ class Booking
     /**
      * @var \DateTime
      * @ORM\Column(name="date_reservation", type="date")
-     * @Assert\NotBlank(
+     * @Assert\NotNull(
      *     message="Veuillez choisir une date de réservation.",
      * )
      * @Assert\Date()
@@ -75,7 +75,7 @@ class Booking
      *     min=0,
      *     max=20,
      *     minMessage="Vous ne pouvez pas sélectionner un nombre négatif",
-     *     maxMessage="Vous ne pouvez pas commander plus de 20 billets par tarif. Contactez le Musée pour organiser une visite de groupe."
+     *     maxMessage="Vous ne pouvez pas commander plus de 20 billets pour le tarif normal. Contactez le Musée pour organiser une visite de groupe."
      * )
      */
     private $ticketNumberNormal = 0;
@@ -88,7 +88,7 @@ class Booking
      *     min=0,
      *     max=20,
      *     minMessage="Vous ne pouvez pas sélectionner un nombre négatif",
-     *     maxMessage="Vous ne pouvez pas commander plus de 20 billets par tarif. Contactez le Musée pour organiser une visite de groupe."
+     *     maxMessage="Vous ne pouvez pas commander plus de 20 billets pour le tarif réduit. Contactez le Musée pour organiser une visite de groupe."
      * )
      */
     private $ticketNumberReduce = 0;
@@ -101,7 +101,7 @@ class Booking
      *     min=0,
      *     max=20,
      *     minMessage="Vous ne pouvez pas sélectionner un nombre négatif",
-     *     maxMessage="Vous ne pouvez pas commander plus de 20 billets par tarif. Contactez le Musée pour organiser une visite de groupe."
+     *     maxMessage="Vous ne pouvez pas commander plus de 20 billets pour le tarif enfant. Contactez le Musée pour organiser une visite de groupe."
      * )
      */
     private $ticketNumberChild = 0;
@@ -114,7 +114,7 @@ class Booking
      *     min=0,
      *     max=20,
      *     minMessage="Vous ne pouvez pas sélectionner un nombre négatif",
-     *     maxMessage="Vous ne pouvez pas commander plus de 20 billets par tarif. Contactez le Musée pour organiser une visite de groupe."
+     *     maxMessage="Vous ne pouvez pas commander plus de 20 billets pour le tarif senior. Contactez le Musée pour organiser une visite de groupe."
      * )
      */
     private $ticketNumberSenior = 0;
