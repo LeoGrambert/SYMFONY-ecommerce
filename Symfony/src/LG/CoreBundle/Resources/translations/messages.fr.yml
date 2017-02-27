@@ -88,3 +88,10 @@ Demi-journée: Demi-journée
 'billet(s) Tarif Senior (12€ - à partir de 60 ans)': 'billet(s) Tarif Senior (12€ - à partir de 60 ans)'
 'Veuillez noter qu''un justificatif pourra vous être demandé à l''entrée du Musée.': 'Veuillez noter qu''un justificatif pourra vous être demandé à l''entrée du Musée.'
 'Paiement en CB': 'Paiement en CB'
+booking:
+  create:
+    success: "Données persistées"
+    informational: "En cours"
+    error:
+      form: "Il y a des champs manquants ou mal remplis"
+      type: "Problème de type"

@@ -58,7 +58,7 @@ class Client
      * @Assert\NotBlank()
      * @Assert\Date()
      */
-    private $birthDate = null;
+    private $birthDate;
 
     /**
      * @ORM\ManyToOne(targetEntity="LG\CoreBundle\Entity\Booking", inversedBy="clients")

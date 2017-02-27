@@ -17,11 +17,5 @@ services:
   lg_core_bundle.stripe:
       class: LG\CoreBundle\Stripe\Stripe
 
-  lg_core_bundle.numbertickets:
-      class: LG\CoreBundle\NumberTickets\NumberTickets
-
-  lg_core_bundle.datereservation:
-      class: LG\CoreBundle\DateReservation\DateReservation
-
-  lg_core_bundle.email:
-      class: LG\CoreBundle\Email\Email
+  lg_core_bundle.bookingprovider:
+      class: LG\CoreBundle\Provider\BookingProvider

@@ -6,7 +6,7 @@
  * Time: 18:32
  */
 
-namespace LG\CoreBundle\NumberTickets;
+namespace LG\CoreBundle\Provider;
 
 use LG\CoreBundle\Entity\Booking;
 
@@ -14,47 +14,8 @@ use LG\CoreBundle\Entity\Booking;
  * Class NumberTickets. It's a service that allows you to get tickets number and price which is associated.
  * @package LG\CoreBundle\NumberTickets
  */
-class NumberTickets
+class BookingProvider
 {
-    /**
-     * Get the tickets number with normal price
-     * @param Booking $booking
-     * @return int
-     */
-    public function getNumberTicketsNormal(Booking $booking){
-        $numberTicketsNormal = $booking->getTicketNumberNormal();
-        return $numberTicketsNormal;
-    }
-
-    /**
-     * Get the tickets number with reduce price
-     * @param Booking $booking
-     * @return int
-     */
-    public function getNumberTicketsReduce(Booking $booking){
-        $numberTicketsReduce = $booking->getTicketNumberReduce();
-        return $numberTicketsReduce;
-    }
-
-    /**
-     * Get the tickets number with child price
-     * @param Booking $booking
-     * @return int
-     */
-    public function getNumberTicketsChild(Booking $booking){
-        $numberTicketsChild = $booking->getTicketNumberChild();
-        return $numberTicketsChild;
-    }
-
-    /**
-     * Get the tickets number with senior price
-     * @param Booking $booking
-     * @return int
-     */
-    public function getNumberTicketsSenior(Booking $booking){
-        $numberTicketsSenior = $booking->getTicketNumberSenior();
-        return $numberTicketsSenior;
-    }
 
     /**
      * Get the tickets number, all prices
@@ -84,5 +45,17 @@ class NumberTickets
         $price = ($numberTicketsChild*8) + ($numberTicketsNormal*16) + ($numberTicketsReduce*10) + ($numberTicketsSenior*12);
 
         return $price;
+    }
+
+    /**
+     * Get the date reservation and convert to string
+     * @param Booking $booking
+     * @return string
+     */
+    public function getDateReservationToString(Booking $booking){
+        $dateReservation = $booking->getDateReservation();
+        $dateReservationToString = $dateReservation->format("d-m-y");
+
+        return $dateReservationToString;
     }
 }

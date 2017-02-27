@@ -52,7 +52,6 @@ class ClientNormalizer implements NormalizerInterface, DenormalizerInterface, Se
     public function denormalize($data, $class, $format = null, array $context = array())
     {
         $client = new Client();
-        
         $firstName = $data["firstName"];
         $client->setFirstName($firstName);
         $lastName = $data["lastName"];

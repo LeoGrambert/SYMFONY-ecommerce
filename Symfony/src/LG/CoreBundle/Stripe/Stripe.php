@@ -9,7 +9,7 @@
 namespace LG\CoreBundle\Stripe;
 
 use LG\CoreBundle\Entity\Booking;
-use LG\CoreBundle\NumberTickets\NumberTickets;
+use LG\CoreBundle\Provider\BookingProvider;
 
 /**
  * Class Stripe
@@ -18,9 +18,9 @@ use LG\CoreBundle\NumberTickets\NumberTickets;
  */
 class Stripe
 {
-    public function checkout(NumberTickets $numberTickets, Booking $booking)
+    public function checkout(BookingProvider $bookingProvider, Booking $booking)
     {
-        $price = ($numberTickets->getPrice($booking))*100;
+        $price = ($bookingProvider->getPrice($booking))*100;
 
         \Stripe\Stripe::setApiKey("sk_test_BmOFQTlYFGqZ6itjVnGiBtrK");
 

@@ -15,10 +15,10 @@ use LG\CoreBundle\Entity\Client;
 use LG\CoreBundle\Form\BookingType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-
 
 /**
  * Class BookingController
@@ -62,16 +62,16 @@ class BookingController extends Controller
     public function bookingCreateStepTwo (Booking $booking)
     {
         // Use NumberTickets service to get tickets number and the associated price
-        $numberTicketsService = $this->get('lg_core_bundle.numbertickets');
-        $numberTickets = $numberTicketsService->getNumberTickets($booking);
-        $numberTicketsChild = $numberTicketsService->getNumberTicketsChild($booking);
-        $numberTicketsNormal = $numberTicketsService->getNumberTicketsNormal($booking);
-        $numberTicketsReduce = $numberTicketsService->getNumberTicketsReduce($booking);
-        $numberTicketsSenior = $numberTicketsService->getNumberTicketsSenior($booking);
-        $price = $numberTicketsService->getPrice($booking);
-
-        // Get the date reservation
-        $dateReservationToString = $this->get('lg_core_bundle.datereservation')->getDateReservationToString($booking);
+        $bookingProvider = $this->get('lg_core_bundle.bookingprovider');
+        $numberTickets = $bookingProvider->getNumberTickets($booking);
+        $price = $bookingProvider->getPrice($booking);
+        //Get tickets number for each price
+        $numberTicketsChild = $booking->getTicketNumberChild();
+        $numberTicketsNormal = $booking->getTicketNumberNormal();
+        $numberTicketsReduce = $booking->getTicketNumberReduce();
+        $numberTicketsSenior = $booking->getTicketNumberSenior();
+        // Get the date reservation (string format)
+        $dateReservationToString = $bookingProvider->getDateReservationToString($booking);
 
         //return the twig template
         return $this->get('templating')->renderResponse('LGCoreBundle:Booking:booking_form_step_two.html.twig', [
@@ -95,24 +95,35 @@ class BookingController extends Controller
      */
     public function createClientBooking (Request $request, Booking $booking)
     {
+        $json = new JsonResponse();
+        $validator = $this->get('validator');
         $clientsDenormalized = [];
-
         // step one denormalize data and push client in an array
         $clients = json_decode($request->get('data'), true);
-        foreach ($clients as $client) {
-            $clientsDenormalized[] = $this->get('serializer')->denormalize($client, Client::class);
-        }
 
+        foreach ($clients as $client) {
+            try{
+                $clientsDenormalized[] = $this->get('serializer')->denormalize($client, Client::class);
+            } catch (\Exception $e) {
+                return $json->setStatusCode(500)->setData($this->get("translator")->trans('booking.create.error.type'));
+            }
+        }
         // step two persist using booking
         $em = $this->getDoctrine()->getManager();
-
         foreach ($clientsDenormalized as $clientDenormalized){
-            $clientDenormalized->setBooking($booking);
-            $em->persist($clientDenormalized);
-            $em->flush();
+            // calling the validator to use assert contrainst on entity
+            $errors = $validator->validate($clientDenormalized);
+            if($errors->count() == 0) {
+                // if no error, persist
+                $clientDenormalized->setBooking($booking);
+                $em->persist($clientDenormalized);
+                $em->flush();
+                return $json->setStatusCode(200)->setData($this->get("translator")->trans('booking.create.success'));
+            } else {
+                return $json->setStatusCode(422)->setData($this->get("translator")->trans('booking.create.error.form'));
+            }
         }
-
-        return new Response;
+        return $json->setStatusCode(100)->setData($this->get("translator")->trans('booking.create.informational'));
     }
 
     /**
@@ -123,13 +134,12 @@ class BookingController extends Controller
     public function bookingCreateStepThree (Booking $booking)
     {
         //Use NumberTickets service to get the tickets number and the associated price
-        $numberTicketsService = $this->get('lg_core_bundle.numbertickets');
-        $numberTickets = $numberTicketsService->getNumberTickets($booking);
-        $price = $numberTicketsService->getPrice($booking);
-
+        $bookingProvider = $this->get('lg_core_bundle.bookingprovider');
+        $numberTickets = $bookingProvider->getNumberTickets($booking);
+        $price = $bookingProvider->getPrice($booking);
         // Get the date reservation and email adress
-        $dateReservationToString = $this->get('lg_core_bundle.datereservation')->getDateReservationToString($booking);
-        $email = $this->get('lg_core_bundle.email')->getEmail($booking);
+        $dateReservationToString = $bookingProvider->getDateReservationToString($booking);
+        $email = $booking->getEmail();
 
         //Return twig template
         return $this->get('templating')->renderResponse('LGCoreBundle:Booking:booking_form_step_three.html.twig', [
@@ -151,11 +161,12 @@ class BookingController extends Controller
     {
         //Using Stripe as a service
         $stripe = $this->get('lg_core_bundle.stripe');
-
+        //Using entity manager
         $em = $this->getDoctrine()->getManager();
-        $numberTickets = $this->get('lg_core_bundle.numbertickets');
+        //Using booking provider service
+        $bookingProvider = $this->get('lg_core_bundle.bookingprovider');
 
-        if ($stripe->checkout($numberTickets, $booking)){
+        if ($stripe->checkout($bookingProvider, $booking)){
 
             //This booking attribute indicates that the order has been paid
             $booking->setPaymentIsSuccess(true);
@@ -163,7 +174,7 @@ class BookingController extends Controller
             $em->flush();
 
             //We get email adress to use SwiftMailer
-            $email = $this->get('lg_core_bundle.email')->getEmail($booking);
+            $email = $booking->getEmail();
             $message = \Swift_Message::newInstance()
                 ->setSubject('Confirmation de votre commande')
                 ->setFrom(['devTestLG@gmail.com' => 'Musée du Louvre'])
@@ -188,7 +199,7 @@ class BookingController extends Controller
     public function bookingCreateStepFour (Booking $booking)
     {
         $codeReservation = $booking->getCodeReservation();
-        $emailReservation = $this->get('lg_core_bundle.email')->getEmail($booking);
+        $emailReservation = $booking->getEmail();
 
         return $this->get('templating')->renderResponse('LGCoreBundle:Booking:booking_form_step_four.html.twig', [
             "booking" => $booking, 
@@ -205,18 +216,19 @@ class BookingController extends Controller
      */
     public function bookingMailConfirmation (Booking $booking)
     {
+        $bookingProvider = $this->get('lg_core_bundle.bookingprovider');
+        $em = $this->getDoctrine()->getRepository('LGCoreBundle:Client');
+        
         // Get informations to construct mailing
-        $dateReservationToString = $this->get('lg_core_bundle.datereservation')->getDateReservationToString($booking);
+        $dateReservationToString = $bookingProvider->getDateReservationToString($booking);
         $isDaily = $booking->getIsDaily();
         $chain = $booking->getCodeReservation();
-        $numberTicketsService = $this->get('lg_core_bundle.numbertickets');
-        $numberTicketsNormal = $numberTicketsService->getNumberTicketsNormal($booking);
-        $numberTicketsReduce = $numberTicketsService->getNumberTicketsReduce($booking);
-        $numberTicketsChild = $numberTicketsService->getNumberTicketsChild($booking);
-        $numberTicketsSenior = $numberTicketsService->getNumberTicketsSenior($booking);
+        $numberTicketsChild = $booking->getTicketNumberChild();
+        $numberTicketsNormal = $booking->getTicketNumberNormal();
+        $numberTicketsReduce = $booking->getTicketNumberReduce();
+        $numberTicketsSenior = $booking->getTicketNumberSenior();
 
         //Use Client repository to get last names and first names
-        $em = $this->getDoctrine()->getRepository('LGCoreBundle:Client');
         $bookingID = $booking->getId();
         $clientsName = $em->getClientsNameById($bookingID);
 

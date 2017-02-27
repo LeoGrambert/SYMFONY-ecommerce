@@ -136,6 +136,7 @@ $(function($) {
         $form.append($('<button class="btn btn-primary booking-client__validate">').text('Confirmer la commande'));
         
         $form.on('click', '.booking-client__validate', function() {
+            
             var $visitor = 0;
             var $number = 1;
             var $numberReduce = 0;
@@ -236,12 +237,21 @@ $(function($) {
             console.log(isValid, reducePriceIsValid, childPriceIsValid, seniorPriceIsValid);
             if( isValid === true && reducePriceIsValid === true && childPriceIsValid === true && seniorPriceIsValid === true)
             {
-                var dataForm = getDataForm();
+            var dataForm = getDataForm();
                 $.each(dataForm, function(index, value) {
                     createClientModel(value.firstname, value.lastname, value.country, value.birthdate);
                 });
-                submitClient();
-                onSuccessSubmit();
+                submitClient()
+                    .done(function (response) {
+                        console.log(response);
+                        // back ok
+                        onSuccessSubmit();
+                    }).fail(function (response) {
+                        console.log(response);
+                        clients.length = 0;
+                        // onErrorSubmit();
+                        // back not ok (sending 422 error http status)
+                });
                 $('#buttonToStepThree').attr('disabled', false);
             }
         });
