@@ -247,7 +247,6 @@ $(function($) {
                         // back not ok
                         onErrorSubmit();
                 });
-                $('#buttonToStepThree').attr('disabled', false);
             }
         });
     };
@@ -307,8 +306,9 @@ $(function($) {
      * Append a success message
      */
    var onSuccessSubmit = function () {
-        //todo Change this function adding a redirection to step three
-        $('.booking-client__validate').after('<div class="alert alert-success" id="persistSuccessMessage">Merci, <br/>Informations enregistrées</div>');
+        var $url = window.location.href;
+        var $id = $url.split('2/');
+        window.location.replace('/fr/booking/create/3/'+$id[1]);
     };
 
     /**

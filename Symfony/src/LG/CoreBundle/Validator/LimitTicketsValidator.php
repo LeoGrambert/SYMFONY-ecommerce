@@ -60,9 +60,9 @@ class LimitTicketsValidator extends ConstraintValidator
             }
         }
         $dates = array_count_values($datesReservation);
-        
+
         foreach ($dates as $date => $number) {
-            if (($number >= 1000) && ($dateValue == $date)) {
+            if (($number >= 10) && ($dateValue == $date)) {
                 $this->context->addViolation($constraint->message);
             }
         }
