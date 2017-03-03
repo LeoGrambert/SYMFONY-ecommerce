@@ -61,6 +61,7 @@ class BookingController extends Controller
      */
     public function bookingCreateStepTwo (Booking $booking)
     {
+        $id = $booking->getId();
         // Use NumberTickets service to get tickets number and the associated price
         $bookingProvider = $this->get('lg_core_bundle.bookingprovider');
         $numberTickets = $bookingProvider->getNumberTickets($booking);
@@ -82,7 +83,8 @@ class BookingController extends Controller
             'numberTicketsSenior' => $numberTicketsSenior,
             "numberTickets" => $numberTickets,
             "dateReservationToString" => $dateReservationToString,
-            "price" => $price
+            "price" => $price,
+            "id" => $id
         ]);
     }
 

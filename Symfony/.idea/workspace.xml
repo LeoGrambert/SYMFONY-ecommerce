@@ -56,17 +56,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BookingController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BookingController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Controller/BookingController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="666">
-              <caret line="248" column="1" selection-start-line="248" selection-start-column="1" selection-end-line="248" selection-end-column="1" />
+            <state relative-caret-position="531">
+              <caret line="80" column="37" selection-start-line="80" selection-start-column="37" selection-end-line="80" selection-end-column="37" />
               <folding>
                 <element signature="e#888#1642#0#PHP" expanded="false" />
-                <element signature="e#1886#3260#0#PHP" expanded="false" />
-                <element signature="e#3539#5059#0#PHP" expanded="false" />
-                <element signature="e#5281#6189#0#PHP" expanded="false" />
-                <element signature="e#8007#8451#0#PHP" expanded="false" />
+                <element signature="e#3597#5117#0#PHP" expanded="false" />
+                <element signature="e#5339#6247#0#PHP" expanded="false" />
+                <element signature="e#8065#8509#0#PHP" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -85,8 +84,18 @@
       <file leaf-file-name="booking.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/public/js/booking.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="145" column="63" selection-start-line="145" selection-start-column="63" selection-end-line="145" selection-end-column="63" />
+            <state relative-caret-position="122">
+              <caret line="237" column="13" selection-start-line="0" selection-start-column="0" selection-end-line="348" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="booking.en.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/public/js/booking.en.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="332" column="0" selection-start-line="332" selection-start-column="0" selection-end-line="332" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -117,15 +126,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="booking_form_step_two.html.twig" pinned="false" current-in-tab="false">
+      <file leaf-file-name="booking_form_step_two.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/views/Booking/booking_form_step_two.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="58" column="16" selection-start-line="58" selection-start-column="16" selection-end-line="58" selection-end-column="16" />
-              <folding>
-                <element signature="e#12#42#0#Twig" expanded="false" />
-                <element signature="e#2924#2945#0#Twig" expanded="false" />
-              </folding>
+            <state relative-caret-position="261">
+              <caret line="73" column="24" selection-start-line="73" selection-start-column="24" selection-end-line="73" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="booking_form_step_one.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/views/Booking/booking_form_step_one.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="416">
+              <caret line="140" column="9" selection-start-line="140" selection-start-column="9" selection-end-line="140" selection-end-column="9" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -135,15 +151,14 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/config/config_dev.yml" />
         <option value="$PROJECT_DIR$/app/Resources/views/TwigBundle/views/Exception/error404.html.twig" />
         <option value="$PROJECT_DIR$/web/app.php" />
         <option value="$PROJECT_DIR$/src/LG/CoreBundle/Resources/public/css/error.css" />
@@ -168,7 +183,6 @@
         <option value="$PROJECT_DIR$/src/LG/CoreBundle/Controller/HomeController.php" />
         <option value="$PROJECT_DIR$/src/LG/CoreBundle/NumberTickets/NumberTickets.php" />
         <option value="$PROJECT_DIR$/src/LG/CoreBundle/Resources/views/Booking/booking_form_step_four.html.twig" />
-        <option value="$PROJECT_DIR$/src/LG/CoreBundle/Resources/views/Booking/booking_form_step_one.html.twig" />
         <option value="$PROJECT_DIR$/src/LG/CoreBundle/Resources/views/Booking/booking_form_step_three.html.twig" />
         <option value="$PROJECT_DIR$/src/LG/CoreBundle/Resources/views/Home/index.html.twig" />
         <option value="$PROJECT_DIR$/src/LG/CoreBundle/Resources/views/layout.html.twig" />
@@ -189,11 +203,13 @@
         <option value="$PROJECT_DIR$/src/LG/CoreBundle/Entity/Client.php" />
         <option value="$PROJECT_DIR$/src/LG/CoreBundle/Repository/BookingRepository.php" />
         <option value="$PROJECT_DIR$/src/LG/CoreBundle/Validator/LimitTicketsValidator.php" />
-        <option value="$PROJECT_DIR$/src/LG/CoreBundle/Resources/views/Booking/booking_form_step_two.html.twig" />
         <option value="$PROJECT_DIR$/src/LG/CoreBundle/Resources/public/css/style_bookingpage.css" />
-        <option value="$PROJECT_DIR$/src/LG/CoreBundle/Resources/public/js/booking.js" />
         <option value="$PROJECT_DIR$/src/LG/CoreBundle/Resources/views/MailConfirmation/template.html.twig" />
+        <option value="$PROJECT_DIR$/src/LG/CoreBundle/Resources/public/js/booking.js" />
+        <option value="$PROJECT_DIR$/src/LG/CoreBundle/Resources/public/js/booking.en.js" />
+        <option value="$PROJECT_DIR$/src/LG/CoreBundle/Resources/views/Booking/booking_form_step_one.html.twig" />
         <option value="$PROJECT_DIR$/src/LG/CoreBundle/Controller/BookingController.php" />
+        <option value="$PROJECT_DIR$/src/LG/CoreBundle/Resources/views/Booking/booking_form_step_two.html.twig" />
       </list>
     </option>
   </component>
@@ -806,12 +822,12 @@
       <workItem from="1488204179850" duration="1384000" />
       <workItem from="1488532682991" duration="7040000" />
       <workItem from="1488542168175" duration="132000" />
-      <workItem from="1488550703292" duration="7598000" />
+      <workItem from="1488550703292" duration="9447000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="419734000" />
+    <option name="totallyTimeSpent" value="421583000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1423" y="24" width="1863" height="1056" extended-state="6" />
@@ -819,12 +835,12 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14168039" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16908714" sideWeight="0.17627677" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31327802" sideWeight="0.17627677" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.03349808" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32572615" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16908714" sideWeight="0.82372326" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31327802" sideWeight="0.82372326" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -854,13 +870,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/DependencyInjection/Configuration.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Controller/DefaultController.php" />
     <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/config/routing.yml">
       <provider selected="true" editor-type-id="text-editor">
@@ -944,13 +953,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
           <caret line="9" column="42" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/views/Booking/booking_form_step_one.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="524">
-          <caret line="120" column="26" selection-start-line="120" selection-start-column="26" selection-end-line="120" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -1222,17 +1224,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/views/Booking/booking_form_step_two.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="58" column="16" selection-start-line="58" selection-start-column="16" selection-end-line="58" selection-end-column="16" />
-          <folding>
-            <element signature="e#12#42#0#Twig" expanded="false" />
-            <element signature="e#2924#2945#0#Twig" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1262,14 +1253,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/public/js/booking.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="145" column="63" selection-start-line="145" selection-start-column="63" selection-end-line="145" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/views/MailConfirmation/template.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -1278,17 +1261,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/public/js/booking.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="237" column="13" selection-start-line="0" selection-start-column="0" selection-end-line="348" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/public/js/booking.en.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="332" column="0" selection-start-line="332" selection-start-column="0" selection-end-line="332" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Controller/BookingController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="666">
-          <caret line="248" column="1" selection-start-line="248" selection-start-column="1" selection-end-line="248" selection-end-column="1" />
+        <state relative-caret-position="531">
+          <caret line="80" column="37" selection-start-line="80" selection-start-column="37" selection-end-line="80" selection-end-column="37" />
           <folding>
             <element signature="e#888#1642#0#PHP" expanded="false" />
-            <element signature="e#1886#3260#0#PHP" expanded="false" />
-            <element signature="e#3539#5059#0#PHP" expanded="false" />
-            <element signature="e#5281#6189#0#PHP" expanded="false" />
-            <element signature="e#8007#8451#0#PHP" expanded="false" />
+            <element signature="e#3597#5117#0#PHP" expanded="false" />
+            <element signature="e#5339#6247#0#PHP" expanded="false" />
+            <element signature="e#8065#8509#0#PHP" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/views/Booking/booking_form_step_one.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="140" column="9" selection-start-line="140" selection-start-column="9" selection-end-line="140" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LG/CoreBundle/Resources/views/Booking/booking_form_step_two.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="73" column="24" selection-start-line="73" selection-start-column="24" selection-end-line="73" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>

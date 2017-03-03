@@ -68,9 +68,23 @@
     'bundles/lgcore/js/booking-namespace.js'
     'bundles/lgcore/js/model/clientModel.js'
     'bundles/lgcore/plugin/moment/moment-with-locales.js'
-    'bundles/lgcore/js/booking.js'
     'bundles/lgcore/plugin/form-master/jquery.form.js'
     %}
     <script src="{{ asset_url }}"></script>
     {% endjavascripts %}
+    {% if app.request.attributes.get('_locale') == "fr" %}
+        {% javascripts
+        '@js'
+        'bundles/lgcore/js/booking.js'
+        %}
+        <script src="{{ asset_url }}"></script>
+        {%  endjavascripts %}
+        {% elseif app.request.attributes.get('_locale') == "en" %}
+            {% javascripts
+            '@js'
+            'bundles/lgcore/js/booking.en.js'
+            %}
+            <script src="{{ asset_url }}"></script>
+            {%  endjavascripts %}
+    {% endif %}
 {% endblock %}
