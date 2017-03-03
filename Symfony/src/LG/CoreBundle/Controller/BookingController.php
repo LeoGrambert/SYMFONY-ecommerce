@@ -118,12 +118,11 @@ class BookingController extends Controller
                 $clientDenormalized->setBooking($booking);
                 $em->persist($clientDenormalized);
                 $em->flush();
-                return $json->setStatusCode(200)->setData($this->get("translator")->trans('booking.create.success'));
             } else {
                 return $json->setStatusCode(422)->setData($this->get("translator")->trans('booking.create.error.form'));
             }
         }
-        return $json->setStatusCode(100)->setData($this->get("translator")->trans('booking.create.informational'));
+        return $json->setStatusCode(200)->setData($this->get("translator")->trans('booking.create.success'));
     }
 
     /**

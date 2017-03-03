@@ -177,13 +177,11 @@ $(function($) {
 
             //We check if checkbox button on reduce price is checked. If not -> error message
             var $containerReduce = $('.booking-form-container.reduce');
-            console.log($containerReduce.length);
             if ($containerReduce.length === 0){
                 reducePriceIsValid = true;
             } else {
                 $containerReduce.each(function () {
                     $numberReduce++;
-                    console.log($numberReduce);
                     if($('.reduce_'+$numberReduce+' input[name=yes]:checked').val() || '')
                     {
                         reducePriceIsValid = true;
@@ -197,14 +195,12 @@ $(function($) {
 
             //We check if birthdate client for senior price is correct (more than 60 years old)
             var $containerSenior = $('.booking-form-container.senior');
-            console.log($containerSenior.length);
             if ($containerSenior.length === 0){
                 seniorPriceIsValid = true;
             } else {
                 $containerSenior.each(function () {
                     $numberSenior++;
                     var $birthDateValue = $(this).find('.birthdate').val();
-                    console.log($birthDateValue.split('-').reverse().join(''));
                     if (($birthDateValue.split('-').reverse().join('') > $sixtyYearsOld.split('-').reverse().join('')) || ($birthDateValue == ""))
                     {
                         seniorPriceIsValid = false;
@@ -234,10 +230,9 @@ $(function($) {
             }
 
             //If each front validation is good, we call submitClient function and onSuccessSubmit function
-            console.log(isValid, reducePriceIsValid, childPriceIsValid, seniorPriceIsValid);
             if( isValid === true && reducePriceIsValid === true && childPriceIsValid === true && seniorPriceIsValid === true)
             {
-            var dataForm = getDataForm();
+                var dataForm = getDataForm();
                 $.each(dataForm, function(index, value) {
                     createClientModel(value.firstname, value.lastname, value.country, value.birthdate);
                 });
