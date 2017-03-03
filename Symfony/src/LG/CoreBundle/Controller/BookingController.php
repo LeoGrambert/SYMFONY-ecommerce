@@ -243,6 +243,7 @@ class BookingController extends Controller
             "numberTicketsReduce" => $numberTicketsReduce,
             "numberTicketsSenior" => $numberTicketsSenior,
             "numberTicketsChild" => $numberTicketsChild
-        ]);
+        ])
+            ->getContent();
     }
 }
