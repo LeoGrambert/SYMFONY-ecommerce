@@ -100,6 +100,7 @@ class BookingController extends Controller
         $clientsDenormalized = [];
         // step one denormalize data and push client in an array
         $clients = json_decode($request->get('data'), true);
+        dump($clients);
 
         foreach ($clients as $client) {
             try{
@@ -108,6 +109,7 @@ class BookingController extends Controller
                 return $json->setStatusCode(500)->setData($this->get("translator")->trans('booking.create.error.type'));
             }
         }
+        dump($clientsDenormalized);
         // step two persist using booking
         $em = $this->getDoctrine()->getManager();
         foreach ($clientsDenormalized as $clientDenormalized){

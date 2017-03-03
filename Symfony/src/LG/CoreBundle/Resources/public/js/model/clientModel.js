@@ -25,6 +25,14 @@ $(function($) {
         this.setFirstName = function(_firstname) {
             this.firstName = _firstname;
         };
+        
+        this.getBirthDate = function(){
+            return this.birthDate;
+        };
+        
+        this.setBirthDate = function(_birthdate){
+            this.birthDate = _birthdate;
+        };
     }
 
 

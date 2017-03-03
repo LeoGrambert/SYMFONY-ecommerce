@@ -164,7 +164,7 @@ $(function($) {
                             return $('#form_'+$visitor).append($('<div class="alert alert-danger messageErrorClient">Le pays de résidence n\'est pas valide</div>'));
                         } else {
                             var $birthDateValue = $(this).find('.birthdate').val();
-                            if(!$birthDateValue.match(/^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]|(?:Jan|Mar|May|Jul|Aug|Oct|Dec)))\1|(?:(?:29|30)(\/|-|\.)(?:0?[1,3-9]|1[0-2]|(?:Jan|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec))\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)(?:0?2|(?:Feb))\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9]|(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep))|(?:1[0-2]|(?:Oct|Nov|Dec)))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$/)){
+                            if(!$birthDateValue.match(/^(\d{1,2})-(\d{1,2})-(\d{4})$/)){
                                 isValid = false;
                                 return $('#form_'+$visitor).append($('<div class="alert alert-danger messageErrorClient">La date de naissance n\'est pas valide</div>'));
                             } else {
@@ -244,8 +244,8 @@ $(function($) {
                     }).fail(function (response) {
                         console.log(response);
                         clients.length = 0;
-                        // onErrorSubmit();
-                        // back not ok (sending 422 error http status)
+                        // back not ok
+                        onErrorSubmit();
                 });
                 $('#buttonToStepThree').attr('disabled', false);
             }
@@ -309,6 +309,15 @@ $(function($) {
    var onSuccessSubmit = function () {
         //todo Change this function adding a redirection to step three
         $('.booking-client__validate').after('<div class="alert alert-success" id="persistSuccessMessage">Merci, <br/>Informations enregistrées</div>');
+    };
+
+    /**
+     * Error Handler
+     * Append an error message
+     * @constructor
+     */
+    var onErrorSubmit = function () {
+        $('.booking-client__validate').after('<div class="alert alert-danger" id="persistMessage">Un problème est survenu. Les données n\'ont pas été enregistrées.</div>');
     };
 
     /**

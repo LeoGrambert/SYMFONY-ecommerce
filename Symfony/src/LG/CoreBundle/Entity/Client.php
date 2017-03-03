@@ -2,6 +2,7 @@
 
 namespace LG\CoreBundle\Entity;
 
+use Doctrine\DBAL\Types\DateType;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Validator\Constraints\Date;
@@ -54,7 +55,7 @@ class Client
 
     /**
      *
-     * @ORM\Column(name="birth_date", type="date", nullable=false)
+     * @ORM\Column(name="birth_date", type="datetime", nullable=false)
      * @Assert\NotBlank()
      * @Assert\Date()
      */

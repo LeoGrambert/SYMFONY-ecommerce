@@ -260,6 +260,10 @@ hr{
 #booking-form-container-step-two .radioReducePrice label{
     margin:2%;
 }
+#persistMessage{
+    width:50%;
+    margin-top:5%;
+}
 .radioReducePrice #reduceText{
     font-weight: normal;
 }
@@ -370,7 +374,7 @@ hr{
     #blocFunnelStepFour{
         margin-left:91%;
     }
-    #persistSuccessMessage{
+    #persistMessage{
         margin-left: 30%;
     }
     #datepickerHelpText, #isDailyHelpText{
