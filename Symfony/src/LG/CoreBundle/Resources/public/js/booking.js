@@ -143,35 +143,43 @@ $(function($) {
             var $numberChild = 0;
             var $numberSenior = 0;
             $('div.alert.alert-danger').remove();
+            $('input.form-control').css('borderColor', '#DADADA');
+            
 
             //For each form, we check if each field is correctly fill.
             $('.booking-form-container').each(function() {
                 $visitor++;
                 $number++;
                 var $lastNameValue = $(this).find('.lastname').val();
-                if ($lastNameValue == "" || $lastNameValue.length < 3){
+                var $firstNameValue = $(this).find('.firstname').val();
+                var $countryValue = $(this).find('.country').val();
+                var $birthDateValue = $(this).find('.birthdate').val();
+                if ($lastNameValue == "" || $lastNameValue.length < 3)
+                {
                     isValid = false;
-                    return $('#form_'+$visitor).append($('<div class="alert alert-danger messageErrorClient">Le nom n\'est pas valide</div>'));
-                } else {
-                    var $firstNameValue = $(this).find('.firstname').val();
-                    if ($firstNameValue == "" || $firstNameValue.length < 3){
-                        isValid = false;
-                        return $('#form_'+$visitor).append($('<div class="alert alert-danger messageErrorClient">Le prénom n\'est pas valide</div>'));
-                    } else {
-                        var $countryValue = $(this).find('.country').val();
-                        if($countryValue == "" || $countryValue.length < 3) {
-                            isValid = false;
-                            return $('#form_'+$visitor).append($('<div class="alert alert-danger messageErrorClient">Le pays de résidence n\'est pas valide</div>'));
-                        } else {
-                            var $birthDateValue = $(this).find('.birthdate').val();
-                            if(!$birthDateValue.match(/^(\d{1,2})-(\d{1,2})-(\d{4})$/)){
-                                isValid = false;
-                                return $('#form_'+$visitor).append($('<div class="alert alert-danger messageErrorClient">La date de naissance n\'est pas valide</div>'));
-                            } else {
-                                isValid = true;
-                            }
-                        }
-                    }
+                    var $lastName = false;
+                    $('#form_'+$visitor+' .form-group .lastname').css('borderColor', '#ef5050');
+                } 
+                if ($firstNameValue == "" || $firstNameValue.length < 3)
+                {
+                    isValid = false;
+                    var $firstName = false;
+                    $('#form_'+$visitor+' .form-group .firstname').css('borderColor', '#ef5050');
+                } 
+                if($countryValue == "" || $countryValue.length < 3) 
+                {
+                    isValid = false;
+                    var $country = false;
+                    $('#form_'+$visitor+' .form-group .country').css('borderColor', '#ef5050');
+                } 
+                if(!$birthDateValue.match(/^(\d{1,2})-(\d{1,2})-(\d{4})$/))
+                {
+                    isValid = false;
+                    var $birthdate = false;
+                    $('#form_'+$visitor+' .form-group .birthdate').css('borderColor', '#ef5050');
+                } 
+                if ($lastName != false && $firstName != false && $country != false && $birthdate != false){
+                    isValid = true;
                 }
             });
 
