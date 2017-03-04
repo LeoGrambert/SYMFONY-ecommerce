@@ -34,4 +34,17 @@ class BookingRepository extends \Doctrine\ORM\EntityRepository
         
         return $qd->getQuery()->getResult();
     }
+
+    /**
+     * @param $token
+     * @return mixed
+     * @throws \Doctrine\ORM\NonUniqueResultException
+     */
+    public function findByToken($token) {
+        $qb = $this->createQueryBuilder('b');
+        $qb->select('b')
+            ->where('b.token = :token')
+            ->setParameter('token', $token['token']);
+        return $qb->getQuery()->getOneOrNullResult();
+    }
 }

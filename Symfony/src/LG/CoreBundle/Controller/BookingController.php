@@ -54,9 +54,9 @@ class BookingController extends Controller
     }
 
     /**
-     * @Route("/create/2/{id}", name="booking.create.stepTwo", methods={"POST", "GET"}, requirements={"id" : "\d+"})
+     * @Route("/create/2/{token}", name="booking.create.stepTwo", methods={"POST", "GET"})
      * @return Response
-     * @ParamConverter("booking", options={"id" = "id"})
+     * @ParamConverter("booking", options={"repository_method" = "findByToken"}))
      * @return Response
      */
     public function bookingCreateStepTwo (Booking $booking)

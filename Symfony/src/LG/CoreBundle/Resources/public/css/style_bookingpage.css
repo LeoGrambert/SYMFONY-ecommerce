@@ -351,7 +351,7 @@ hr{
         width: 85%;
     }
     .marginBody .booking-client__validate{
-        margin-left: 36%;
+        margin-left: 24%;
     }
 }
 @media screen and (max-width: 981px) {
@@ -452,6 +452,9 @@ hr{
     }
     #selectType label{
         margin-left:45%;
+    }
+    .booking-client__validate{
+        margin-left:38%;
     }
 }
 @media screen and (max-width: 1200px) {

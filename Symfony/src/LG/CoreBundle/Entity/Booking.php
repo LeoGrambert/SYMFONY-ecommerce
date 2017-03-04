@@ -12,6 +12,8 @@ use Symfony\Component\Validator\Constraints as Assert;
  *
  * @ORM\Table(name="booking")
  * @ORM\Entity(repositoryClass="LG\CoreBundle\Repository\BookingRepository")
+ * @ORM\HasLifecycleCallbacks()
+ * @ORM\EntityListeners({"LG\CoreBundle\Entity\EntityListener\BookingTokenListener"})
  */
 class Booking
 {
@@ -66,6 +68,12 @@ class Booking
      *     )
      */
     private $email;
+
+    /**
+     * @var string
+     * @ORM\Column(name="token", type="string", nullable=true)
+     */
+    private $token;
 
     /**
      * @var int
@@ -427,7 +435,6 @@ class Booking
         return $this->codeReservation;
     }
 
-
     /**
      * @return boolean
      */
@@ -442,5 +449,18 @@ class Booking
     public function setPaymentIsSuccess($paymentIsSuccess)
     {
         $this->paymentIsSuccess = $paymentIsSuccess;
+    }
+
+    private function generateToken($idBooking) {
+        $now = new \DateTime();
+        return $this->token = md5($now->getTimestamp() + $idBooking);
+    }
+
+    /**
+     * @param $idBooking
+     */
+    public function setToken($idBooking)
+    {
+        $this->token = $this->generateToken($idBooking);
     }
 }
