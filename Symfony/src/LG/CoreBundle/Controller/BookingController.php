@@ -45,7 +45,7 @@ class BookingController extends Controller
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($booking);
                 $em->flush();
-                return $this->redirectToRoute("booking.create.stepTwo", ['id' => $booking->getId()]);
+                return $this->redirectToRoute("booking.create.stepTwo", ['token' => $booking->getToken()]);
             }
         }
         
@@ -128,11 +128,11 @@ class BookingController extends Controller
         }
         return $json->setStatusCode(200)->setData($this->get("translator")->trans('booking.create.success'));
     }
-
+    
     /**
-     * @Route("/create/3/{id}", name="booking.create.stepThree", methods={"POST", "GET"}, requirements={"id" : "\d+"})
+     * @Route("/create/3/{token}", name="booking.create.stepThree", methods={"POST", "GET"})
      * @return Response
-     * @ParamConverter("booking", options={"id" = "id"})
+     * @ParamConverter("booking", options={"repository_method" = "findByToken"})
      */
     public function bookingCreateStepThree (Booking $booking)
     {
@@ -155,8 +155,8 @@ class BookingController extends Controller
     }
 
     /**
-     * @Route("/order/{id}", name="order.checkout", methods="POST", requirements={"id" : "\d+"})
-     * @ParamConverter("booking", options={"id" = "id"})
+     * @Route("/order/{token}", name="order.checkout", methods="POST")
+     * @ParamConverter("booking", options={"repository_method" = "findByToken"})
      * @param Booking $booking
      * @return Response
      */
@@ -187,16 +187,16 @@ class BookingController extends Controller
                 ->setBody($this->bookingMailConfirmation($booking));
             $this->get('mailer')->send($message);
 
-            return $this->redirectToRoute("booking.create.stepFour", ['id' => $booking->getId()]);
+            return $this->redirectToRoute("booking.create.stepFour", ['token' => $booking->getToken()]);
         } else {
-            return $this->redirectToRoute("booking.create.stepThree", ['id' => $booking->getId()]);
+            return $this->redirectToRoute("booking.create.stepThree", ['token' => $booking->getToken()]);
         }
     }
 
     /**
-     * @Route("/create/4/{id}", name="booking.create.stepFour", methods={"POST", "GET"}, requirements={"id" : "\d+"})
+     * @Route("/create/4/{token}", name="booking.create.stepFour", methods={"POST", "GET"})
      * @return Response
-     * @ParamConverter("booking", options={"id" = "id"})
+     * @ParamConverter("booking", options={"repository_method" = "findByToken"})
      * @return Response
      */
     public function bookingCreateStepFour (Booking $booking)
@@ -212,9 +212,9 @@ class BookingController extends Controller
     }
 
     /**
-     * @Route("/mailConfirmation/{id}", name="booking.mailConfirmation", methods={"POST", "GET"}, requirements={"id" : "\d+"})
+     * @Route("/mailConfirmation/{token}", name="booking.mailConfirmation", methods={"POST", "GET"})
      * @return Response
-     * @ParamConverter("booking", options={"id" = "id"})
+     * @ParamConverter("booking", options={"repository_method" = "findByToken"})
      * @return Response
      */
     public function bookingMailConfirmation (Booking $booking)

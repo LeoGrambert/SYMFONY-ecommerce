@@ -463,4 +463,11 @@ class Booking
     {
         $this->token = $this->generateToken($idBooking);
     }
+
+    /**
+     * @return string
+     */
+    public function getToken(){
+        return $this->token;
+    }
 }
