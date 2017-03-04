@@ -19,13 +19,18 @@ class BookingRepository extends \Doctrine\ORM\EntityRepository
         $dayYesterday = date('d') - 1;
         $month = date('m');
         $year = date('Y');
+        // If we don't check that, we can't get date reservation after current date (for example, with 2017033 for current date, query doesn't work. We must have 20170303)
+        if ($dayYesterday < 10){
+            $dayYesterday = '0'.$dayYesterday;
+        }
         $currentDate = $year.$month.$dayYesterday;
         
         $qd = $this->createQueryBuilder('b');
         
         $qd
             ->select('b')
-            ->where('b.dateReservation > :currentDate')->setParameter('currentDate', $currentDate);
+            ->where('b.dateReservation > :currentDate')->setParameter('currentDate', $currentDate)
+            ->andWhere('b.paymentIsSuccess = 1');
         
         return $qd->getQuery()->getResult();
     }
