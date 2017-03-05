@@ -36,7 +36,7 @@ class BookingController extends Controller
     public function bookingCreateStepOne(Request $request)
     {
         $booking = new Booking();
-
+        
         $form = $this->createForm(BookingType::class, $booking, ['action' => $this->get('router')->generate('booking.create.stepOne')]);
         $form->handleRequest($request);
 

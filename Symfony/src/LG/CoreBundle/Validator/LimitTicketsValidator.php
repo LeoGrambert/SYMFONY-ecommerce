@@ -35,6 +35,7 @@ class LimitTicketsValidator extends ConstraintValidator
      */
     public function validate($value, Constraint $constraint)
     {
+      
         $datesReservation = [];
         if($value != null){
             $dateValue = $value->format('d-m-Y');
@@ -44,7 +45,7 @@ class LimitTicketsValidator extends ConstraintValidator
          * I call findByDateReservation in repository/BookingRepository.php
          */
         $bookings = $this->em->getRepository('LGCoreBundle:Booking')->findByDateReservation();
-
+        dump($bookings);
         foreach ($bookings as $booking) {
             $dateReservation = $booking->getDateReservation()->format('d-m-Y');
             $numberTicketsNormal = $booking->getTicketNumberNormal();
@@ -60,13 +61,11 @@ class LimitTicketsValidator extends ConstraintValidator
             }
         }
         $dates = array_count_values($datesReservation);
-        dump($dates);
 
         foreach ($dates as $date => $number) {
             if (($number >= 1000) && ($dateValue == $date)) {
                 $this->context->addViolation($constraint->message);
             }
         }
-        
     }
 }

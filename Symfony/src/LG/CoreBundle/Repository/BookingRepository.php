@@ -16,9 +16,11 @@ class BookingRepository extends \Doctrine\ORM\EntityRepository
      */
     public function findByDateReservation()
     {
-        $dayYesterday = date('d') - 1;
+        $day = date('d');
+        $dayYesterday = $day - 1;
         $month = date('m');
         $year = date('Y');
+
         // If we don't check that, we can't get date reservation after current date (for example, with 2017033 for current date, query doesn't work. We must have 20170303)
         if ($dayYesterday < 10){
             $dayYesterday = '0'.$dayYesterday;
