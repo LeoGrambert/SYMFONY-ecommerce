@@ -19,3 +19,6 @@ services:
 
   lg_core_bundle.bookingprovider:
       class: LG\CoreBundle\Provider\BookingProvider
+
+  lg_core_bundle.notallowedtobehere:
+      class: LG\CoreBundle\NotAllowedToBeHere\NotAllowedToBeHere

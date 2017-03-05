@@ -61,6 +61,11 @@ class BookingController extends Controller
      */
     public function bookingCreateStepTwo (Booking $booking)
     {
+        if ($booking->getStateOrder() != 100)
+        {
+            return $this->redirectToRoute('booking.create.stepOne');
+        }
+
         $id = $booking->getId();
         // Use NumberTickets service to get tickets number and the associated price
         $bookingProvider = $this->get('lg_core_bundle.bookingprovider');
@@ -138,6 +143,10 @@ class BookingController extends Controller
      */
     public function bookingCreateStepThree (Booking $booking)
     {
+        if ($booking->getStateOrder() != 110)
+        {
+            return $this->redirectToRoute('booking.create.stepTwo', ['token' => $booking->getToken()]);
+        }
         //Use NumberTickets service to get the tickets number and the associated price
         $bookingProvider = $this->get('lg_core_bundle.bookingprovider');
         $numberTickets = $bookingProvider->getNumberTickets($booking);
@@ -203,6 +212,11 @@ class BookingController extends Controller
      */
     public function bookingCreateStepFour (Booking $booking)
     {
+        if ($booking->getStateOrder() != 111)
+        {
+            return $this->redirectToRoute('booking.create.stepThree', ['token' => $booking->getToken()]);
+        }
+
         $codeReservation = $booking->getCodeReservation();
         $emailReservation = $booking->getEmail();
 

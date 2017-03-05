@@ -435,6 +435,10 @@ class Booking
         return $this->codeReservation;
     }
 
+    /**
+     * @param $idBooking
+     * @return mixed
+     */
     private function generateToken($idBooking) {
         $now = new \DateTime();
         return $this->token = md5($now->getTimestamp() + $idBooking);

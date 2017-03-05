@@ -51,54 +51,50 @@
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="14" parent="2" name="payment_is_success">
-        <mandatory>1</mandatory>
-        <data-type>tinyint(1)</data-type>
-      </column>
-      <column id="15" parent="2" name="token">
+      <column id="14" parent="2" name="token">
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="16" parent="2" name="state_order">
+      <column id="15" parent="2" name="state_order">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <key id="17" parent="2" name="PRIMARY">
+      <key id="16" parent="2" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="18" parent="3" name="id">
+      <column id="17" parent="3" name="id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
-      <column id="19" parent="3" name="last_name">
+      <column id="18" parent="3" name="last_name">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="20" parent="3" name="first_name">
+      <column id="19" parent="3" name="first_name">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="21" parent="3" name="country">
+      <column id="20" parent="3" name="country">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="22" parent="3" name="booking_id">
+      <column id="21" parent="3" name="booking_id">
         <data-type>int(11)</data-type>
       </column>
-      <column id="23" parent="3" name="birth_date">
+      <column id="22" parent="3" name="birth_date">
         <mandatory>1</mandatory>
         <data-type>datetime</data-type>
       </column>
-      <index id="24" parent="3" name="IDX_C74404553301C60">
+      <index id="23" parent="3" name="IDX_C74404553301C60">
         <columns>booking_id</columns>
         <desc-columns></desc-columns>
       </index>
-      <key id="25" parent="3" name="PRIMARY">
+      <key id="24" parent="3" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <foreign-key id="26" parent="3" name="FK_C74404553301C60">
+      <foreign-key id="25" parent="3" name="FK_C74404553301C60">
         <columns>booking_id</columns>
         <ref-key>~.booking.PRIMARY</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>

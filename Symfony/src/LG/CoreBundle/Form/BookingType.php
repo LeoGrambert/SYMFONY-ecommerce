@@ -3,6 +3,7 @@
 namespace LG\CoreBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -70,16 +71,16 @@ class BookingType extends AbstractType
             ->add('email', EmailType::class, [
                 'label' => 'Entrez votre adresse e-mail'
             ])
-            ->add('ticketNumberNormal', TextType::class, array(
+            ->add('ticketNumberNormal', IntegerType::class, array(
                 'label' => 'Tarif Normal',
             ))
-            ->add('ticketNumberReduce', TextType::class, array(
+            ->add('ticketNumberReduce', IntegerType::class, array(
                 'label' => 'Tarif Réduit',
             ))
-            ->add('ticketNumberChild', TextType::class, array(
+            ->add('ticketNumberChild', IntegerType::class, array(
                 'label' => 'Tarif Enfant',
             ))
-            ->add('ticketNumberSenior', TextType::class, array(
+            ->add('ticketNumberSenior', IntegerType::class, array(
                 'label' => 'Tarif Senior',
             ))
             ->add('stepThree', SubmitType::class, [
