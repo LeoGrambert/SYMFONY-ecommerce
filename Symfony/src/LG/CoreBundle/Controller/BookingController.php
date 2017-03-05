@@ -120,7 +120,9 @@ class BookingController extends Controller
             if($errors->count() == 0) {
                 // if no error, persist
                 $clientDenormalized->setBooking($booking);
+                $booking->setStateOrder(110);
                 $em->persist($clientDenormalized);
+                $em->persist($booking);
                 $em->flush();
             } else {
                 return $json->setStatusCode(422)->setData($this->get("translator")->trans('booking.create.error.form'));
@@ -172,7 +174,7 @@ class BookingController extends Controller
         if ($stripe->checkout($bookingProvider, $booking)){
 
             //This booking attribute indicates that the order has been paid
-            $booking->setPaymentIsSuccess(true);
+            $booking->setStateOrder(111);
             $em->persist($booking);
             $em->flush();
 

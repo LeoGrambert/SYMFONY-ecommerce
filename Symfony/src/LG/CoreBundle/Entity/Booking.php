@@ -128,16 +128,15 @@ class Booking
     private $ticketNumberSenior = 0;
 
     /**
+     * @var int
+     * @ORM\Column(name="state_order", type="integer")
+     */
+    private $stateOrder;
+
+    /**
      * @ORM\OneToMany(targetEntity="LG\CoreBundle\Entity\Client", mappedBy="booking", cascade={"persist"})
      */
     private $clients;
-
-    /**
-     * @var boolean
-     *
-     * @ORM\Column(name="payment_is_success", type="boolean")
-     */
-    private $paymentIsSuccess = false;
 
     /**
      * Booking constructor.
@@ -146,6 +145,7 @@ class Booking
     {
         $this->dateAchat = new \DateTime();
         $this->codeReservation = $this->generateCodeReservation();
+        $this->stateOrder = 100;
     }
 
     /**
@@ -435,22 +435,6 @@ class Booking
         return $this->codeReservation;
     }
 
-    /**
-     * @return boolean
-     */
-    public function isPaymentIsSuccess()
-    {
-        return $this->paymentIsSuccess;
-    }
-
-    /**
-     * @param boolean $paymentIsSuccess
-     */
-    public function setPaymentIsSuccess($paymentIsSuccess)
-    {
-        $this->paymentIsSuccess = $paymentIsSuccess;
-    }
-
     private function generateToken($idBooking) {
         $now = new \DateTime();
         return $this->token = md5($now->getTimestamp() + $idBooking);
@@ -469,5 +453,21 @@ class Booking
      */
     public function getToken(){
         return $this->token;
+    }
+
+    /**
+     * @return int
+     */
+    public function getStateOrder(){
+        return $this->stateOrder;
+    }
+
+    /**
+     * @param $stateOrder
+     * @return mixed
+     */
+    public function setStateOrder($stateOrder){
+        $this->stateOrder = $stateOrder;
+        return $stateOrder;
     }
 }

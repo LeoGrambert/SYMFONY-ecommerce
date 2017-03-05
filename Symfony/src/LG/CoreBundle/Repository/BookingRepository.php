@@ -30,7 +30,7 @@ class BookingRepository extends \Doctrine\ORM\EntityRepository
         $qd
             ->select('b')
             ->where('b.dateReservation > :currentDate')->setParameter('currentDate', $currentDate)
-            ->andWhere('b.paymentIsSuccess = 1');
+            ->andWhere('b.stateOrder = 111');
         
         return $qd->getQuery()->getResult();
     }
