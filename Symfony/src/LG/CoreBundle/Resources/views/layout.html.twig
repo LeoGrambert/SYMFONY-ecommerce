@@ -90,6 +90,17 @@
         <a href="{{ path(route, params|merge({ _locale: "en" })) }}"><img src="{{ asset('bundles/lgcore/img/united-kingdom.png') }}" alt="uk_flag"></a>
     </div>
 
+    {% for flash_message in app.session.flashBag.get('warning') %}
+        <div class="alert alert-danger flash-info">
+            {{ flash_message }}
+        </div>
+    {% endfor %}
+    {% for flash_message in app.session.flashBag.get('info') %}
+        <div class="alert alert-info flash-info">
+            {{ flash_message }}
+        </div>
+    {% endfor %}
+
     {% block body %}
     {% endblock %}
 

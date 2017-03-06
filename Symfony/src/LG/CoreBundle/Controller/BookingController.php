@@ -36,19 +36,26 @@ class BookingController extends Controller
     public function bookingCreateStepOne(Request $request)
     {
         $booking = new Booking();
+        $bookingProvider = $this->get('lg_core_bundle.bookingprovider');
         
         $form = $this->createForm(BookingType::class, $booking, ['action' => $this->get('router')->generate('booking.create.stepOne')]);
         $form->handleRequest($request);
 
         if($form->isSubmitted()) {
             if ($form->isValid()){
-                $em = $this->getDoctrine()->getManager();
-                $em->persist($booking);
-                $em->flush();
-                return $this->redirectToRoute("booking.create.stepTwo", ['token' => $booking->getToken()]);
+                if ($bookingProvider->oneThousandTickets($booking) == true) {
+                    $this->addFlash('info', 'Date souhaitée : '.$bookingProvider->getDateReservationToString($booking).'. Il reste '.$bookingProvider->getRemainingTickets().' billets en vente.');
+                    $em = $this->getDoctrine()->getManager();
+                    $em->persist($booking);
+                    $em->flush();
+                    return $this->redirectToRoute("booking.create.stepTwo", ['token' => $booking->getToken()]);
+                } else {
+                    $this->addFlash('warning', 'Billetterie fermée pour le '.$bookingProvider->getDateReservationToString($booking).' : Plus de 1000 billets ont déjà été vendus.');
+                    return $this->redirectToRoute("booking.create.stepOne");
+                }
             }
         }
-        
+
         return $this->get('templating')->renderResponse('@LGCore/Booking/booking_form_step_one.html.twig', ['form' => $form->createView()]);
 
     }
@@ -61,7 +68,7 @@ class BookingController extends Controller
      */
     public function bookingCreateStepTwo (Booking $booking)
     {
-        if ($booking->getStateOrder() != 100)
+        if ($booking->getStateOrder() != 1)
         {
             return $this->redirectToRoute('booking.create.stepOne');
         }
@@ -79,18 +86,26 @@ class BookingController extends Controller
         // Get the date reservation (string format)
         $dateReservationToString = $bookingProvider->getDateReservationToString($booking);
 
-        //return the twig template
-        return $this->get('templating')->renderResponse('LGCoreBundle:Booking:booking_form_step_two.html.twig', [
-            "booking" => $booking,
-            'numberTicketsNormal' => $numberTicketsNormal,
-            'numberTicketsReduce' => $numberTicketsReduce,
-            'numberTicketsChild' => $numberTicketsChild,
-            'numberTicketsSenior' => $numberTicketsSenior,
-            "numberTickets" => $numberTickets,
-            "dateReservationToString" => $dateReservationToString,
-            "price" => $price,
-            "id" => $id
-        ]);
+        $bookingProvider = $this->get('lg_core_bundle.bookingprovider');
+
+        if ($bookingProvider->oneThousandTickets($booking) == true) {
+            $this->addFlash('info', 'Date souhaitée : '.$bookingProvider->getDateReservationToString($booking).'. Il reste '.$bookingProvider->getRemainingTickets().' billets en vente.');
+            //return the twig template
+            return $this->get('templating')->renderResponse('LGCoreBundle:Booking:booking_form_step_two.html.twig', [
+                "booking" => $booking,
+                'numberTicketsNormal' => $numberTicketsNormal,
+                'numberTicketsReduce' => $numberTicketsReduce,
+                'numberTicketsChild' => $numberTicketsChild,
+                'numberTicketsSenior' => $numberTicketsSenior,
+                "numberTickets" => $numberTickets,
+                "dateReservationToString" => $dateReservationToString,
+                "price" => $price,
+                "id" => $id
+            ]);
+        } else {
+            $this->addFlash('warning', 'Billetterie fermée pour le '.$bookingProvider->getDateReservationToString($booking).' : Plus de 1000 billets ont déjà été vendus');
+            return $this->redirectToRoute("booking.create.stepOne");
+        }
     }
 
     /**
@@ -107,7 +122,6 @@ class BookingController extends Controller
         $clientsDenormalized = [];
         // step one denormalize data and push client in an array
         $clients = json_decode($request->get('data'), true);
-        dump($clients);
 
         foreach ($clients as $client) {
             try{
@@ -116,7 +130,6 @@ class BookingController extends Controller
                 return $json->setStatusCode(500)->setData($this->get("translator")->trans('booking.create.error.type'));
             }
         }
-        dump($clientsDenormalized);
         // step two persist using booking
         $em = $this->getDoctrine()->getManager();
         foreach ($clientsDenormalized as $clientDenormalized){
@@ -125,7 +138,7 @@ class BookingController extends Controller
             if($errors->count() == 0) {
                 // if no error, persist
                 $clientDenormalized->setBooking($booking);
-                $booking->setStateOrder(110);
+                $booking->setStateOrder(2);
                 $em->persist($clientDenormalized);
                 $em->persist($booking);
                 $em->flush();
@@ -143,7 +156,7 @@ class BookingController extends Controller
      */
     public function bookingCreateStepThree (Booking $booking)
     {
-        if ($booking->getStateOrder() != 110)
+        if ($booking->getStateOrder() != 2)
         {
             return $this->redirectToRoute('booking.create.stepTwo', ['token' => $booking->getToken()]);
         }
@@ -155,14 +168,20 @@ class BookingController extends Controller
         $dateReservationToString = $bookingProvider->getDateReservationToString($booking);
         $email = $booking->getEmail();
 
-        //Return twig template
-        return $this->get('templating')->renderResponse('LGCoreBundle:Booking:booking_form_step_three.html.twig', [
-            "booking" => $booking,
-            "numberTickets" => $numberTickets,
-            "dateReservationToString" => $dateReservationToString,
-            "price" => $price,
-            "email" => $email
-        ]);
+        if ($bookingProvider->oneThousandTickets($booking) == true) {
+            $this->addFlash('info', 'Date souhaitée : '.$bookingProvider->getDateReservationToString($booking).'. Il reste '.$bookingProvider->getRemainingTickets().' billets en vente.');
+            //Return twig template
+            return $this->get('templating')->renderResponse('LGCoreBundle:Booking:booking_form_step_three.html.twig', [
+                "booking" => $booking,
+                "numberTickets" => $numberTickets,
+                "dateReservationToString" => $dateReservationToString,
+                "price" => $price,
+                "email" => $email
+            ]);
+        } else {
+            $this->addFlash('warning', 'Billetterie fermée pour le '.$bookingProvider->getDateReservationToString($booking).' : Plus de 1000 billets ont déjà été vendus');
+            return $this->redirectToRoute("booking.create.stepOne");
+        }
     }
 
     /**
@@ -180,27 +199,32 @@ class BookingController extends Controller
         //Using booking provider service
         $bookingProvider = $this->get('lg_core_bundle.bookingprovider');
 
-        if ($stripe->checkout($bookingProvider, $booking)){
+        if($bookingProvider->oneThousandTickets($booking) == true) {
+            if ($stripe->checkout($bookingProvider, $booking)){
 
-            //This booking attribute indicates that the order has been paid
-            $booking->setStateOrder(111);
-            $em->persist($booking);
-            $em->flush();
+                //This booking attribute indicates that the order has been paid
+                $booking->setStateOrder(3);
+                $em->persist($booking);
+                $em->flush();
 
-            //We get email adress to use SwiftMailer
-            $email = $booking->getEmail();
-            $message = \Swift_Message::newInstance()
-                ->setSubject('Confirmation de votre commande')
-                ->setFrom(['devTestLG@gmail.com' => 'Musée du Louvre'])
-                ->setTo($email)
-                ->setCharset('utf-8')
-                ->setContentType('text/html')
-                ->setBody($this->bookingMailConfirmation($booking));
-            $this->get('mailer')->send($message);
+                //We get email adress to use SwiftMailer
+                $email = $booking->getEmail();
+                $message = \Swift_Message::newInstance()
+                    ->setSubject('Confirmation de votre commande')
+                    ->setFrom(['devTestLG@gmail.com' => 'Musée du Louvre'])
+                    ->setTo($email)
+                    ->setCharset('utf-8')
+                    ->setContentType('text/html')
+                    ->setBody($this->bookingMailConfirmation($booking));
+                $this->get('mailer')->send($message);
 
-            return $this->redirectToRoute("booking.create.stepFour", ['token' => $booking->getToken()]);
+                return $this->redirectToRoute("booking.create.stepFour", ['token' => $booking->getToken()]);
+            } else {
+                return $this->redirectToRoute("booking.create.stepThree", ['token' => $booking->getToken()]);
+            }
         } else {
-            return $this->redirectToRoute("booking.create.stepThree", ['token' => $booking->getToken()]);
+            $this->addFlash('warning', 'Billetterie fermée pour le '.$bookingProvider->getDateReservationToString($booking).' : Plus de 1000 billets ont déjà été vendus');
+            return $this->redirectToRoute("booking.create.stepOne");
         }
     }
 
@@ -212,7 +236,7 @@ class BookingController extends Controller
      */
     public function bookingCreateStepFour (Booking $booking)
     {
-        if ($booking->getStateOrder() != 111)
+        if ($booking->getStateOrder() != 3)
         {
             return $this->redirectToRoute('booking.create.stepThree', ['token' => $booking->getToken()]);
         }

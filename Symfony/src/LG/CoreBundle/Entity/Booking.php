@@ -4,7 +4,6 @@ namespace LG\CoreBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
-use LG\CoreBundle\Validator\LimitTickets;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -33,7 +32,6 @@ class Booking
      *     message="Veuillez choisir une date de réservation.",
      * )
      * @Assert\Date()
-     * @LimitTickets()
      */
     private $dateReservation;
 
@@ -145,7 +143,7 @@ class Booking
     {
         $this->dateAchat = new \DateTime();
         $this->codeReservation = $this->generateCodeReservation();
-        $this->stateOrder = 100;
+        $this->stateOrder = 1;
     }
 
     /**

@@ -8,14 +8,26 @@
 
 namespace LG\CoreBundle\Provider;
 
+use Doctrine\ORM\EntityManagerInterface;
 use LG\CoreBundle\Entity\Booking;
 
 /**
- * Class NumberTickets. It's a service that allows you to get tickets number and price which is associated.
+ * Class BookingProvider. It's a service that allows you to do many things on Booking.
  * @package LG\CoreBundle\NumberTickets
  */
 class BookingProvider
 {
+    private $em;
+    private $remainingTickets;
+
+    /**
+     * LimitTicketsValidator constructor.
+     * @param EntityManagerInterface $em
+     */
+    public function __construct(EntityManagerInterface $em)
+    {
+        $this->em = $em;
+    }
 
     /**
      * Get the tickets number, all prices
@@ -54,8 +66,74 @@ class BookingProvider
      */
     public function getDateReservationToString(Booking $booking){
         $dateReservation = $booking->getDateReservation();
-        $dateReservationToString = $dateReservation->format("d-m-y");
+        $dateReservationToString = $dateReservation->format("d-m-Y");
 
         return $dateReservationToString;
+    }
+
+    /**
+     * This function allow you to check the number of tickets remaining for sale
+     * With a query builder, I get all Booking database (after current date, it's useless to get past dates).
+     * For each tickets (normal, reduce, child or senior), I add a dateReservation in an array datesReservation.
+     * I count the duplicates dates in array. If a date is present more than 1000 times, function return false.
+     * @param Booking $booking
+     * @return bool
+     */
+    public function oneThousandTickets(Booking $booking)
+    {
+        $isAvailable = true;
+        $datesReservation = [];
+        $dateValue = $this->getDateReservationToString($booking);
+
+        /*
+         * Call findByDateReservation in repository/BookingRepository.php
+         */
+        $bookingsRepo = $this->em->getRepository('LGCoreBundle:Booking')->findByDateReservation();
+
+        foreach ($bookingsRepo as $bookingRepo) {
+            $dateReservation = $bookingRepo->getDateReservation()->format('d-m-Y');
+            $numberTicketsNormal = $bookingRepo->getTicketNumberNormal();
+            $numberTicketsReduce = $bookingRepo->getTicketNumberReduce();
+            $numberTicketsChild = $bookingRepo->getTicketNumberChild();
+            $numberTicketsSenior = $bookingRepo->getTicketNumberSenior();
+            $numberTickets = $numberTicketsChild + $numberTicketsSenior + $numberTicketsNormal + $numberTicketsReduce;
+            /*
+             * I add as many dates in array as there are tickets for the day
+             */
+            for($i=0;$i<$numberTickets;$i++){
+                $datesReservation[] = $dateReservation ;
+            }
+        }
+
+        /*
+         * I also add user choice as many as there are tickets
+         */
+        for($i=0;$i<$this->getNumberTickets($booking);$i++){
+            $datesReservation[] = $dateValue;
+        }
+
+        /*
+         * For each date, I count number of times it's present in array
+         */
+        $dates = array_count_values($datesReservation);
+
+        foreach ($dates as $date => $number) {
+            if (($number >= 1000) && ($dateValue == $date)) {
+                $isAvailable = false;
+            } else {
+                $isAvailable = true;
+                $this->remainingTickets = 1000-$number;
+            }
+        }
+        return $isAvailable;
+    }
+
+    /**
+     * Get remaining tickets to display on header
+     * @return mixed
+     */
+    public function getRemainingTickets()
+    {
+        return $this->remainingTickets;
     }
 }

@@ -107,6 +107,15 @@ hr{
     float: right;
     margin-right: -8%;
 }
+.flash-info{
+    position: fixed;
+    top:50px;
+    z-index: 50;
+    width:60%;
+    margin-left: 20%;
+    text-align: center;
+    opacity:0.9;
+}
 
 /*Form step one stylesheet*/
 #lg_corebundle_booking_dateReservation{

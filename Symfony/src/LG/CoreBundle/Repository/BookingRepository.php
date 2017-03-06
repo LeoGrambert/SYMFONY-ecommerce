@@ -32,7 +32,7 @@ class BookingRepository extends \Doctrine\ORM\EntityRepository
         $qd
             ->select('b')
             ->where('b.dateReservation > :currentDate')->setParameter('currentDate', $currentDate)
-            ->andWhere('b.stateOrder = 111');
+            ->andWhere('b.stateOrder = 3');
         
         return $qd->getQuery()->getResult();
     }
