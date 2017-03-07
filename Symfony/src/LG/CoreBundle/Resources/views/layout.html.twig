@@ -91,12 +91,7 @@
     </div>
 
     {% for flash_message in app.session.flashBag.get('warning') %}
-        <div class="alert alert-danger flash-info">
-            {{ flash_message }}
-        </div>
-    {% endfor %}
-    {% for flash_message in app.session.flashBag.get('info') %}
-        <div class="alert alert-info flash-info">
+        <div class="alert alert-danger flash-warning">
             {{ flash_message }}
         </div>
     {% endfor %}

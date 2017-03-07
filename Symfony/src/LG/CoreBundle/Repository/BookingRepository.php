@@ -20,19 +20,28 @@ class BookingRepository extends \Doctrine\ORM\EntityRepository
         $dayYesterday = $day - 1;
         $month = date('m');
         $year = date('Y');
+        $hour = date('H');
+        $minute = date('i');
+        dump($hour, $minute);
 
         // If we don't check that, we can't get date reservation after current date (for example, with 2017033 for current date, query doesn't work. We must have 20170303)
         if ($dayYesterday < 10){
             $dayYesterday = '0'.$dayYesterday;
         }
         $currentDate = $year.$month.$dayYesterday;
+        $onHourAfterCurrentDateTime = $year.$month.$day.$hour.($minute+1);
+        dump($onHourAfterCurrentDateTime);
         
         $qd = $this->createQueryBuilder('b');
-        
+        /*
+        //todo Essayer d'affiner la requête pour prendre en compte :
+        -> Les commandes qui ont été payées
+        -> Les commandes qui n'ont pas encore été payées jusqu'à 1 heure après la date d'achat
+        */
         $qd
             ->select('b')
             ->where('b.dateReservation > :currentDate')->setParameter('currentDate', $currentDate)
-            ->andWhere('b.stateOrder = 3');
+            ->andWhere('b.stateOrder = 3 OR b.dateAchat > :onHourAfterCurrentDateTime')->setParameter('onHourAfterCurrentDateTime', $onHourAfterCurrentDateTime);
         
         return $qd->getQuery()->getResult();
     }

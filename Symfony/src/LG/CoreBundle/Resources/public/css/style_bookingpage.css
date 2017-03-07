@@ -107,7 +107,7 @@ hr{
     float: right;
     margin-right: -8%;
 }
-.flash-info{
+.flash-info, .flash-warning{
     position: fixed;
     top:50px;
     z-index: 50;
@@ -115,6 +115,7 @@ hr{
     margin-left: 20%;
     text-align: center;
     opacity:0.9;
+
 }
 
 /*Form step one stylesheet*/
@@ -304,7 +305,7 @@ hr{
     }
     body #logoImg{
         width: 40%;
-        margin:15% 0 0 1%;
+        margin:25% 0 0 1%;
     }
     body #subTextLogo{
         display: none;

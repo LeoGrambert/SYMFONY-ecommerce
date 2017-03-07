@@ -89,7 +89,7 @@ class BookingProvider
          * Call findByDateReservation in repository/BookingRepository.php
          */
         $bookingsRepo = $this->em->getRepository('LGCoreBundle:Booking')->findByDateReservation();
-
+        dump($bookingsRepo);
         foreach ($bookingsRepo as $bookingRepo) {
             $dateReservation = $bookingRepo->getDateReservation()->format('d-m-Y');
             $numberTicketsNormal = $bookingRepo->getTicketNumberNormal();
@@ -116,13 +116,13 @@ class BookingProvider
          * For each date, I count number of times it's present in array
          */
         $dates = array_count_values($datesReservation);
-
+        dump($datesReservation, $dates);
         foreach ($dates as $date => $number) {
             if (($number >= 1000) && ($dateValue == $date)) {
                 $isAvailable = false;
             } else {
                 $isAvailable = true;
-                $this->remainingTickets = 1000-$number;
+                $this->setRemainingTickets(1000-$number);
             }
         }
         return $isAvailable;
@@ -135,5 +135,14 @@ class BookingProvider
     public function getRemainingTickets()
     {
         return $this->remainingTickets;
+    }
+
+    /**
+     * @param $remainingTickets
+     * @return mixed
+     */
+    public function setRemainingTickets($remainingTickets){
+        $this->remainingTickets = $remainingTickets;
+        return $remainingTickets;
     }
 }

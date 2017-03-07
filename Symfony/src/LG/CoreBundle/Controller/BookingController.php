@@ -44,13 +44,12 @@ class BookingController extends Controller
         if($form->isSubmitted()) {
             if ($form->isValid()){
                 if ($bookingProvider->oneThousandTickets($booking) == true) {
-                    $this->addFlash('info', 'Date souhaitée : '.$bookingProvider->getDateReservationToString($booking).'. Il reste '.$bookingProvider->getRemainingTickets().' billets en vente.');
                     $em = $this->getDoctrine()->getManager();
                     $em->persist($booking);
                     $em->flush();
                     return $this->redirectToRoute("booking.create.stepTwo", ['token' => $booking->getToken()]);
                 } else {
-                    $this->addFlash('warning', 'Billetterie fermée pour le '.$bookingProvider->getDateReservationToString($booking).' : Plus de 1000 billets ont déjà été vendus.');
+                    $this->addFlash('warning', 'Billetterie fermée pour le '.$bookingProvider->getDateReservationToString($booking).' : 1000 billets ont déjà été vendus.');
                     return $this->redirectToRoute("booking.create.stepOne");
                 }
             }
@@ -89,7 +88,6 @@ class BookingController extends Controller
         $bookingProvider = $this->get('lg_core_bundle.bookingprovider');
 
         if ($bookingProvider->oneThousandTickets($booking) == true) {
-            $this->addFlash('info', 'Date souhaitée : '.$bookingProvider->getDateReservationToString($booking).'. Il reste '.$bookingProvider->getRemainingTickets().' billets en vente.');
             //return the twig template
             return $this->get('templating')->renderResponse('LGCoreBundle:Booking:booking_form_step_two.html.twig', [
                 "booking" => $booking,
@@ -103,7 +101,7 @@ class BookingController extends Controller
                 "id" => $id
             ]);
         } else {
-            $this->addFlash('warning', 'Billetterie fermée pour le '.$bookingProvider->getDateReservationToString($booking).' : Plus de 1000 billets ont déjà été vendus');
+            $this->addFlash('warning', 'Billetterie fermée pour le '.$bookingProvider->getDateReservationToString($booking).' : 1000 billets ont déjà été vendus');
             return $this->redirectToRoute("booking.create.stepOne");
         }
     }
@@ -169,7 +167,6 @@ class BookingController extends Controller
         $email = $booking->getEmail();
 
         if ($bookingProvider->oneThousandTickets($booking) == true) {
-            $this->addFlash('info', 'Date souhaitée : '.$bookingProvider->getDateReservationToString($booking).'. Il reste '.$bookingProvider->getRemainingTickets().' billets en vente.');
             //Return twig template
             return $this->get('templating')->renderResponse('LGCoreBundle:Booking:booking_form_step_three.html.twig', [
                 "booking" => $booking,
@@ -179,7 +176,7 @@ class BookingController extends Controller
                 "email" => $email
             ]);
         } else {
-            $this->addFlash('warning', 'Billetterie fermée pour le '.$bookingProvider->getDateReservationToString($booking).' : Plus de 1000 billets ont déjà été vendus');
+            $this->addFlash('warning', 'Billetterie fermée pour le '.$bookingProvider->getDateReservationToString($booking).' : 1000 billets ont déjà été vendus');
             return $this->redirectToRoute("booking.create.stepOne");
         }
     }
@@ -223,7 +220,7 @@ class BookingController extends Controller
                 return $this->redirectToRoute("booking.create.stepThree", ['token' => $booking->getToken()]);
             }
         } else {
-            $this->addFlash('warning', 'Billetterie fermée pour le '.$bookingProvider->getDateReservationToString($booking).' : Plus de 1000 billets ont déjà été vendus');
+            $this->addFlash('warning', 'Billetterie fermée pour le '.$bookingProvider->getDateReservationToString($booking).' : 1000 billets ont déjà été vendus');
             return $this->redirectToRoute("booking.create.stepOne");
         }
     }
