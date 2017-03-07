@@ -18,7 +18,6 @@ use LG\CoreBundle\Entity\Booking;
 class BookingProvider
 {
     private $em;
-    private $remainingTickets;
 
     /**
      * LimitTicketsValidator constructor.
@@ -85,11 +84,10 @@ class BookingProvider
         $datesReservation = [];
         $dateValue = $this->getDateReservationToString($booking);
 
-        /*
-         * Call findByDateReservation in repository/BookingRepository.php
-         */
+        //Call findByDateReservation in repository/BookingRepository.php
         $bookingsRepo = $this->em->getRepository('LGCoreBundle:Booking')->findByDateReservation();
-        dump($bookingsRepo);
+
+        //For each result, we get booking date and tickets number
         foreach ($bookingsRepo as $bookingRepo) {
             $dateReservation = $bookingRepo->getDateReservation()->format('d-m-Y');
             $numberTicketsNormal = $bookingRepo->getTicketNumberNormal();
@@ -97,52 +95,32 @@ class BookingProvider
             $numberTicketsChild = $bookingRepo->getTicketNumberChild();
             $numberTicketsSenior = $bookingRepo->getTicketNumberSenior();
             $numberTickets = $numberTicketsChild + $numberTicketsSenior + $numberTicketsNormal + $numberTicketsReduce;
-            /*
-             * I add as many dates in array as there are tickets for the day
-             */
+
+            //I add as many dates in array as there are tickets for the day
             for($i=0;$i<$numberTickets;$i++){
                 $datesReservation[] = $dateReservation ;
             }
         }
 
-        /*
-         * I also add user choice as many as there are tickets
-         */
+        //I also add user choice as many as there are tickets
         for($i=0;$i<$this->getNumberTickets($booking);$i++){
             $datesReservation[] = $dateValue;
         }
 
-        /*
-         * For each date, I count number of times it's present in array
-         */
+        //For each date, I count number of times it's present in array
         $dates = array_count_values($datesReservation);
-        dump($datesReservation, $dates);
+
+        //If a date is present 1000 times or more, $isAvailable is false
         foreach ($dates as $date => $number) {
             if (($number >= 1000) && ($dateValue == $date)) {
                 $isAvailable = false;
             } else {
                 $isAvailable = true;
-                $this->setRemainingTickets(1000-$number);
             }
         }
+
+        //Return a boolean. I use this in controller to allow (or not) the Booking persist on Step One
+        //I also use this on Step Three to check before payment
         return $isAvailable;
-    }
-
-    /**
-     * Get remaining tickets to display on header
-     * @return mixed
-     */
-    public function getRemainingTickets()
-    {
-        return $this->remainingTickets;
-    }
-
-    /**
-     * @param $remainingTickets
-     * @return mixed
-     */
-    public function setRemainingTickets($remainingTickets){
-        $this->remainingTickets = $remainingTickets;
-        return $remainingTickets;
     }
 }

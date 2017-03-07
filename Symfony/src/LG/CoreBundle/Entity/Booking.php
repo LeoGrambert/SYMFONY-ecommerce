@@ -26,39 +26,22 @@ class Booking
     private $id;
 
     /**
-     * @var \DateTime
-     * @ORM\Column(name="date_reservation", type="date")
-     * @Assert\NotNull(
-     *     message="Veuillez choisir une date de réservation.",
-     * )
-     * @Assert\Date()
-     */
-    private $dateReservation;
-
-    /**
-     * @var \DateTime
+     * @var string
      *
-     * @ORM\Column(name="date_achat", type="datetime")
+     * @ORM\Column(name="date_achat", type="string")
      */
     private $dateAchat;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="code_reservation", type="string")
+     * @ORM\Column(name="an_hour_after_booking", type="string")
      */
-    private $codeReservation;
-
-    /**
-     * @var bool
-     *
-     * @ORM\Column(name="is_daily", type="boolean")
-     */
-    private $isDaily;
+    private $anHourAfterBooking;
 
     /**
      * @var string
-     * 
+     *
      * @ORM\Column(name="email", type="string")
      * @Assert\Email(
      *     message="L'adresse email indiquée n'est pas valide. Veuillez rentrer une adresse correcte, vous y recevrez vos billets d'entrée.",
@@ -72,6 +55,23 @@ class Booking
      * @ORM\Column(name="token", type="string", nullable=true)
      */
     private $token;
+    
+    /**
+     * @var \DateTime
+     * @ORM\Column(name="date_reservation", type="date")
+     * @Assert\NotNull(
+     *     message="Veuillez choisir une date de réservation.",
+     * )
+     * @Assert\Date()
+     */
+    private $dateReservation;
+
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="is_daily", type="boolean")
+     */
+    private $isDaily;
 
     /**
      * @var int
@@ -126,6 +126,13 @@ class Booking
     private $ticketNumberSenior = 0;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="code_reservation", type="string")
+     */
+    private $codeReservation;
+
+    /**
      * @var int
      * @ORM\Column(name="state_order", type="integer")
      */
@@ -135,13 +142,14 @@ class Booking
      * @ORM\OneToMany(targetEntity="LG\CoreBundle\Entity\Client", mappedBy="booking", cascade={"persist"})
      */
     private $clients;
-
+    
     /**
      * Booking constructor.
      */
     public function __construct()
     {
-        $this->dateAchat = new \DateTime();
+        $this->dateAchat = date('YmdHis', time());
+        $this->anHourAfterBooking = date('YmdHis', time() + 3600);
         $this->codeReservation = $this->generateCodeReservation();
         $this->stateOrder = 1;
     }
@@ -168,8 +176,8 @@ class Booking
      * Return is called in constructor method.
      */
     public function generateCodeReservation(){
-        $dateAchat = $this->getDateAchat()->format('YmdHis');
-        $codeReservation = $this->random(3).$dateAchat;
+        $dateAchat = $this->getDateAchat();
+        $codeReservation = ($this->random(3)).$dateAchat;
         return $codeReservation;
     }
 
