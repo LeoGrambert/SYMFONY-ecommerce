@@ -80,7 +80,7 @@ class BookingProvider
      */
     public function oneThousandTickets(Booking $booking)
     {
-        $isAvailable = true;
+        $isAvailable = false;
         $datesReservation = [];
         $dateValue = $this->getDateReservationToString($booking);
 
@@ -109,11 +109,11 @@ class BookingProvider
 
         //For each date, I count number of times it's present in array
         $dates = array_count_values($datesReservation);
-
         //If a date is present 1000 times or more, $isAvailable is false
         foreach ($dates as $date => $number) {
             if (($number >= 1000) && ($dateValue == $date)) {
                 $isAvailable = false;
+                return $isAvailable;
             } else {
                 $isAvailable = true;
             }
