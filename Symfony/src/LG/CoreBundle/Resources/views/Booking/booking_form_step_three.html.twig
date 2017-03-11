@@ -9,6 +9,13 @@
     <!--
 Funnel
 -->
+
+    <!-- CB Number test -->
+    <div id="testCB">
+        Numéro CB pour tester l'interface de paiement<br/>Cliquez ici
+    </div>
+    <!-- End CB Number test -->
+
     <div class="container" id="funnelStepThree">
         <div class="row">
             <div class="col-md-6 col-md-offset-4">
@@ -66,3 +73,11 @@ Funnel
 
     <!-- //end main -->
 {% endblock %}
+
+{% block script %}
+    {% javascripts
+    '@js'
+    'bundles/lgcore/js/cbtest.js'%}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+    {% endblock %}
