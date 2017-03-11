@@ -57,7 +57,7 @@ class Client
      *
      * @ORM\Column(name="birth_date", type="datetime", nullable=false)
      * @Assert\NotBlank()
-     * @Assert\Date()
+     * @Assert\DateTime(format="d-m-Y")
      */
     private $birthDate;
 
