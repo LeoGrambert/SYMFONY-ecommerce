@@ -18,13 +18,13 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 /**
  * Class HomeController
  * @package LG\CoreBundle\Controller
- * @Route("/")
+ * @Route("/{_locale}", requirements={"_locale" : "fr|en"})
  */
 class HomeController extends Controller
 {
     /**
      * @return Response
-     * @Route("/{_locale}", name="home.index", methods={"GET"})
+     * @Route("/", name="home.index", methods={"GET"})
      * @throws \Twig_Error
      */
     public function indexAction(){
