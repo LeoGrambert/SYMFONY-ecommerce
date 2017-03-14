@@ -33,7 +33,8 @@
         "symfony/property-access": "^3.2",
         "curl/curl": "^1.6",
         "stripe/stripe-php": "^4.4",
-        "friendsofsymfony/jsrouting-bundle": "^1.6"
+        "friendsofsymfony/jsrouting-bundle": "^1.6",
+        "coresphere/console-bundle": "~0.4"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",

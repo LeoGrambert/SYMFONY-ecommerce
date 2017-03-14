@@ -50,6 +50,13 @@ Funnel
                 </div>
             </div>
 
+            <div id="testCBMobile">
+                Numéro CB pour tester l'interface de paiement :<br/>
+                4242 4242 4242 4242<br/>
+                Peu importe le mois et l'année (à condition que ce soit dans le futur)<br/>
+                Peu importe le cryptogramme (nombre à 3 chiffres)
+            </div>
+
             <div id="status">
                 <form action="{{ path('order.checkout', {"token" : booking.token}) }}" method="POST">
                     <input

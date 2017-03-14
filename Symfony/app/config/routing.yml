@@ -8,3 +8,7 @@ lg_core:
 
 fos_js_routing:
     resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
+
+coresphere_console:
+    resource: .
+    type: extra

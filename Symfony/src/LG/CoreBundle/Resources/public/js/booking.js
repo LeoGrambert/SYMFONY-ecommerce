@@ -12,7 +12,7 @@ $(function($) {
         birthdate :'Date de naissance (dd-mm-yyyy)'
     };
     var clients = [];
-    
+
     //Get the current date in order to validate birthdate (child and senior price)
     var $now = new Date();
     var $currentDay = $now.getDate();
@@ -36,7 +36,7 @@ $(function($) {
     var $numberChild = 0;
     var $numberSenior = 0;
 
-    
+
     /**
      * Function that retrieves the number of ordered tickets
      * Then, it's generate form in a for loop
@@ -51,7 +51,7 @@ $(function($) {
         var $number = 0;
         //In order to identify ticket price
         var $price;
-        
+
         //Generate forms for normal tickets
         for (i=0; i<$numberTicketsNormal; i++){
             $visitor++;
@@ -60,7 +60,7 @@ $(function($) {
             generateForm($number, $price);
             $('#form_'+$number).prepend('<div class="visitor normalPriceVisitor">Visiteur n°'+$visitor+'<br/>Tarif Normal</div>');
         }
-        
+
         //Generate forms for reduce tickets
         for (i=0; i<$numberTicketsReduce; i++){
             $visitor++;
@@ -75,7 +75,7 @@ $(function($) {
                             '<p id="reduceText">Votre carte d\'étudiant, militaire ou équivalent vous sera demandé à l\'entrée du Musée.</p></div>')
                 .addClass('reduce_'+$numberReduce);
         }
-        
+
         //Generate forms for child tickets
         for (i=0; i<$numberTicketsChild; i++){
             $visitor++;
@@ -88,7 +88,7 @@ $(function($) {
                 .append('<div class="textChildPrice">Le visiteur doit être né entre le ' + $twelveYearsOld + ' et le ' + $fourYearsOld +'</div>')
                 .addClass('child_'+$numberChild);
         }
-        
+
         //Generate forms for senior tickets
         for (i=0; i<$numberTicketsSenior; i++){
             $visitor++;
@@ -130,13 +130,13 @@ $(function($) {
         var reducePriceIsValid = false;
         var childPriceIsValid = false;
         var seniorPriceIsValid = false;
-        
+
         var $form = $('<div class="col-md-offset-4">');
         $formContainerStepTwo.after($form);
         $form.append($('<button class="btn btn-primary booking-client__validate">').text('Confirmer la commande'));
-        
+
         $form.on('click', '.booking-client__validate', function() {
-            
+
             var $visitor = 0;
             var $number = 1;
             var $numberReduce = 0;
@@ -144,7 +144,7 @@ $(function($) {
             var $numberSenior = 0;
             $('div.alert.alert-danger').remove();
             $('input.form-control').css('borderColor', '#DADADA');
-            
+
 
             //For each form, we check if each field is correctly fill.
             $('.booking-form-container').each(function() {
@@ -159,25 +159,25 @@ $(function($) {
                     isValid = false;
                     var $lastName = false;
                     $('#form_'+$visitor+' .form-group .lastname').css('borderColor', '#ef5050');
-                } 
+                }
                 if ($firstNameValue == "" || $firstNameValue.length < 3)
                 {
                     isValid = false;
                     var $firstName = false;
                     $('#form_'+$visitor+' .form-group .firstname').css('borderColor', '#ef5050');
-                } 
-                if($countryValue == "" || $countryValue.length < 3) 
+                }
+                if($countryValue == "" || $countryValue.length < 3)
                 {
                     isValid = false;
                     var $country = false;
                     $('#form_'+$visitor+' .form-group .country').css('borderColor', '#ef5050');
-                } 
+                }
                 if(!$birthDateValue.match(/^(\d{1,2})-(\d{1,2})-(\d{4})$/))
                 {
                     isValid = false;
                     var $birthdate = false;
                     $('#form_'+$visitor+' .form-group .birthdate').css('borderColor', '#ef5050');
-                } 
+                }
                 if ($lastName != false && $firstName != false && $country != false && $birthdate != false){
                     isValid = true;
                 }
@@ -316,7 +316,7 @@ $(function($) {
    var onSuccessSubmit = function () {
         var $url = window.location.href;
         var $id = $url.split('2/');
-        window.location.replace('/fr/booking/create/3/'+$id[1]);
+        window.location.replace('/front/projets/louvre/website/web/fr/booking/create/3/'+$id[1]);
     };
 
     /**

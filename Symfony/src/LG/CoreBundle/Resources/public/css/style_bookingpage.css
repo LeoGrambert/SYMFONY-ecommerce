@@ -305,6 +305,11 @@ hr{
     background-color: #DADADA;
     text-decoration: underline;
 }
+#testCBMobile{
+  display:none;
+  text-align: center;
+  margin-bottom:3%;
+}
 
 /*Step Four Stylesheet*/
 #confirmationPage{
@@ -430,6 +435,12 @@ hr{
     }
     #status{
         margin-left:40%;
+    }
+    #testCBMobile{
+      display: block;
+    }
+    #testCB{
+      display: none;
     }
     .messageErrorClient{
         margin-left: 30%;
