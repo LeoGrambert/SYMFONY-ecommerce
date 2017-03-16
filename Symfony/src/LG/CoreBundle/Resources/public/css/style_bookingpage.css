@@ -290,25 +290,10 @@ hr{
     display:none;
 }
 #testCB{
-    width: 10%;
     padding: 1%;
     text-align: center;
-    background-color: rgba(218,218,218,0.5);
-    right: 0;
-    border-radius: 2%;
-    font-size: 0.8em;
-    bottom:25%;
-    position: fixed;
-}
-#testCB:hover{
-    cursor: pointer;
-    background-color: #DADADA;
-    text-decoration: underline;
-}
-#testCBMobile{
-  display:none;
-  text-align: center;
-  margin-bottom:3%;
+    font-size: 0.9em;
+    margin-top:3%;
 }
 
 /*Step Four Stylesheet*/
@@ -438,12 +423,6 @@ hr{
     }
     #status{
         margin-left:40%;
-    }
-    #testCBMobile{
-      display: block;
-    }
-    #testCB{
-      display: none;
     }
     .messageErrorClient{
         margin-left: 30%;
