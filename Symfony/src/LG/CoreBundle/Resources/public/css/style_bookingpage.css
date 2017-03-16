@@ -14,7 +14,7 @@ hr{
     margin-left: 2%;
 }
 #basketImg{
-    padding-right: 3.5%;
+    padding-right: 4%;
     float: right;
     margin-top: -7%;
 }
@@ -23,6 +23,7 @@ hr{
     padding-right: 1%;
     float: right;
     margin-top: -5%;
+    text-align: center;
 }
 #stepOne, #stepTwo, #stepThree, #stepFour{
     text-align: center;

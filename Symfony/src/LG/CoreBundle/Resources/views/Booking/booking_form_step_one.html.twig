@@ -3,8 +3,8 @@
 {%  block body %}
     <img src="{{ asset('bundles/lgcore/img/logo.png') }}" alt="logo_musee_du_louvre" id="logoImg"/>
     <p id="subTextLogo">{{ "Billetterie en ligne"|trans}}</p>
-    <img src="{{ asset('bundles/lgcore/img/basket.png') }}" alt="panier" id="basketImg"/>
-    <p id="basketText">{{ "Vous avez"|trans}} <span id="numberTickets">0</span> {{ "billet(s)"|trans}}<br/> {{ "dans votre panier"|trans}}</p>
+    <img src="{{ asset('bundles/lgcore/img/tickets.png') }}" alt="tickets" id="basketImg"/>
+    <p id="basketText">{{ "Commande en cours :"|trans}}<br/><span id="numberTickets">0</span> {{ "billet(s)"|trans}}</p>
     <!--
 Funnel
 -->
@@ -86,7 +86,7 @@ Funnel
                         <p><span class="ticketNumber">{{ "Tarif réduit :"|trans}}</span> {{ "étudiant, employé du Musée, service du Ministre de la Culture, militaire"|trans}} (10€)</p>
                         <p><span class="ticketNumber">{{ "Tarif enfant :"|trans}}</span> {{ "de 4 à 12 ans"|trans}} (8€)</p>
                         <p><span class="ticketNumber">{{ "Tarif senior :"|trans}}</span> {{ "à partir de 60 ans"|trans}} (12€)</p>
-                        <p>{{ "Pour les enfants de moins de 4 ans, l'entrée est gratuite. Vous n'avez pas à prendre de billets."|trans}}</p>
+                        <p><strong>{{ "Pour les enfants de moins de 4 ans, l'entrée est gratuite. Vous n'avez pas à prendre de billets."|trans}}</strong></p>
                     </div>
                 </div>
                 <div id="choiceTicketNumber">
