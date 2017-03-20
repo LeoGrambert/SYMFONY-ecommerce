@@ -439,7 +439,7 @@ hr{
 @media screen and (min-width:501px) and (max-width: 981px){
     #lg_corebundle_booking_dateReservation{
         width:auto;
-        margin-left: 36%;
+        margin-left: 32%;
     }
     #choiceTicketNumber input{
         width:auto;
@@ -454,13 +454,16 @@ hr{
         margin-left: 9%;
     }
     #lg_corebundle_booking_email{
-        margin-left: 36%;
+        margin-left: 32%;
     }
     #funnelBorder{
         margin-bottom: -3%;
     }
+    #funnelStepOne, #funnelstepTwo, #funnelStepThree, #funnelStepFour{
+      margin: 10% 0 15% 25%;
+    }
     #selectType{
-        margin: 3% 0 3% 0;
+        margin: 3% 0 3% -5%;
         width: 100%;
         display:flex;
         flex-direction: row;
@@ -471,10 +474,31 @@ hr{
         width:40%;
     }
     #selectType label{
-        margin-left:45%;
+        margin-left:35%;
+        margin-top: 5%;
+        width:100%;
+    }
+    #logoImg{
+        margin: 10% 0 0 1%;
+    }
+    #basketImg{
+        margin-top:-11%;
+        padding-right: 7%;
+    }
+    #blocFunnelStepTwo{
+      margin-left: 29%;
+    }
+    #blocFunnelStepThree{
+      margin-left:60%;
+    }
+    #blocFunnelStepFour{
+      margin-left:89%;
     }
     .booking-client__validate{
-        margin-left:38%;
+        margin-left:34%;
+    }
+    .marginBody{
+      margin:2%;
     }
 }
 @media screen and (max-width: 1200px) {
