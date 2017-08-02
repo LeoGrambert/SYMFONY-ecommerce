@@ -319,7 +319,7 @@ $(function($) {
     var onSuccessSubmit = function () {
         var $url = window.location.href;
         var $id = $url.split('2/');
-        window.location.replace('/front/projets/louvre/Symfony/web/fr/booking/create/3/'+$id[1]);
+        window.location.replace('/fr/booking/create/3/'+$id[1]);
     };
 
     /**
