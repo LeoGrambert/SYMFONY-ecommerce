@@ -17,7 +17,7 @@ Website is alvaible at this adress : <a href="http://leogrambert.fr/front/projet
 <code>php bin/console doctrine:schema:update --force</code><br>
 <code>php bin/console assets:install</code><br></h5>
 
-<h5>5. Then launch the server with this command <code>php bin/console server:start</code> and go to this adress : http://127.0.0.1:8000/fr/</h5>
+<h5>5. Then launch the server with this command <code>php bin/console server:start</code> and go to this address : http://127.0.0.1:8000/fr/</h5>
 
 <hr>
 
