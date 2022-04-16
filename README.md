@@ -1,6 +1,6 @@
 Find instructions here : <a href="https://openclassrooms.com/projects/developpez-un-back-end-pour-un-client">"Développez un back-end pour un client"</a>
 
-Website is alvaible at this adress : <a href="http://leogrambert.fr/front/projets/louvre">http://leogrambert.fr/front/projets/louvre</a>
+Description is alvaible at this adress : <a href="https://leogrambert.fr/projets/louvre.php">https://leogrambert.fr/projets/louvre.php</a>
 
 <hr>
 
